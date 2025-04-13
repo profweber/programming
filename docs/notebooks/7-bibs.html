@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -182,9 +216,10 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#einführung-zu-bibliotheken" id="toc-einführung-zu-bibliotheken" class="nav-link active" data-scroll-target="#einführung-zu-bibliotheken"><span class="header-section-number">9.1</span> Einführung zu Bibliotheken</a></li>
-  <li><a href="#nützliche-python-bibliotheken" id="toc-nützliche-python-bibliotheken" class="nav-link" data-scroll-target="#nützliche-python-bibliotheken"><span class="header-section-number">9.2</span> Nützliche Python-Bibliotheken</a>
+  <li><a href="#numpy" id="toc-numpy" class="nav-link" data-scroll-target="#numpy"><span class="header-section-number">9.2</span> NumPy</a>
   <ul class="collapse">
-  <li><a href="#numpy" id="toc-numpy" class="nav-link" data-scroll-target="#numpy">NumPy</a></li>
+  <li><a href="#überblick" id="toc-überblick" class="nav-link" data-scroll-target="#überblick">Überblick</a></li>
+  <li><a href="#demo-effiziente-matrixoperationen-mit-arrays" id="toc-demo-effiziente-matrixoperationen-mit-arrays" class="nav-link" data-scroll-target="#demo-effiziente-matrixoperationen-mit-arrays">Demo: Effiziente Matrixoperationen mit Arrays</a></li>
   <li><a href="#matplotlib" id="toc-matplotlib" class="nav-link" data-scroll-target="#matplotlib">Matplotlib</a></li>
   <li><a href="#pandas" id="toc-pandas" class="nav-link" data-scroll-target="#pandas">Pandas</a></li>
   </ul></li>
@@ -235,10 +270,111 @@ ul.task-list li input[type="checkbox"] {
 <section id="einführung-zu-bibliotheken" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="einführung-zu-bibliotheken"><span class="header-section-number">9.1</span> Einführung zu Bibliotheken</h2>
 </section>
-<section id="nützliche-python-bibliotheken" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="nützliche-python-bibliotheken"><span class="header-section-number">9.2</span> Nützliche Python-Bibliotheken</h2>
-<section id="numpy" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="numpy">NumPy</h3>
+<section id="numpy" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="numpy"><span class="header-section-number">9.2</span> NumPy</h2>
+<section id="überblick" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="überblick">Überblick</h3>
+<p><strong>NumPy (Numerical Python)</strong> ist eine der zentralen Bibliotheken im wissenschaftlichen Rechnen mit Python. Sie bietet leistungsfähige Datenstrukturen, insbesondere das n-dimensionale Array (<code>ndarray</code>), und eine breite Palette mathematischer Funktionen zur effizienten Verarbeitung großer Datenmengen. Für Ingenieurinnen und Ingenieure ist NumPy besonders wertvoll, da es numerische Simulationen, Datenanalyse und Algorithmenentwicklung deutlich vereinfacht und beschleunigt – ein entscheidender Vorteil in der praxisnahen Ingenieurarbeit, in der oft große Datenmengen analysiert und komplexe Berechnungen durchgeführt werden müssen. Damit es keine Missverständnisse gibt: Numerisch bedeutet, dass wir in Numpy immer mit konkreten Zahlen rechnen und solche als Ergebnisse erhalten. Das Gegenteil wären symbolische Berechnungen, bei denen es darum geht eine Formel als Lösung für ein Problem zu finden. Hierfür gibt es auch eine Python-Bibliothek: <strong>Sympy (Symbolic Python)</strong>.</p>
+<p>Drei Highlights von NumPy für die Ingenieurpraxis:</p>
+<ul>
+<li><p>Effiziente Matrixoperationen: Lineare Algebra ist das Rückgrat vieler ingenieurtechnischer Berechnungen, z. B. in der Statik, Regelungstechnik oder Signalverarbeitung. NumPy ermöglicht schnelle und speichereffiziente Operationen auf Matrizen – inklusive Inversion, Eigenwertberechnung oder Lösung linearer Gleichungssysteme.</p></li>
+<li><p>Schnelle Datenverarbeitung: Durch seine optimierte Implementierung (die Bibliothekt wurde in C geschrieben!) ist NumPy um ein Vielfaches schneller als Standard-Python-Schleifen. Das ist ideal für Messdatenanalysen oder Simulationen, bei denen Zeit eine kritische Rolle spielt.</p></li>
+<li><p>Nahtlose Integration mit anderen Tools: NumPy bildet die Grundlage für viele andere wissenschaftliche Bibliotheken wie SciPy, pandas oder Matplotlib. So lässt es sich leicht in bestehende Arbeitsabläufe integrieren – vom Datenimport bis zur Visualisierung der Ergebnisse.</p></li>
+</ul>
+</section>
+<section id="demo-effiziente-matrixoperationen-mit-arrays" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="demo-effiziente-matrixoperationen-mit-arrays">Demo: Effiziente Matrixoperationen mit Arrays</h3>
+<div id="b7cca466-5e45-4ac8-9b58-a2e11be3754d" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 3x3 Matrix als np.array</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>],</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">4</span>],</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">0</span>]])</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 3D-Vektor</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrix mal Vektor v = A * b:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> np.dot(A, b)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"A*b = "</span>,v)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>A*b =  [13 10  9]</code></pre>
+</div>
+</div>
+<p>Wir können viele Operationen aus der linearen Algebra direkt ausführen:</p>
+<div id="c8534d99-5059-4bb2-af92-5af35c270b39" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>A.transpose()  <span class="co"># liefert die transponierte Matrix</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>array([[ 2,  0,  5],
+       [ 1, -1,  2],
+       [ 3,  4,  0]])</code></pre>
+</div>
+</div>
+<div id="1d8755c0-b82e-40c7-a287-ac0cb74ca3e7" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>np.linalg.eigvals(A)  <span class="co"># liefert die Eigenwerte von A</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>array([ 5.83891641, -0.80708431, -4.0318321 ])</code></pre>
+</div>
+</div>
+<div id="f0fbdbae-c49f-47b1-ada0-2c9ffb782d71" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>np.linalg.eig(A)  <span class="co"># liefert Eigenwerte und Eigenvektoren von A</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>EigResult(eigenvalues=array([ 5.83891641, -0.80708431, -4.0318321 ]), eigenvectors=array([[-0.62757479, -0.37722073, -0.16597401],
+       [-0.39307122,  0.92504816, -0.78589196],
+       [-0.67204531,  0.04461408,  0.59567311]]))</code></pre>
+</div>
+</div>
+<div id="9897da8e-4b12-4aa7-9088-af61aea4694b" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linalg.solve(A, b)  <span class="co"># löst das lineare Gleichungssystem: A*x = b</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[ 1.31578947 -1.78947368  0.05263158]</code></pre>
+</div>
+</div>
+<p>Überprüfen wir das Ergebnis:</p>
+<div id="595bedc2-9034-4e8b-8b46-1a7061a51fd4" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.dot(A,x), <span class="st">"Zum Vergleich: "</span>, b)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1. 2. 3.] Zum Vergleich:  [1 2 3]</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Numpy-Arrays
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die Arrays von Numpy sind ein hochoptimierter Datentyp für numerische Berechnungen. Anders als bei Listen können Sie Datentypen nicht mehr wild mischen innerhalb eines Arrays, sondern müssen konsequent einen Datentyp für alle Einträge verwenden, meistens <code>float</code> oder <code>int</code>. Zwei Besonderheiten von Numpy-Arrays möchten wir hier herausstellen:</p>
+<ul>
+<li><p><strong>Vektorisierte Operationen:</strong> NumPy bietet vektorisierten Code, d. h. mathematische Operationen wie Addition, Subtraktion, Multiplikation auf Arrays werden auf allen Elementen gleichzeitig angewendet. Dies ist viel schneller als das manuelle Schleifen über Listen in Python.</p></li>
+<li><p><strong>Broadcasting:</strong> NumPy unterstützt Broadcasting, sodass auch Arrays unterschiedlicher Formen miteinander rechnen können, ohne dass wir diese mühsam aneinander anpassen müssen.</p></li>
+</ul>
+</div>
+</div>
+<p>Wir demonstrieren Broadcasting anhand eines Beispiels:</p>
+<div id="32e33b15-1e47-4ad2-b452-855a82ab8740" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>],</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>],</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">3</span>]])</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> A <span class="op">+</span> v  <span class="co"># das passt eigentlich nicht!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Die letzte Zeile führt überraschenderweise nicht zu einem Programmgfehler, obwohl die Dimensionen von A und v überhaupt nicht zusammenpassen. In solchen Fällen geschieht Broadcasting: “Was nicht passt, wird passend gemacht!”. Schauen wir uns das Ergebnis genauer an:</p>
+<div id="8032a609-8aff-4a18-aaa6-9f4f721806c2" class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(B)  </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[2 2 3]
+ [1 4 3]
+ [1 2 6]]</code></pre>
+</div>
+</div>
+<p>Wir sehen: Der Vektor v wurde zeilenweise addiert. Für das Broadcasting gibt es ein klar definiertes Vorgehen, wie Arrays aneinander angeglichen werden und in welchen Fällen es überhaupt möglich ist. Man muss aufpassen, dass man kein unbeabsichtigtes Broadcasting durchführt und unerwartete Ergebnisse erhält. Aber so tief wollen wir an dieser Stelle nicht einsteigen. Ein erstes Kennenlernen von Numpy war das Ziel dieses Abschnitts.</p>
 </section>
 <section id="matplotlib" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="matplotlib">Matplotlib</h3>
