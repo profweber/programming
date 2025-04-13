@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Prof.&nbsp;Dr.&nbsp;Maik Weber">
+
+<title>6&nbsp; Kontrollstrukturen – Programmierung für Ingenieurinnen und Ingenieure</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<link href="../notebooks/5-functions.html" rel="next">
+<link href="../notebooks/3-datatypes.html" rel="prev">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-a185852c63625fd9ffbdc57047c9a77e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-20d4060cc67bd9191ed65a16e0597eba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/4-controls.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kontrollstrukturen</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../logo.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Programmierung für Ingenieurinnen und Ingenieure</a> 
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Vorwort</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/0-einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Einleitung</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/1-prep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Vorbereitungen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/2-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Einführung ins Programmieren</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/3-datatypes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Datentypen und ihre Repräsentation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/4-controls.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kontrollstrukturen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/5-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Funktionen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/6-sequences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Datenstrukturen in Python</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/7-bibs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Die Verwendung von Bibliotheken</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/8-oop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Objektorientierte Programmierung (OOP)</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#verzweigungen" id="toc-verzweigungen" class="nav-link active" data-scroll-target="#verzweigungen"><span class="header-section-number">6.1</span> Verzweigungen</a>
+  <ul class="collapse">
+  <li><a href="#verzweigungen-mit-if-und-else" id="toc-verzweigungen-mit-if-und-else" class="nav-link" data-scroll-target="#verzweigungen-mit-if-und-else">Verzweigungen mit if und else</a></li>
+  <li><a href="#verzweigungen-mit-if-elif-und-else" id="toc-verzweigungen-mit-if-elif-und-else" class="nav-link" data-scroll-target="#verzweigungen-mit-if-elif-und-else">Verzweigungen mit if, elif und else</a></li>
+  <li><a href="#zusammengesetzte-bedingungen-mit-and-or-und-not" id="toc-zusammengesetzte-bedingungen-mit-and-or-und-not" class="nav-link" data-scroll-target="#zusammengesetzte-bedingungen-mit-and-or-und-not">Zusammengesetzte Bedingungen mit <em>and</em>, <em>or</em> und <em>not</em></a></li>
+  </ul></li>
+  <li><a href="#schleifen" id="toc-schleifen" class="nav-link" data-scroll-target="#schleifen"><span class="header-section-number">6.2</span> Schleifen</a>
+  <ul class="collapse">
+  <li><a href="#while-loop" id="toc-while-loop" class="nav-link" data-scroll-target="#while-loop">While-Loop</a></li>
+  <li><a href="#for-loop" id="toc-for-loop" class="nav-link" data-scroll-target="#for-loop">For-Loop</a></li>
+  <li><a href="#den-schleifenfluss-kontrollieren-mit-break-und-continue" id="toc-den-schleifenfluss-kontrollieren-mit-break-und-continue" class="nav-link" data-scroll-target="#den-schleifenfluss-kontrollieren-mit-break-und-continue">Den Schleifenfluss kontrollieren mit <em>break</em> und <em>continue</em></a></li>
+  </ul></li>
+  <li><a href="#anwendung-das-newton-verfahren" id="toc-anwendung-das-newton-verfahren" class="nav-link" data-scroll-target="#anwendung-das-newton-verfahren"><span class="header-section-number">6.3</span> Anwendung: Das Newton-Verfahren</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kontrollstrukturen</span></h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Autor:in</div>
+  <div class="quarto-title-meta-heading">Zugehörigkeit</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Prof.&nbsp;Dr.&nbsp;Maik Weber </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Hochschule Trier
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">13. April 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In der Programmierung sind Kontrollstrukturen essenziell, um den Ablauf eines Programms zu steuern. Sie ermöglichen es, Entscheidungen zu treffen, Wiederholungen durchzuführen und den Programmfluss gezielt zu lenken. Ohne sie würden Programme einfach nur von oben nach unten ausgeführt werden, ohne auf Eingaben oder Bedingungen zu reagieren.</p>
+<p>Wir unterscheiden zwischen zwei grundsätzlichen Arten von Kontrollstrukturen: <strong>Verzweigungen</strong> und <strong>Schleifen</strong>.</p>
+<section id="verzweigungen" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="verzweigungen"><span class="header-section-number">6.1</span> Verzweigungen</h2>
+<p>Verzweigungen oder bedingte Anweisungen sind nichts anderes als Fallunterscheidungen: “Wenn eine bestimmte Bedingungen erfüllt ist, tue dies, andernfalls tue das.” In den meisten Programmiersprachen, wird dies durch eine <code>if</code>-Anweisungen realisiert (die genaue Syntax unterscheidet sich von Sprache zu Sprache). Das folgende Codebeispiel zeigt, wie es in Python funktioniert:</p>
+<div id="a3da107c" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> number <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Die Zahl ist positiv!"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Die Zahl ist positiv!</code></pre>
+</div>
+</div>
+<p>In diesem einfachen Beispiel, wird die Bedingung <code>number &gt; 0</code> geprüft. Ist die Bedingung erfüllt, werden die <strong>eingerückten</strong> Anweisungen ausgeführt, in diesem Beispiel der <code>print</code>-Befehl.</p>
+<p>Die Funktionsweise einer <code>if</code>-Anweisung lässt sich mit einem Flussdiagramm (<a href="#fig-if" class="quarto-xref">Abbildung&nbsp;<span>6.1</span></a>) anschaulich darstellen.</p>
+<div id="fig-if" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-if-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/if.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-if-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;6.1: Flussdiagramm zur if-Anweisung
+</figcaption>
+</figure>
+</div>
+<p>Wichtig ist die korrekte Syntax: Die Anweisung wird mit dem Schlüsselwort <code>if</code> eingeleitet, gefolgt von der Bedingung und einem Doppelpunkt. Alle Anweisungen, die bei erfüllter Bedingung ausgeführt werden sollen, müssen darunter eingerückt sein. Wir betrachten ein zweites Beispiel:</p>
+<div id="63661d60" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>max_load <span class="op">=</span> <span class="dv">5000</span>  <span class="co"># Maximale Belastung in Newton</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>current_load <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Belastung in Newton: "</span>))  <span class="co"># z.B. ein Messergebnis</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> current_load <span class="op">&gt;</span> max_load:</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Warnung: Belastung überschritten!"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    factor <span class="op">=</span> (current_load <span class="op">-</span> max_load) <span class="op">/</span> max_load</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Maximale Belastung um "</span>, <span class="bu">round</span>(<span class="dv">100</span><span class="op">*</span>factor,<span class="dv">2</span>),<span class="st">"% überschritten!"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Belastung in Newton:  5200</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Warnung: Belastung überschritten!
+Maximale Belastung um  4.0 % überschritten!</code></pre>
+</div>
+</div>
+<p>Aktuell beschränken sich unsere Beispiele zu Zwecken der Illustration auf simple Ausgaben, aber natürlich gibt es keine Grenzen für die Komplexität, die in einem <code>if</code>-Block ausgeführt werden kann.</p>
+<section id="verzweigungen-mit-if-und-else" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="verzweigungen-mit-if-und-else">Verzweigungen mit if und else</h3>
+<p>In den meisten Fällen verwendet man erweiterte Varianten der <code>if</code>-Anweisung. Zum Beispiel möchte man auch bestimmte Anweisungen ausführen, falls die Bedingung nicht erfüllt ist. Dafür ergänzt man einen <code>else</code>-Block:</p>
+<div id="9f7abab0" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>max_load <span class="op">=</span> <span class="dv">5000</span>  <span class="co"># Maximale Belastung in Newton</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>current_load <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Belastung in Newton: "</span>))</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> current_load <span class="op">&gt;</span> max_load:</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Warnung: Belastung überschritten!"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    factor <span class="op">=</span> (current_load <span class="op">-</span> max_load) <span class="op">/</span> max_load</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Maximale Belastung um "</span>, <span class="bu">round</span>(<span class="dv">100</span><span class="op">*</span>factor,<span class="dv">2</span>),<span class="st">"% überschritten!"</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Alles im grünen Bereich!"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Belastung in Newton:  4600</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Alles im grünen Bereich!</code></pre>
+</div>
+</div>
+<p>Auch diese Variante stellen wir im Flussdiagramm dar (<a href="#fig-ifelse" class="quarto-xref">Abbildung&nbsp;<span>6.2</span></a>).</p>
+<div id="fig-ifelse" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ifelse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/ifelse.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ifelse-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;6.2: Flussdiagramm zur Verzweigung mit if und else
+</figcaption>
+</figure>
+</div>
+<p>Wir haben die Flussdiagramme bewusst so gezeichnet, dass die Einrückungen, wie sie von Python verlangt werden, auch im Diagramm ersichtlich sind: Die Schlüsselwörter <code>if</code> und <code>else</code> befinden sich auf selber Höhe, die jeweiligen Anweisungsblöcke sind darunter eingerückt.</p>
+</section>
+<section id="verzweigungen-mit-if-elif-und-else" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="verzweigungen-mit-if-elif-und-else">Verzweigungen mit if, elif und else</h3>
+<p>Schließlich können wir unsere Verzweigung noch um sog. “else-if-Zweige” erweitern (das Python-Keyword heißt <code>elif</code>). Der Sinn davon: Wenn eine erste Bedingung falsch ist, möchte man vielleicht eine weitere Bedingung prüfen. Ist auch diese falsch, könnte noch eine dritte (vierte, fünfte, …) Bedingung interessant sein. In Worten: “Wenn Bedingung1 wahr ist, tue A, andernfalls prüfe Bedingung2. Ist Bedingung2 wahr, tue B, andernfalls prüfe Bedingung3 usw.” Wichtig zu verstehen ist, dass die Bedingungen nacheinander geprüft werden. Wenn eine frühere Bedingung bereits erfüllt ist, werden spätere Bedingungen gar nicht mehr angeschaut. Ein (optionales) finales <code>else</code> fängt den Fall auf, wenn keine Bedingung erfüllt ist. Das Flussdiagramm <a href="#fig-elif" class="quarto-xref">Abbildung&nbsp;<span>6.3</span></a> stellt die möglichen Fälle da. Es können beliebig viele <code>elif</code>-Blöcke verwendet werden und das finale <code>else</code> kann auch weggelassen werden. Damit steht uns eine sehr flexible Möglichkeit für Verzweigungen zur Verfügung.</p>
+<div id="fig-elif" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-elif-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/elif.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-elif-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;6.3: Flussdiagramm zur Verzweigung mit if, elif und else
+</figcaption>
+</figure>
+</div>
+<div id="9a0b530d" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Grenzwerte für die Motorüberwachung (in °C)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>normal_temp <span class="op">=</span> <span class="dv">80</span>  <span class="co"># normale Betriebstemperatur</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>warning_temp <span class="op">=</span> <span class="dv">100</span>  <span class="co"># Warnschwelle</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>danger_temp <span class="op">=</span> <span class="dv">120</span>  <span class="co"># Kritische Temperatur</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Eingabe: Gemessene Motortemperatur</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Aktuelle Motortemperatur in °C: "</span>))</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Bewertung der Temperatur</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> temperature <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Fehler: Ungültige Temperatur. Bitte Sensor prüfen."</span>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> temperature <span class="op">&lt;=</span> normal_temp:</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Temperatur im sicheren Bereich."</span>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> temperature <span class="op">&lt;=</span> warning_temp:</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Achtung: Temperatur erhöht. Kühlung überprüfen."</span>)</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> temperature <span class="op">&lt;=</span> danger_temp:</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Kritische Warnung! Motor überhitzt!"</span>)</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    <span class="co">#hier folgt Code, der eine zusätzliche Kühlung aktiviert</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Motor wird abgeschaltet!"</span>)</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    <span class="co">#hier folgt Code, der den Motor sofort abschaltet</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Aktuelle Motortemperatur in °C:  110</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Kritische Warnung! Motor überhitzt!</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Die if-Anweisung in anderen Programmiersprachen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die <code>if</code>-Anweisung ist ein universelles Werkzeug der Programmierung, das Sie in vielen Programmiersprachen wiederfinden werden. Beim Wechsel zu einer anderen Programmiersprache müssen Sie sich mit der jeweiligen Syntax vertraut machen. Python verpflichtet Sie z.B. zu Einrückungen, was in anderen Programmiersprachen eher unüblich ist (zu Zwecken der Übersichtlichkeit aber trotzdem gemacht wird). In C verwendet man geschweifte Klammern, um die Blöcke voneinander abzugrenzen. Hier ein Beispiel:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> temperatur <span class="op">=</span> <span class="dv">25</span><span class="op">;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>temperatur <span class="op">&gt;</span> <span class="dv">30</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"Es ist heiß!</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">else</span> <span class="cf">if</span> <span class="op">(</span>temperatur <span class="op">&gt;</span> <span class="dv">20</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"Angenehmes Wetter.</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>        printf<span class="op">(</span><span class="st">"Es ist kühl.</span><span class="sc">\n</span><span class="st">"</span><span class="op">);</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Sie erkennen sicherlich die große Ähnlichkeit zu dem, was Sie in Python kennengelernt haben, aber auch Unterschiede. Zum Beispiel schreibt man in C <code>else if</code> statt des verkürzten <code>elif</code>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Conditional Expressions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Eine Besonderheit von Python sind die sog. Conditional Expressions. Sie sind eine elegante Art, Code kompakt darzustellen, wenn eine Zuweisung abhängig von einer <code>if</code>-Bedingung stattfinden soll. Dazu betrachten wir zunächst ein Beispiel als traditionelle Verzweigung mit <code>if</code> und <code>else</code>:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> voltage <span class="op">&gt;</span> <span class="dv">1000</span>:</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    classification <span class="op">=</span> <span class="st">"Hochspannung"</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    classification <span class="op">=</span><span class="st">"Niederspannung"</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Die kompakte Schreibweise als Conditional Expression sieht dagegen so aus:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>classification <span class="op">=</span> (<span class="st">"Hochspannung"</span> <span class="cf">if</span> voltage <span class="op">&gt;</span> <span class="dv">1000</span> <span class="cf">else</span> <span class="st">"Niederspannung"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Die Conditional Expression ist leicht zu verstehen, da sie wie ein englischer Satz gelesen werden kann. Die Klammern sind optional, unterstützen aber die Übersicht.</p>
+</div>
+</div>
+<div class="exercises">
+<p><b>Übungen:</b></p>
+<ol type="1">
+<li><p>Implementieren Sie einen Türsteher vor einem Club. Er fragt die Besucher nach dem Alter und reagiert entsprechend.</p></li>
+<li><p>Schreiben Sie Code, der den BMI einer Person berechnet und professionelles Feedback gibt.</p></li>
+<li><p>Schreiben Sie ein Programm, das einen primitiven Taschenrechner darstellt: Der Benutzer gibt zwei Zahlen ein, wählt eine Grundrechenart aus und erhält das gewünschte Ergebnis.<br>
+</p></li>
+</ol>
+</div>
+</section>
+<section id="zusammengesetzte-bedingungen-mit-and-or-und-not" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="zusammengesetzte-bedingungen-mit-and-or-und-not">Zusammengesetzte Bedingungen mit <em>and</em>, <em>or</em> und <em>not</em></h3>
+<p>Mit den Operatoren <code>and</code>, <code>or</code> und <code>not</code> können komplexere logische Bedingungen aufgebaut werden. Die Bedeutung der Operatoren ist aus der Aussagenlogik bekannt:</p>
+<ul>
+<li><code>and</code>: “A und B” ist wahr, wenn beide Bedingungen wahr sind.</li>
+<li><code>or</code>: “A oder B” ist wahr, wenn mindestens eine der Bedingungen wahr ist.</li>
+<li><code>not</code>: “nicht A” kehrt den Wahrheitswert einer Bedingung um (wahr wird falsch und falsch wird wahr).</li>
+</ul>
+<div id="12b3346a" class="cell" data-execution_count="61">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>has_license <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># "Führerschein und Fahrzeugpapiere bitte!"</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> age <span class="op">&gt;=</span> <span class="dv">18</span> <span class="kw">and</span> has_license:</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Sie dürfen fahren!"</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Steigen Sie mal bitte aus..."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sie dürfen fahren!</code></pre>
+</div>
+</div>
+<p>Bei der Verknüpfung von mehr als zwei Bedingungen empfiehlt sich die Verwendung von Klammern. Ohne Klammern gelten die Prioritätsregeln: * <code>not</code> hat die höchste Priorität. Es wird zuerst ausgewertet. * <code>and</code> hat eine mittlere Priorität. Es wird vor <code>or</code> ausgewertet. * <code>or</code> hat die niedrigste Priorität.</p>
+<p>Im folgenden Beispiel bräuchte man die Klammern nicht, aber sie unterstützen die Lesbarkeit und beugen Missverständnissen vor:</p>
+<div id="aa2b1066" class="cell" data-execution_count="64">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>is_sunny <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>is_holiday <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (temperature <span class="op">&gt;</span> <span class="dv">20</span> <span class="kw">and</span> is_sunny) <span class="kw">or</span> is_holiday:</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Ich bin happy!"</span>)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Ein Tag wie jeder andere."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Ich bin happy!</code></pre>
+</div>
+</div>
+<p>Im folgenden Beispiel wird <code>not</code> als erstes ausgewertet:</p>
+<div id="c7bb72d2" class="cell" data-execution_count="66">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>is_guest <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>is_admin <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>data_updated <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="kw">not</span> is_guest <span class="kw">and</span> (is_admin <span class="kw">or</span> data_updated):</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Zugriff gewährt!"</span>)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Zugriff verweigert!"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Zugriff gewährt!</code></pre>
+</div>
+</div>
+<p>Zugriff wird hier nur gewährt, wenn es sich <strong>nicht</strong> um einen Gast handelt. Darüber hinaus muss es ein Admin oder ein User mit aktualisierten Daten sein.</p>
+</section>
+</section>
+<section id="schleifen" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="schleifen"><span class="header-section-number">6.2</span> Schleifen</h2>
+<p>Mit Schleifen können wir Anweisungen wiederholen, ohne sie erneut hinschreiben zu müssen. Die Anweisungen, die wiederholt ausgeführt werden sollen, stehen in einem eingerückten <em>Schleifenkörper</em> (so wie die Anweisungen in <code>if</code>- oder <code>else</code>-Blöcken). In Python gibt es zwei grundlegende Schleifentypen, die es in ähnlicher Weise auch in vielen anderen Programmiersprachen gibt.</p>
+<section id="while-loop" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="while-loop">While-Loop</h3>
+<p>Bei der <code>while</code>-Schleife (engl. Loop) legen wir eine Bedingung fest. Nur, wenn diese Bedingung erfüllt ist, werden die Anweisungen im Schleifenkörper ausgeführt. Nach jedem Durchlauf wird die Bedingung erneut geprüft und der Schleifenkörper ggf. ein weiteres Mal durchlaufen. Sie ahnen vielleicht schon die Gefahr dieses Schleifentyps: Wenn die Bedingung immer wahr ist, kommt das Programm nie mehr aus der Schleife raus! Sie haben dann eine sog. <em>Endlosschleife</em> erschaffe, ein gefürchteter Schrecken in der Programmierung. Denken Sie daher gut über Ihre Schleifenbedingung nach!</p>
+<p>Das geschilderte Verhalten können Sie auch im Flussdiagramm der <code>while</code>-Schleife nachvollziehen (<a href="#fig-while" class="quarto-xref">Abbildung&nbsp;<span>6.4</span></a>).</p>
+<div id="fig-while" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-while-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/while.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-while-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;6.4: Flussdiagramm zur while-Loop
+</figcaption>
+</figure>
+</div>
+<p>Betrachten wir ein Beispiel, an dem Sie Syntax und Funktionsweise der <code>while</code>-Schleife lernen können:</p>
+<div id="dfe44d58" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>water_level <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Startfüllstand in Liter</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>max_water_level <span class="op">=</span> <span class="dv">80</span>  <span class="co"># Kapazität des Wassertanks in Liter</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>flow_rate <span class="op">=</span> <span class="dv">10</span>  <span class="co"># Befüllung pro Schritt in Liter</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> water_level <span class="op">&lt;</span> max_water_level:</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    water_level <span class="op">+=</span> flow_rate</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Wassertank wird befüllt... Aktueller Stand:"</span>, water_level)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Der Tank ist voll! Befüllung gestoppt."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Wassertank wird befüllt... Aktueller Stand: 10
+Wassertank wird befüllt... Aktueller Stand: 20
+Wassertank wird befüllt... Aktueller Stand: 30
+Wassertank wird befüllt... Aktueller Stand: 40
+Wassertank wird befüllt... Aktueller Stand: 50
+Wassertank wird befüllt... Aktueller Stand: 60
+Wassertank wird befüllt... Aktueller Stand: 70
+Wassertank wird befüllt... Aktueller Stand: 80
+Der Tank ist voll! Befüllung gestoppt.</code></pre>
+</div>
+</div>
+</section>
+<section id="for-loop" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="for-loop">For-Loop</h3>
+<p>Die <code>for</code>-Schleife hat einen anderen Charakter als die <code>while</code>-Schleife: Sie wird verwendet, um eine Sequenz (z. B. eine Liste, eine Zeichenkette oder eine Zahlenreihe) Schritt für Schritt zu durchlaufen. Für jedes Element der Sequenz wird der Schleifenkörper durchlaufen, bis schließlich das Ende der Sequenz erreicht ist und die Schleife verlassen wird.</p>
+<p>Die grundlegende Syntax sieht so aus:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> var <span class="kw">in</span> sequence:</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Codeblock, der für jedes Element der Sequenz ausgeführt wird.</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># </span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># var ist beim ersten Druchlauf das erste Element,</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># beim zweiten Durchlauf das zweite Element,</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># beim letzten Durchlauf das letzte Element.</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Bei einer for-Schleife wird beim ersten Eintritt in die Schleife das erste Element der Sequenz ausgewählt (Initialisierung). Nach jedem Durchlauf des Schleifenkörpers erfolgt <strong>automatisch</strong> der Übergang zum nächsten Element der Sequenz (Iteration), bis alle Elemente durchlaufen wurden. Das zugehörige Flussdiagramm (<a href="#fig-for" class="quarto-xref">Abbildung&nbsp;<span>6.5</span></a>) sieht daher etwas anders aus, als die bisherigen Beispiele.</p>
+<div id="fig-for" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-for-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/for.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-for-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;6.5: Flussdiagramm zur for-Loop
+</figcaption>
+</figure>
+</div>
+<p>Am besten wir betrachten ein paar Beispiele:</p>
+<div id="73e380dd" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wir buchstabieren ein Wort:</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># "Apfel" ist hierbei die Sequenz</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> letter <span class="kw">in</span> <span class="st">"Apfel"</span>:  </span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(letter)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>A
+p
+f
+e
+l</code></pre>
+</div>
+</div>
+<div id="ff924dc3" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wir gehen eine Liste durch und prüfen eine Bedingung</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>sensor_values <span class="op">=</span> [<span class="fl">12.4</span>, <span class="fl">15.7</span>, <span class="fl">19.3</span>, <span class="fl">21.2</span>, <span class="fl">13.5</span>, <span class="fl">7.8</span>]</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>critical_threshold <span class="op">=</span> <span class="fl">20.0</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> value <span class="kw">in</span> sensor_values:</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (value <span class="op">&gt;</span> critical_threshold):</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Kritischer Messwert gefunden:"</span>, value, <span class="st">"V"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Kritischer Messwert gefunden: 21.2 V</code></pre>
+</div>
+</div>
+<p>Eine häufige Anwendung von <code>for</code>-Schleifen sind sog. Zählschleifen, bei denen eine feste Anzahl an Wiederholungen vorgeben wird. Dies erreicht man in Python durch die Funktion <code>range()</code>:</p>
+<div id="f493c5f6" class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># range(5) erzeugt die Sequenz 0 - 4</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>): </span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0
+1
+2
+3
+4</code></pre>
+</div>
+</div>
+<p>Beachten Sie, dass die von <code>range(n)</code> erzeugte Sequenz bei 0 beginnt und n-1 endet. Tatsächlich werden die Buchstaben <code>i</code> und <code>j</code> gerne als Zählvariablen verwendet. Die <code>range()</code>-Funktion bietet verschiedene Optionen, um die erzeugte Sequenz zu beeinflussen. So können Sie neben dem End-Wert auch einen Start-Wert angeben:</p>
+<div id="1f64a4f4" class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># range(3,10) erzeugt die Sequenz 3 - 9</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>,<span class="dv">10</span>): </span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3
+4
+5
+6
+7
+8
+9</code></pre>
+</div>
+</div>
+<p>Und was macht der folgende Code?</p>
+<div id="db7beda9" class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>,<span class="dv">10</span>,<span class="dv">2</span>):</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3
+5
+7
+9</code></pre>
+</div>
+</div>
+<p>Wir fassen die drei Varianten von <code>range()</code> zusammen:</p>
+<ul>
+<li><code>range(stop)</code> Sequenz von <code>0</code> bis <code>stop-1</code></li>
+<li><code>range(start, stop)</code> Sequenz von <code>start</code> bis <code>stop-1</code></li>
+<li><code>range(start, stop, step)</code> Sequenz von <code>start</code> bis maximal <code>stop-1</code> mit der Schrittweite <code>step</code>.</li>
+</ul>
+<p>In der dritten Variante steht “bis maximal <code>stop-1</code>”, weil nicht mehr garantiert werden kann, dass <code>stop-1</code> angenommen wird, da jeweils <code>step</code> hinzuaddiert wird und somit <code>stop-1</code> übersprungen werden kann. Sobald der Zähler aber <code>&gt;= stop</code> ist, terminiert die Schleife.</p>
+<p>Übrigens kann man mit <code>range()</code> auch rückwärts zählen:</p>
+<div id="50340d1c" class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">3</span>):</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>10
+7
+4
+1</code></pre>
+</div>
+</div>
+<p>::{.callout-info} ### For-Schleifen in anderen Programmiersprachen {.unnumbered} In den meisten anderen Programmiersprachen ähnelt die For-Schleife von vornherein eher einer Zählschleife. In C sieht das z.B. so aus:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Schleifenkörper für </span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// i von 0 bis 9</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In der runden Klammer erkennt man drei Anweisungen: * <code>int i = 0</code> initialisiert die Zählvariable <code>i</code> * <code>i &lt; 10</code> definiert die Bedingung, wie lange die Schleife ausgeführt werden soll * <code>i++</code> bedeutet, dass die Zählvariable nach jedem Durchgang um eins erhöht wird.</p>
+<p>Das Python-Analogon wäre also:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="exercises">
+<p><b>Übungen:</b> Gegeben sei eine Liste mit Messwerten <code>data=[0.2, -1.3, 2.7, 0.6, 9.9, 8.2]</code>.</p>
+<ol type="1">
+<li>Implementieren Sie eine For-Loop, die die Summe aller Messwerte berechnet.</li>
+<li>Schreiben Sie Code, der den Durchschnitt aller Messwerte berechnet.</li>
+<li>Schreiben Sie Code, der das Maximum der Messwerte findet.</li>
+</ol>
+</div>
+<p>Lösung (alle drei Aufgaben in einem Code):</p>
+<div id="3be99737-4406-40eb-8f0f-bca2798c3a32" class="cell" data-execution_count="24">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="fl">0.2</span>, <span class="op">-</span><span class="fl">1.3</span>, <span class="fl">2.7</span>, <span class="fl">0.6</span>, <span class="fl">9.9</span>, <span class="fl">8.2</span>]</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>sum_result <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Summe initialisieren mit Null</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>max_value <span class="op">=</span> data[<span class="dv">0</span>]  <span class="co"># Maximum initialisieren mit erstem Element</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> value <span class="kw">in</span> data:</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>    sum_result <span class="op">+=</span> value  <span class="co"># aufaddieren    </span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(value <span class="op">&gt;</span> max_value):  <span class="co"># Maximum suchen</span></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>        max_value <span class="op">=</span> value</span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Für den Durchschnitt brauchen wir noch</span></span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a><span class="co"># die Anzahl der Elemente. Diese erhält</span></span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a><span class="co"># man mit len(data):        </span></span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>average <span class="op">=</span> sum_result <span class="op">/</span> <span class="bu">len</span>(data)  </span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Summe: "</span>, sum_result,<span class="st">"Durchschnitt: "</span>, average, <span class="st">"Maximum: "</span>, max_value)</span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>    </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="den-schleifenfluss-kontrollieren-mit-break-und-continue" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="den-schleifenfluss-kontrollieren-mit-break-und-continue">Den Schleifenfluss kontrollieren mit <em>break</em> und <em>continue</em></h3>
+<section id="break---schleife-vorzeitig-beenden" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="break---schleife-vorzeitig-beenden">break - Schleife vorzeitig beenden</h4>
+<p>Sobald in einer Schleife das Keyword <code>break</code> verwendet wird, bricht die Schleife an Ort und Stelle ab. Das funktioniert sowohl in <code>while</code>- als auch in <code>for</code>-Schleifen. Betrachten Sie das folgende Ratespiel - können Sie den Nutzen von <code>break</code> nachvollziehen?</p>
+<div id="1c9c6cef" class="cell" data-execution_count="55">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>secret_number <span class="op">=</span> random.randint(<span class="dv">0</span>,<span class="dv">100</span>) <span class="co">#erzeugt eine Zufallszahl</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>guess <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(guess <span class="op">!=</span> secret_number):</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>    guess <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Raten Sie die geheime Zahl zwischen 0 und 100 (-1 für Abbruch): "</span>))</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (guess <span class="op">==</span> <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Abbruch."</span>)</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span>  <span class="co"># Die Schleife wird abgebrochen</span></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Falls das Spiel fortgesetzt wird, geben wir Tipps:</span></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(secret_number <span class="op">&lt;</span> guess):</span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Zu groß!"</span>)</span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> (secret_number <span class="op">&gt;</span> guess):</span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Zu klein!"</span>)</span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Gratulation!"</span>)  <span class="co"># Geheime Zahl erraten!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Raten Sie die geheime Zahl zwischen 0 und 100 (-1 für Abbruch): 23
+Zu klein!
+Raten Sie die geheime Zahl zwischen 0 und 100 (-1 für Abbruch): 87
+Zu groß!
+Raten Sie die geheime Zahl zwischen 0 und 100 (-1 für Abbruch): -1
+Abbruch.</code></pre>
+</div>
+</div>
+<p>Ein Beispiel für <code>break</code> in einer <code>for</code>-Schleife:</p>
+<div id="f6e4d3c7" class="cell" data-execution_count="56">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>bag <span class="op">=</span> [<span class="st">"Schlüssel"</span>, <span class="st">"Handy"</span>, <span class="st">"Brille"</span>, <span class="st">"Geldbörse"</span>, <span class="st">"Stift"</span>]  <span class="co"># Dinge in der Tasche</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>search_item <span class="op">=</span> <span class="st">"Geldbörse"</span>  <span class="co"># Der Gegenstand, den wir suchen</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> bag:</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Suche nach "</span>, search_item, <span class="st">" läuft. Aktueller Gegenstand: "</span>, item)</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> item <span class="op">==</span> search_item:</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Die Schleife wird abgebrochen, </span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>        <span class="co"># da der Gegenstand gefunden wurde:</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(search_item, <span class="st">"gefunden!"</span>)</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span>  </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Suche nach  Geldbörse  läuft. Aktueller Gegenstand:  Schlüssel
+Suche nach  Geldbörse  läuft. Aktueller Gegenstand:  Handy
+Suche nach  Geldbörse  läuft. Aktueller Gegenstand:  Brille
+Suche nach  Geldbörse  läuft. Aktueller Gegenstand:  Geldbörse
+Geldbörse gefunden!</code></pre>
+</div>
+</div>
+</section>
+<section id="continue---schleifendurchlauf-vorzeitig-beenden-weiter-mit-dem-nächsten" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="continue---schleifendurchlauf-vorzeitig-beenden-weiter-mit-dem-nächsten">continue - Schleifendurchlauf vorzeitig beenden, weiter mit dem nächsten!</h4>
+<p>Das Keyword <code>continue</code> bricht nur den aktuellen Schleifendurchlauf an Ort und Stelle ab, aber nicht die ganze Schleife. Es geht einfach direkt mit dem nächsten Durchlauf weiter. Wir erweitern das Ratespiel von oben durch ein <code>continue</code> bei ungültiger Eingabe:</p>
+<div id="7bb7b5b4" class="cell" data-execution_count="59">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>secret_number <span class="op">=</span> random.randint(<span class="dv">0</span>,<span class="dv">100</span>)  <span class="co"># erzeugt eine Zufallszahl</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>guess <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(guess <span class="op">!=</span> secret_number):</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>    guess <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Raten Sie die geheime Zahl zwischen 0 und 100 (-1 für Abbruch): "</span>))</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (guess <span class="op">&gt;</span> <span class="dv">100</span> <span class="kw">or</span> guess <span class="op">&lt;</span> <span class="op">-</span><span class="dv">1</span>): </span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Eingabe außerhalb gültiger Grenzen</span></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ungültig!"</span>)</span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Durchgang abbrechen und nächste Runde: </span></span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span> </span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (guess <span class="op">==</span> <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Die Schleife wird abgebrochen</span></span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Abbruch."</span>)</span>
+<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span> </span>
+<span id="cb43-19"><a href="#cb43-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Falls das Spiel fortgesetzt wird, geben wir Tipps:</span></span>
+<span id="cb43-21"><a href="#cb43-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(secret_number <span class="op">&lt;</span> guess):</span>
+<span id="cb43-22"><a href="#cb43-22" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Zu groß!"</span>)</span>
+<span id="cb43-23"><a href="#cb43-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> (secret_number <span class="op">&gt;</span> guess):</span>
+<span id="cb43-24"><a href="#cb43-24" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Zu klein!"</span>)</span>
+<span id="cb43-25"><a href="#cb43-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb43-26"><a href="#cb43-26" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Gratulation!"</span>)  <span class="co"># Geheime Zahl erraten!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Raten Sie die geheime Zahl zwischen 0 und 100 (-1 für Abbruch): 102
+Ungültig!
+Raten Sie die geheime Zahl zwischen 0 und 100 (-1 für Abbruch): -3
+Ungültig!
+Raten Sie die geheime Zahl zwischen 0 und 100 (-1 für Abbruch): 23
+Zu klein!
+Raten Sie die geheime Zahl zwischen 0 und 100 (-1 für Abbruch): 54
+Zu groß!
+Raten Sie die geheime Zahl zwischen 0 und 100 (-1 für Abbruch): -1
+Abbruch.</code></pre>
+</div>
+</div>
+<p>Auch hierzu ein Beispiel mit <code>for</code> (es illustriert eine einfache Datenbereinigung):</p>
+<div id="ae278065" class="cell" data-execution_count="60">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>user_inputs <span class="op">=</span> [<span class="st">"23"</span>, <span class="st">"abc"</span>, <span class="st">"45"</span>, <span class="st">"-1"</span>, <span class="st">"67"</span>, <span class="st">"150"</span>, <span class="st">""</span>, <span class="st">"89"</span>, <span class="st">"0"</span>, <span class="st">"xyz"</span>]</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>cleaned_data <span class="op">=</span> []  <span class="co"># Liste für bereinigte Eingaben</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> input_str <span class="kw">in</span> user_inputs:</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 1. Überspringe nicht-numerische Eingabe</span></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> input_str.isdigit():</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 2. Wandle die Eingabe in eine Zahl um</span></span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>    input_number <span class="op">=</span> <span class="bu">int</span>(input_str)  </span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 3. Überspringe Werte außerhalb gültiger Grenzen</span></span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> input_number <span class="op">&lt;</span> <span class="dv">10</span> <span class="kw">or</span> input_number <span class="op">&gt;</span> <span class="dv">100</span>:</span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Füge gültige Eingabe der Liste hinzu:</span></span>
+<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a>    cleaned_data.append(input_number)  </span>
+<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Bereinigte Eingaben:"</span>, cleaned_data)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Bereinigte Eingaben: [23, 45, 67, 89]</code></pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="anwendung-das-newton-verfahren" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="anwendung-das-newton-verfahren"><span class="header-section-number">6.3</span> Anwendung: Das Newton-Verfahren</h2>
+<div class="exercises">
+<p><b>Aufgabe:</b> Implementieren Sie das Newton-Verfahren (siehe <a href="https://de.wikipedia.org/wiki/Newtonverfahren">Wikipedia</a>), welches nach einer Nullstelle einer Funktion <span class="math inline">\(f(x)\)</span> sucht. Testen Sie es für die Funktion <span class="math inline">\(f(x)=x^3+x^2-2\,x-1\)</span> und probieren Sie dabei verschiedene Startwerte aus.</p>
+</div>
+<p>Wir erzeugen zunächst einen Plot der Funktion (den Code hierzu müssen Sie noch nicht nachvollziehen können):</p>
+<div id="7de2f963-5511-4220-85af-c8882c4bd2d6" class="cell" data-execution_count="84">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> np.arange(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="fl">0.1</span>)</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>ys <span class="op">=</span> xs<span class="op">**</span><span class="dv">3</span> <span class="op">+</span> xs<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>xs<span class="op">-</span><span class="dv">1</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>plt.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">"black"</span>, linewidth<span class="op">=</span><span class="dv">1</span>)  <span class="co"># x-Achse</span></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>plt.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">"black"</span>, linewidth<span class="op">=</span><span class="dv">1</span>)  <span class="co"># y-Achse</span></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"f(x)"</span>)</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>plt.plot(xs,ys,label<span class="op">=</span><span class="st">"$f(x)=x^3+x^2-2\,x-3$"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="4-controls_files/figure-html/cell-21-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Jetzt implementieren wir das Verfahren:</p>
+<div id="a427edbd" class="cell" data-execution_count="26">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>max_iter <span class="op">=</span> <span class="dv">100</span>  <span class="co"># maximale Zahl der Iterationen</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">1.0</span>  <span class="co"># Startwert</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>tol <span class="op">=</span> <span class="fl">1e-6</span>  <span class="co"># Toleranz</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(max_iter):    </span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Funktion:</span></span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>    f <span class="op">=</span> x<span class="op">**</span><span class="dv">3</span><span class="op">+</span>x<span class="op">**</span><span class="dv">2</span><span class="op">-</span><span class="dv">2</span><span class="op">*</span>x<span class="op">-</span><span class="dv">1</span> </span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Ableitung:</span></span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a>    fp <span class="op">=</span> <span class="dv">3</span> <span class="op">*</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">-</span> <span class="dv">2</span> </span>
+<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">abs</span>(f) <span class="op">&lt;</span> tol:</span>
+<span id="cb48-14"><a href="#cb48-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Funktionswert ist nahe genug bei Null</span></span>
+<span id="cb48-15"><a href="#cb48-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Konvergiert nach "</span>, i, <span class="st">"Iterationen."</span>)</span>
+<span id="cb48-16"><a href="#cb48-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb48-17"><a href="#cb48-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb48-18"><a href="#cb48-18" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> x <span class="op">-</span> f <span class="op">/</span> fp  <span class="co"># Iteration des Newton-Verfahrens</span></span>
+<span id="cb48-19"><a href="#cb48-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb48-20"><a href="#cb48-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"x="</span>,x,<span class="st">"f(x)="</span>,f)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Eine alternative Abbruchbedingung betrachtet die Änderung in <span class="math inline">\(x\)</span> von Schritt zu Schritt. Sobald sich <span class="math inline">\(x\)</span> nicht mehr signifikant ändert, bricht das Verfahren ab. Wir gehen an dieser Stelle nicht auf die Vor- und Nachteile der jeweiligen Abbruchbedingung ein.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Kopiert");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Kopiert");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../notebooks/3-datatypes.html" class="pagination-link" aria-label="Datentypen und ihre Repräsentation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Datentypen und ihre Repräsentation</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../notebooks/5-functions.html" class="pagination-link" aria-label="Funktionen">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Funktionen</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

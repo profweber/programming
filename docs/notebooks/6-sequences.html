@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Prof.&nbsp;Dr.&nbsp;Maik Weber">
+
+<title>8&nbsp; Datenstrukturen in Python – Programmierung für Ingenieurinnen und Ingenieure</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<link href="../notebooks/7-bibs.html" rel="next">
+<link href="../notebooks/5-functions.html" rel="prev">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-a185852c63625fd9ffbdc57047c9a77e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-20d4060cc67bd9191ed65a16e0597eba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/6-sequences.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Datenstrukturen in Python</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../logo.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Programmierung für Ingenieurinnen und Ingenieure</a> 
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Vorwort</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/0-einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Einleitung</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/1-prep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Vorbereitungen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/2-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Einführung ins Programmieren</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/3-datatypes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Datentypen und ihre Repräsentation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/4-controls.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kontrollstrukturen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/5-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Funktionen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/6-sequences.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Datenstrukturen in Python</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/7-bibs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Die Verwendung von Bibliotheken</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/8-oop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Objektorientierte Programmierung (OOP)</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#ein-sensor-speichert-stündlich-temperaturdaten-anwendung-der-liste" id="toc-ein-sensor-speichert-stündlich-temperaturdaten-anwendung-der-liste" class="nav-link active" data-scroll-target="#ein-sensor-speichert-stündlich-temperaturdaten-anwendung-der-liste"><span class="header-section-number">8.1</span> Ein Sensor speichert stündlich Temperaturdaten – Anwendung der Liste</a>
+  <ul class="collapse">
+  <li><a href="#sortieren-der-messungen" id="toc-sortieren-der-messungen" class="nav-link" data-scroll-target="#sortieren-der-messungen">Sortieren der Messungen</a></li>
+  <li><a href="#werte-extrahieren---indexzugriff-und-list-slicing" id="toc-werte-extrahieren---indexzugriff-und-list-slicing" class="nav-link" data-scroll-target="#werte-extrahieren---indexzugriff-und-list-slicing">Werte extrahieren - Indexzugriff und List Slicing</a></li>
+  </ul></li>
+  <li><a href="#analyse-der-einzigartigen-messwerte-anwendung-des-sets" id="toc-analyse-der-einzigartigen-messwerte-anwendung-des-sets" class="nav-link" data-scroll-target="#analyse-der-einzigartigen-messwerte-anwendung-des-sets"><span class="header-section-number">8.2</span> Analyse der einzigartigen Messwerte – Anwendung des Sets</a></li>
+  <li><a href="#hinzufügen-von-zeitstempeln-anwendung-des-dictionaries" id="toc-hinzufügen-von-zeitstempeln-anwendung-des-dictionaries" class="nav-link" data-scroll-target="#hinzufügen-von-zeitstempeln-anwendung-des-dictionaries"><span class="header-section-number">8.3</span> Hinzufügen von Zeitstempeln – Anwendung des Dictionaries</a></li>
+  <li><a href="#speichern-einer-zweiten-messgröße---anwendung-des-tuples" id="toc-speichern-einer-zweiten-messgröße---anwendung-des-tuples" class="nav-link" data-scroll-target="#speichern-einer-zweiten-messgröße---anwendung-des-tuples"><span class="header-section-number">8.4</span> Speichern einer zweiten Messgröße - Anwendung des Tuples</a></li>
+  <li><a href="#daten-mehrerer-sensoren---verschachtelte-dictionaries" id="toc-daten-mehrerer-sensoren---verschachtelte-dictionaries" class="nav-link" data-scroll-target="#daten-mehrerer-sensoren---verschachtelte-dictionaries"><span class="header-section-number">8.5</span> Daten mehrerer Sensoren - verschachtelte Dictionaries</a></li>
+  <li><a href="#exkurs-mutable-und-immutable-datentypen-in-python" id="toc-exkurs-mutable-und-immutable-datentypen-in-python" class="nav-link" data-scroll-target="#exkurs-mutable-und-immutable-datentypen-in-python"><span class="header-section-number">8.6</span> Exkurs: Mutable und immutable Datentypen in Python</a></li>
+  <li><a href="#sicheres-kopieren-von-listen" id="toc-sicheres-kopieren-von-listen" class="nav-link" data-scroll-target="#sicheres-kopieren-von-listen"><span class="header-section-number">8.7</span> Sicheres Kopieren von Listen</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Datenstrukturen in Python</span></h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Autor:in</div>
+  <div class="quarto-title-meta-heading">Zugehörigkeit</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Prof.&nbsp;Dr.&nbsp;Maik Weber </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Hochschule Trier
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">13. April 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><strong>Datenstrukturen</strong> und <strong>Datentypen</strong> sind zentrale Begriffe in der Informatik, die eng miteinander verbunden, aber dennoch voneinander zu unterscheiden sind:</p>
+<ul>
+<li><p>Datentypen beschreiben die Art und den Wertebereich von Daten, wie Zahlen (z. B. int, float), Zeichenketten (z. B. str) oder Wahrheitswerte (bool). Sie definieren die grundlegenden Eigenschaften eines Werts und wie dieser vom Computer verarbeitet wird. Damit haben wir uns bereits ausführlich beschäftigt.</p></li>
+<li><p>Datenstrukturen hingegen organisieren mehrere Werte in einer bestimmten Weise, sodass sie effizient gespeichert und verarbeitet werden können. Sie kombinieren oft mehrere Datentypen, um komplexe Informationen abzubilden. Beispiele hierfür sind Listen, Dictionaries oder Sets in Python.</p></li>
+</ul>
+<p>Während Datentypen also die Bausteine sind, definieren Datenstrukturen den Bauplan, wie diese Bausteine miteinander in Beziehung stehen und verarbeitet werden. In diesem Kapitel fokussieren wir uns auf grundlegende Datenstrukturen und deren Anwendung in Python anhand eines praxisnahen Beispiels: der Organisation und Analyse von Sensordaten. Das Beispiel wird im Verlauf des Kapitels sukzessive komplexer und damit auch realistischer.</p>
+<p>Sie sollen einen Eindruck davon gewinnen, wie verschiedene Datenstrukturen für bestimmte Fragstellungen und Anwendungen ihre Stärken ausspielen.</p>
+<section id="ein-sensor-speichert-stündlich-temperaturdaten-anwendung-der-liste" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="ein-sensor-speichert-stündlich-temperaturdaten-anwendung-der-liste"><span class="header-section-number">8.1</span> Ein Sensor speichert stündlich Temperaturdaten – Anwendung der Liste</h2>
+<p>Ein Sensor misst stündlich die Temperatur (z.B. in einem Raum oder einer Maschine). Diese Daten speichern wir der Reihe nach in einer Liste, einer der einfachsten Datenstrukturen. Die Liste ist ideal für lineares Speichern (Messwert für Messwert hintereinander). Sie ermöglicht den einfachen Zugriff auf Elemente anhand ihrer Position, stellt aber auch nützliche Funktionen zum Arbeiten mit den Daten bereit. ### Speichern der Daten {.unnumbered}</p>
+<div id="d59285c5-f25a-4451-8910-341f1b8e478c" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># eine Liste kann mit Werten initialisiert werden</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>temperatures <span class="op">=</span> [<span class="fl">22.5</span>, <span class="fl">23.1</span>, <span class="fl">21.8</span>]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># es kann aber auch nach und nach ein Wert hinten angefügt werden:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>temperatures.append(<span class="fl">24.0</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>temperatures.append(<span class="fl">22.5</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>temperatures.append(<span class="fl">21.8</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[22.5, 23.1, 21.8, 24.0, 22.5, 21.8]</code></pre>
+</div>
+</div>
+<p>In der Praxis würde an einer bestimmten Stelle im Code (einmal pro Stunde) mithilfe von <code>append</code> der aktuelle Messwert in der Liste gespeichert werden. Auffällig ist, dass die Funktion <code>append</code> zu unserer Liste selbst gehört, beim Aufruf verwenden wir einen <code>.</code> zwischen der Referenz auf die Liste und der Funktion. Solche Funktionen werden auch <strong>Methoden</strong> genannt und sind ein wesentlicher Bestandteil der objektorientierten Programmierung: Die Instanz einer Liste bietet Benutzern diese Funktion an, um ihren Inhalt zu manipulieren.</p>
+<section id="sortieren-der-messungen" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sortieren-der-messungen">Sortieren der Messungen</h3>
+<p>Sortieren hilft, die Werte geordnet darzustellen und z.B. das Finden des höchsten oder niedrigsten Messwerts zu erleichtern. Auch hierfür steht eine Methode bereit:</p>
+<div id="aa8e68f7-c8fe-4907-8379-ab445fd08e65" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sortieren der Liste</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>temperatures.sort()</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sortierte Temperaturen:"</span>, temperatures)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sortierte Temperaturen: [21.8, 21.8, 22.5, 22.5, 23.1, 24.0]</code></pre>
+</div>
+</div>
+<p>Wir können nun direkt ablesen, dass der Wertebereich zwischen 21.8 und 24.0 liegt. Allerdings haben wir unsere Originalliste durch das Sortieren verändert! Das war womöglich gar nicht unsere Absicht, denn wir wollen weiterhin die Information besitzen, wann welcher Wert erhoben wurde. Für diesen Zweck gibt es eine Lösung: Anstelle der Methode <code>.sort()</code> verwenden wir die Funktion <code>sorted()</code>, die eine sortierte Liste zurückgibt <strong>ohne das Original zu verändern</strong>:</p>
+<div id="eea3ae66-4fb6-4a02-9e7f-052f81c6eec8" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wir stellen zunächst das Original wieder her</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>temperatures <span class="op">=</span> [<span class="fl">22.5</span>, <span class="fl">23.1</span>, <span class="fl">21.8</span>, <span class="fl">24.0</span>, <span class="fl">22.5</span>, <span class="fl">21.8</span>]</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>sorted_data <span class="op">=</span> <span class="bu">sorted</span>(temperatures)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sortierte Liste: "</span>, sorted_data)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original: "</span>, temperatures)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sortierte Liste:  [21.8, 21.8, 22.5, 22.5, 23.1, 24.0]
+Original:  [22.5, 23.1, 21.8, 24.0, 22.5, 21.8]</code></pre>
+</div>
+</div>
+<p>Die implemenmtierten Sortieralgorithmen sind übrigens sehr effizient (schneller als der früher vorgestellte Bubble Sort).</p>
+</section>
+<section id="werte-extrahieren---indexzugriff-und-list-slicing" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="werte-extrahieren---indexzugriff-und-list-slicing">Werte extrahieren - Indexzugriff und List Slicing</h3>
+<p>Wir können auf die Werte in einer Liste ganz einfach über ihren Index zugreifen und dabei ist besonders nützlich, dass Python auch negative Indizes erlaubt: der Index -1 entspricht immer dem letzten Element, -2 dem vorletzten usw. Wir demonstrieren die Verwendung von Indizes:</p>
+<div id="bee2f479-63a5-4512-85b3-57610e50093a" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"1. Messwert: "</span> , temperatures[<span class="dv">0</span>])</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Letzter Messwert: "</span> , temperatures[<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Min: "</span> , sorted_data[<span class="dv">0</span>])</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Max: "</span> , sorted_data[<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"5. Messwert: "</span> , temperatures[<span class="dv">4</span>])</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Vorletzter Messwert: "</span> , temperatures[<span class="op">-</span><span class="dv">2</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1. Messwert:  22.5
+Letzter Messwert:  21.8
+Min:  21.8
+Max:  24.0
+5. Messwert:  22.5
+Vorletzter Messwert:  22.5</code></pre>
+</div>
+</div>
+<p>Oft interessiert man sich für Bereiche von Messwerten und kann diese in Python sehr effizient mit sog. “List Slicing” <em>ausschneiden</em>: Hierfür verwendet man einen Start- und Endindex, getrennt durch ein <code>:</code>. Zu beachten ist, dass der Anfangsindex inkludiert wird, das Slicing aber einen Schritt vor dem Endindex aufhört:</p>
+<div id="ea8e467e-d005-42ac-9e4d-6c5a3062407c" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Slicing: Werte gesucht ...</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ... mit Indizes: 0,1,2</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[<span class="dv">0</span>:<span class="dv">3</span>])  </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ... mit Indizes: 2,3,4</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[<span class="dv">2</span>:<span class="dv">5</span>])  </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># ... mit Indizes: 1,2,3...,vorletztes</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>])  </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[22.5, 23.1, 21.8]
+[21.8, 24.0, 22.5]
+[23.1, 21.8, 24.0, 22.5]</code></pre>
+</div>
+</div>
+<p>Man kann auch Start- und Endindex weglassen und meint damit “von Anfang” oder “bis Ende”:</p>
+<div id="71e7a400-63b4-4271-960e-c64a436a17e6" class="cell" data-execution_count="49">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Slicing: Werte gesucht ...</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ... von Anfang bis Index 2</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[:<span class="dv">3</span>]) </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ... von Index 4 bis Schluss</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[<span class="dv">4</span>:]) </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Die ganze Liste als großer Slice:</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[:]) </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[22.5, 23.1, 21.8]
+[22.5, 21.8]
+[22.5, 23.1, 21.8, 24.0, 22.5, 21.8]</code></pre>
+</div>
+</div>
+<p>Python erlaubt sogar noch präzisere Analysen, indem es Schrittweiten beim Slicing zulässt. Die Schrittweite ist standardmäßig <code>1</code>, aber kann als dritter Parameter hinter einem weiteren <code>:</code> verändert werden:</p>
+<div id="67300d1b-47f1-439b-9bac-b2e09ff15684" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># von Index 0 bis 4 in 2er Schritten</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[<span class="dv">0</span>:<span class="dv">5</span>:<span class="dv">2</span>]) </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># von Index 1 bis Schluss in 2er Schritten</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[<span class="dv">1</span>::<span class="dv">2</span>]) </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># jeder dritte Messwert</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[::<span class="dv">3</span>]) </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co"># auch rückwärts funktioniert!</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[<span class="dv">4</span>:<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>]) </span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co"># komplette Liste rückwärts</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[::<span class="op">-</span><span class="dv">1</span>]) </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[22.5, 21.8, 22.5]
+[23.1, 24.0, 21.8]
+[22.5, 24.0]
+[22.5, 24.0, 21.8]
+[21.8, 22.5, 24.0, 21.8, 23.1, 22.5]</code></pre>
+</div>
+</div>
+<p>Man kann auch mit dem Operator <code>in</code> fragen, ob ein spezifischer Wert in der Liste enthalten ist:</p>
+<div id="59e0782d-11a4-4b5f-a95f-0b4144e3e0cb" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fl">23.1</span> <span class="kw">in</span> temperatures</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<pre><code>True</code></pre>
+</div>
+</div>
+<p>Praktisch sind auch die Funktionen <code>min()</code> und <code>max()</code>:</p>
+<div id="e5d22cd1-736c-48e4-899c-470d46292cce" class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Min: "</span>, <span class="bu">min</span>(temperatures))</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Max: "</span>, <span class="bu">max</span>(temperatures))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Min:  21.8
+Max:  24.0</code></pre>
+</div>
+</div>
+<p>Dabei muss intern aber jedes Element einzeln abgefragt werden, mit Pech also die gesamte Liste durchgegangen werden.</p>
+</section>
+</section>
+<section id="analyse-der-einzigartigen-messwerte-anwendung-des-sets" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="analyse-der-einzigartigen-messwerte-anwendung-des-sets"><span class="header-section-number">8.2</span> Analyse der einzigartigen Messwerte – Anwendung des Sets</h2>
+<p>Wir möchten wissen, welche Temperaturwerte einzigartig sind. Hierfür ist ein Set ideal, da es automatisch doppelte Einträge entfernt. Würden wir weiter mit einer Liste arbeiten, müssten wir selbst die Daten filtern, z.B. mit den uns bekannten Schleifen. Das wäre allerdings deutlich ineffizienter. Das Set entspricht einer mathematischen Menge, in der jedes Element nur einmal vorkommen darf. Für die Umwandlung führen wir ein explizites Casting durch:</p>
+<div id="41f05ac9-172a-4748-b97c-76d1b3687c2b" class="cell" data-execution_count="72">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>unique_values <span class="op">=</span> <span class="bu">set</span>(temperatures)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(unique_values) <span class="co"># keine doppelten Werte mehr</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{24.0, 21.8, 22.5, 23.1}</code></pre>
+</div>
+</div>
+<p>Syntaktisch erkennen Sie das Set an den geschweiften Klammern <code>{}</code>. Ein Set erlaubt alle bekannten Mengenoperationen, die Sie aus der Mathematik kennen (z.B. Durchschnitt oder Vereinigung). Nehmen wir an, wir wollen überprüfen, ob unser Sensor mit einer anderen Messreihe gemeinsame Werte hat. Hierfür können wir ganz einfach die Schnittmenge aus beiden Mengen untersuchen:</p>
+<div id="803de0fa-4d15-4ba1-b558-1bd670438910" class="cell" data-execution_count="76">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>second_temperatures <span class="op">=</span> [<span class="fl">22.0</span>, <span class="fl">23.1</span>, <span class="fl">25.0</span>, <span class="fl">22.4</span>, <span class="fl">20.8</span>]</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>second_set <span class="op">=</span> <span class="bu">set</span>(second_temperatures)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>intersection <span class="op">=</span> unique_values.intersection(second_set)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Gemeinsame Werte: "</span>, intersection)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Gemeinsame Werte:  {23.1}</code></pre>
+</div>
+</div>
+<p>Die Abfrage mit dem Operator <code>in</code> ist übrigens bei Sets viel effizienter als bei Listen. Das liegt an einem Trick: Zu jedem Element eines Sets berechnet Python einen sog. “Hash-Wert”, der angibt, wo das Element im Speicher liegt. Fragt man, ob ein Element im Set liegt, muss Python nur den Hash-Wert für dieses Element berechnen und checken, ob der entsprechende Speicherplatz zum Set gehört. Daher ist der Aufwand - anders als bei Listen - unabhängig von der Größe des Sets!<!-- Deshalb dürfen Sets aber auch nur immutable Elemente beinhalten, denn nur diese sind hashable! --></p>
+<div class="exercises">
+<p><b>Übungen:</b></p>
+<ol type="1">
+<li>Erstellen Sie eine eigene Liste mit fünf Messwerten. Erweitern Sie Ihre Liste durch <code>append()</code> auf insgesamt 8 Elemente.</li>
+<li>Geben Sie mithilfe des Slicing-Operators folgende Messwerte aus: a) die ersten drei, b) jeden zweiten, c) alle zwischen dem 3. und 7. Messwert (ohne den 3. und ohne den 7. Messwert selbst) d) die letzten drei.</li>
+<li>Finden Sie den größten und den kleinsten Wert Ihrer Messreihe.</li>
+<li>Sortieren Sie alle Messwerte der Größe nach von klein nach groß. Finden Sie auch heraus, wie Sie die umgekehrte Sortierung erhalten (also vom größten zum kleinsten Wert).<br>
+</li>
+<li>Reduzieren Sie Ihre Datenreihe auf ein Set, welches nur einzigartige Messwerte enthält.<br>
+</li>
+</ol>
+</div>
+<p>Lösungsvarianten für die umgekehrte Sortierung in Aufgabe 4:</p>
+<div id="6b2e2e63-f073-40fa-9814-6eee5b05b08b" class="cell" data-execution_count="51">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variante 1</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">0</span>,<span class="op">-</span><span class="dv">6</span>]</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>data.sort(reverse<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Variante 2</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">0</span>,<span class="op">-</span><span class="dv">6</span>]</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>sorted_data <span class="op">=</span> <span class="bu">sorted</span>(data, reverse<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_data)</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Variante 3</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">0</span>,<span class="op">-</span><span class="dv">6</span>]</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>sorted_data <span class="op">=</span> <span class="bu">sorted</span>(data)</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>sorted_data.reverse()</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_data)</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Variante 4</span></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">0</span>,<span class="op">-</span><span class="dv">6</span>]</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>reverse_sorted_data <span class="op">=</span> <span class="bu">sorted</span>(data)[::<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(reverse_sorted_data)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="hinzufügen-von-zeitstempeln-anwendung-des-dictionaries" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="hinzufügen-von-zeitstempeln-anwendung-des-dictionaries"><span class="header-section-number">8.3</span> Hinzufügen von Zeitstempeln – Anwendung des Dictionaries</h2>
+<p>Für eine präzisere Darstellung ergänzen wir die Daten um Zeitstempel. Wir wären gerne in der Lage, folgende Frage zu beantworten: “Wie war die Temperatur am Tag xy zum Zeitpunkt z?”.</p>
+<p>Hierzu speichern wir die Temperaturen als <strong>Werte (values)</strong> und die Zeitpunkte als <strong>Schlüssel (keys)</strong> in einem <strong>Dictionary</strong>. Bei einem Dictionary greift man über einen eindeutigen Schlüssel auf das entsprechende Element zu. Es bedarf keiner komplexen Suche nach dem passenden Element etc. Wir demonstrieren die Anwendung:</p>
+<div id="07959a40-08c3-4c96-b6af-d3e69f8422ce" class="cell" data-execution_count="85">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dictionary für Zeitstempel und Temperaturen</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2025-03-23 08:00"</span>: <span class="fl">22.5</span>,</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2025-03-23 09:00"</span>: <span class="fl">23.1</span>,</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2025-03-23 10:00"</span>: <span class="fl">21.8</span>,</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2025-03-23 11:00"</span>: <span class="fl">24.0</span>,</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2025-03-23 12:00"</span>: <span class="fl">22.5</span>,</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="co"># neue Werte können jederzeit einzeln hinzugefügt werden: </span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>data[<span class="st">"2025-03-23 13:00"</span>] <span class="op">=</span> <span class="fl">21.8</span></span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'2025-03-23 08:00': 22.5, '2025-03-23 09:00': 23.1, '2025-03-23 10:00': 21.8, '2025-03-23 11:00': 24.0, '2025-03-23 12:00': 22.5, '2025-03-23 13:00': 21.8}</code></pre>
+</div>
+</div>
+<p>Achten Sie erneut auf die Syntax: Geschweifte Klammern (wie beim Set), aber darin befinden sich Auflistungen von <code>Key:Value</code>. Der Zugriff auf einzelne Elemente ähnelt syntaktisch dem Index-Zugriff bei einer Liste, aber anstelle eines Indizes verwendet man einen Schlüssel:</p>
+<div id="29e748a2-0429-4d14-94f8-00209b89d5a9" class="cell" data-execution_count="93">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Zugriff auf bestimmte Temperatur</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data[<span class="st">"2025-03-23 09:00"</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>23.1</code></pre>
+</div>
+</div>
+<p>Eine Gefahr besteht darin, dass man auf Schlüssel zugreifen möchte, die es nicht gibt. Dann würde das Programm abstürzen! Daher gibt es noch eine sicherere Zugriffsmethode über die Methode <code>.get()</code>:</p>
+<div id="cb3cc265-fcf9-4695-9199-ee4647ac9c31" class="cell" data-execution_count="106">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data.get(<span class="st">"2025-03-23 09:00"</span>))</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data.get(<span class="st">"2025-03-23 22:00"</span>)) <span class="co"># Key existiert nicht</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data.get(<span class="st">"2025-03-23 22:00"</span>, <span class="st">"Datensatz fehlt"</span>)) <span class="co"># mit Alternativtext</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>23.1
+None
+Datensatz fehlt</code></pre>
+</div>
+</div>
+</section>
+<section id="speichern-einer-zweiten-messgröße---anwendung-des-tuples" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="speichern-einer-zweiten-messgröße---anwendung-des-tuples"><span class="header-section-number">8.4</span> Speichern einer zweiten Messgröße - Anwendung des Tuples</h2>
+<p>Neben der Temperatur speichert der Sensor nun auch die relative Luftfeuchtigkeit. Wir speichern beide Messwerte als <strong>Tupel</strong>. Ein Tupel ist ähnlich wie eine Liste eine Kollektion von Elementen, aber mit dem Unterschied, dass diese unveränderlich sind. Man kann kein Element hinzufügen oder entfernen, auch keinen Wert überschreiben. Diese Einschränkungen machen das Tupel zu einem sehr effizienten und sicheren Datenformat. Syntaktisch erkennt man das Tupel an runden Klammern <code>()</code>:</p>
+<div id="e867f4c2-e098-49d9-8dee-8f6d4dd54187" class="cell" data-execution_count="155">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>measurement <span class="op">=</span> (<span class="fl">23.4</span>, <span class="dv">40</span>) <span class="co"># Tupel mit zwei Werten</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Man kann die Werte eines Tupels über den Indexzugriff auslesen (aber nicht überschreiben!):</p>
+<div id="0b0b2783-3f4a-4970-8906-75bab2969b6b" class="cell" data-execution_count="158">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Temperatur: "</span>, measurement[<span class="dv">0</span>])</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Luftfeuchtigkeit: "</span>, measurement[<span class="dv">1</span>])</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co">#measurement[0] = 25.0 ist nicht erlaubt!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Temperatur:  23.4
+Luftfeuchtigkeit:  40</code></pre>
+</div>
+</div>
+<p>Unser neues Dictionary sieht jetzt so aus:</p>
+<div id="1574602a-ae9c-4c98-be0b-04eacc788e06" class="cell" data-execution_count="160">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Erweiterung: Values = Tupel aus Temperatur und Luftfeuchtigkeit</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2025-03-23 08:00"</span>: (<span class="fl">22.5</span>, <span class="dv">60</span>),</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2025-03-23 09:00"</span>: (<span class="fl">23.1</span>, <span class="dv">55</span>),</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2025-03-23 10:00"</span>: (<span class="fl">21.8</span>, <span class="dv">58</span>),</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2025-03-23 11:00"</span>: (<span class="fl">24.0</span>, <span class="dv">61</span>),</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"2025-03-23 12:00"</span>: (<span class="fl">22.5</span>, <span class="dv">62</span>)</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="co"># neuen Wert hinzufügen</span></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>data[<span class="st">"2025-03-23 13:00"</span>] <span class="op">=</span> (<span class="fl">24.0</span>, <span class="dv">58</span>)</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a><span class="co"># einen Zeitpunkt abfragen</span></span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data.get(<span class="st">"2025-03-23 10:00"</span>))</span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(21.8, 58)</code></pre>
+</div>
+</div>
+<p>Tatsächlich könnte man die beiden Messwerte natürlich auch als Liste mit zwei Elementen zusammenfassen, aber das Tupel hat in diesem Fall klare Vorteile: * Semantik: Ein Tupel repräsentiert eine feste Kombination von Werten, z. B. Temperatur und Luftfeuchtigkeit, die logisch zusammengehören. * Unveränderbarkeit: Tupel verhindern unbeabsichtigte Änderungen. (Will man bewusst einen Wert verändern, kann man in eine Liste umwandeln.) * Effizienz: Tupel benötigen weniger Speicherplatz und sind schneller zu verarbeiten als Listen.</p>
+</section>
+<section id="daten-mehrerer-sensoren---verschachtelte-dictionaries" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="daten-mehrerer-sensoren---verschachtelte-dictionaries"><span class="header-section-number">8.5</span> Daten mehrerer Sensoren - verschachtelte Dictionaries</h2>
+<p>Stellen Sie sich vor, wir hätten drei anstelle von einem Sensor und wollten die Daten aller Sensoren strukturiert erfassen. Hierzu können wir zwei Dictionaries ineinander verschachteln: Der erste Key ist der Name des Sensors, zugehöriger Value ist ein Dictionary, das wie bisher die Messwerte dieses einen Sensors sammelt (also Zeitstempel als Key, Messwert als Value). Im Code sieht das so aus:</p>
+<div id="e3177ac6-9d49-4cc4-9a54-87aadce46550" class="cell" data-execution_count="170">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verschachtelte Dictionaries für drei Sensoren</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Sensor1"</span>: {</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2025-03-23 08:00"</span>: (<span class="fl">22.5</span>, <span class="dv">60</span>),</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2025-03-23 09:00"</span>: (<span class="fl">23.1</span>, <span class="dv">55</span>)</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Sensor2"</span>: {</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2025-03-23 08:00"</span>: (<span class="fl">21.8</span>, <span class="dv">57</span>),</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2025-03-23 09:00"</span>: (<span class="fl">22.0</span>, <span class="dv">67</span>)</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Sensor3"</span>: {</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2025-03-23 08:00"</span>: (<span class="fl">24.0</span>, <span class="dv">58</span>),</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"2025-03-23 09:00"</span>: (<span class="fl">23.8</span>, <span class="dv">57</span>)</span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a><span class="co"># So würde man Messwerte hinzufügen:</span></span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>data[<span class="st">"Sensor3"</span>][<span class="st">"2025-03-23 10:00"</span>] <span class="op">=</span> (<span class="fl">25.2</span>, <span class="dv">62</span>) <span class="co"># Neuer Wert für Sensor 3</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exkurs-mutable-und-immutable-datentypen-in-python" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="exkurs-mutable-und-immutable-datentypen-in-python"><span class="header-section-number">8.6</span> Exkurs: Mutable und immutable Datentypen in Python</h2>
+<p>Python unterscheidet zwischen <strong>immutable</strong> (unveränderlichen) und <strong>mutable</strong> (veränderlichen) Datentypen. Diese Begriffe beziehen sich auf Instanzen eines bestimmten Datentyps:</p>
+<ul>
+<li><p>Wenn eine Instanz <strong>immutable</strong> ist, kann sich ihr Wert nie verändern! Python wird deshalb denselben Wert nicht mehrmals speichern, sondern genau einmal. Wenn der Wert einer Variable, die auf eine immutable Instanz zeigt, sich verändert, zeigt die Variable hinterher auf eine andere Instanz! Integers, Floats, Bools, Strings und Tuples sind in Python immutable.</p></li>
+<li><p>Anders bei den <strong>mutable</strong> Datentypen: Hier kann die Instanz verändert werden. Dies führt zu Seiteneffekten, wenn mehrere Variablen dieselbe Instanz referenzieren. Listen, Dictionaries und Sets sind mutable.</p></li>
+</ul>
+<p>Vielleicht können Sie jetzt schon ahnen, dass diese Unterschiede zu ungewolltem Verhalten führen können, wenn man sich ihrer nicht bewusst ist. Bei Unsicherheiten können Sie die Identitäten abfragen. Es gibt aber noch eine direktere Möglichkeit, nämlich den <code>is</code>-Operator: Er liefert <code>True</code>, wenn zwei Variablen auf dieselbe Instanz zeigen:</p>
+<div id="882af5b9-b577-4cc8-8a2f-118397d6dc8b" class="cell" data-execution_count="57">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>my_shopping_list <span class="op">=</span> [<span class="st">'apples'</span>, <span class="st">'oranges'</span>, <span class="st">'paper'</span>]</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>your_shopping_list <span class="op">=</span> my_shopping_list</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Mit is auf identische </span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Instanzen prüfen:</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>my_shopping_list <span class="kw">is</span> your_shopping_list </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="57">
+<pre><code>True</code></pre>
+</div>
+</div>
+<p>Wenn die Instanz in diesem Beispiel über eine der beiden Referenzen geändert wird, hat das auch Auswirkungen auf die zweite Referenz:</p>
+<div id="c9fe2599-7a92-48d1-add4-153cd95dcd21" class="cell" data-execution_count="60">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>my_shopping_list.append(<span class="st">'shoes'</span>)  <span class="co"># Instanz verändert sich!</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(your_shopping_list)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['apples', 'oranges', 'paper', 'shoes']</code></pre>
+</div>
+</div>
+<p>Seiteneffekte können auch durch den Aufruf von Funktionen auftreten: Wir übergeben an Funktionen eine Referenz auf eine Instanz. Wenn die Instanz mutable ist, kann die Funktion die Instanz verändern! Hierzu eine Demo:</p>
+<div id="44e26f9b-b5f8-4606-bdc9-f12a9673cd61" class="cell" data-execution_count="206">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> append_a(l:<span class="bu">list</span>, a:<span class="bu">int</span>):</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    l.append(a)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>append_a(my_list, <span class="dv">100</span>)</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_list)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 2, 3, 100]</code></pre>
+</div>
+</div>
+<p>Behalten Sie stets im Hinterkopf, dass es um die Instanz geht. Natürlich können Sie die Variable, die auf eine <strong>immutable</strong> Instanz zeigt, ändern. Dann zeigt sie aber auf eine andere Instanz.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wie ist das in anderen Sprachen?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Das Konzept der Immutability, wie wir es in Python kennengelernt haben, existiert nicht genauso in anderen Sprachen. Auch der prinzipielle Umgang mit Speicher unterscheidet sich teils grundlegend. Sprachen wie Java oder C# sind Python ähnlicher, da sie Instanzen und Referenzen verwenden und teilweise Immutability durch Sprachmechanismen unterstützen, wie z. B. immutable Strings oder Klassen.</p>
+<p>In C hingegen gibt es keine Sprachmechanismen für immutable Instanzen. Stattdessen operiert C als Low-Level-Sprache direkt mit Speicheradressen. Werte können überschrieben und mehrere <em>Pointer</em> auf denselben Speicherbereich angelegt werden, die den Wert dort verändern können. Es liegt in der Verantwortung der Programmierer, Speicher sicher zu verwalten, was anfällig für Fehler macht – etwa Speicherlecks oder unvorhergesehene Zustandsänderungen. Die Freiheit von C ist jedoch unverzichtbar, wenn es um Hardware-nahe Programmierung, Performance-Optimierung oder ressourcensparende Anwendungen geht.</p>
+</div>
+</div>
+</section>
+<section id="sicheres-kopieren-von-listen" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="sicheres-kopieren-von-listen"><span class="header-section-number">8.7</span> Sicheres Kopieren von Listen</h2>
+<p>Seien Sie immer auf der Hut, wenn Sie eine Liste kopieren wollen. Da sie zu den mutable Datentypen gehört, erzeugen Sie schnell unbeabsichtigt nur eine zweite Referenz auf das Original mit den genannten Seiteneffekten als Gefahr. Eine einfache Möglichkeit, dies zu umgehen, ist eine Kopie mithilfe des Slicing-Operators:</p>
+<div id="c2044608-1e7a-4b95-a9e2-600bb3c95277" class="cell" data-execution_count="212">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>original <span class="op">=</span> [<span class="st">"apples"</span>, <span class="st">"oranges"</span>, <span class="st">"books"</span>]</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Zuweisung erzeugt nur eine zweite Referenz:</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>second_reference <span class="op">=</span> original  <span class="co"># keine Kopie! </span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="co"># mit Slicing eine Kopie erzeugen:</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>copy <span class="op">=</span> original[:] </span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Wir zeigen, dass copy keine Seiteneffekte hat: </span></span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>copy.append(<span class="st">"bananas"</span>)</span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original: "</span>, original) <span class="co"># unverändert</span></span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Kopie: "</span>, copy)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Original:  ['apples', 'oranges', 'books']
+Kopie:  ['apples', 'oranges', 'books', 'bananas']</code></pre>
+</div>
+</div>
+<p>Es gibt allerdings noch eine Diffizilität: Der Trick mit dem Slicing-Operator funktioniert nur so lange, wie die Elemente der Liste immutable sind. Sollten sich darunter aber mutable Datentypen befinden, kann es immer noch zu Seiteneffekten kommen. Wir haben zwar eine Kopie erstellt, allerdings nur eine sog. “flache Kopie”. Um alle Mehrfachreferenzen aufzulösen und eine völlig unabhängige Kopie zu erhalten, braucht es eine sog. “tiefe Kopie”. Hierfür gibt es bestimmte Algorithmen aus dem Modul <code>copy</code>:</p>
+<div id="8fc8d7d8-b5c3-4eac-9781-397a4b8528bf" class="cell" data-execution_count="218">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> copy</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>original <span class="op">=</span> [[<span class="dv">1</span>,<span class="dv">2</span>],<span class="dv">3</span>,<span class="dv">4</span>] <span class="co"># Liste mit einem mutable Element</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>copy1 <span class="op">=</span> original[:] <span class="co"># flache Kopie</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>copy2 <span class="op">=</span> copy.deepcopy(original) <span class="co"># tiefe Kopie</span></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Demo der Seiteneffekte:</span></span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Das mutable erste Element wird in den Kopien verändert</span></span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>copy1[<span class="dv">0</span>].append(<span class="dv">3</span>) </span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>copy2[<span class="dv">0</span>].append(<span class="dv">100</span>)</span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original: "</span>, original)</span>
+<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"flache Kopie: "</span>, copy1)</span>
+<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"tiefe Kopie: "</span>, copy2)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Original:  [[1, 2, 3], 3, 4]
+flache Kopie:  [[1, 2, 3], 3, 4]
+tiefe Kopie:  [[1, 2, 100], 3, 4]</code></pre>
+</div>
+</div>
+<p>Die Änderungen an der flachen Kopie hatten noch Auswirkungen auf das Original, weil beide die Referenz auf das erste Element teilten, welches mutable war. Nur bei der tiefen Kopie handelt es sich um eine völlig autarke Kopie, die nichts mehr mit dem Original gemein hat.</p>
+<!-- List Comprehensions? -->
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Kopiert");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Kopiert");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../notebooks/5-functions.html" class="pagination-link" aria-label="Funktionen">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Funktionen</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../notebooks/7-bibs.html" class="pagination-link" aria-label="Die Verwendung von Bibliotheken">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Die Verwendung von Bibliotheken</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

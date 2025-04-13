@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Prof.&nbsp;Dr.&nbsp;Maik Weber">
+
+<title>5&nbsp; Datentypen und ihre Repräsentation – Programmierung für Ingenieurinnen und Ingenieure</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<link href="../notebooks/4-controls.html" rel="next">
+<link href="../notebooks/2-basics.html" rel="prev">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-a185852c63625fd9ffbdc57047c9a77e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-20d4060cc67bd9191ed65a16e0597eba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/3-datatypes.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Datentypen und ihre Repräsentation</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../logo.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Programmierung für Ingenieurinnen und Ingenieure</a> 
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Vorwort</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/0-einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Einleitung</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/1-prep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Vorbereitungen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/2-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Einführung ins Programmieren</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/3-datatypes.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Datentypen und ihre Repräsentation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/4-controls.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kontrollstrukturen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/5-functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Funktionen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/6-sequences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Datenstrukturen in Python</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/7-bibs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Die Verwendung von Bibliotheken</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/8-oop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Objektorientierte Programmierung (OOP)</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#grundlegende-datentypen" id="toc-grundlegende-datentypen" class="nav-link active" data-scroll-target="#grundlegende-datentypen"><span class="header-section-number">5.1</span> Grundlegende Datentypen</a>
+  <ul class="collapse">
+  <li><a href="#statisch-oder-dynamisch-typisiert" id="toc-statisch-oder-dynamisch-typisiert" class="nav-link" data-scroll-target="#statisch-oder-dynamisch-typisiert">Statisch oder dynamisch typisiert?</a></li>
+  <li><a href="#kurzer-ausblick-auf-weitere-datentypen-in-python" id="toc-kurzer-ausblick-auf-weitere-datentypen-in-python" class="nav-link" data-scroll-target="#kurzer-ausblick-auf-weitere-datentypen-in-python">Kurzer Ausblick auf weitere Datentypen in Python</a></li>
+  </ul></li>
+  <li><a href="#instanzen-und-referenzen" id="toc-instanzen-und-referenzen" class="nav-link" data-scroll-target="#instanzen-und-referenzen"><span class="header-section-number">5.2</span> Instanzen und Referenzen</a>
+  <ul class="collapse">
+  <li><a href="#ein-vereinfachtes-speichermodell" id="toc-ein-vereinfachtes-speichermodell" class="nav-link" data-scroll-target="#ein-vereinfachtes-speichermodell">Ein vereinfachtes Speichermodell</a></li>
+  <li><a href="#instanzen" id="toc-instanzen" class="nav-link" data-scroll-target="#instanzen">Instanzen</a></li>
+  <li><a href="#referenzen" id="toc-referenzen" class="nav-link" data-scroll-target="#referenzen">Referenzen</a></li>
+  <li><a href="#identität-einer-instanz" id="toc-identität-einer-instanz" class="nav-link" data-scroll-target="#identität-einer-instanz">Identität einer Instanz</a></li>
+  <li><a href="#exkurs-seiteneffekte---wenn-mehrere-referenzen-auf-dieselbe-instanz-zeigen." id="toc-exkurs-seiteneffekte---wenn-mehrere-referenzen-auf-dieselbe-instanz-zeigen." class="nav-link" data-scroll-target="#exkurs-seiteneffekte---wenn-mehrere-referenzen-auf-dieselbe-instanz-zeigen.">Exkurs: Seiteneffekte - Wenn mehrere Referenzen auf dieselbe Instanz zeigen.</a></li>
+  </ul></li>
+  <li><a href="#binäre-darstellung-von-daten" id="toc-binäre-darstellung-von-daten" class="nav-link" data-scroll-target="#binäre-darstellung-von-daten"><span class="header-section-number">5.3</span> Binäre Darstellung von Daten</a>
+  <ul class="collapse">
+  <li><a href="#binäre-darstellung-von-ganzzahlen" id="toc-binäre-darstellung-von-ganzzahlen" class="nav-link" data-scroll-target="#binäre-darstellung-von-ganzzahlen">Binäre Darstellung von Ganzzahlen</a></li>
+  <li><a href="#binäre-darstellung-von-gleitkommazahlen" id="toc-binäre-darstellung-von-gleitkommazahlen" class="nav-link" data-scroll-target="#binäre-darstellung-von-gleitkommazahlen">Binäre Darstellung von Gleitkommazahlen</a></li>
+  <li><a href="#binäre-darstellung-von-strings" id="toc-binäre-darstellung-von-strings" class="nav-link" data-scroll-target="#binäre-darstellung-von-strings">Binäre Darstellung von Strings</a></li>
+  </ul></li>
+  <li><a href="#casting-typumwandlung" id="toc-casting-typumwandlung" class="nav-link" data-scroll-target="#casting-typumwandlung"><span class="header-section-number">5.4</span> Casting (Typumwandlung)</a>
+  <ul class="collapse">
+  <li><a href="#implizites-casting" id="toc-implizites-casting" class="nav-link" data-scroll-target="#implizites-casting">Implizites Casting</a></li>
+  <li><a href="#explizites-casting" id="toc-explizites-casting" class="nav-link" data-scroll-target="#explizites-casting">Explizites Casting</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Datentypen und ihre Repräsentation</span></h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Autor:in</div>
+  <div class="quarto-title-meta-heading">Zugehörigkeit</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Prof.&nbsp;Dr.&nbsp;Maik Weber </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Hochschule Trier
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">13. April 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Beim Programmieren arbeiten wir ständig mit Daten – Zahlen, Texte, Wahrheitswerte und mehr. Wie aus dieser Aufzählung hervorgeht, gibt es unterschiedliche <strong>Datentypen</strong>, und jeder Typ hat einen Einfluss darauf, wie Daten dargestellt, verarbeitet und gespeichert werden. In diesem Kapitel lernen wir die wichtigsten Datentypen kennen und werfen einen genaueren Blick darauf, wie diese Daten gespeichert und verwaltet werden.</p>
+<p>Im Speicher des Computers liegen Daten als sog. <strong>Instanzen</strong>. Wie wir sehen werden, fungieren Variablen als <strong>Referenzen</strong> auf diese Instanzen (man könnte sagen: <em>Wegweiser zu den Instanzen</em>).</p>
+<p>Zuletzt wollen wir noch verstehen, wie Instanzen von unterschiedlichen Datentypen eigentlich für den Computer aussehen, denn dieser versteht nur eine Sprache: das Binärsystem! Für jeden Datentyp existieren daher Kodierungen, die die jeweilige Information (ob Zahl oder Text) als Binärzahl ausdrückt.</p>
+<p>Zum Abschluss des Kapitels zeigen wir, wie Datentypen ineinander umgewandelt werden können.</p>
+<section id="grundlegende-datentypen" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="grundlegende-datentypen"><span class="header-section-number">5.1</span> Grundlegende Datentypen</h2>
+<p>Mit der Funktion <code>type()</code> können wir in Python den Datentyp einer Variablen oder eines Literals abfragen:</p>
+<div id="b88579fb-fa58-437d-a85f-f4355554ddc9" class="cell" data-execution_count="73">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="dv">4</span>)  <span class="co"># Typ einer ganzen Zahl</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="73">
+<pre><code>int</code></pre>
+</div>
+</div>
+<div id="6f88c666-156e-4300-a587-b01d596414e6" class="cell" data-execution_count="74">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="fl">3.2</span>)  <span class="co"># Typ einer Dezimalzahl</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="74">
+<pre><code>float</code></pre>
+</div>
+</div>
+<div id="b25bb209-3f80-457f-bb34-9452ba62453e" class="cell" data-execution_count="75">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="st">"Hallo"</span>)  <span class="co"># Typ eines Textes</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="75">
+<pre><code>str</code></pre>
+</div>
+</div>
+<div id="2e345425-af5d-48c7-bcd2-2ea5499d5c33" class="cell" data-execution_count="76">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="va">True</span>)  <span class="co"># Typ eines Wahrheitswertes</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="76">
+<pre><code>bool</code></pre>
+</div>
+</div>
+<div id="5984bc3d-2146-423d-86e0-d806cb0fb470" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel mit einer Variable</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">5.4</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(x)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>float</code></pre>
+</div>
+</div>
+<p>Die folgende Tabelle fasst die gefundenen Datentypen zusammen:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Datentyp</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>int</code> (Integer)</td>
+<td>ganze Zahlen</td>
+</tr>
+<tr class="even">
+<td><code>float</code> (Floating-point)</td>
+<td>Gleitkommazahlen</td>
+</tr>
+<tr class="odd">
+<td><code>str</code> (String)</td>
+<td>Zeichenketten (Text)</td>
+</tr>
+<tr class="even">
+<td><code>bool</code> (Boolean)</td>
+<td>Wahrheitswert</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Was sind Gleitkommazahlen?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Dezimalzahlen können sehr viele Nachkommastellen haben. Um sie effizient zu speichern, nutzt der Rechner intern die wissenschaftliche Schreibweise, z. B. <code>2.1e-4</code> statt <code>0.00021</code>. Dadurch werden führende oder nachfolgende Nullen vermieden. Statt der vollständigen Zahl speichert man nur die signifikanten Stellen (hier: <code>2.1</code>, genannt <em>Mantisse</em>) und den Exponenten (hier: <code>-4</code>), sowie das Vorzeichen der Zahl (hier: positiv).</p>
+<p>Das wird besonders bei extrem kleinen oder großen Zahlen deutlich: <code>3.23e10</code> statt <code>32300000000</code> oder <code>1.2e-9</code> statt <code>0.0000000012</code>. Der Dezimalpunkt „gleitet“ dabei entsprechend dem Exponenten, woher der Name <em>Gleitkommazahl (floating-point)</em> stammt.</p>
+<p>Im Gegensatz dazu gibt es Festkommazahlen, bei denen der Dezimalpunkt immer an einer festen Stelle steht (z. B. Währungsbeträge wie <code>12.34</code> Euro). Diese sind in der Informatik seltener, weil sie eine feste Genauigkeit haben und weniger flexibel sind. Sie werden nur in speziellen Anwendungen genutzt.</p>
+</div>
+</div>
+<p>Die genannten Datentypen gibt es auch in vielen anderen Programmiersprachen, oft mit leicht unterschiedlichen Bezeichnungen oder Eigenschaften:</p>
+<ul>
+<li><p><strong>C</strong> arbeitet u.a. mit <code>int</code>, <code>float</code>, <code>double</code> (Gleitkommazahl mit doppelter Genauigkeit), <code>char</code> (für einzelne Zeichen; Strings werden als Zeichenarrays gespeichert, sog. <em>C-Strings</em>); <code>bool</code> kann seit C99 über einen Header eingebunden werden.</p></li>
+<li><p><strong>C++</strong> führt u.a. eine <code>String</code>-Klasse ein (das Wort Klasse erklären wir in der objektorientierten Programmierung).</p></li>
+<li><p><strong>Java</strong> kennt primitive Datentypen wie <code>int</code>, <code>double</code>, <code>char</code> und <code>boolean</code>, sowie die Klasse <code>String</code> für Texte.</p></li>
+<li><p><strong>JavaScript</strong> nutzt <code>Number</code> für Ganz- und Gleitkommazahlen, <code>Boolean</code> für Wahrheitswerte und <code>String</code> für Texte.</p></li>
+</ul>
+<p>Die vorgestellten Datentypen sind die Grundbausteine einer Programmiersprache, aus denen komplexere Datenstrukturen zusammengesetzt werden können. Man nennt sie daher oft auch <strong>primitive Datentypen</strong>.</p>
+<section id="statisch-oder-dynamisch-typisiert" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="statisch-oder-dynamisch-typisiert">Statisch oder dynamisch typisiert?</h3>
+<p>Programmiersprachen unterscheiden sich darin, wie flexibel sie mit Datentypen umgehen. Man kann grundsätzlich zwischen zwei Arten unterscheiden:</p>
+<p><strong>Statisch typisierte Sprachen:</strong> Datentypen werden <strong>vor der Laufzeit</strong> durch den Programmierer oder die Programmiererin definiert (z. B. in C, Java). Typenfehler (man versucht im Code etwas mit einem Datentyp zu machen, was nicht erlaubt ist) werden beim Kompilieren erkannt, was Sicherheit und Geschwindigkeit bietet, aber weniger flexibel ist.</p>
+<p>Beispiel-Code in C: <code>int zahl = 42;</code><br> Bei der Deklaration der Variable <code>zahl</code> muss bereits ihr Typ angegeben werden, hier: Integer. Sie darf im gesamten Programm niemals für einen anderen Typen verwendet werden (in vielen Fällen würde die Zuweisung trotzdem gelingen, aber durch ein implizites Casting (siehe unten) ein evtl. unbeabsichtigter Datenverlust stattfinden).</p>
+<p><strong>Dynamisch typisierte Sprachen:</strong> Typen werden automatisch <strong>zur Laufzeit</strong> bestimmt (z. B. in Python, JavaScript). Das schenkt eine höhere Flexibilität: Wir können an einer Stelle <code>zahl = 42</code> und an einer anderen Stelle <code>zahl = "Apfel"</code> schreiben. Allerdings können sich so auch leichter Fehler einschleichen. Einen exemplarischen Typenfehler in Python zeigt der folgende Code:</p>
+<div id="99547a16-ce15-4414-b0a6-2cb1bc98e20a" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">"42"</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="st">"2"</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> x <span class="op">/</span> y <span class="co"># diese Zeile führt zu einem Fehler!</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Strings können nicht durcheinander dividiert werden. </span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Oder könnten Sie "Auto" durch "Apfel" teilen?!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="kurzer-ausblick-auf-weitere-datentypen-in-python" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="kurzer-ausblick-auf-weitere-datentypen-in-python">Kurzer Ausblick auf weitere Datentypen in Python</h3>
+<p>Python verfügt von Haus aus über weitere praktische Datentypen, von denen wir nur ein paar hier vorstellen möchten. Einige davon werden wir in späteren Kapiteln noch genauer untersuchen und verstärkt einsetzen:</p>
+<div id="e93d6ab7-85b4-4cf4-bed8-2001015e4d65" class="cell" data-execution_count="77">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>shopping_list <span class="op">=</span> [<span class="st">'apples'</span>, <span class="st">'bananas'</span>, <span class="st">'bread'</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(shopping_list)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="77">
+<pre><code>list</code></pre>
+</div>
+</div>
+<p>Der Datentyp <strong><code>list</code></strong> wird für eine <strong>geordnete</strong> Ansammlung von Elementen verwendet. Die Elemente werden wie im Beispiel zwischen eckigen Klammern (<code>[]</code>) aufgelistet. ‘Geordnet’ heißt in diesem Zusammenhang, dass die Elemente eine feste Reihenfolge haben: In unserem Beispiel ist <code>'apples'</code> das erste Element, <code>'bananas'</code> das zweite, usw. Wir können über den sog. <em>Indexzugriff</em> auch gezielt auf das erste, zweite, dritte, … Element einer Liste zugreifen:</p>
+<div id="9b83d242-20f7-4c95-9b35-e5e65fa9a750" class="cell" data-execution_count="78">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>shopping_list[<span class="dv">0</span>]  <span class="co"># immer bei 0 anfangen zu zählen!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="78">
+<pre><code>'apples'</code></pre>
+</div>
+</div>
+<div id="39689cb7-2b5a-4f0b-9093-75b97696300a" class="cell" data-execution_count="79">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>shopping_list[<span class="dv">1</span>]  <span class="co"># Index 1 entspricht dem zweiten Element</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="79">
+<pre><code>'bananas'</code></pre>
+</div>
+</div>
+<div id="435b0fb4-ae4f-4e96-81d0-45369f00b684" class="cell" data-execution_count="80">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>shopping_list[<span class="dv">2</span>]  <span class="co"># Index 2 entspricht dem dritten Element</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="80">
+<pre><code>'bread'</code></pre>
+</div>
+</div>
+<p>Es gibt auch ungeordnete Ansammlungen von Elementen:</p>
+<div id="4af5c1d1-eb96-4f2d-902a-5a56147e1412" class="cell" data-execution_count="81">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>favorite_colors <span class="op">=</span> {<span class="st">'red'</span>, <span class="st">'blue'</span>, <span class="st">'green'</span>}</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(favorite_colors)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="81">
+<pre><code>set</code></pre>
+</div>
+</div>
+<p>Mit den geschweiften Klammern haben wir ein <strong><code>set</code></strong> angelegt, das einer mathematischen Menge entspricht: Es gibt keine Reihenfolge (der Indexzugriff funktioniert nicht!), außerdem kommt jedes Element nur einmal vor. Fügt man der obigen Menge die Farbe <code>'red'</code> ein zweites Mal hinzu, gibt es das Element trotzdem nur einmal:</p>
+<div id="41b847f0-d5e9-4cfd-be41-3109a7ac258d" class="cell" data-execution_count="82">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>favorite_colors.add(<span class="st">'red'</span>)  <span class="co"># wir fügen ein bereits vorhandenes Element hinzu</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(favorite_colors)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'blue', 'green', 'red'}</code></pre>
+</div>
+</div>
+<div id="ef9bd0f1-07f2-46c5-b058-5c89ebc2bb9c" class="cell" data-execution_count="83">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>favorite_colors.add(<span class="st">'yellow'</span>)  <span class="co"># wir fügen ein neues Element hinzu</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(favorite_colors)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'blue', 'green', 'yellow', 'red'}</code></pre>
+</div>
+</div>
+<p>Listen und Sets können mit verschiedenen Datentypen gefüllt und auch verschachtelt werden. Wir demonstrieren es am Beispiel einer Liste:</p>
+<div id="3cc07cc8-6056-4965-97ba-418f96160068" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># in dieser Liste befinden sich Einträge vom Typ</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># int, float, str und wiederum list</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>crazy_list <span class="op">=</span> [<span class="dv">1</span>, <span class="fl">0.5</span>, <span class="st">"Monty Python"</span>, [<span class="dv">42</span>, <span class="va">True</span>]]</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(crazy_list)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 0.5, 'Monty Python', [42, True]]</code></pre>
+</div>
+</div>
+<div id="dc750d4e-21b0-4df9-825f-ff7dd14b8157" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>crazy_list[<span class="dv">0</span>]  <span class="co"># erstes Element: der Integer 1</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>1</code></pre>
+</div>
+</div>
+<div id="d2922185-5335-4b3e-a5ed-a57b706c96ab" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>crazy_list[<span class="dv">3</span>]  <span class="co"># viertes Element: die Liste [42, True]</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>[42, True]</code></pre>
+</div>
+</div>
+<div id="3462d509-6083-4caf-a7fb-874040d6e23b" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>crazy_list[<span class="dv">3</span>][<span class="dv">0</span>]  <span class="co"># Zugriff auf das erste Element der Liste [42, True]</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>42</code></pre>
+</div>
+</div>
+<p>Ein besonderer Datentyp, den wir nicht in vielen Programmiersprachen finden, ist <strong><code>complex</code></strong> für die Darstellung komplexer Zahlen. Dabei stellt <code>j</code> die imaginäre Einheit dar:</p>
+<div id="a4202b2e-fe6d-444e-a2c3-39a65ff50541" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(<span class="dv">1</span><span class="op">+</span><span class="ot">2j</span>)  <span class="co"># komplexe Zahl mit Realteil 1 und Imaginärteil 2</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>complex</code></pre>
+</div>
+</div>
+<div id="bc39e021-9358-44e5-848e-80c58370cfa3" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Das Quadrat von j ist: "</span>,(<span class="ot">1j</span>)<span class="op">**</span><span class="dv">2</span>) </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Das Quadrat von j ist:  (-1+0j)</code></pre>
+</div>
+</div>
+<p>Die letzte Ausgabe sieht auf den ersten Blick vielleicht etwas kryptisch aus, aber belegt, dass <code>j</code> die Wurzel aus <code>-1</code> ist. Es ist nun besonders einfach mit komplexen Zahlen zu rechnen:</p>
+<div id="2d9b3f40-8652-4155-be0c-6a4bd24c9132" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span><span class="op">+</span><span class="ot">2j</span>)<span class="op">*</span>(<span class="op">-</span><span class="dv">2</span><span class="op">+</span><span class="ot">4j</span>)  <span class="co"># rechnen mit komplexen Zahlen</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>(-10+0j)</code></pre>
+</div>
+</div>
+<div class="exercises">
+<p><b>Übung:</b> Recherchieren Sie zum Datentyp <code>dict</code> und legen Sie ein Dictionary aus Namen und Telefonnummern an.</p>
+</div>
+</section>
+</section>
+<section id="instanzen-und-referenzen" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="instanzen-und-referenzen"><span class="header-section-number">5.2</span> Instanzen und Referenzen</h2>
+<p>Wir wollen jetzt verstehen, wie Daten gespeichert werden und was eine Variable genau ist. Dieser Absatz erscheint beim ersten Lesen womöglich etwas theoretisch, sein Verständnis hilft aber später enorm bei der Vermeidung vieler Missverständnisse und Fehler.</p>
+<section id="ein-vereinfachtes-speichermodell" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="ein-vereinfachtes-speichermodell">Ein vereinfachtes Speichermodell</h3>
+<p>An dieser Stelle benötigen wir ein einfaches Modell eines Speichers: Stellen wir uns vor, unser Programm hat Zugriff auf eine Reihe von Speicherstellen, in denen es Daten ablegen kann. Die kleinste Informationsmenge, die wir speichern können, ist ein <strong>Bit</strong>, das entweder den Wert 0 oder 1 annehmen kann. Um jedoch komplexere Informationen zu speichern, arbeiten wir in der Regel mit Gruppen aus 8 Bits, die wir als <strong>Byte</strong> bezeichnen. In unserem Modell stellen wir uns den Speicher als eine große Zahl freier Bytes vor, die alle hintereinander aufgereiht sind. Jedes Byte kann über eine eindeutige Adresse identifiziert werden (die Adressen sind in der C-Programmierung wichtig, nicht so sehr in Python). Das einfache Speichermodell ist in <a href="#fig-memory-empty" class="quarto-xref">Abbildung&nbsp;<span>5.1</span></a> skizziert.</p>
+<div id="fig-memory-empty" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-memory-empty-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/memory_model.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-memory-empty-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;5.1: Vereinfachtes Speichermodell
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="instanzen" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="instanzen">Instanzen</h3>
+<p>Wenn wir einen bestimmten Wert speichern wollen (z.B. eine Zahl oder einen Text), brauchen wir in der Regel mehr als eine Speicherstelle. Die genaue Größe hängt davon ab, welcher Datentyp gespeichert wird und wie viel Information dieser enthält (ein einzelner Buchstabe ist sicherlich weniger Information als ein ganzer Satz). Daten werden also je nach Datentyp und Informationsgehalt in unterschiedlich vielen Speicherzellen gespeichert. Um die Verwaltung des Speichers kümmert sich der Python-Interpreter, er ermittelt also auch wie viele Zellen benötigt werden und speichert die Daten. Nun aber Schritt für Schritt: Was passiert, wenn wir folgende einfache Zeile programmieren?</p>
+<div id="929326f1-7263-42ce-949d-8eb860d44e32" class="cell" data-execution_count="96">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"Hi"</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Zunächst ermittelt der Interpreter den Speicherbedarf für den String-Wert <code>"Hi"</code>, weist ihm einen freien Platz im Speicher zu und speichert dort die Daten ab (natürlich nicht in menschenlesbarer Form, sondern binär kodiert, wie wir später noch genauer erklären werden). Das Ergebnis nennt man eine <strong>Instanz</strong>: Eine Instanz ist ein konkretes Datenobjekt im Speicher, das nach den Vorgaben eines bestimmten Datentyps erzeugt und gespeichert wurde. Es kann sich dabei auch um eine Zahl handeln, z.B. <code>-5.25</code>. Wichtig an dieser Stelle: <strong>Zu einer Instanz gehört ein bestimmter Datentyp!</strong></p>
+<p>Bisher haben wir nur die rechte Seite der Zuweisung betrachtet: Das Literal erzeugt eine Instanz im Speicher. Was bewirkt die linke Seite der Zuweisung?</p>
+</section>
+<section id="referenzen" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="referenzen">Referenzen</h3>
+<p>Wenn wir den String <code>"Hi"</code> keiner Variable zugeordnet hätten, wäre die erzeugte Instanz für uns nicht mehr greifbar. Sie würde nutzlos im Speicher rumliegen! In Python würde ein Aufräummechanismus (der sog. <em>Garbage Collector</em>) diese Instanz wieder aus dem Speicher löschen. Glücklicherweise haben wir den Wert jedoch der Variable mit dem Namen <code>text</code> zugewiesen. Die Variable <code>text</code> <strong>referenziert</strong> die Instanz im Speicher, wodurch wir mit der Instanz arbeiten können. Eine Variable ist also eine bloße <strong>Referenz</strong> und von der eigentlichen Instanz (den “echten Daten”) zu unterscheiden. Referenzen können Sie sich wie Hinweisschilder oder Wegweiser vorstellen: Sie zeigen auf die Instanz, sind aber nicht selbst die Instanz.</p>
+<p>In <a href="#fig-memory-instances" class="quarto-xref">Abbildung&nbsp;<span>5.2</span></a> wird der Unterschied zwischen Instanzen und Referenzen bildlich dargestellt.</p>
+<div id="fig-memory-instances" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-memory-instances-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/memory_instances.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-memory-instances-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;5.2: Referenzen und Instanzen. Instanzen sind konkrete Datenobjekte im Speicher. Variablen verweisen auf diese Instanzen und werden deshalb auch Referenzen genannt. Im gezeigten Beispiel liegen eine String-Instanz und eine Float-Instanz im Speicher und werden jeweils von einer Variable referenziert. Eine Instanz kann aber auch mehrfach oder gar nicht referenziert werden (in letzterem Fall wird sie aber vom Garbage Collector wieder aufgeräumt)
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-simple callout-caution no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>Strenggenommen ist es nicht korrekt, zu sagen, eine Variable hätte einen bestimmten Datentyp. Der Datentyp gehört immer zur referenzierten Instanz. Wenn wir in einer anderen Zeile <code>text = 123</code> schreiben, zeigt die Variable <code>text</code> plötzlich auf eine Instanz vom Typ <code>int</code>. Dennoch ist es im alltäglichen Sprachgebrauch üblich zu sagen, “Die Variable <code>text</code> hat den Typ <code>string</code>.” Merken Sie sich jedoch, dass diese Formulierung ungenau ist!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="identität-einer-instanz" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="identität-einer-instanz">Identität einer Instanz</h3>
+<p>Jede Instanz besitzt in Python eine eindeutige <strong>Identität</strong>, die durch die Funtkion <code>id()</code> abgefragt werden kann und wie ein Fingerabdruck der Instanz verstanden werden kann:</p>
+<div id="60780525-75ff-4b96-b2c1-f48c1b02a157" class="cell" data-execution_count="97">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="bu">id</span>(text)  <span class="co"># mit id() erhält man die Identität</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="97">
+<pre><code>2122758446064</code></pre>
+</div>
+</div>
+<p>Hier wurde die eindeutige ID der Instanz ausgegeben, die von <code>text</code> referenziert wird. Wenn wir die Variable auf eine andere Instanz zeigen lassen, ändert sich auch die Identität:</p>
+<div id="fce24001-f65d-413e-9eea-28dcd717cf5c" class="cell" data-execution_count="98">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"Guten Tag"</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="bu">id</span>(text)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="98">
+<pre><code>2122752622320</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Kurze Zusammenfassung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Eine Instanz ist ein konkretes Objekt im Speicher. Es hat drei Merkmale: Eine eindeutige Identität, einen Datentyp und einen Wert. Eine Variable ist ein symbolischer Name, der eine Instanz referenziert (man sagt auch: auf eine Instanz zeigt).</p>
+</div>
+</div>
+</section>
+<section id="exkurs-seiteneffekte---wenn-mehrere-referenzen-auf-dieselbe-instanz-zeigen." class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="exkurs-seiteneffekte---wenn-mehrere-referenzen-auf-dieselbe-instanz-zeigen.">Exkurs: Seiteneffekte - Wenn mehrere Referenzen auf dieselbe Instanz zeigen.</h3>
+<p>Es kann vorkommen, dass mehrere Variablen auf ein und dieselbe Instanz zeigen und dadurch unerwartete Effekte passieren. Dazu betrachten wir zunächst ein Beispiel ohne Seiteneffekte und danach ein zweites mit solchen Effekten.</p>
+<p><strong>Erstes Beispiel (keine Seiteneffekte):</strong></p>
+<div id="551f7903-9cee-4282-ae54-09cadccb30cf" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">12</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a  <span class="co"># a wird b zugewiesen</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(a), <span class="bu">id</span>(b))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>140715933117208 140715933117208</code></pre>
+</div>
+</div>
+<p>An dieser Stelle erhalten wir identische Identitäten, d.h. <code>a</code> und <code>b</code> referenzieren dieselbe Instanz! Python hat festgestellt, dass es keinen Grund gibt, eine zweite Instanz anzulegen und verhält sich ökonomisch (Speicher sparend und Laufzeit sparend, denn das Anlegen von Instanzen kostet Zeit). Wir führen unser Beispiel fort:</p>
+<div id="88977fa3-5a8b-45ef-affa-4c09897094e8" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">+=</span> <span class="dv">10</span>  <span class="co"># b wird verändert</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(a),<span class="bu">id</span>(b))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>140715933117208 140715933117528</code></pre>
+</div>
+</div>
+<p>Wie wir sehen, zeigt <code>b</code> jetzt auf eine andere Instanz (eine mit Wert 22), während <code>a</code> immer noch unverändert auf die ursprüngliche verweist. In diesem Beispiel ist nichts unerwartetes geschehen. Damit wir nicht immer die Identitäten mühsam miteinander vergleichen müssen, können wir auch den Operator <code>is</code> verwenden:</p>
+<div id="c26ba996-e45f-4ba0-9cbb-401c5bf20b12" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>a <span class="kw">is</span> b  <span class="co"># vergleicht die Identitäten der referenzierten Instanzen</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="co"># True heißt: a und b zeigen auf dieselbe Instanz</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="co"># False heißt: a und b zeigen auf unterschiedliche Instanzen</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>False</code></pre>
+</div>
+</div>
+<p><strong>Zweites Beispiel (mit Seiteneffekten):</strong></p>
+<p>Wir wiederholen das Experiment von oben, diesmal aber mit einem anderen Datentyp (einer Liste):</p>
+<div id="aff78186-497f-4cf3-a5ab-68d7c03fd19b" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>my_shopping_list <span class="op">=</span> [<span class="st">'apples'</span>, <span class="st">'oranges'</span>, <span class="st">'paper'</span>]</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>your_shopping_list <span class="op">=</span> my_shopping_list</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(my_shopping_list), <span class="bu">id</span>(your_shopping_list))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3130323362688 3130323362688</code></pre>
+</div>
+</div>
+<p>Bis hierin verhalten sich die beiden Beispiele gleich. Jetzt manipulieren wir eine der Variablen:</p>
+<div id="c31d084c-93ef-4fcb-b0d5-cbce5ddd3201" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>your_shopping_list.append(<span class="st">'shoes'</span>)</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(my_shopping_list), <span class="bu">id</span>(your_shopping_list))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3130323362688 3130323362688</code></pre>
+</div>
+</div>
+<p>Die Identitäten sind immer noch gleich! Das bestätigt auch der <code>is</code>-Operator:</p>
+<div id="e6a302bc-d329-423b-8cb4-164a88df6fd6" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>your_shopping_list <span class="kw">is</span> my_shopping_list</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>True</code></pre>
+</div>
+</div>
+<p>Aber was bedeutet das für die ursprüngliche Liste?</p>
+<div id="df7c3b2e-bafd-4dd6-8ee9-09f2cee6c991" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_shopping_list)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['apples', 'oranges', 'paper', 'shoes']</code></pre>
+</div>
+</div>
+<p><strong>Die ursprüngliche Liste wurde verändert, obwohl wir die Variable <code>my_shopping_list</code> gar nicht angefasst haben!</strong> Man spricht in diesem Zusammenhang von einem <strong>Seiteneffekt</strong>.</p>
+<p>Später gehen wir genauer auf dieses Phänomen ein (es tritt nur bei sog. <em>mutable Datentypen</em> auf, zu denen die Liste gehört: Instanzen dieser Datentypen sind veränderlich, während bei <em>immutable Datentypen</em> keine nachträgliche Veränderung von Instanzen erlaubt ist). An dieser Stelle soll es nur illustrieren, warum das Verständnis von Instanzen und Referenzen so wichtig für angehende Programmiererinnen und Programmierer ist. Vielleicht haben Sie auch bereits von <em>Pointern</em> in der Sprache C gehört: Obwohl sich das Konzept von den hier vorgestellten Referenzen unterscheidet, besteht dieselbe Gefahr: Mehrere Pointer können auf dasselbe Objekt zeigen; eine Code-Stelle kann Änderungen bewirken, mit denen man an einer anderen Stelle gar nicht rechnet.</p>
+</section>
+</section>
+<section id="binäre-darstellung-von-daten" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="binäre-darstellung-von-daten"><span class="header-section-number">5.3</span> Binäre Darstellung von Daten</h2>
+<p>Wir wissen nun, dass im Speicher eines Computers Instanzen der benötigten Daten erzeugt werden und wir über Referenzen auf diese zugreifen können. Wie aber sieht so eine Instanz im Speicher genau aus? Computer arbeiten auf einer fundamentalen Ebene mit binären Daten, also Zahlen, die nur aus den Ziffern 0 und 1 bestehen. Diese beiden Zustände repräsentieren die grundlegenden Bits (Binary Digits), mit denen alle Arten von Daten – wie Zahlen, Texte oder Bilder – gespeichert und verarbeitet werden. Mit anderen Worten: Eine Zahl (z.B. <span class="math inline">\(-5.25\)</span>) oder ein Wort (z.B. “Apfel”) muss durch eine Transformation, genannt <em>Kodierung</em>, als Binärzahl dargestellt werden können (und umgekehrt). Die Art der Kodierung hängt davon ab, welcher Datentyp dargestellt werden soll.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exkurs: Einführung ins Binärsystem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Das Binärsystem (oder Dualsystem) ist ein Zahlensystem zur Basis 2, das nur zwei Ziffern verwendet: 0 und 1. Es ist die Grundlage aller digitalen Systeme, da Computer mit diesen beiden Zuständen (z.B. Strom an/aus) arbeiten. Die natürlichen Zahlen in aufsteigender Reihenfolge sehen binär so aus: 0, 1, 10, 11, 100, 101, usw. Zur Abgrenzung von Dezimalzahlen verwendet man gelegentlich eine tiefgestellte 2 (z.B. <span class="math inline">\((100)_2\)</span>) oder das Präfix <span class="math inline">\(0\text{b}\)</span> (z.B. <span class="math inline">\(0\text{b}100\)</span>).</p>
+<section id="umwandlung-von-binär--nach-dezimalsystem" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="umwandlung-von-binär--nach-dezimalsystem">Umwandlung von Binär- nach Dezimalsystem</h5>
+<p>Um eine Binärzahl in eine Dezimalzahl umzuwandeln, multipliziert man jede Ziffer mit <span class="math inline">\(2^{\text{Position}}\)</span>, beginnend von rechts mit der Position 0, und addiert die Ergebnisse.</p>
+<p><strong>Beispiel:</strong> Binärzahl <span class="math inline">\((1011)_2 = 1\cdot 2^3+0\cdot 2^2 + 1\cdot 2^1+1\cdot 2^0=8+0+2+1=11\)</span> (Dezimalzahl).</p>
+</section>
+<section id="umwandlung-von-dezimal--nach-binärsystem" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="umwandlung-von-dezimal--nach-binärsystem">Umwandlung von Dezimal- nach Binärsystem</h5>
+<p>Eine Dezimalzahl wird durch wiederholtes Teilen durch 2 in eine Binärzahl umgewandelt. Die Reste ergeben die Binärzahl (von unten nach oben lesen).</p>
+<p><strong>Beispiel:</strong> Die Dezimalzahl 13 soll binär dargestellt werden. <br></p>
+<p><span class="math inline">\(13 : 2 = 6, \text{ Rest: } 1\)</span><br> <span class="math inline">\(6 : 2 = 3, \text{ Rest: } 0\)</span><br> <span class="math inline">\(3 : 2 = 1, \text{ Rest: } 1\)</span><br> <span class="math inline">\(1 : 2 = 0, \text{ Rest: } 1\)</span><br></p>
+<p>Binärzahl (Reste von unten nach oben lesen): <span class="math inline">\(1101\)</span></p>
+</section>
+<section id="stellen-hinter-dem-komma-in-binärer-schreibweise" class="level5 unnumbered">
+<h5 class="unnumbered anchored" data-anchor-id="stellen-hinter-dem-komma-in-binärer-schreibweise">Stellen hinter dem Komma in binärer Schreibweise</h5>
+<p>Bei Kommazahlen entsprechen die Stellen hinter dem Komma negativen Exponenten. Wir kennen das vom Dezimalsystem: <span class="math inline">\(0.243 = 2\cdot 10^{-1} + 4\cdot 10^{-2}+ 3\cdot 10^{-3}.\)</span></p>
+<p>Analog im Binärsystem: <span class="math inline">\((0.101)_2 = 1 \cdot 2^{-1}+0\cdot 2^{-2} + 1\cdot 2^{-3} = 0.625\)</span> als Dezimalzahl.</p>
+</section>
+</div>
+</div>
+<section id="binäre-darstellung-von-ganzzahlen" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="binäre-darstellung-von-ganzzahlen">Binäre Darstellung von Ganzzahlen</h3>
+<p>Ganzzahlen (Integer) werden direkt im Binärsystem gespeichert. Dabei gibt es eine Unterscheidung:</p>
+<ul>
+<li><p>Positive Ganzzahlen: Sie werden als reine Binärzahlen dargestellt, z. B. ist die Dezimalzahl 5 im Binärsystem 101.</p></li>
+<li><p>Negative Ganzzahlen: Hier gibt es verschiedene Ansätze. In der Regel wird das höchste Bit als Vorzeichenbit verwendet, das angibt, ob die Zahl positiv (Vorzeichenbit = 0) oder negativ (Vorzeichenbit = 1) ist. Dann muss nur noch der Betrag der Zahl kodiert werden, wofür es wiederum verschiedene Methoden gibt, auf die wir im Rahmen dieser Einführung nicht näher eingehen (für Interessierte empfehlen wir: <a href="https://de.wikipedia.org/wiki/Zweierkomplement#Name">Zweierkomplement</a>.)</p></li>
+</ul>
+<p>Integer können in Python mit dem Befehl <code>bin()</code> ganz einfach ins Binärsystem umgewandelt werden:</p>
+<div id="602fefcc" class="cell" data-execution_count="106">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Dezimal:"</span>, <span class="dv">11</span>, <span class="st">"Binär:"</span>, <span class="bu">bin</span>(<span class="dv">11</span>))</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Dezimal:"</span>, <span class="dv">13</span>, <span class="st">"Binär:"</span>, <span class="bu">bin</span>(<span class="dv">13</span>))</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Dezimal:"</span>, <span class="dv">423</span>, <span class="st">"Binär:"</span>, <span class="bu">bin</span>(<span class="dv">423</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Dezimal: 11 Binär: 0b1011
+Dezimal: 13 Binär: 0b1101
+Dezimal: 423 Binär: 0b110100111</code></pre>
+</div>
+</div>
+<p>Umgekehrt geht es sogar noch viel einfacher, wie die folgenden Beispiele zeigen:</p>
+<div id="08326d78" class="cell" data-execution_count="89">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ein binäres Litera 0b... wird automatisch umgewandelt: </span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Binär:"</span>, <span class="st">"0b1011"</span>, <span class="st">"Dezimal:"</span>, <span class="bn">0b1011</span>) </span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Binär:"</span>, <span class="st">"0b1101"</span>, <span class="st">"Dezimal:"</span>, <span class="bn">0b1101</span>)</span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Binär:"</span>, <span class="st">"0b110100111"</span>, <span class="st">"Dezimal"</span>, <span class="bn">0b110100111</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Binär: 0b1011 Dezimal: 11
+Binär: 0b1101 Dezimal: 13
+Binär: 0b110100111 Dezimal 423</code></pre>
+</div>
+</div>
+</section>
+<section id="binäre-darstellung-von-gleitkommazahlen" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="binäre-darstellung-von-gleitkommazahlen">Binäre Darstellung von Gleitkommazahlen</h3>
+<p>Gleitkommazahlen (wie 3.14 oder -0.001) werden durch den IEEE 754-Standard dargestellt, der folgende Struktur nutzt:</p>
+<ul>
+<li><p><strong>Vorzeichen</strong> (1 Bit): Gibt an, ob die Zahl positiv (Vorzeichenbit = 0) oder negativ (Vorzeichenbit = 1) ist.</p></li>
+<li><p><strong>Exponent</strong>: Bestimmt die Skalierung der Zahl.</p></li>
+<li><p><strong>Mantisse</strong>: Speichert die signifikanten Stellen der Zahl.</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Beispiel Gleitkommazahl-Darstellung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die Zahl -5.25 soll binär mit insgesamt 32 Bits dargestellt werden. Die Aufteilung der Bits soll so erfolgen: 1 Bit für das Vorzeichen, 8 Bits für den Exponenten und 23 Bits für die Mantisse.</p>
+<p>Das Vorzeichenbit ist offensichtlich 1 (für negativ), nun müssen wir noch Exponent und Mantisse kodieren. Dazu drücken wir den Betrag (das Vorzeichen interessiert uns nicht mehr) binär und wissenschaftlich notiert aus: <span class="math inline">\(5.25 = (101.01)_2 = (\textcolor{blue}{1.0101})_2 \cdot 2^{\textcolor{green}2}\)</span>.</p>
+<p>Daraus ergibt sich:</p>
+<ul>
+<li>Der <span class="math inline">\(\textcolor{green}{\text{Exponent}}\)</span> ist 2, allerdings noch im Zehnersystem ausgedrückt. Mit 8 Bits binär dargestellt wäre er <span class="math inline">\((00000010)_2\)</span>. Man verwendet aber noch einen Trick, um negative Exponenten nicht wieder mit einem Vorzeichenbit unterscheiden zu müssen, und addiert 127 zum eigentlichen Exponenten: Unser Exponent 2 wird also folgendermaßen kodiert: <span class="math inline">\(127+2=129=(10000001)_2\)</span>.</li>
+<li>Die <span class="math inline">\(\textcolor{blue}{\text{Mantisse}}\)</span> im Binärsystem ist 1.0101. Beim Kodieren wird die führende 1 weggelassen, weil sie immer da ist – ein Trick zur Speicheroptimierung. Die Stellen hinter dem Komma werden in 23 Bits abgelegt: <span class="math inline">\((01010000000000000000000)_2\)</span></li>
+</ul>
+<p>Die komplette Kodierung lautet: <span class="math inline">\(1\ 10000001\ 01010000000000000000000\)</span>.</p>
+</div>
+</div>
+<p>Gleitkommazahlen bieten durch diese Struktur eine große Reichweite und Präzision, allerdings entstehen dabei gelegentlich Rundungsfehler, da nicht alle Dezimalzahlen im Binärsystem mit endlich vielen Stellen exakt darstellbar sind. Ein wichtiger Merksatz lautet an dieser Stelle bereits: Vergleichen Sie <strong>niemals</strong> zwei Gleitkommazahlen auf exakte Gleichheit, sondern verwenden Sie immer eine kleine Toleranz für Rundungsfehler.</p>
+</section>
+<section id="binäre-darstellung-von-strings" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="binäre-darstellung-von-strings">Binäre Darstellung von Strings</h3>
+<p>Strings bestehen aus einer Folge von Zeichen, die jeweils durch Zahlencodes repräsentiert werden:</p>
+<ul>
+<li><p><strong>ASCII:</strong> Jedes Zeichen wird durch eine 7-Bit-Zahl dargestellt (z. B. A = 65 = 0b01000001). Der Code deckt eine Auswahl von druckbaren Zeichen (lateinisches Alphabet in Groß- und Kleinschreibung, unsere 10 Ziffern, Interpunktions- und Sonderzeichen) und nicht-druckbare Zeichen (z.B. Tabulator oder Protokollzeichen für Übertragungsende oder Bestätigung) ab. Für englische Texte ist der Zeichensatz völlig ausreichend, er beinhaltet aber weder deutsche Umlaute (‘ä’,‘ü’,etc.), noch chinesische Schriftzeichen oder Emojis - um nur einige Beispiele von Zeichen zu nennen, die über ASCII hinausgehen. Aus diesem Grund gibt es erweiterte Zeichensätze. Durch Erweiterung um ein achtes Bit entstanden verschiedene Zeichensätze für unterschiedliche Sprachen (z.B. <em>Latin-1</em> für westeuropäische Sprachen, inkl. der deutschen Umlaute).</p></li>
+<li><p><strong>Unicode (UTF-8):</strong> Unicode ist ein universeller Zeichensatz, der mehrere Sprachen mit nur einem Zeichensatz umfassen soll. Es gibt mehrere Kodierungen für Unicode, von denen UTF-8 (UTF = Unicode Transformation Format) die am weitesten verbreite Variante darstellt. UTF-8 kodiert Zeichen mit variabler Byte-Anzahl: Dabei wird ein Unicodezeichen in 1 bis 4 Bytes kodiert. Die Codewerte 0 bis 127 entsprechen dem ASCII-Zeichensatz und werden in einem einzigen Byte kodiert, wobei das höchstwertige Bit stets 0 ist. Mithilfe des achten Bits kann ein längeres Unicode-Zeichen eingeleitet werden, das sich auf 2, 3 oder 4 Byte erstreckt. Beispiele: A → 01000001 (1 Byte), 😊 → 11110000 10011111 10011000 10000010 (4 Bytes).</p></li>
+</ul>
+<p>Abschließend stellen wir unser früheres Beispiel für Instanzen und Referenzen noch einmal dar, diesmal aber mit binär kodierten Werten (<a href="#fig-memory-binary" class="quarto-xref">Abbildung&nbsp;<span>5.3</span></a>).</p>
+<div id="fig-memory-binary" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-memory-binary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/memory_binary.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-memory-binary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;5.3: Instanzen und Referenzen revisited. Diesmal mit binär kodierten Werten.
+</figcaption>
+</figure>
+</div>
+<p>Noch ein paar Bemerkungen zum Speicherbedarf:</p>
+<ul>
+<li>In C liegen im Speicher nur die rohen Daten, daher benötigt ein Float mit der oben dargestellten Kodierung tatsächlich nur vier Bytes odder ein ASCII-Zeichen nur ein Byte.</li>
+<li>Python speichert viel mehr ab: Zu jedem Wert werden Metadaten, wie Datentyp, Identität, Referenz-Zähler, etc. abgespeichert. Außerdem verwendet Python eigene Optimierungen, z.B. im Umgang mit Strings oder kleinen Integern. Daher stimmt die Größe einer Instanz nicht mit der Größe der “Rohdaten” überein.</li>
+<li>Python passt den Speicherbedarf automatisch an die Informationsmenge an, so werden für eine sehr große Ganzzahl automatisch mehr Bytes verwendet, als für eine kleine Ganzzahl. In C macht das niemand für Sie: Ein Datentyp stellt eine bestimmte Zahl an Bytes zur Verfügung, reicht diese nicht aus, müssen Sie selbst einen größeren Datentyp verwenden!</li>
+<li>Mit der Funktion <code>getsizeof()</code> aus der Bibliothek <code>sys</code> können Sie die Zahl der Bytes abfragen. Beispiel:</li>
+</ul>
+<div id="f441f06f-c047-4df7-8bac-93a31d0c1e99" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>sys.getsizeof(<span class="st">"42"</span>)  <span class="co"># Antwort: Größe in Bytes</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>51</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="casting-typumwandlung" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="casting-typumwandlung"><span class="header-section-number">5.4</span> Casting (Typumwandlung)</h2>
+<p><em>Casting</em> oder Typumwandlung bezeichnet das Konvertieren eines Wertes von einem Datentyp in einen anderen. Dies ist sowohl in statisch als auch dynamisch typisierten Sprachen nützlich, um unterschiedliche Datentypen zu kombinieren oder explizite Anforderungen zu erfüllen. Es gibt dabei implizites Casting durch die Programmiersprache und explizites Casting durch den Programmierer oder die Programmiererin.</p>
+<section id="implizites-casting" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="implizites-casting">Implizites Casting</h3>
+<p>Die Programmiersprache übernimmt die Typumwandlung automatisch bei kompatiblen Typen (z.B. Integer zu Float). Im folgenden Beispiel wird eine Integer-Zahl zu einer Float gecastet, um eine Summe zu bilden (das Ergebnis ist wieder ein Float):</p>
+<div id="9e79ed14" class="cell" data-execution_count="109">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>int_number <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>float_number <span class="op">=</span> <span class="fl">3.2</span></span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> int_number <span class="op">+</span> float_number</span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(result)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="109">
+<pre><code>float</code></pre>
+</div>
+</div>
+<p>Ein zweites Beispiel demonstriert das implizite Casting von Wahrheitswerten zu Integern:</p>
+<div id="80d92a09" class="cell" data-execution_count="125">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="dv">11</span></span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>boolean <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> number <span class="op">+</span> boolean  <span class="co"># implizites Casting von bool zu int</span></span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Result: "</span>, result)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Result:  12</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Vorsicht
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Unbeabsichtigtes implizites Casting kann zu unerwarteten Fehlern führen!</p>
+<p>In C kompiliert beispielsweise folgender Code:</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> x <span class="op">=</span> <span class="fl">3.99</span><span class="op">;</span></span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> y <span class="op">=</span> x<span class="op">;</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Allerdings ist der Wert von <code>y</code> nicht <code>3.99</code> und auch nicht <code>4</code>, sondern <code>3</code>. Beim impliziten Casting von float nach int gehen alle Nachkommastellen verloren!</p>
+</div>
+</div>
+<p><strong>Hinweis</strong>: Python ist strenger beim impliziten Casting und erlaubt es oft nicht, damit sich keine ungewollten Effekte einschleichen. Eine Ausnahme stellen implizite Castings nach <code>bool</code> bei Bedingungen von Verzweigungen und Schleifen dar (siehe nächstes Kapitel). Hier wird alles, was ungleich 0 bzw. nicht-leer ist, implizit als <code>True</code> interpretiert. Im Umkehrschluss: 0 oder leer (z.B. ein leerer String) bedeutet <code>False</code>.</p>
+</section>
+<section id="explizites-casting" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="explizites-casting">Explizites Casting</h3>
+<p>Beim expliziten Casting fordern wir beim Programmieren die Typumwandlung ausdrücklich an. Das ist z.B. dann erforderlich, wenn die Programmiersprache implizites Casting an einer Stelle nicht unterstützt, wir die Umwandlung aber bewusst durchführen wollen. Python bietet hierfür intuitive Funktionen an, die nach dem gewünschten Zieltyp benannt sind (<code>float()</code>, <code>int()</code>, <code>str()</code>, <code>bool()</code>). Diese Funktionen übernehmen einen Input-Wert, versuchen diesen in den gewünschten Zieltyp umzuwandeln und geben das gecastete Ergebnis zurück. Der zurückgegebene Wert kann z.B. wieder einer Variable zugewiesen werden.</p>
+<p>Beispiele:</p>
+<div id="e4c373bf" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"Meine Glückszahl ist "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">11</span>) <span class="co"># Int -&gt; Str</span></span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text)</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> <span class="st">"Das Messergebnis beträgt "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="fl">5.4e-2</span>) <span class="op">+</span> <span class="st">" A."</span></span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Meine Glückszahl ist 11
+Das Messergebnis beträgt 0.054 A.</code></pre>
+</div>
+</div>
+<div id="59c39d86" class="cell" data-execution_count="113">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>pi <span class="op">=</span> <span class="fl">3.14</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>pi <span class="op">=</span> <span class="bu">int</span>(pi)  <span class="co"># Float -&gt; Int</span></span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pi)  <span class="co"># alle Nachkommastellen gingen verloren!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3</code></pre>
+</div>
+</div>
+<div id="cfcaeea6" class="cell" data-execution_count="134">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="dv">123</span></span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>condition <span class="op">=</span> <span class="bu">bool</span>(<span class="dv">123</span>)  <span class="co"># Int -&gt; Bool</span></span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(condition)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div id="66c10abb" class="cell" data-execution_count="136">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>condition <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="bu">int</span>(condition)  <span class="co"># Casting Bool -&gt; Int</span></span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(number)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0</code></pre>
+</div>
+</div>
+<div id="10e3d027" class="cell" data-execution_count="140">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>condition <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a><span class="co">"The condition is "</span> <span class="op">+</span> <span class="bu">str</span>(condition)  <span class="co"># Bool -&gt; String</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="140">
+<pre><code>'The condition is False'</code></pre>
+</div>
+</div>
+<p>Wir haben bereits die <code>input</code>-Funktion kennengelernt und darauf hingewiesen, dass sie stets Strings zurückgibt. Wenn man aber mit einer User-Eingabe rechnen möchte, muss diese zunächst in einen Zahlentyp umgewandelt werden. Hierzu folgende Beispiele:</p>
+<div id="4455d2e0-6f2e-4c4e-b558-e50fe8639292" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Wie alt sind Sie? "</span>))  <span class="co"># Casting: str -&gt; int</span></span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">+=</span> <span class="dv">10</span>  <span class="co"># wäre mit str nicht möglich!</span></span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"In 10 Jahren sind Sie </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss"> Jahre alt."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Wie alt sind Sie?  22</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>In 10 Jahren sind Sie 32 Jahre alt.</code></pre>
+</div>
+</div>
+<div id="756aa12b-6422-486c-9676-9eb6968aafde" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>width <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Breite: "</span>))  <span class="co"># Casting: str -&gt; float</span></span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>height <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Höhe: "</span>))  <span class="co"># Casting: str -&gt; float</span></span>
+<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a>area <span class="op">=</span> width <span class="op">*</span> height  <span class="co"># wäre mit str nicht möglich</span></span>
+<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Fläche: "</span>, area)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Breite:  12.4
+Höhe:  7.8</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Fläche:  96.72</code></pre>
+</div>
+</div>
+<p>Aber auch explizites Casting ist nicht in jedem Fall möglich und kann zu Fehlern führen. Z.B. weiß der Python-Interpreter nicht, wie er die folgenden Castings durchführen soll:</p>
+<div id="cdc43a37-724d-45c1-a75f-46b1a237af8b" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(<span class="st">"Apfel"</span>)  <span class="co"># Fehler! Wie soll "Apfel" als float interpretiert werden?</span></span>
+<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(<span class="st">"Haus"</span>)  <span class="co"># Fehler!</span></span>
+<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="fl">1.2</span>]) <span class="co"># Fehler! Wie soll list -&gt; int gecastet werden?</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Kopiert");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Kopiert");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../notebooks/2-basics.html" class="pagination-link" aria-label="Einführung ins Programmieren">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Einführung ins Programmieren</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../notebooks/4-controls.html" class="pagination-link" aria-label="Kontrollstrukturen">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kontrollstrukturen</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Prof.&nbsp;Dr.&nbsp;Maik Weber">
+
+<title>7&nbsp; Funktionen – Programmierung für Ingenieurinnen und Ingenieure</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<link href="../notebooks/6-sequences.html" rel="next">
+<link href="../notebooks/4-controls.html" rel="prev">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-a185852c63625fd9ffbdc57047c9a77e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-20d4060cc67bd9191ed65a16e0597eba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/5-functions.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Funktionen</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../logo.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Programmierung für Ingenieurinnen und Ingenieure</a> 
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Vorwort</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/0-einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Einleitung</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/1-prep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Vorbereitungen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/2-basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Einführung ins Programmieren</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/3-datatypes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Datentypen und ihre Repräsentation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/4-controls.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kontrollstrukturen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/5-functions.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Funktionen</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/6-sequences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Datenstrukturen in Python</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/7-bibs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Die Verwendung von Bibliotheken</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/8-oop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Objektorientierte Programmierung (OOP)</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#prozedurale-programmierung" id="toc-prozedurale-programmierung" class="nav-link active" data-scroll-target="#prozedurale-programmierung"><span class="header-section-number">7.1</span> Prozedurale Programmierung</a>
+  <ul class="collapse">
+  <li><a href="#was-ist-eine-funktion" id="toc-was-ist-eine-funktion" class="nav-link" data-scroll-target="#was-ist-eine-funktion">Was ist eine Funktion?</a></li>
+  </ul></li>
+  <li><a href="#funktionen-in-python" id="toc-funktionen-in-python" class="nav-link" data-scroll-target="#funktionen-in-python"><span class="header-section-number">7.2</span> Funktionen in Python</a>
+  <ul class="collapse">
+  <li><a href="#parameter-und-argumente" id="toc-parameter-und-argumente" class="nav-link" data-scroll-target="#parameter-und-argumente">Parameter und Argumente</a></li>
+  <li><a href="#rückgabewerte" id="toc-rückgabewerte" class="nav-link" data-scroll-target="#rückgabewerte">Rückgabewerte</a></li>
+  <li><a href="#keyword-argumente" id="toc-keyword-argumente" class="nav-link" data-scroll-target="#keyword-argumente">Keyword-Argumente</a></li>
+  </ul></li>
+  <li><a href="#dynamische-typisierung-und-mögliche-gefahren" id="toc-dynamische-typisierung-und-mögliche-gefahren" class="nav-link" data-scroll-target="#dynamische-typisierung-und-mögliche-gefahren"><span class="header-section-number">7.3</span> Dynamische Typisierung und mögliche Gefahren</a></li>
+  <li><a href="#funktionen-mit-beliebig-vielen-parametern" id="toc-funktionen-mit-beliebig-vielen-parametern" class="nav-link" data-scroll-target="#funktionen-mit-beliebig-vielen-parametern"><span class="header-section-number">7.4</span> Funktionen mit beliebig vielen Parametern</a></li>
+  <li><a href="#scope" id="toc-scope" class="nav-link" data-scroll-target="#scope"><span class="header-section-number">7.5</span> Scope</a>
+  <ul class="collapse">
+  <li><a href="#das-keyword-global-in-python" id="toc-das-keyword-global-in-python" class="nav-link" data-scroll-target="#das-keyword-global-in-python">Das Keyword <code>global</code> in Python</a></li>
+  </ul></li>
+  <li><a href="#docstrings-und-typ-annotationen-meine-funktion-für-andere-dokumentieren" id="toc-docstrings-und-typ-annotationen-meine-funktion-für-andere-dokumentieren" class="nav-link" data-scroll-target="#docstrings-und-typ-annotationen-meine-funktion-für-andere-dokumentieren"><span class="header-section-number">7.6</span> Docstrings und Typ-Annotationen: Meine Funktion für andere dokumentieren</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Funktionen</span></h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Autor:in</div>
+  <div class="quarto-title-meta-heading">Zugehörigkeit</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Prof.&nbsp;Dr.&nbsp;Maik Weber </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Hochschule Trier
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">13. April 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Funktionen sind ein zentrales Konzept der Programmierung, das es ermöglicht, Code in wiederverwendbare Einheiten zu gliedern. Sie tragen dazu bei, Programme übersichtlicher und wartbarer zu gestalten, vermeiden insbesondere redundanten Code. Wann immer man geneigt ist, eine Codezeile oder einen Block zu kopieren, sollte man darüber nachdenken, ob eine Funktion sinnvoll ist. In diesem Kapitel werden Funktionen allgemein und ihre Anwendung in Python im Speziellen vorgestellt.</p>
+<section id="prozedurale-programmierung" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="prozedurale-programmierung"><span class="header-section-number">7.1</span> Prozedurale Programmierung</h2>
+<p>Wir befinden uns noch immer in der sog. <strong>imperativen Programmierung</strong>: Dabei wird der Programmablauf durch eine Abfolge von Befehlen gesteuert, die der Reihe nach abgearbeitet werden (der Kontrollfluss wird insbesondere durch Verzweigungen und Schleifen beeinflusst).</p>
+<p>Die <strong>prozedurale Programmierung</strong> ist ein Ansatz innerhalb der imperativen Programmierung, bei dem das Programm als eine Reihe von Prozeduren oder Funktionen organisiert wird. Durch diese Aufteilung können komplexe Abläufe in einzelne, handhabbare Teile zerlegt werden, was zu einem klareren und besser wartbaren Code führt.</p>
+<section id="was-ist-eine-funktion" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="was-ist-eine-funktion">Was ist eine Funktion?</h3>
+<p>Eine Funktion ist ein in sich geschlossener Block von Anweisungen, der eine bestimmte Aufgabe erfüllt. Vergleichen Sie eine Funktion mit einem Kochrezept: Das Rezept beschreibt eine schrittweise Anleitung zur Zubereitung eines Gerichts. Wann immer Sie das Gericht kochen, verwenden Sie dasselbe Rezept wieder und wieder. In der Programmierung würden wir sagen: “Sie rufen dieselbe Funktion immer wieder auf.” Von dem Rezept benötigen Sie aber nur ein einziges Exemplar (ganz egal, wie oft sie das Gericht kochen werden). So ist es auch mit dem Code, der in einer Funktion definiert wird: Sie schreiben ihn ein einziges Mal und verwenden ihn dann beliebig oft.</p>
+<p>Manchmal wird auch eine Analogie zu mathematischen Funktionen <span class="math inline">\(f(x)\)</span> gezogen. Diese Analogie hat aber einige Schwächen: Die mathematische Funktion bekommt immer einen <em>Input</em> (hier <span class="math inline">\(x\)</span>) und gibt immer einen Wert als <em>Output</em> (<span class="math inline">\(y = f(x)\)</span>) zurück. Das muss bei Funktionen in der Programmierung nicht sein! Eine Funktion in der Programmierung kommt auch ohne Input und Output aus, wie wir gleich sehen werden. Es liegt ganz in Ihrer Freiheit, ob Ihre Funktionen mit Inputs und Outputs arbeitet oder nicht.</p>
+<p>Bevor wir konkret werden, fassen wir die Vorteile von Funktionen zusammen:</p>
+<ul>
+<li><p><strong>Modularisierung:</strong> Zerlegung des Codes in kleine, verständliche Einheiten.</p></li>
+<li><p><strong>Wiederverwendbarkeit:</strong> Einmal definierte Funktionen können mehrfach eingesetzt werden.</p></li>
+<li><p><strong>Lesbarkeit und Wartbarkeit:</strong> Klar strukturierter Code erleichtert das Verständnis und die Fehlersuche.</p></li>
+<li><p><strong>Vermeidung von Redundanz:</strong> Gleicher Code muss nicht mehrfach geschrieben werden, sondern kann über Funktionsaufrufe wiederverwendet werden. Insbesondere von Vorteil, wenn Sie etwas ändern müssen: Sie müssen nur eine Stelle korrigieren, egal wie oft die Funktion aufgerufen wird.</p></li>
+</ul>
+</section>
+</section>
+<section id="funktionen-in-python" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="funktionen-in-python"><span class="header-section-number">7.2</span> Funktionen in Python</h2>
+<p>Python bietet eine einfache und flexible Syntax zur Definition von Funktionen. Eine Funktion wird mit dem Schlüsselwort <code>def</code> eingeleitet. In runden Klammern werden optional Eingangsparameter definiert, dann folgt ein Doppelpunkt. Der eigentliche Funktionsblock muss eingerückt werden (das kennen Sie schon von Code-Blöcken in Verzweigungen und Schleifen). Hier ein einfaches Beispiel ohne Eingangsparameter:</p>
+<div id="2f1aff81-b8a2-45e9-86f8-b6cb5f5a2f17" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greeting():</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hello, world!"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Wir haben eine sehr primitive Funktion definiert, die nichts anderes tut, als <code>"Hello, World"</code> auszugeben, wann immer wir sie aufrufen:</p>
+<div id="73c20a21-2fb5-44c7-a955-116b21d661e1" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>greeting()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello, world!</code></pre>
+</div>
+</div>
+<p>Beachten Sie beim Aufruf der Funktion die runden Klammern, die gleich mehr Sinn ergeben werden.</p>
+<section id="parameter-und-argumente" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="parameter-und-argumente">Parameter und Argumente</h3>
+<p>Wie bereits erwähnt, können Funktionen <strong>Parameter</strong> entgegennehmen, um mit variablen Eingabewerten zu arbeiten. Zum Beispiel können wir unsere Begrüßungsfunktion so erweitern, dass Sie einen Namen als Parameter entgegennimmt und diesen für eine personalisierte Begrüßung verwendet:</p>
+<div id="97d68455-5a05-4fd4-b725-11f9d05cf6f6" class="cell" data-execution_count="49">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greeting(name):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hallo,"</span>,name)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="e79b43cc-e00c-4854-81f4-44e3072d5995" class="cell" data-execution_count="51">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>greeting(<span class="st">"Anna"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hallo, Anna</code></pre>
+</div>
+</div>
+<div id="dd1a3317-1a9b-4570-ad60-930919c575ed" class="cell" data-execution_count="53">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>greeting(<span class="st">"Tom"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hallo, Tom</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Argumente
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Den konkreten Wert, den man an eine Funktion übergibt, nennt man <strong>Argument</strong>. Wir haben in unseren Beispielen bereits verschiedene Argumente (“Anna”,“Tom”) für den Parameter <code>name</code> verwendet.</p>
+</div>
+</div>
+<p>Was jetzt nicht mehr funktioniert: Wir können die Funktion nicht mehr ohne ein Argument für den Parameter <code>name</code> aufrufen! Probieren Sie <code>greeting()</code> und Python wird sich beschweren, dass ein Argument fehlt! Eine besondere Möglichkeit, dieses Problem zu beheben, ist sog. <strong>Standardargumente</strong> für Parameter festzulegen. Diese werden verwendet, wenn der Anwender der Funktion kein Argument übergibt (ob das sinnvoll ist oder nicht, hängt ganz von Ihrer Anwendung ab). Wir demonstrieren die Begrüßungsfunktion mit einem Standardargument:</p>
+<div id="d4ea9b53-4edd-4a65-a0d9-3050e27f3ccf" class="cell" data-execution_count="71">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greeting(name<span class="op">=</span><span class="st">"Welt"</span>):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hallo,"</span>,name)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="818179d2-760d-4c61-a2ec-64a23f794a65" class="cell" data-execution_count="73">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>greeting(<span class="st">"Lisa"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hallo, Lisa</code></pre>
+</div>
+</div>
+<div id="c2fd50d6-a30a-43f4-81f3-fae54f5c30dd" class="cell" data-execution_count="75">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>greeting()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hallo, Welt</code></pre>
+</div>
+</div>
+<p>Der Parameter <code>name</code> wurde durch die Definition eines Standardarguments zu einem <strong>optionalen Parameter</strong>: Es ist nicht mehr zwingend erforderlich, ihn beim Funktionsaufruf festzulegen.</p>
+<p>### Mehrere Parameter {.unnumbered}</p>
+<p>Selbstverständlich können wir mehr als einen Parameter verwenden:</p>
+<div id="cc677b7b-e1c3-4474-a393-959e391715ec" class="cell" data-execution_count="64">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greeting(name, age):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hello,"</span>, name)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> age <span class="op">&lt;</span> <span class="dv">18</span>:</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Sie sind noch minderjährig!"</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Willkommen im Club!"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="94587c3b-6d4e-48e5-94da-cb241f29f528" class="cell" data-execution_count="66">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>greeting(<span class="st">"Tom"</span>, <span class="dv">16</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>greeting(<span class="st">"Lisa"</span>, <span class="dv">21</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello, Tom
+Sie sind noch minderjährig!
+Hello, Lisa
+Willkommen im Club!</code></pre>
+</div>
+</div>
+<p>Jetzt muss man allerdings aufpassen, wenn man Standardargumente verwenden will, denn es gibt eine wichtige Regel:</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Optionale Parameter immer hinter nicht-optionalen Parametern!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Folgende Definition ist korrekt:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greeting(name, age <span class="op">=</span> <span class="dv">20</span>):</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Funktionsblock</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Folgender Code ist <strong>falsch</strong> und wird nicht funktionieren:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greeting(name<span class="op">=</span><span class="st">"Peter"</span>, age):</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Funktionsblock</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="rückgabewerte" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="rückgabewerte">Rückgabewerte</h3>
+<p>Funktionen können einen Wert zurückgeben. Hierfür verwendet man (wie in C oder C++) das Keyword <code>return</code>:</p>
+<div id="b2343bd9-83e3-4b3d-94dd-3060c3eebbb4" class="cell" data-execution_count="107">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square(x):</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">*</span> x</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> square(<span class="dv">4</span>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>16</code></pre>
+</div>
+</div>
+<p>Wir können die Funktion wieder beliebig oft mit verschiedenen Argumenten aufrufen:</p>
+<div id="516a4717-4a4f-4d61-9b81-5e4005ff4595" class="cell" data-execution_count="109">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(square(<span class="dv">3</span>))</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(square(<span class="op">-</span><span class="dv">2</span>))</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(square(<span class="fl">7.3</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>9
+4
+53.29</code></pre>
+</div>
+</div>
+<p>Eine Besonderheit in Python ist, dass wir sogar mehr als einen Wert zurückgeben können! Das geht in vielen anderen Programmiersprachen nicht ohne Weiteres, in C oder C++ würde man dafür z.B. Datenstrukturen (als Container für mehrere Werte) oder Zeiger verwenden (die auf einen Bereich im Speicher verweisen, wo die Werte hintereinander liegen). In Python geht das ganz einfach, wie das folgende Beispiel zeigt:</p>
+<div id="cc4a843c-3c28-4b07-b1d2-6dcd2110968c" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> <span class="bu">divmod</span>(a, b): </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Division mit Rest</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># zwei Rückgabewerte durch Komma getrennt:</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a<span class="op">//</span>b, a<span class="op">%</span>b </span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">13</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>quotient, remainder <span class="op">=</span> <span class="bu">divmod</span>(a,b)</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, <span class="st">" geteilt durch "</span>, b ,<span class="st">" ergibt:"</span>)</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(quotient, <span class="st">"mit Rest "</span>, remainder)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>13  geteilt durch  3  ergibt:
+4 mit Rest  1</code></pre>
+</div>
+</div>
+<p>Die Reihenfolge der Rückgabewerte ist natürlich zu beachten, sonst geschehen leicht Fehler (würde man versehentlich <code>remainder, quotient = divmod(a,b)</code> schreiben, stünde in <code>quotient</code> der Rest und in <code>remainder</code> der Quotient).</p>
+</section>
+<section id="keyword-argumente" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="keyword-argumente">Keyword-Argumente</h3>
+<p>Python erlaubt uns, Funktionen mit sog. <strong>Keyword-Argumenten</strong> aufzurufen. Damit ist gemeint, dass die Argumente explizit benannt werden, anstatt sie anhand ihrer Reihenfolge zu identifizieren. Betrachten wir zunächst folgendes Beispiel, in dem wir eine Funktion wie gewohnt aufrufen:</p>
+<div id="5df1e025-7835-4fb0-ba5b-95aa328602f8" class="cell" data-execution_count="133">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_personal_details(name, age, city):</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Name: "</span>, name)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Alter: "</span>, age)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Wohnort: "</span>, city)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>print_personal_details(<span class="st">"Alice"</span>, <span class="dv">23</span>, <span class="st">"London"</span>) <span class="co"># wie gehabt</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Name:  Alice
+Alter:  23
+Wohnort:  London</code></pre>
+</div>
+</div>
+<p>Jetzt zeigen wir Varianten mit Keyword-Argumenten:</p>
+<div id="586ca26b-f331-49c9-b524-c7cbc655db47" class="cell" data-execution_count="149">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mit Verwendung von Keyword-Argumenten:</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>print_personal_details(name<span class="op">=</span><span class="st">"John"</span>, city<span class="op">=</span><span class="st">"Birmingham"</span>, age<span class="op">=</span><span class="dv">32</span>) </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Name:  John
+Alter:  32
+Wohnort:  Birmingham</code></pre>
+</div>
+</div>
+<div id="0c4344e9-e67c-4065-851d-6c866e267710" class="cell" data-execution_count="151">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># teilweise mit Keyword-Argumenten:</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>print_personal_details(<span class="st">"Marc"</span>, city<span class="op">=</span><span class="st">"Hamburg"</span>, age<span class="op">=</span><span class="dv">19</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Name:  Marc
+Alter:  19
+Wohnort:  Hamburg</code></pre>
+</div>
+</div>
+<p>Wie Sie sehen, können Sie die Parameternamen explizit verwenden, um ein Argument zu definieren und dabei sogar von der Reihenfolge im Funktionskopf abweichen. Eine Regel gibt es allerdings auch hier wieder: Wenn Sie nur teilweise Keyword-Argumente verwenden (wie im Beispiel <code>Marc</code> oben), kommen die Keyword-Argumente immer am Schluss! So können alle Parameter eindeutig identifiziert werden und es kommt nicht zu Mehrdeutigkeiten.</p>
+<p>Zur namentlichen Abgrenzung von den Keyword-Argumenten, bezeichnet man die Argumente, die anhand ihrer Reihenfolge identifiziert werden, als <strong>Positions-Argumente</strong> (engl.: <em>keyword arguments and positional arguments</em>).</p>
+<div class="exercises">
+<p><b>Übungen:</b></p>
+<ol type="1">
+<li>Ein Körper werde aus seiner Ruhelage beschleunigt. Implementieren Sie eine Funktion <code>accelerated_motion(a, t)</code>, die die Beschleunigung <code>a</code> und die Zeit <code>t</code> als Parameter erwartet und die zurückgelegte Strecke <span class="math inline">\(s(t)=\frac{1}{2}a\,t^2\)</span> und die Geschwindigkeit <span class="math inline">\(v(t)=a\cdot t\)</span> zurückgibt.</li>
+<li>Erweitern Sie die Funktion <code>accelerated_motion</code> um zwei optionale Parameter <code>s0</code> und <code>v0</code>, die eine Anfangsposition bzw. eine Anfangsgeschwindigkeit zum Zeitpunkt <span class="math inline">\(t=0\)</span> darstellen. Übergibt man keine Argumente, soll die Bewegung wie gehabt aus der Ruhelage beginnen.</li>
+</ol>
+</div>
+</section>
+</section>
+<section id="dynamische-typisierung-und-mögliche-gefahren" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="dynamische-typisierung-und-mögliche-gefahren"><span class="header-section-number">7.3</span> Dynamische Typisierung und mögliche Gefahren</h2>
+<p>Wir kennen bereits die dynamische Typisierung als besondere Eigenschaft von Python. Im Zusammenhang mit Funktionen erlaubt Sie uns, dieselbe Funktion mit unterschiedlichen Datentypen aufzurufen (wir haben das bereits oben einmal getan, finden Sie das Beispiel?). In anderen Programmiersprachen muss man dafür die Funktion in der Regel mehrfach implementieren (eine Variante für jeden Datentyp), man sagt auch: die Funktion wird <strong>überladen</strong>. Bei überladenen Funktionen in C oder C++ erkennt der Compiler anhand der übergebenen Datentypen, welche Version der Funktion gemeint ist.</p>
+<p>Nicht so in Python, wo der Datentyp der Parameter und Rückgabewerte nicht vom Programmierer bzw. der Programmiererin festgelegt wird. Das kann sehr nützlich sein, aber auch zu Fehlern führen, wenn die Funktion mit inkompatiblen Datentypen aufgerufen wird. Hierzu ein Beispiel:</p>
+<div id="cdef92e8-551c-4a1a-8674-6340979b0c9d" class="cell" data-execution_count="172">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> multiply(x, y):</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">*</span> y</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Eine sehr einfache Funktion, die zwei Parameter miteinander multipliziert. Wir rufen sie jetzt mit unterschiedlichen Datentypen auf:</p>
+<div id="b99619c0-8cf2-4ec5-bd09-4a694f78faa4" class="cell" data-execution_count="181">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(multiply(<span class="dv">3</span>,<span class="dv">4</span>)) <span class="co"># zwei Integer</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(multiply(<span class="dv">2</span>, <span class="fl">3.2</span>)) <span class="co"># Integer und Float</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(multiply(<span class="dv">2</span><span class="op">+</span><span class="ot">2j</span>, <span class="dv">3</span><span class="op">-</span><span class="ot">1j</span>)) <span class="co"># zwei komplexe Zahlen</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(multiply(<span class="st">"hi"</span>, <span class="dv">3</span>)) <span class="co"># String und Integer</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>12
+6.4
+(8+4j)
+hihihi</code></pre>
+</div>
+</div>
+<p>Hätten Sie geahnt, was alles mit dieser kleinen, unscheinbaren Funktion möglich ist?</p>
+<p>Es scheint fast alles möglich zu sein, aber eben nur <em>fast</em>! Rufen Sie die Funktion mit zwei Strings auf und Ihr Programm stürzt ab (wie sollen zwei Strings miteinander multipliziert werden?). Natürlich sind auch viele weitere Kombinationen nicht möglich (versuchen Sie z.B. zwei Listen miteinander zu multiplizieren oder eine Liste mit einem String). Manchmal ist es sogar noch schlimmer, wenn das Programm zwar nicht abstürzt, aber das Ergebnis völlig unerwartet ist (hätten Sie z.B. das Ergebnis der Multiplikation von String mit Integer in der Form erwartet?). Dann entstehen an einer anderen Stelle im Code womöglich überraschend Probleme und Sie müssen langwierig debuggen, bis Sie die Ursache finden.</p>
+<p>Daran erkennen Sie wieder: Python bietet große Flexibilität, aber Sie müssen damit verantwortungsbewusst umgehen!</p>
+</section>
+<section id="funktionen-mit-beliebig-vielen-parametern" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="funktionen-mit-beliebig-vielen-parametern"><span class="header-section-number">7.4</span> Funktionen mit beliebig vielen Parametern</h2>
+<p>Wir kennen seit Beginn des Kurses eine Funktion, die beliebig viele Argumente entgegennehmen kann:</p>
+<div id="108f4af6-dac8-425f-8e07-f6a0a1cf0c32" class="cell" data-execution_count="206">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()  <span class="co"># 0 Argumente</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hallo"</span>)  <span class="co"># 1 Argument</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hallo, "</span>, <span class="st">"Welt"</span>)  <span class="co"># 2 Argumente usw.</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Hallo
+Hallo,  Welt</code></pre>
+</div>
+</div>
+<p>Mit einem einfachen Trick, können Sie selbst solche Funktionen definieren: Stellen Sie vor ein Argument ein <code>*</code>, damit machen Sie deutlich, dass hier eine Sequenz von Argumenten übergeben werden kann. Innerhalb der Funktion können Sie über die Sequenz iterieren, z.B. mit der bekannten For-Schleife:</p>
+<div id="b5533568-d0fc-4bef-ac53-8590ddc49ba3" class="cell" data-execution_count="220">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sum_numbers(<span class="op">*</span>numbers):</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> number <span class="kw">in</span> numbers:</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> number</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sum_numbers(<span class="op">-</span><span class="dv">2</span>))</span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sum_numbers(<span class="dv">5</span>, <span class="dv">10</span>))</span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sum_numbers(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)) </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>-2
+15
+10</code></pre>
+</div>
+</div>
+</section>
+<section id="scope" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="scope"><span class="header-section-number">7.5</span> Scope</h2>
+<p>In Python – und generell in der Programmierung – bezieht sich der Scope (Gültigkeitsbereich) auf den Bereich des Codes, in dem eine Variable sichtbar und zugänglich ist. Es gibt dabei zwei Hauptarten von Scope:</p>
+<ul>
+<li><p><strong>Lokaler Scope</strong>: Eine Variable, die innerhalb einer Funktion definiert wird, ist nur in dieser Funktion sichtbar und außerhalb nicht zugänglich.</p></li>
+<li><p><strong>Globaler Scope:</strong> Eine Variable, die außerhalb einer Funktion definiert wird, ist im gesamten Programm sichtbar. Python schützt uns aber davor, diese Variablen unbeabsichtigt zu verändern, es sei denn wir machen unsere Absicht explizit deutlich. Dafür gibt es in Python das Keyword <code>global</code>.</p></li>
+</ul>
+<p>Beginnen wir mit einem Beispiel zum lokalen Scope:</p>
+<div id="6fc5f60f-0231-4d8d-82ef-cdf3661180dd" class="cell" data-execution_count="234">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_function(a, b):</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> a <span class="op">+</span> b</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> c<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>my_function(<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c) <span class="co"># FEHLER!!!! c ist hier nicht bekannt. </span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg ansi-bold">In[234], line 6</span>
+<span class="ansi-green-fg">      3</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> c<span style="color:rgb(98,98,98)">*</span><span style="color:rgb(98,98,98)">*</span><span style="color:rgb(98,98,98)">2</span>
+<span class="ansi-green-fg">      5</span> my_function(<span style="color:rgb(98,98,98)">2</span>,<span style="color:rgb(98,98,98)">3</span>)
+<span class="ansi-green-fg ansi-bold">----&gt; 6</span> <span style="color:rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">c</span>)
+
+<span class="ansi-red-fg ansi-bold">NameError</span>: name 'c' is not defined</pre>
+</div>
+</div>
+</div>
+<p>Auf die Variable <code>c</code> kann außerhalb der Funktion nicht zugegriffen werden, sie existiert nur im lokalen Scope der Funktion.</p>
+<p>Nun versuchen wir umgekehrt innerhalb der Funktion auf eine Variable zuzugreifen, die außerhalb definiert wurde:</p>
+<div id="1491ea42-2dd1-4290-8367-8a1c3595a495" class="cell" data-execution_count="278">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greeting():</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hallo,"</span>, name)  <span class="co"># name existiert nur außerhalb</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Peter"</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>greeting()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hallo, Peter</code></pre>
+</div>
+</div>
+<p>Das Beispiel ist geglückt! Allerdings handelt es sich hierbei nicht um guten Programmierstil. Vielmehr sollte man <code>name</code> als Parameter der Funktion definieren. Was geschieht eigentlich, wenn es <code>name</code> im globalen und im lokalen Scope gibt?</p>
+<div id="66ccf16d-6d8a-4232-a71e-52d9960afbfe" class="cell" data-execution_count="262">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greeting(name):</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hallo,"</span>, name)</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Peter"</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>greeting(<span class="st">"Tina"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hallo, Tina</code></pre>
+</div>
+</div>
+<p><strong>Der lokale Scope geht vor! Die Funktion sucht immer zuerst in ihrem lokalen Scope nach der Variable. Nur, wenn sie sie dort nicht findet, schaut sie im globalen Scope nach.</strong></p>
+<section id="das-keyword-global-in-python" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="das-keyword-global-in-python">Das Keyword <code>global</code> in Python</h3>
+<p>Wie bereits erwähnt, schützt uns Python davor, unbeabsichtigt eine Variable im globalen Scope zu verändern. Wir können zwar ohne weiteres lesend darauf zugreifen, nicht aber schreibend, wie dieses Beispiel zeigt:</p>
+<div id="48c029af-f599-45b2-84b0-2d7774f6fd44" class="cell" data-execution_count="260">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> change_name(new_name):</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> new_name</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Peter"</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>change_name(<span class="st">"John"</span>)</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(name)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Peter</code></pre>
+</div>
+</div>
+<p>Hätten Sie die Ausgabe “John” erwartet? Python schützt uns: Beim Versuch die globale Variable zu verändern, hat Python eine Variable im lokalen Scope der Funktion angelegt. Diese bekam den Wert “John”, aber die Variable im globalen Scope wurde nicht angefasst. Machen wir das ruhig explizit:</p>
+<div id="5082e095-c95b-4e41-8513-198da1e6509a" class="cell" data-execution_count="283">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> change_name(new_name):</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> new_name</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"name innerhalb der Funktion: "</span>, name)</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Peter"</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>change_name(<span class="st">"John"</span>)</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"name außerhalb: "</span> , name)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>name innerhalb der Funktion:  John
+name außerhalb:  Peter</code></pre>
+</div>
+</div>
+<p>Man kann diesen Sicherheitsmechanismus mit dem Keyword <code>global</code> aushebeln:</p>
+<div id="06eb25eb-8b3f-418b-a6c2-ee95b9248458" class="cell" data-execution_count="286">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> change_name(new_name):</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> name  <span class="co"># hey Python, wir meinen die globale Variable!</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> new_name</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Peter"</span></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>change_name(<span class="st">"John"</span>)</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(name)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>John</code></pre>
+</div>
+</div>
+<p>Mit der Zeile <code>global name</code> weisen wir Python explizit an, die Variable <code>name</code> aus dem globalen Scope zu verwenden!</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Verwendung globaler Variablen in Funktionen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Finden Sie das alles noch ein wenig verwirrend? Gut so, denn Sie sollten von der Verwendung globaler Variablen in Funktionen sowieso besser absehen. Versuchen Sie stattdessen saubere Schnittstellen mithilfe von Parametern und Rückgabewerten zu definieren. Wann immer Sie geneigt sind, lesend auf einen globalen Wert zuzugreifen, übergeben Sie diesen lieber als Argument. Wann immer Sie geneigt sind, schreibend auf einen globalen Wert zuzugreifen, arbeiten Sie lieber mit einem Rückgabewert, den Sie im Hauptprogramm zuweisen können.</p>
+<p>Beispiel: Eine Zahl im globalen Scope soll durch ihre Quadratzahl ersetzt werden.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square(x):</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span> <span class="co"># die Funktion führt die Rechnung durch</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> square(a) <span class="co"># die eigentliche Veränderung geschieht außerhalb der Funktion</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="docstrings-und-typ-annotationen-meine-funktion-für-andere-dokumentieren" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="docstrings-und-typ-annotationen-meine-funktion-für-andere-dokumentieren"><span class="header-section-number">7.6</span> Docstrings und Typ-Annotationen: Meine Funktion für andere dokumentieren</h2>
+<p>In großen Software-Projekten sind Sie nicht die einzige Person, die Ihre Funktionen benutzt. Sie können durch verständliche Dokumentation, die Nutzbarkeit Ihrer Funktionen enorm erhöhen. Eine einfache Möglichkeit sind sog. Docstrings: Dabei handelt es sich um eine spezielle Dokumentierung, direkt nach der definierenden Zeile:</p>
+<div id="dc648da2-9af1-433d-9313-7447b5880161" class="cell" data-execution_count="326">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bending_stress(moment, y, inertia):</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Berechnet die Biegespannung in einem Balken.</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Formel: sigma = (M * y) / I</span></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a><span class="co">        moment (float): Biegemoment in Newton-Meter (Nm).</span></span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a><span class="co">        y (float): Abstand von der Neutralachse in Meter (m).</span></span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a><span class="co">        inertia (float): Flächenträgheitsmoment in m^4.</span></span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a><span class="co">        float: Biegespannung in Pascal (Pa).</span></span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> moment <span class="op">*</span> y <span class="op">/</span> inertia</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Der Docstring wird mit <code>"""</code> eingeleitet, es folgt eine kurze Erklärung der Funktion, anschließend eine Erklärung der Argumente und der Rückgabewerte, und zum Abschluss wieder <code>"""</code>. Wie genau der Docstring formattiert wird, hängt von der gewählten Konvention ab (wir haben hier den Google-Style verwendet). Viele Editoren greifen Docstrings in unterstützenden Funktionen auf (Tooltips oder Autovervollständigungen). Insbesondere kann nun aber jeder Entwickler und jede Entwicklerin über die Funktion <code>help()</code>eine Hilfe zu Ihrer Funktion aufrufen:</p>
+<div id="55ded537-a8e4-43b2-af92-13202e87b61c" class="cell" data-execution_count="329">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(bending_stress)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Help on function bending_stress in module __main__:
+
+bending_stress(moment, y, inertia)
+    Berechnet die Biegespannung in einem Balken.
+    
+    Formel: sigma = (M * y) / I
+    
+    Args:
+        moment (float): Biegemoment in Newton-Meter (Nm).
+        y (float): Abstand von der Neutralachse in Meter (m).
+        inertia (float): Flächenträgheitsmoment in m^4.
+    
+    Returns:
+        float: Biegespannung in Pascal (Pa).
+</code></pre>
+</div>
+</div>
+<p>Eine weitere Unterstützung bieten <strong>Typ-Annotation</strong>, mit denen wir andere Entwickler bzw. Entwicklerinnen darüber informieren, welche Datentypen unsere Funktion erwartet bzw. zurückgibt. Aber Vorsicht: Diese Angaben sind rein informativ! Sie verhindern nicht, dass die Funktion mit anderen Datentypen aufgerufen wird! Unser Beispiel mit Typ-Annotationen:</p>
+<div id="1d94901b-a400-4388-84e8-9719b07bbe93" class="cell" data-execution_count="310">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bending_stress(moment: <span class="bu">float</span>, y: <span class="bu">float</span>, inertia: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Rest wie oben</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span> <span class="co"># pass ist nur ein Platzhalter</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Die Typ-Annotationen geben an: Wir erwarten den Datentyp <code>float</code> für die Parameter <code>moment</code>, <code>y</code> und <code>inertia</code> und geben auch eine Float als Ergebnis zurück (<code>-&gt; float</code>).</p>
+<div class="exercises">
+<p><b>Übung:</b></p>
+<p>Schreiben Sie eine Funktion <code>ohms_law(R, U, I)</code>: Der Anwender übergibt für jeweils zwei der drei Parameter Zahlenwerte und für den dritten den String <code>"*"</code>. Daraufhin berechnet die Funktion den fehlenden Wert mithilfe des Ohmschen Gesetzes und gibt ihn zurück. Dokumentieren Sie die Funktion mit einem Docstring, der die Benutzung erklärt.</p>
+</div>
+<div id="b5eb4889-28ec-4e53-960e-d805ab1beeec" class="cell" data-execution_count="351">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ohms_law(R, U, I):</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Berechnet Widerstand, Spannung oder Strom mithilfe des Ohmschen Gesetzes. </span></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Der fehlende Wert wird mit dem Argument "*" markiert; für die anderen beiden müssen Zahlen übergeben werden.</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a><span class="co">        R (float oder string): El. Widerstand (Ohm) oder "*".</span></span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a><span class="co">        U (float oder string): El. Spannung (Volt) oder "*".</span></span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a><span class="co">        I (float oder string): El. Strom (A) oder "*".</span></span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a><span class="co">        float: fehlender Wert</span></span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (R<span class="op">==</span><span class="st">"*"</span>):</span>
+<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> U<span class="op">/</span>I</span>
+<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> (U<span class="op">==</span><span class="st">"*"</span>):</span>
+<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> R<span class="op">*</span>I</span>
+<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> (I <span class="op">==</span><span class="st">"*"</span>):</span>
+<span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> U<span class="op">/</span>R</span>
+<span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb54-20"><a href="#cb54-20" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ungültige Eingabe!"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Kopiert");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Kopiert");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../notebooks/4-controls.html" class="pagination-link" aria-label="Kontrollstrukturen">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Kontrollstrukturen</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../notebooks/6-sequences.html" class="pagination-link" aria-label="Datenstrukturen in Python">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Datenstrukturen in Python</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

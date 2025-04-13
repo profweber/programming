@@ -1,0 +1,15 @@
+.exercises {
+    background-color: lightblue;
+    padding: 10px
+}
+
+.exercises ul,
+.exercises ol {
+    margin-top: 0;
+    margin-bottom: 1em;
+    padding-left: 2em;
+}
+
+.exercises li {
+    margin-bottom: 0.5em;
+}
