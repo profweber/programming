@@ -217,6 +217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#ein-sensor-speichert-stündlich-temperaturdaten-anwendung-der-liste" id="toc-ein-sensor-speichert-stündlich-temperaturdaten-anwendung-der-liste" class="nav-link active" data-scroll-target="#ein-sensor-speichert-stündlich-temperaturdaten-anwendung-der-liste"><span class="header-section-number">8.1</span> Ein Sensor speichert stündlich Temperaturdaten – Anwendung der Liste</a>
   <ul class="collapse">
+  <li><a href="#speichern-der-daten" id="toc-speichern-der-daten" class="nav-link" data-scroll-target="#speichern-der-daten">Speichern der Daten</a></li>
   <li><a href="#sortieren-der-messungen" id="toc-sortieren-der-messungen" class="nav-link" data-scroll-target="#sortieren-der-messungen">Sortieren der Messungen</a></li>
   <li><a href="#werte-extrahieren---indexzugriff-und-list-slicing" id="toc-werte-extrahieren---indexzugriff-und-list-slicing" class="nav-link" data-scroll-target="#werte-extrahieren---indexzugriff-und-list-slicing">Werte extrahieren - Indexzugriff und List Slicing</a></li>
   </ul></li>
@@ -279,7 +280,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Sie sollen einen Eindruck davon gewinnen, wie verschiedene Datenstrukturen für bestimmte Fragstellungen und Anwendungen ihre Stärken ausspielen.</p>
 <section id="ein-sensor-speichert-stündlich-temperaturdaten-anwendung-der-liste" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="ein-sensor-speichert-stündlich-temperaturdaten-anwendung-der-liste"><span class="header-section-number">8.1</span> Ein Sensor speichert stündlich Temperaturdaten – Anwendung der Liste</h2>
-<p>Ein Sensor misst stündlich die Temperatur (z.B. in einem Raum oder einer Maschine). Diese Daten speichern wir der Reihe nach in einer Liste, einer der einfachsten Datenstrukturen. Die Liste ist ideal für lineares Speichern (Messwert für Messwert hintereinander). Sie ermöglicht den einfachen Zugriff auf Elemente anhand ihrer Position, stellt aber auch nützliche Funktionen zum Arbeiten mit den Daten bereit. ### Speichern der Daten {.unnumbered}</p>
+<p>Ein Sensor misst stündlich die Temperatur (z.B. in einem Raum oder einer Maschine). Diese Daten speichern wir der Reihe nach in einer Liste, einer der einfachsten Datenstrukturen. Die Liste ist ideal für lineares Speichern (Messwert für Messwert hintereinander). Sie ermöglicht den einfachen Zugriff auf Elemente anhand ihrer Position, stellt aber auch nützliche Funktionen zum Arbeiten mit den Daten bereit.</p>
+<section id="speichern-der-daten" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="speichern-der-daten">Speichern der Daten</h3>
 <div id="d59285c5-f25a-4451-8910-341f1b8e478c" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># eine Liste kann mit Werten initialisiert werden</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>temperatures <span class="op">=</span> [<span class="fl">22.5</span>, <span class="fl">23.1</span>, <span class="fl">21.8</span>]</span>
@@ -295,6 +298,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>In der Praxis würde an einer bestimmten Stelle im Code (einmal pro Stunde) mithilfe von <code>append</code> der aktuelle Messwert in der Liste gespeichert werden. Auffällig ist, dass die Funktion <code>append</code> zu unserer Liste selbst gehört, beim Aufruf verwenden wir einen <code>.</code> zwischen der Referenz auf die Liste und der Funktion. Solche Funktionen werden auch <strong>Methoden</strong> genannt und sind ein wesentlicher Bestandteil der objektorientierten Programmierung: Die Instanz einer Liste bietet Benutzern diese Funktion an, um ihren Inhalt zu manipulieren.</p>
+</section>
 <section id="sortieren-der-messungen" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="sortieren-der-messungen">Sortieren der Messungen</h3>
 <p>Sortieren hilft, die Werte geordnet darzustellen und z.B. das Finden des höchsten oder niedrigsten Messwerts zu erleichtern. Auch hierfür steht eine Methode bereit:</p>
