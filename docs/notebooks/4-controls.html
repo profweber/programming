@@ -254,6 +254,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#while-loop" id="toc-while-loop" class="nav-link" data-scroll-target="#while-loop">While-Loop</a></li>
   <li><a href="#for-loop" id="toc-for-loop" class="nav-link" data-scroll-target="#for-loop">For-Loop</a></li>
+  <li><a href="#for-schleifen-in-anderen-programmiersprachen" id="toc-for-schleifen-in-anderen-programmiersprachen" class="nav-link" data-scroll-target="#for-schleifen-in-anderen-programmiersprachen">For-Schleifen in anderen Programmiersprachen</a></li>
   <li><a href="#den-schleifenfluss-kontrollieren-mit-break-und-continue" id="toc-den-schleifenfluss-kontrollieren-mit-break-und-continue" class="nav-link" data-scroll-target="#den-schleifenfluss-kontrollieren-mit-break-und-continue">Den Schleifenfluss kontrollieren mit <em>break</em> und <em>continue</em></a></li>
   </ul></li>
   <li><a href="#anwendung-das-newton-verfahren" id="toc-anwendung-das-newton-verfahren" class="nav-link" data-scroll-target="#anwendung-das-newton-verfahren"><span class="header-section-number">6.3</span> Anwendung: Das Newton-Verfahren</a></li>
@@ -673,7 +674,10 @@ l</code></pre>
 1</code></pre>
 </div>
 </div>
-<p>::{.callout-info} ### For-Schleifen in anderen Programmiersprachen {.unnumbered} In den meisten anderen Programmiersprachen ähnelt die For-Schleife von vornherein eher einer Zählschleife. In C sieht das z.B. so aus:</p>
+</section>
+<section id="for-schleifen-in-anderen-programmiersprachen" class="level3 unnumbered callout-info">
+<h3 class="unnumbered anchored" data-anchor-id="for-schleifen-in-anderen-programmiersprachen">For-Schleifen in anderen Programmiersprachen</h3>
+<p>In den meisten anderen Programmiersprachen ähnelt die For-Schleife von vornherein eher einer Zählschleife. In C sieht das z.B. so aus:</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span><span class="dt">int</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">10</span><span class="op">;</span> i<span class="op">++)</span> <span class="op">{</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Schleifenkörper für </span></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// i von 0 bis 9</span></span>
@@ -681,6 +685,7 @@ l</code></pre>
 <p>In der runden Klammer erkennt man drei Anweisungen: * <code>int i = 0</code> initialisiert die Zählvariable <code>i</code> * <code>i &lt; 10</code> definiert die Bedingung, wie lange die Schleife ausgeführt werden soll * <code>i++</code> bedeutet, dass die Zählvariable nach jedem Durchgang um eins erhöht wird.</p>
 <p>Das Python-Analogon wäre also:</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 <div class="exercises">
 <p><b>Übungen:</b> Gegeben sei eine Liste mit Messwerten <code>data=[0.2, -1.3, 2.7, 0.6, 9.9, 8.2]</code>.</p>
 <ol type="1">
@@ -711,7 +716,6 @@ l</code></pre>
 <span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>    </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
 <section id="den-schleifenfluss-kontrollieren-mit-break-und-continue" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="den-schleifenfluss-kontrollieren-mit-break-und-continue">Den Schleifenfluss kontrollieren mit <em>break</em> und <em>continue</em></h3>
 <section id="break---schleife-vorzeitig-beenden" class="level4 unnumbered">
