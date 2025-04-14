@@ -380,7 +380,7 @@ Abbildung&nbsp;6.2: Flussdiagramm zur Verzweigung mit if und else
 </section>
 <section id="verzweigungen-mit-if-elif-und-else" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="verzweigungen-mit-if-elif-und-else">Verzweigungen mit if, elif und else</h3>
-<p>Schließlich können wir unsere Verzweigung noch um sog. “else-if-Zweige” erweitern (das Python-Keyword heißt <code>elif</code>). Der Sinn davon: Wenn eine erste Bedingung falsch ist, möchte man vielleicht eine weitere Bedingung prüfen. Ist auch diese falsch, könnte noch eine dritte (vierte, fünfte, …) Bedingung interessant sein. In Worten: “Wenn Bedingung1 wahr ist, tue A, andernfalls prüfe Bedingung2. Ist Bedingung2 wahr, tue B, andernfalls prüfe Bedingung3 usw.” Wichtig zu verstehen ist, dass die Bedingungen nacheinander geprüft werden. Wenn eine frühere Bedingung bereits erfüllt ist, werden spätere Bedingungen gar nicht mehr angeschaut. Ein (optionales) finales <code>else</code> fängt den Fall auf, wenn keine Bedingung erfüllt ist. Das Flussdiagramm <a href="#fig-elif" class="quarto-xref">Abbildung&nbsp;<span>6.3</span></a> stellt die möglichen Fälle da. Es können beliebig viele <code>elif</code>-Blöcke verwendet werden und das finale <code>else</code> kann auch weggelassen werden. Damit steht uns eine sehr flexible Möglichkeit für Verzweigungen zur Verfügung.</p>
+<p>Schließlich können wir unsere Verzweigung noch um sog. “else-if-Zweige” erweitern (das Python-Keyword heißt <code>elif</code>). Der Sinn davon: Wenn eine erste Bedingung falsch ist, möchte man vielleicht eine weitere Bedingung prüfen. Ist auch diese falsch, könnte noch eine dritte (vierte, fünfte, …) Bedingung interessant sein. In Worten: “Wenn Bedingung1 wahr ist, tue A, andernfalls prüfe Bedingung2. Ist Bedingung2 wahr, tue B, andernfalls prüfe Bedingung3 usw.” Wichtig zu verstehen ist, dass die Bedingungen nacheinander geprüft werden. Wenn eine frühere Bedingung bereits erfüllt ist, werden spätere Bedingungen gar nicht mehr angeschaut. Ein (optionales) finales <code>else</code> fängt den Fall auf, wenn keine Bedingung erfüllt ist. Das Flussdiagramm <a href="#fig-elif" class="quarto-xref">Abbildung&nbsp;<span>6.3</span></a> stellt die möglichen Fälle dar. Es können beliebig viele <code>elif</code>-Blöcke verwendet werden und das finale <code>else</code> kann auch weggelassen werden. Damit steht uns eine sehr flexible Möglichkeit für Verzweigungen zur Verfügung.</p>
 <div id="fig-elif" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-elif-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -457,7 +457,7 @@ Conditional Expressions
 <div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> voltage <span class="op">&gt;</span> <span class="dv">1000</span>:</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    classification <span class="op">=</span> <span class="st">"Hochspannung"</span> </span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    classification <span class="op">=</span><span class="st">"Niederspannung"</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    classification <span class="op">=</span> <span class="st">"Niederspannung"</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Die kompakte Schreibweise als Conditional Expression sieht dagegen so aus:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>classification <span class="op">=</span> (<span class="st">"Hochspannung"</span> <span class="cf">if</span> voltage <span class="op">&gt;</span> <span class="dv">1000</span> <span class="cf">else</span> <span class="st">"Niederspannung"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Die Conditional Expression ist leicht zu verstehen, da sie wie ein englischer Satz gelesen werden kann. Die Klammern sind optional, unterstützen aber die Übersicht.</p>
@@ -475,7 +475,7 @@ Conditional Expressions
 </section>
 <section id="zusammengesetzte-bedingungen-mit-and-or-und-not" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="zusammengesetzte-bedingungen-mit-and-or-und-not">Zusammengesetzte Bedingungen mit <em>and</em>, <em>or</em> und <em>not</em></h3>
-<p>Mit den Operatoren <code>and</code>, <code>or</code> und <code>not</code> können komplexere logische Bedingungen aufgebaut werden. Die Bedeutung der Operatoren ist aus der Aussagenlogik bekannt:</p>
+<p>Wir wiederholen: Mit den Operatoren <code>and</code>, <code>or</code> und <code>not</code> können komplexere logische Bedingungen aufgebaut werden. Die Bedeutung der Operatoren ist aus der Aussagenlogik bekannt:</p>
 <ul>
 <li><code>and</code>: “A und B” ist wahr, wenn beide Bedingungen wahr sind.</li>
 <li><code>or</code>: “A oder B” ist wahr, wenn mindestens eine der Bedingungen wahr ist.</li>
@@ -531,7 +531,7 @@ Conditional Expressions
 <p>Mit Schleifen können wir Anweisungen wiederholen, ohne sie erneut hinschreiben zu müssen. Die Anweisungen, die wiederholt ausgeführt werden sollen, stehen in einem eingerückten <em>Schleifenkörper</em> (so wie die Anweisungen in <code>if</code>- oder <code>else</code>-Blöcken). In Python gibt es zwei grundlegende Schleifentypen, die es in ähnlicher Weise auch in vielen anderen Programmiersprachen gibt.</p>
 <section id="while-loop" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="while-loop">While-Loop</h3>
-<p>Bei der <code>while</code>-Schleife (engl. Loop) legen wir eine Bedingung fest. Nur, wenn diese Bedingung erfüllt ist, werden die Anweisungen im Schleifenkörper ausgeführt. Nach jedem Durchlauf wird die Bedingung erneut geprüft und der Schleifenkörper ggf. ein weiteres Mal durchlaufen. Sie ahnen vielleicht schon die Gefahr dieses Schleifentyps: Wenn die Bedingung immer wahr ist, kommt das Programm nie mehr aus der Schleife raus! Sie haben dann eine sog. <em>Endlosschleife</em> erschaffe, ein gefürchteter Schrecken in der Programmierung. Denken Sie daher gut über Ihre Schleifenbedingung nach!</p>
+<p>Bei der <code>while</code>-Schleife (engl. while-loop) legen wir eine Bedingung fest. Nur, wenn diese Bedingung erfüllt ist, werden die Anweisungen im Schleifenkörper ausgeführt. Nach jedem Durchlauf wird die Bedingung erneut geprüft und der Schleifenkörper ggf. ein weiteres Mal durchlaufen. Sie ahnen vielleicht schon die Gefahr dieses Schleifentyps: Wenn die Bedingung immer wahr ist, kommt das Programm nie mehr aus der Schleife raus! Sie haben dann eine sog. <em>Endlosschleife</em> erschaffen, ein gefürchteter Schrecken in der Programmierung. Denken Sie daher gut über Ihre Schleifenbedingungen nach!</p>
 <p>Das geschilderte Verhalten können Sie auch im Flussdiagramm der <code>while</code>-Schleife nachvollziehen (<a href="#fig-while" class="quarto-xref">Abbildung&nbsp;<span>6.4</span></a>).</p>
 <div id="fig-while" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -570,7 +570,7 @@ Der Tank ist voll! Befüllung gestoppt.</code></pre>
 </section>
 <section id="for-loop" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="for-loop">For-Loop</h3>
-<p>Die <code>for</code>-Schleife hat einen anderen Charakter als die <code>while</code>-Schleife: Sie wird verwendet, um eine Sequenz (z. B. eine Liste, eine Zeichenkette oder eine Zahlenreihe) Schritt für Schritt zu durchlaufen. Für jedes Element der Sequenz wird der Schleifenkörper durchlaufen, bis schließlich das Ende der Sequenz erreicht ist und die Schleife verlassen wird.</p>
+<p>Die <code>for</code>-Schleife hat einen anderen Charakter als die <code>while</code>-Schleife: Sie wird verwendet, um eine Sequenz (z. B. eine Liste, eine Zeichenkette oder eine Zahlenreihe) Schritt für Schritt zu durchlaufen. Für jedes Element der Sequenz wird der Schleifenkörper abgearbeitet, bis schließlich das Ende der Sequenz erreicht ist und die Schleife verlassen wird.</p>
 <p>Die grundlegende Syntax sieht so aus:</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> var <span class="kw">in</span> sequence:</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Codeblock, der für jedes Element der Sequenz ausgeführt wird.</span></span>
@@ -579,7 +579,7 @@ Der Tank ist voll! Befüllung gestoppt.</code></pre>
 <span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># beim zweiten Durchlauf das zweite Element,</span></span>
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ...</span></span>
 <span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># beim letzten Durchlauf das letzte Element.</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Bei einer for-Schleife wird beim ersten Eintritt in die Schleife das erste Element der Sequenz ausgewählt (Initialisierung). Nach jedem Durchlauf des Schleifenkörpers erfolgt <strong>automatisch</strong> der Übergang zum nächsten Element der Sequenz (Iteration), bis alle Elemente durchlaufen wurden. Das zugehörige Flussdiagramm (<a href="#fig-for" class="quarto-xref">Abbildung&nbsp;<span>6.5</span></a>) sieht daher etwas anders aus, als die bisherigen Beispiele.</p>
+<p>Bei einer for-Schleife wird beim ersten Eintritt in die Schleife das erste Element der Sequenz ausgewählt (<em>Initialisierung</em>). Nach jedem Durchlauf des Schleifenkörpers erfolgt <strong>automatisch</strong> der Übergang zum nächsten Element der Sequenz (<em>Iteration</em>), bis alle Elemente durchlaufen wurden. Das zugehörige Flussdiagramm (<a href="#fig-for" class="quarto-xref">Abbildung&nbsp;<span>6.5</span></a>) sieht daher etwas anders aus, als die bisherigen Beispiele.</p>
 <div id="fig-for" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-for-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -604,16 +604,17 @@ e
 l</code></pre>
 </div>
 </div>
-<div id="ff924dc3" class="cell" data-execution_count="23">
+<div id="ff924dc3" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wir gehen eine Liste durch und prüfen eine Bedingung</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>sensor_values <span class="op">=</span> [<span class="fl">12.4</span>, <span class="fl">15.7</span>, <span class="fl">19.3</span>, <span class="fl">21.2</span>, <span class="fl">13.5</span>, <span class="fl">7.8</span>]</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>sensor_values <span class="op">=</span> [<span class="fl">12.4</span>, <span class="fl">15.7</span>, <span class="fl">19.3</span>, <span class="fl">21.2</span>, <span class="fl">13.5</span>, <span class="fl">7.8</span>, <span class="fl">23.2</span>]</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>critical_threshold <span class="op">=</span> <span class="fl">20.0</span></span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> value <span class="kw">in</span> sensor_values:</span>
 <span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (value <span class="op">&gt;</span> critical_threshold):</span>
 <span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Kritischer Messwert gefunden:"</span>, value, <span class="st">"V"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Kritischer Messwert gefunden: 21.2 V</code></pre>
+<pre><code>Kritischer Messwert gefunden: 21.2 V
+Kritischer Messwert gefunden: 23.2 V</code></pre>
 </div>
 </div>
 <p>Eine häufige Anwendung von <code>for</code>-Schleifen sind sog. Zählschleifen, bei denen eine feste Anzahl an Wiederholungen vorgeben wird. Dies erreicht man in Python durch die Funktion <code>range()</code>:</p>
@@ -629,7 +630,7 @@ l</code></pre>
 4</code></pre>
 </div>
 </div>
-<p>Beachten Sie, dass die von <code>range(n)</code> erzeugte Sequenz bei 0 beginnt und n-1 endet. Tatsächlich werden die Buchstaben <code>i</code> und <code>j</code> gerne als Zählvariablen verwendet. Die <code>range()</code>-Funktion bietet verschiedene Optionen, um die erzeugte Sequenz zu beeinflussen. So können Sie neben dem End-Wert auch einen Start-Wert angeben:</p>
+<p>Beachten Sie, dass die von <code>range(n)</code> erzeugte Sequenz bei 0 beginnt und n-1 endet. Die Buchstaben <code>i</code> und <code>j</code> werden gerne als Zählvariablen in Kombination mit <code>range</code> verwendet. Die <code>range()</code>-Funktion bietet verschiedene Optionen, um die erzeugte Sequenz zu beeinflussen. So können Sie neben dem End-Wert auch einen Start-Wert angeben:</p>
 <div id="1f64a4f4" class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># range(3,10) erzeugt die Sequenz 3 - 9</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>,<span class="dv">10</span>): </span>
@@ -661,7 +662,7 @@ l</code></pre>
 <li><code>range(start, stop)</code> Sequenz von <code>start</code> bis <code>stop-1</code></li>
 <li><code>range(start, stop, step)</code> Sequenz von <code>start</code> bis maximal <code>stop-1</code> mit der Schrittweite <code>step</code>.</li>
 </ul>
-<p>In der dritten Variante steht “bis maximal <code>stop-1</code>”, weil nicht mehr garantiert werden kann, dass <code>stop-1</code> angenommen wird, da jeweils <code>step</code> hinzuaddiert wird und somit <code>stop-1</code> übersprungen werden kann. Sobald der Zähler aber <code>&gt;= stop</code> ist, terminiert die Schleife.</p>
+<p>In der dritten Variante steht “bis maximal <code>stop-1</code>”, weil nicht mehr garantiert werden kann, dass <code>stop-1</code> angenommen wird: Es wird jeweils <code>step</code> hinzuaddiert und damit könnte auch <code>stop-1</code> übersprungen werden. Sobald der Zähler <code>&gt;= stop</code> ist, terminiert die Schleife.</p>
 <p>Übrigens kann man mit <code>range()</code> auch rückwärts zählen:</p>
 <div id="50340d1c" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">3</span>):</span>
@@ -734,48 +735,59 @@ For-Schleifen in anderen Programmiersprachen
 <section id="break---schleife-vorzeitig-beenden" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="break---schleife-vorzeitig-beenden">break - Schleife vorzeitig beenden</h4>
 <p>Sobald in einer Schleife das Keyword <code>break</code> verwendet wird, bricht die Schleife an Ort und Stelle ab. Das funktioniert sowohl in <code>while</code>- als auch in <code>for</code>-Schleifen. Betrachten Sie das folgende Ratespiel - können Sie den Nutzen von <code>break</code> nachvollziehen?</p>
-<div id="1c9c6cef" class="cell" data-execution_count="55">
+<div id="1c9c6cef" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>secret_number <span class="op">=</span> random.randint(<span class="dv">0</span>,<span class="dv">100</span>) <span class="co">#erzeugt eine Zufallszahl</span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>guess <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(guess <span class="op">!=</span> secret_number):</span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>    guess <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Raten Sie die geheime Zahl zwischen 0 und 100 (-1 für Abbruch): "</span>))</span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (guess <span class="op">==</span> <span class="op">-</span><span class="dv">1</span>):</span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Abbruch."</span>)</span>
-<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span>  <span class="co"># Die Schleife wird abgebrochen</span></span>
-<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Falls das Spiel fortgesetzt wird, geben wir Tipps:</span></span>
-<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(secret_number <span class="op">&lt;</span> guess):</span>
-<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Zu groß!"</span>)</span>
-<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> (secret_number <span class="op">&gt;</span> guess):</span>
-<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Zu klein!"</span>)</span>
-<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Gratulation!"</span>)  <span class="co"># Geheime Zahl erraten!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>guess <span class="op">=</span> <span class="op">-</span><span class="dv">1</span>  <span class="co"># guess wird auf -1 initialisiert</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(guess <span class="op">!=</span> secret_number):</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    guess <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Raten Sie die geheime Zahl zwischen 0 und 100 (-1 für Abbruch): "</span>))</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (guess <span class="op">==</span> <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Abbruch."</span>)</span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span>  <span class="co"># Die Schleife wird abgebrochen</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Falls das Spiel fortgesetzt wird, geben wir Tipps:</span></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(secret_number <span class="op">&lt;</span> guess):</span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Zu groß!"</span>)</span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> (secret_number <span class="op">&gt;</span> guess):</span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Zu klein!"</span>)</span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Gratulation!"</span>)  <span class="co"># Geheime Zahl erraten!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Raten Sie die geheime Zahl zwischen 0 und 100 (-1 für Abbruch):  34</code></pre>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Raten Sie die geheime Zahl zwischen 0 und 100 (-1 für Abbruch): 23
-Zu klein!
-Raten Sie die geheime Zahl zwischen 0 und 100 (-1 für Abbruch): 87
-Zu groß!
-Raten Sie die geheime Zahl zwischen 0 und 100 (-1 für Abbruch): -1
-Abbruch.</code></pre>
+<pre><code>Zu klein!</code></pre>
+</div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Raten Sie die geheime Zahl zwischen 0 und 100 (-1 für Abbruch):  56</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Zu groß!</code></pre>
+</div>
+<div class="cell-output cell-output-stdin">
+<pre><code>Raten Sie die geheime Zahl zwischen 0 und 100 (-1 für Abbruch):  -1</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Abbruch.</code></pre>
 </div>
 </div>
 <p>Ein Beispiel für <code>break</code> in einer <code>for</code>-Schleife:</p>
 <div id="f6e4d3c7" class="cell" data-execution_count="56">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>bag <span class="op">=</span> [<span class="st">"Schlüssel"</span>, <span class="st">"Handy"</span>, <span class="st">"Brille"</span>, <span class="st">"Geldbörse"</span>, <span class="st">"Stift"</span>]  <span class="co"># Dinge in der Tasche</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>search_item <span class="op">=</span> <span class="st">"Geldbörse"</span>  <span class="co"># Der Gegenstand, den wir suchen</span></span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> bag:</span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Suche nach "</span>, search_item, <span class="st">" läuft. Aktueller Gegenstand: "</span>, item)</span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> item <span class="op">==</span> search_item:</span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Die Schleife wird abgebrochen, </span></span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>        <span class="co"># da der Gegenstand gefunden wurde:</span></span>
-<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(search_item, <span class="st">"gefunden!"</span>)</span>
-<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span>  </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>bag <span class="op">=</span> [<span class="st">"Schlüssel"</span>, <span class="st">"Handy"</span>, <span class="st">"Brille"</span>, <span class="st">"Geldbörse"</span>, <span class="st">"Stift"</span>]  <span class="co"># Dinge in der Tasche</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>search_item <span class="op">=</span> <span class="st">"Geldbörse"</span>  <span class="co"># Der Gegenstand, den wir suchen</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> bag:</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Suche nach "</span>, search_item, <span class="st">" läuft. Aktueller Gegenstand: "</span>, item)</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> item <span class="op">==</span> search_item:</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Die Schleife wird abgebrochen, </span></span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>        <span class="co"># da der Gegenstand gefunden wurde:</span></span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(search_item, <span class="st">"gefunden!"</span>)</span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span>  </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Suche nach  Geldbörse  läuft. Aktueller Gegenstand:  Schlüssel
 Suche nach  Geldbörse  läuft. Aktueller Gegenstand:  Handy
@@ -785,36 +797,36 @@ Geldbörse gefunden!</code></pre>
 </div>
 </div>
 </section>
-<section id="continue---schleifendurchlauf-vorzeitig-beenden-weiter-mit-dem-nächsten" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="continue---schleifendurchlauf-vorzeitig-beenden-weiter-mit-dem-nächsten">continue - Schleifendurchlauf vorzeitig beenden, weiter mit dem nächsten!</h4>
+<section id="continue---aktuellen-schleifendurchlauf-vorzeitig-abbrechen-weiter-mit-dem-nächsten" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="continue---aktuellen-schleifendurchlauf-vorzeitig-abbrechen-weiter-mit-dem-nächsten">continue - Aktuellen Schleifendurchlauf vorzeitig abbrechen, weiter mit dem nächsten!</h4>
 <p>Das Keyword <code>continue</code> bricht nur den aktuellen Schleifendurchlauf an Ort und Stelle ab, aber nicht die ganze Schleife. Es geht einfach direkt mit dem nächsten Durchlauf weiter. Wir erweitern das Ratespiel von oben durch ein <code>continue</code> bei ungültiger Eingabe:</p>
 <div id="7bb7b5b4" class="cell" data-execution_count="59">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>secret_number <span class="op">=</span> random.randint(<span class="dv">0</span>,<span class="dv">100</span>)  <span class="co"># erzeugt eine Zufallszahl</span></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>guess <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(guess <span class="op">!=</span> secret_number):</span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>   </span>
-<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>    guess <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Raten Sie die geheime Zahl zwischen 0 und 100 (-1 für Abbruch): "</span>))</span>
-<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (guess <span class="op">&gt;</span> <span class="dv">100</span> <span class="kw">or</span> guess <span class="op">&lt;</span> <span class="op">-</span><span class="dv">1</span>): </span>
-<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Eingabe außerhalb gültiger Grenzen</span></span>
-<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ungültig!"</span>)</span>
-<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Durchgang abbrechen und nächste Runde: </span></span>
-<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span> </span>
-<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (guess <span class="op">==</span> <span class="op">-</span><span class="dv">1</span>):</span>
-<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Die Schleife wird abgebrochen</span></span>
-<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Abbruch."</span>)</span>
-<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span> </span>
-<span id="cb43-19"><a href="#cb43-19" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Falls das Spiel fortgesetzt wird, geben wir Tipps:</span></span>
-<span id="cb43-21"><a href="#cb43-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(secret_number <span class="op">&lt;</span> guess):</span>
-<span id="cb43-22"><a href="#cb43-22" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Zu groß!"</span>)</span>
-<span id="cb43-23"><a href="#cb43-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> (secret_number <span class="op">&gt;</span> guess):</span>
-<span id="cb43-24"><a href="#cb43-24" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Zu klein!"</span>)</span>
-<span id="cb43-25"><a href="#cb43-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb43-26"><a href="#cb43-26" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Gratulation!"</span>)  <span class="co"># Geheime Zahl erraten!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>secret_number <span class="op">=</span> random.randint(<span class="dv">0</span>,<span class="dv">100</span>)  <span class="co"># erzeugt eine Zufallszahl</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>guess <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(guess <span class="op">!=</span> secret_number):</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>    guess <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Raten Sie die geheime Zahl zwischen 0 und 100 (-1 für Abbruch): "</span>))</span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (guess <span class="op">&gt;</span> <span class="dv">100</span> <span class="kw">or</span> guess <span class="op">&lt;</span> <span class="op">-</span><span class="dv">1</span>): </span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Eingabe außerhalb gültiger Grenzen</span></span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ungültig!"</span>)</span>
+<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Durchgang abbrechen und nächste Runde: </span></span>
+<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span> </span>
+<span id="cb48-14"><a href="#cb48-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb48-15"><a href="#cb48-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (guess <span class="op">==</span> <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb48-16"><a href="#cb48-16" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Die Schleife wird abgebrochen</span></span>
+<span id="cb48-17"><a href="#cb48-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Abbruch."</span>)</span>
+<span id="cb48-18"><a href="#cb48-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span> </span>
+<span id="cb48-19"><a href="#cb48-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb48-20"><a href="#cb48-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Falls das Spiel fortgesetzt wird, geben wir Tipps:</span></span>
+<span id="cb48-21"><a href="#cb48-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(secret_number <span class="op">&lt;</span> guess):</span>
+<span id="cb48-22"><a href="#cb48-22" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Zu groß!"</span>)</span>
+<span id="cb48-23"><a href="#cb48-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> (secret_number <span class="op">&gt;</span> guess):</span>
+<span id="cb48-24"><a href="#cb48-24" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Zu klein!"</span>)</span>
+<span id="cb48-25"><a href="#cb48-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb48-26"><a href="#cb48-26" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Gratulation!"</span>)  <span class="co"># Geheime Zahl erraten!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Raten Sie die geheime Zahl zwischen 0 und 100 (-1 für Abbruch): 102
 Ungültig!
@@ -830,26 +842,26 @@ Abbruch.</code></pre>
 </div>
 <p>Auch hierzu ein Beispiel mit <code>for</code> (es illustriert eine einfache Datenbereinigung):</p>
 <div id="ae278065" class="cell" data-execution_count="60">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>user_inputs <span class="op">=</span> [<span class="st">"23"</span>, <span class="st">"abc"</span>, <span class="st">"45"</span>, <span class="st">"-1"</span>, <span class="st">"67"</span>, <span class="st">"150"</span>, <span class="st">""</span>, <span class="st">"89"</span>, <span class="st">"0"</span>, <span class="st">"xyz"</span>]</span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>cleaned_data <span class="op">=</span> []  <span class="co"># Liste für bereinigte Eingaben</span></span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> input_str <span class="kw">in</span> user_inputs:</span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 1. Überspringe nicht-numerische Eingabe</span></span>
-<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> input_str.isdigit():</span>
-<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
-<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 2. Wandle die Eingabe in eine Zahl um</span></span>
-<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>    input_number <span class="op">=</span> <span class="bu">int</span>(input_str)  </span>
-<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 3. Überspringe Werte außerhalb gültiger Grenzen</span></span>
-<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> input_number <span class="op">&lt;</span> <span class="dv">10</span> <span class="kw">or</span> input_number <span class="op">&gt;</span> <span class="dv">100</span>:</span>
-<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
-<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Füge gültige Eingabe der Liste hinzu:</span></span>
-<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a>    cleaned_data.append(input_number)  </span>
-<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Bereinigte Eingaben:"</span>, cleaned_data)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>user_inputs <span class="op">=</span> [<span class="st">"23"</span>, <span class="st">"abc"</span>, <span class="st">"45"</span>, <span class="st">"-1"</span>, <span class="st">"67"</span>, <span class="st">"150"</span>, <span class="st">""</span>, <span class="st">"89"</span>, <span class="st">"0"</span>, <span class="st">"xyz"</span>]</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>cleaned_data <span class="op">=</span> []  <span class="co"># Liste für bereinigte Eingaben</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> input_str <span class="kw">in</span> user_inputs:</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 1. Überspringe nicht-numerische Eingabe</span></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> input_str.isdigit():</span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 2. Wandle die Eingabe in eine Zahl um</span></span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>    input_number <span class="op">=</span> <span class="bu">int</span>(input_str)  </span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 3. Überspringe Werte außerhalb gültiger Grenzen</span></span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> input_number <span class="op">&lt;</span> <span class="dv">10</span> <span class="kw">or</span> input_number <span class="op">&gt;</span> <span class="dv">100</span>:</span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span></span>
+<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Füge gültige Eingabe der Liste hinzu:</span></span>
+<span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a>    cleaned_data.append(input_number)  </span>
+<span id="cb50-19"><a href="#cb50-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-20"><a href="#cb50-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Bereinigte Eingaben:"</span>, cleaned_data)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Bereinigte Eingaben: [23, 45, 67, 89]</code></pre>
 </div>
@@ -866,15 +878,15 @@ Abbruch.</code></pre>
 <div id="7de2f963-5511-4220-85af-c8882c4bd2d6" class="cell" data-execution_count="84">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> np.arange(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="fl">0.1</span>)</span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>ys <span class="op">=</span> xs<span class="op">**</span><span class="dv">3</span> <span class="op">+</span> xs<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>xs<span class="op">-</span><span class="dv">1</span></span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>plt.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">"black"</span>, linewidth<span class="op">=</span><span class="dv">1</span>)  <span class="co"># x-Achse</span></span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>plt.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">"black"</span>, linewidth<span class="op">=</span><span class="dv">1</span>)  <span class="co"># y-Achse</span></span>
-<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
-<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"f(x)"</span>)</span>
-<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>plt.plot(xs,ys,label<span class="op">=</span><span class="st">"$f(x)=x^3+x^2-2\,x-3$"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> np.arange(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>,<span class="fl">0.1</span>)</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>ys <span class="op">=</span> xs<span class="op">**</span><span class="dv">3</span> <span class="op">+</span> xs<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>xs<span class="op">-</span><span class="dv">1</span></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>plt.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">"black"</span>, linewidth<span class="op">=</span><span class="dv">1</span>)  <span class="co"># x-Achse</span></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>plt.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">"black"</span>, linewidth<span class="op">=</span><span class="dv">1</span>)  <span class="co"># y-Achse</span></span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"f(x)"</span>)</span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>plt.plot(xs,ys,label<span class="op">=</span><span class="st">"$f(x)=x^3+x^2-2\,x-3$"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -888,26 +900,26 @@ Abbruch.</code></pre>
 <div id="a427edbd" class="cell" data-execution_count="26">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>max_iter <span class="op">=</span> <span class="dv">100</span>  <span class="co"># maximale Zahl der Iterationen</span></span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">1.0</span>  <span class="co"># Startwert</span></span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>tol <span class="op">=</span> <span class="fl">1e-6</span>  <span class="co"># Toleranz</span></span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(max_iter):    </span>
-<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Funktion:</span></span>
-<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>    f <span class="op">=</span> x<span class="op">**</span><span class="dv">3</span><span class="op">+</span>x<span class="op">**</span><span class="dv">2</span><span class="op">-</span><span class="dv">2</span><span class="op">*</span>x<span class="op">-</span><span class="dv">1</span> </span>
-<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Ableitung:</span></span>
-<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a>    fp <span class="op">=</span> <span class="dv">3</span> <span class="op">*</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">-</span> <span class="dv">2</span> </span>
-<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">abs</span>(f) <span class="op">&lt;</span> tol:</span>
-<span id="cb48-14"><a href="#cb48-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Funktionswert ist nahe genug bei Null</span></span>
-<span id="cb48-15"><a href="#cb48-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Konvergiert nach "</span>, i, <span class="st">"Iterationen."</span>)</span>
-<span id="cb48-16"><a href="#cb48-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
-<span id="cb48-17"><a href="#cb48-17" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb48-18"><a href="#cb48-18" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> x <span class="op">-</span> f <span class="op">/</span> fp  <span class="co"># Iteration des Newton-Verfahrens</span></span>
-<span id="cb48-19"><a href="#cb48-19" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb48-20"><a href="#cb48-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"x="</span>,x,<span class="st">"f(x)="</span>,f)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>max_iter <span class="op">=</span> <span class="dv">100</span>  <span class="co"># maximale Zahl der Iterationen</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">1.0</span>  <span class="co"># Startwert</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>tol <span class="op">=</span> <span class="fl">1e-6</span>  <span class="co"># Toleranz</span></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(max_iter):    </span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Funktion:</span></span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>    f <span class="op">=</span> x<span class="op">**</span><span class="dv">3</span><span class="op">+</span>x<span class="op">**</span><span class="dv">2</span><span class="op">-</span><span class="dv">2</span><span class="op">*</span>x<span class="op">-</span><span class="dv">1</span> </span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Ableitung:</span></span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>    fp <span class="op">=</span> <span class="dv">3</span> <span class="op">*</span> x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>x <span class="op">-</span> <span class="dv">2</span> </span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">abs</span>(f) <span class="op">&lt;</span> tol:</span>
+<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Funktionswert ist nahe genug bei Null</span></span>
+<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Konvergiert nach "</span>, i, <span class="st">"Iterationen."</span>)</span>
+<span id="cb53-16"><a href="#cb53-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb53-18"><a href="#cb53-18" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> x <span class="op">-</span> f <span class="op">/</span> fp  <span class="co"># Iteration des Newton-Verfahrens</span></span>
+<span id="cb53-19"><a href="#cb53-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb53-20"><a href="#cb53-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"x="</span>,x,<span class="st">"f(x)="</span>,f)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Eine alternative Abbruchbedingung betrachtet die Änderung in <span class="math inline">\(x\)</span> von Schritt zu Schritt. Sobald sich <span class="math inline">\(x\)</span> nicht mehr signifikant ändert, bricht das Verfahren ab. Wir gehen an dieser Stelle nicht auf die Vor- und Nachteile der jeweiligen Abbruchbedingung ein.</p>
