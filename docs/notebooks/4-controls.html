@@ -956,7 +956,7 @@ Abbruch.</code></pre>
 <pre><code>[0.0, -1.0, 2.0]</code></pre>
 </div>
 </div>
-<p>Was wäre eigentlich geschehene, wenn wir <code>v + w</code> ausprobiert hätten? Vergessen Sie nicht, dass <code>v</code> und <code>w</code> Listen sind und als solche keine natürliche Addition kennen. Statt dessen konkatentiert der Plus-Operator die beiden Listen:</p>
+<p>Was wäre eigentlich geschehen, wenn wir <code>v + w</code> ausprobiert hätten? Vergessen Sie nicht, dass <code>v</code> und <code>w</code> Listen sind und als solche keine natürliche Addition kennen. Statt dessen konkatentiert der Plus-Operator die beiden Listen:</p>
 <div id="377c54f7-e5d5-4fdf-8e13-d54423b8c9dd" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>v_concat_w <span class="op">=</span> v <span class="op">+</span> w</span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v_concat_w)  <span class="co"># offensichtlich keine Vektoraddition </span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -982,7 +982,7 @@ Abbruch.</code></pre>
 </section>
 <section id="matrizen" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="matrizen">Matrizen</h4>
-<p>Eine Matrix kann als geschachtelte Liste dargestellt werden. Man kann sich das so vorstellen, dass die Elemente der äußeren Liste die Zeilen der Matrix sind:</p>
+<p>Eine Matrix kann als verschachtelte Liste dargestellt werden. Man kann sich das so vorstellen, dass die Elemente der äußeren Liste die Zeilen der Matrix sind (jede Zeile ist wiederum eine Liste ihrer Elemente):</p>
 <div id="6a953c0d-87ec-47ad-ba16-3a5782ee2d0d" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># innerhalb der eckigen Klammern sind </span></span>
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Zeilenumbrüche erlaubt, was die</span></span>
@@ -1041,11 +1041,11 @@ Abbruch.</code></pre>
 <pre><code>[[2.0, 0.5, 2.0], [2.0, 0.0, 2.0], [1.0, -1.0, 1.0]]</code></pre>
 </div>
 </div>
-<p>Machen Sie sich die Funktion der verschachtelten For-Schleifen klar: Der Zeilenindex <code>i</code> iteriert von 0 bis 2. Für jede Zeile, also jeden Wert von <code>i</code>, startet der Spaltenindex <code>j</code> jeweils wieder bei 0 und iteriert bis 2. So wird jede Kombination von <code>i</code> und <code>j</code> abgedeckt.</p>
+<p>Machen Sie sich die Funktionsweise der verschachtelten For-Schleifen klar: Der <em>Zeilen</em>index <code>i</code> iteriert von 0 bis 2. Für jede Zeile, also jeden Wert von <code>i</code>, startet der <em>Spalten</em>index <code>j</code> jeweils wieder bei 0 und iteriert bis 2. So wird jede Kombination von <code>i</code> und <code>j</code> durchlaufen.</p>
 </section>
 <section id="matrix-mal-vektor" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="matrix-mal-vektor">Matrix mal Vektor</h4>
-<div id="f8f64689-c2c8-4032-8311-55dda5833835" class="cell" data-execution_count="66">
+<div id="f8f64689-c2c8-4032-8311-55dda5833835" class="cell" data-execution_count="87">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>M_dot_v <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>]  <span class="co"># Initialisierung</span></span>
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
