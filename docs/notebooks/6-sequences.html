@@ -227,6 +227,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#daten-mehrerer-sensoren---verschachtelte-dictionaries" id="toc-daten-mehrerer-sensoren---verschachtelte-dictionaries" class="nav-link" data-scroll-target="#daten-mehrerer-sensoren---verschachtelte-dictionaries"><span class="header-section-number">8.5</span> Daten mehrerer Sensoren - verschachtelte Dictionaries</a></li>
   <li><a href="#exkurs-mutable-und-immutable-datentypen-in-python" id="toc-exkurs-mutable-und-immutable-datentypen-in-python" class="nav-link" data-scroll-target="#exkurs-mutable-und-immutable-datentypen-in-python"><span class="header-section-number">8.6</span> Exkurs: Mutable und immutable Datentypen in Python</a></li>
   <li><a href="#sicheres-kopieren-von-listen" id="toc-sicheres-kopieren-von-listen" class="nav-link" data-scroll-target="#sicheres-kopieren-von-listen"><span class="header-section-number">8.7</span> Sicheres Kopieren von Listen</a></li>
+  <li><a href="#list-comprehensions" id="toc-list-comprehensions" class="nav-link" data-scroll-target="#list-comprehensions"><span class="header-section-number">8.8</span> List Comprehensions</a>
+  <ul class="collapse">
+  <li><a href="#syntax" id="toc-syntax" class="nav-link" data-scroll-target="#syntax">Syntax</a></li>
+  <li><a href="#beispiele-aus-der-ingenieurpraxis" id="toc-beispiele-aus-der-ingenieurpraxis" class="nav-link" data-scroll-target="#beispiele-aus-der-ingenieurpraxis">Beispiele aus der Ingenieurpraxis</a></li>
+  <li><a href="#performance" id="toc-performance" class="nav-link" data-scroll-target="#performance">Performance</a></li>
+  <li><a href="#fazit-für-die-praxis" id="toc-fazit-für-die-praxis" class="nav-link" data-scroll-target="#fazit-für-die-praxis">Fazit für die Praxis</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -259,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">14. April 2025</p>
+      <p class="date">27. April 2025</p>
     </div>
   </div>
   
@@ -686,9 +693,140 @@ tiefe Kopie:  [[1, 2, 100], 3, 4]</code></pre>
 </div>
 </div>
 <p>Die Änderungen an der flachen Kopie hatten noch Auswirkungen auf das Original, weil beide die Referenz auf das erste Element teilten, welches mutable war. Nur bei der tiefen Kopie handelt es sich um eine völlig autarke Kopie, die nichts mehr mit dem Original gemein hat.</p>
-<!-- List Comprehensions? -->
+</section>
+<section id="list-comprehensions" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="list-comprehensions"><span class="header-section-number">8.8</span> List Comprehensions</h2>
+<p>In Python gibt es eine elegante und kompakte Möglichkeit, Listen zu erzeugen: die sogenannte <strong>List Comprehension</strong>.</p>
+<p>Statt mit einer Schleife umständlich Elemente einer Liste hinzuzufügen, können wir in einer einzigen Zeile eine neue Liste erstellen. Das macht den Code kürzer, lesbarer und oft schneller.</p>
+<section id="syntax" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="syntax">Syntax</h3>
+<p>Die allgemeine Syntax sieht so aus:</p>
+<p><code>[ Ausdruck for Element in Sequenz ]</code></p>
+<ul>
+<li><p><strong>Sequenz</strong>: Etwas, über das iteriert werden kann (z.B. eine Liste, ein String, ein Bereich <code>range()</code>), wie wir es schon von der For-Schleife kennen.</p></li>
+<li><p><strong>Element</strong>: Eine Variable, die nacheinander die Werte aus der Sequenz annimmt.</p></li>
+<li><p><strong>Ausdruck</strong>: Ein Ausdruck, der für jedes Element ausgewertet wird. Dieser wird dann der neuen Liste hinzugefügt.</p></li>
+</ul>
+<p>Der hintere Teil der List Comprehension verhält sich ganz analog zur For-Schleife, neu ist der Ausdruck. Ein Beispiel macht alles verständlicher:</p>
+<div id="f26ad137-7c53-41b9-a189-1a339c2ff8bc" class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel: Liste aller Quadratzahlen der Zahlen von 0 bis 9</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>squares <span class="op">=</span> [x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(squares)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</code></pre>
+</div>
+</div>
+<p>Analysieren wir das Beispiel:</p>
+<ul>
+<li><p><strong>Sequenz</strong>: <code>range(10)</code>.</p></li>
+<li><p><strong>Element</strong>: <code>x</code>, eine eigene Bezeichnung für die Elemente der Sequenz.</p></li>
+<li><p><strong>Ausdruck</strong>: <code>x**2</code>, jedes <code>x</code> aus der genannten Sequenz soll quadriert werden.</p></li>
+</ul>
+<p>Die Syntax kann noch um eine <code>if</code>-Bedingung am Ende erweitert werden:</p>
+<p><code>[ Ausdruck for Element in Sequenz if Bedingung ]</code></p>
+<ul>
+<li><strong>Bedingung</strong> am Ende der List Comprehension: Nur Elemente, die die Bedingung erfüllen, werden berücksichtigt.</li>
+</ul>
+<div id="0cfbaff9-8420-486a-b75a-5754aa997bdc" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ein Beispiel: Liste aller Quadratzahlen der geraden Zahlen von 0 bis 9</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>squares2 <span class="op">=</span> [x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>) <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(squares2)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[0, 4, 16, 36, 64]</code></pre>
+</div>
+</div>
+<p>Darüber hinaus können auch <code>if</code>- und <code>else</code>-Bedingungen vor dem <code>for</code> verwendet werden, um alternative Ausdrücke zu verwenden:</p>
+<div id="03d9ca33-197c-4061-901d-2b5da9584112" class="cell" data-execution_count="47">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mit if-else vor dem for</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> [x <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="cf">else</span> <span class="op">-</span>x <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[0, -1, 2, -3, 4, -5, 6, -7, 8, -9]</code></pre>
+</div>
+</div>
+<p>Je komplexer eine List Comprehension wird, desto schwieriger wird sie allerdings zu lesen und zu verstehen – und das kann schnell die Vorteile zunichtemachen, die man eigentlich durch die kürzere Schreibweise erreichen wollte.</p>
+</section>
+<section id="beispiele-aus-der-ingenieurpraxis" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="beispiele-aus-der-ingenieurpraxis">Beispiele aus der Ingenieurpraxis</h3>
+<p>List Comprehensions sind sehr praktisch, um Messwerte von einer Einheit in eine andere umzurechnen:</p>
+<div id="1628c126-884e-4747-b049-956a1581666c" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>values_in_cm <span class="op">=</span> [<span class="dv">100</span>, <span class="dv">250</span>, <span class="dv">430</span>, <span class="dv">125</span>]</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>values_in_m <span class="op">=</span> [x <span class="op">/</span> <span class="dv">100</span> <span class="cf">for</span> x <span class="kw">in</span> values_in_cm]</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(values_in_m)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1.0, 2.5, 4.3, 1.25]</code></pre>
+</div>
+</div>
+<div id="6e572543-38d7-41ce-9a96-e23224318141" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>temperatures_celsius <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">20</span>, <span class="dv">37</span>, <span class="dv">100</span>]</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>temperatures_fahrenheit <span class="op">=</span> [t <span class="op">*</span> <span class="dv">9</span><span class="op">/</span><span class="dv">5</span> <span class="op">+</span> <span class="dv">32</span> <span class="cf">for</span> t <span class="kw">in</span> temperatures_celsius]</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures_fahrenheit)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[32.0, 68.0, 98.6, 212.0]</code></pre>
+</div>
+</div>
+<p>List Comprehensions werden auch gerne zum Filtern von Messwerten verwendet, wie das folgende Beispiel zeigt:</p>
+<div id="06908345-2431-4d09-82b9-8c9f6cf925c5" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>voltages <span class="op">=</span> [<span class="fl">3.3</span>, <span class="fl">5.1</span>, <span class="fl">2.5</span>, <span class="fl">4.8</span>, <span class="fl">2.1</span>, <span class="fl">7.2</span>, <span class="fl">0.7</span>]</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>high_voltages <span class="op">=</span> [u <span class="cf">for</span> u <span class="kw">in</span> voltages <span class="cf">if</span> u <span class="op">&gt;</span> <span class="dv">5</span>]  <span class="co"># 5 V ist hier ein oberer Grenzwert </span></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>low_voltages <span class="op">=</span> [u <span class="cf">for</span> u <span class="kw">in</span> voltages <span class="cf">if</span> u <span class="op">&lt;=</span> <span class="dv">5</span>]</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Oberhalb des Grenzwertes:"</span>, high_voltages)</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Gültige Messwerte:"</span>, low_voltages) </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Oberhalb des Grenzwertes: [5.1, 7.2]
+Gültige Messwerte: [3.3, 2.5, 4.8, 2.1, 0.7]</code></pre>
+</div>
+</div>
+<div id="1cca6e65-bcd2-47d7-a60f-9a6d4969e302" class="cell" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Alternativ könnte man die zu hohen Werte "abschneiden":</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>voltages <span class="op">=</span> [<span class="fl">3.3</span>, <span class="fl">5.1</span>, <span class="fl">2.5</span>, <span class="fl">4.8</span>, <span class="fl">2.1</span>, <span class="fl">7.2</span>, <span class="fl">0.7</span>]</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>limited_voltages <span class="op">=</span> [u <span class="cf">if</span> u <span class="op">&lt;=</span> <span class="dv">5</span> <span class="cf">else</span> <span class="dv">5</span> <span class="cf">for</span> u <span class="kw">in</span> voltages]  <span class="co"># 5 V ist hier ein oberer Grenzwert </span></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Bereinigte Messwerte:"</span>, limited_voltages) </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Bereinigte Messwerte: [3.3, 5, 2.5, 4.8, 2.1, 5, 0.7]</code></pre>
+</div>
+</div>
+</section>
+<section id="performance" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="performance">Performance</h3>
+<p>List Comprehensions sind in der Regel schneller als eine klassische Schleife mit <code>append()</code>, da sie in Python auf C-Ebene optimiert sind. Das bedeutet, viele Schritte (wie Funktionsaufrufe oder das Anhängen an eine Liste) passieren effizient im Hintergrund. Eine kleine Demo:</p>
+<div id="910aa7bc-8de0-4a0c-8575-8318f2e8562b" class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time  <span class="co"># zum Messen von Zeiten</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Klassische For-Loop mit append</span></span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>start <span class="op">=</span> time.time()</span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> []</span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000000</span>):</span>
+<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a>        result.append(i <span class="op">*</span> <span class="dv">2</span>)</span>
+<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> time.time()</span>
+<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-12"><a href="#cb60-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"For-Loop Dauer: </span><span class="sc">{</span><span class="bu">round</span>(end <span class="op">-</span> start,<span class="dv">2</span>)<span class="sc">}</span><span class="ss"> Sekunden"</span>)</span>
+<span id="cb60-13"><a href="#cb60-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-14"><a href="#cb60-14" aria-hidden="true" tabindex="-1"></a><span class="co"># List Comprehension mit demselben Ergebnis</span></span>
+<span id="cb60-15"><a href="#cb60-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-16"><a href="#cb60-16" aria-hidden="true" tabindex="-1"></a>start <span class="op">=</span> time.time()</span>
+<span id="cb60-17"><a href="#cb60-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-18"><a href="#cb60-18" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> [i <span class="op">*</span> <span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000000</span>) <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]</span>
+<span id="cb60-19"><a href="#cb60-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-20"><a href="#cb60-20" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> time.time()</span>
+<span id="cb60-21"><a href="#cb60-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-22"><a href="#cb60-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"List Comprehension Dauer: </span><span class="sc">{</span><span class="bu">round</span>(end <span class="op">-</span> start,<span class="dv">2</span>)<span class="sc">}</span><span class="ss"> Sekunden"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>For-Loop Dauer: 2.12 Sekunden
+List Comprehension Dauer: 1.01 Sekunden</code></pre>
+</div>
+</div>
+<p>Die Zeiten variieren natürlich und werden auf Ihrem System andere Werte annehmen. Probieren Sie es aus!</p>
+<p>Ob ein Code, wie in diesem Beispiel, eine Sekunde oder zwei Sekunden benötigt, spielt natürlich keine große Rolle. Der Performance-Unterschied wird nur relevant, wenn sie enorm große Mengen an Daten verarbeiten müssen.</p>
+</section>
+<section id="fazit-für-die-praxis" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="fazit-für-die-praxis">Fazit für die Praxis</h3>
+<p>List Comprehensions sind oft eine gute Wahl, wenn eine neue Liste erzeugt werden soll. Sie führen in der Regel zu kürzerem und verständlicherem Code. Allerdings sollte man sie nur verwenden, wenn Bedingungen und Ausdrücke einfach genug sind, um die Lesbarkeit nicht zu gefährden. Bei komplexerer Logik ist eine klassische Schleife oft die bessere Wahl, um die Wartbarkeit zu sichern. Sollte Performance eine entscheidende Rolle spielen, kann es sich lohnen, größere Schleifen in eine List Comprehension umzuschreiben – vorausgesetzt, die Lesbarkeit bleibt erhalten.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
