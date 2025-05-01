@@ -294,7 +294,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">27. April 2025</p>
+      <p class="date">1. Mai 2025</p>
     </div>
   </div>
   
@@ -372,17 +372,17 @@ Argumente
 </div>
 </div>
 <p>Was jetzt nicht mehr funktioniert: Wir können die Funktion nicht mehr ohne ein Argument für den Parameter <code>name</code> aufrufen! Probieren Sie <code>greeting()</code> und Python wird sich beschweren, dass ein Argument fehlt! Eine besondere Möglichkeit, dieses Problem zu beheben, ist sog. <strong>Standardargumente</strong> für Parameter festzulegen. Diese werden verwendet, wenn der Anwender der Funktion kein Argument übergibt (ob das sinnvoll ist oder nicht, hängt ganz von Ihrer Anwendung ab). Wir demonstrieren die Begrüßungsfunktion mit einem Standardargument:</p>
-<div id="d4ea9b53-4edd-4a65-a0d9-3050e27f3ccf" class="cell" data-execution_count="71">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greeting(name<span class="op">=</span><span class="st">"Welt"</span>):</span>
+<div id="d4ea9b53-4edd-4a65-a0d9-3050e27f3ccf" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greeting(name <span class="op">=</span> <span class="st">"Welt"</span>):</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hallo,"</span>,name)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="818179d2-760d-4c61-a2ec-64a23f794a65" class="cell" data-execution_count="73">
+<div id="818179d2-760d-4c61-a2ec-64a23f794a65" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>greeting(<span class="st">"Lisa"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hallo, Lisa</code></pre>
 </div>
 </div>
-<div id="c2fd50d6-a30a-43f4-81f3-fae54f5c30dd" class="cell" data-execution_count="75">
+<div id="c2fd50d6-a30a-43f4-81f3-fae54f5c30dd" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>greeting()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hallo, Welt</code></pre>
@@ -393,21 +393,21 @@ Argumente
 <section id="mehrere-parameter" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="mehrere-parameter">Mehrere Parameter</h3>
 <p>Selbstverständlich können wir mehr als einen Parameter verwenden:</p>
-<div id="cc677b7b-e1c3-4474-a393-959e391715ec" class="cell" data-execution_count="64">
+<div id="cc677b7b-e1c3-4474-a393-959e391715ec" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greeting(name, age):</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hello,"</span>, name)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hallo,"</span>, name)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> age <span class="op">&lt;</span> <span class="dv">18</span>:</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Sie sind noch minderjährig!"</span>)</span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Willkommen im Club!"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="94587c3b-6d4e-48e5-94da-cb241f29f528" class="cell" data-execution_count="66">
+<div id="94587c3b-6d4e-48e5-94da-cb241f29f528" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>greeting(<span class="st">"Tom"</span>, <span class="dv">16</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>greeting(<span class="st">"Lisa"</span>, <span class="dv">21</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Hello, Tom
+<pre><code>Hallo, Tom
 Sie sind noch minderjährig!
-Hello, Lisa
+Hallo, Lisa
 Willkommen im Club!</code></pre>
 </div>
 </div>
@@ -455,12 +455,12 @@ Optionale Parameter immer hinter nicht-optionalen Parametern!
 53.29</code></pre>
 </div>
 </div>
-<p>Eine Besonderheit in Python ist, dass wir sogar mehr als einen Wert zurückgeben können! Das geht in vielen anderen Programmiersprachen nicht ohne Weiteres, in C oder C++ würde man dafür z.B. Datenstrukturen (als Container für mehrere Werte) oder Zeiger verwenden (die auf einen Bereich im Speicher verweisen, wo die Werte hintereinander liegen). In Python geht das ganz einfach, wie das folgende Beispiel zeigt:</p>
-<div id="cc4a843c-3c28-4b07-b1d2-6dcd2110968c" class="cell" data-execution_count="3">
+<p>Eine Besonderheit in Python ist, dass wir sogar mehr als einen Wert zurückgeben können! Das geht in vielen anderen Programmiersprachen nicht ohne Weiteres, in C oder C++ würde man dafür z.B. Datenstrukturen (als Container für mehrere Werte) oder Zeiger verwenden (die auf einen Bereich im Speicher verweisen, wo die Werte hintereinander abgelegt werden). In Python geht das ganz einfach, wie das folgende Beispiel zeigt:</p>
+<div id="cc4a843c-3c28-4b07-b1d2-6dcd2110968c" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> <span class="bu">divmod</span>(a, b): </span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Division mit Rest</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># zwei Rückgabewerte durch Komma getrennt:</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a<span class="op">//</span>b, a<span class="op">%</span>b </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">//</span> b, a <span class="op">%</span> b </span>
 <span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">13</span></span>
 <span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">3</span></span>
@@ -479,7 +479,7 @@ Optionale Parameter immer hinter nicht-optionalen Parametern!
 <section id="keyword-argumente" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="keyword-argumente">Keyword-Argumente</h3>
 <p>Python erlaubt uns, Funktionen mit sog. <strong>Keyword-Argumenten</strong> aufzurufen. Damit ist gemeint, dass die Argumente explizit benannt werden, anstatt sie anhand ihrer Reihenfolge zu identifizieren. Betrachten wir zunächst folgendes Beispiel, in dem wir eine Funktion wie gewohnt aufrufen:</p>
-<div id="5df1e025-7835-4fb0-ba5b-95aa328602f8" class="cell" data-execution_count="133">
+<div id="5df1e025-7835-4fb0-ba5b-95aa328602f8" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_personal_details(name, age, city):</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Name: "</span>, name)</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Alter: "</span>, age)</span>
@@ -493,25 +493,25 @@ Wohnort:  London</code></pre>
 </div>
 </div>
 <p>Jetzt zeigen wir Varianten mit Keyword-Argumenten:</p>
-<div id="586ca26b-f331-49c9-b524-c7cbc655db47" class="cell" data-execution_count="149">
+<div id="586ca26b-f331-49c9-b524-c7cbc655db47" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mit Verwendung von Keyword-Argumenten:</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>print_personal_details(name<span class="op">=</span><span class="st">"John"</span>, city<span class="op">=</span><span class="st">"Birmingham"</span>, age<span class="op">=</span><span class="dv">32</span>) </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>print_personal_details(name <span class="op">=</span> <span class="st">"John"</span>, city <span class="op">=</span> <span class="st">"Birmingham"</span>, age <span class="op">=</span> <span class="dv">32</span>) </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Name:  John
 Alter:  32
 Wohnort:  Birmingham</code></pre>
 </div>
 </div>
-<div id="0c4344e9-e67c-4065-851d-6c866e267710" class="cell" data-execution_count="151">
+<div id="0c4344e9-e67c-4065-851d-6c866e267710" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># teilweise mit Keyword-Argumenten:</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>print_personal_details(<span class="st">"Marc"</span>, city<span class="op">=</span><span class="st">"Hamburg"</span>, age<span class="op">=</span><span class="dv">19</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>print_personal_details(<span class="st">"Marc"</span>, city <span class="op">=</span> <span class="st">"Hamburg"</span>, age <span class="op">=</span> <span class="dv">19</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Name:  Marc
 Alter:  19
 Wohnort:  Hamburg</code></pre>
 </div>
 </div>
-<p>Wie Sie sehen, können Sie die Parameternamen explizit verwenden, um ein Argument zu definieren und dabei sogar von der Reihenfolge im Funktionskopf abweichen. Eine Regel gibt es allerdings auch hier wieder: Wenn Sie nur teilweise Keyword-Argumente verwenden (wie im Beispiel <code>Marc</code> oben), kommen die Keyword-Argumente immer am Schluss! So können alle Parameter eindeutig identifiziert werden und es kommt nicht zu Mehrdeutigkeiten.</p>
+<p>Wie Sie sehen, können Sie die Parameternamen explizit verwenden, um ein Argument zu definieren und dabei sogar von der Reihenfolge im Funktionskopf abweichen. Eine Regel gibt es allerdings auch hier wieder: Wenn Sie nur teilweise Keyword-Argumente verwenden (wie im Beispiel <code>"Marc"</code> oben), kommen die Keyword-Argumente immer am Schluss! So können alle Parameter eindeutig identifiziert werden und es kommt nicht zu Mehrdeutigkeiten.</p>
 <p>Zur namentlichen Abgrenzung von den Keyword-Argumenten, bezeichnet man die Argumente, die anhand ihrer Reihenfolge identifiziert werden, als <strong>Positions-Argumente</strong> (engl.: <em>keyword arguments and positional arguments</em>).</p>
 <div class="exercises">
 <p><b>Übungen:</b></p>
@@ -526,13 +526,13 @@ Wohnort:  Hamburg</code></pre>
 <h2 data-number="7.3" class="anchored" data-anchor-id="dynamische-typisierung-und-mögliche-gefahren"><span class="header-section-number">7.3</span> Dynamische Typisierung und mögliche Gefahren</h2>
 <p>Wir kennen bereits die dynamische Typisierung als besondere Eigenschaft von Python. Im Zusammenhang mit Funktionen erlaubt Sie uns, dieselbe Funktion mit unterschiedlichen Datentypen aufzurufen (wir haben das bereits oben einmal getan, finden Sie das Beispiel?). In anderen Programmiersprachen muss man dafür die Funktion in der Regel mehrfach implementieren (eine Variante für jeden Datentyp), man sagt auch: die Funktion wird <strong>überladen</strong>. Bei überladenen Funktionen in C oder C++ erkennt der Compiler anhand der übergebenen Datentypen, welche Version der Funktion gemeint ist.</p>
 <p>Nicht so in Python, wo der Datentyp der Parameter und Rückgabewerte nicht vom Programmierer bzw. der Programmiererin festgelegt wird. Das kann sehr nützlich sein, aber auch zu Fehlern führen, wenn die Funktion mit inkompatiblen Datentypen aufgerufen wird. Hierzu ein Beispiel:</p>
-<div id="cdef92e8-551c-4a1a-8674-6340979b0c9d" class="cell" data-execution_count="172">
+<div id="cdef92e8-551c-4a1a-8674-6340979b0c9d" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> multiply(x, y):</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">*</span> y</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Eine sehr einfache Funktion, die zwei Parameter miteinander multipliziert. Wir rufen sie jetzt mit unterschiedlichen Datentypen auf:</p>
-<div id="b99619c0-8cf2-4ec5-bd09-4a694f78faa4" class="cell" data-execution_count="181">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(multiply(<span class="dv">3</span>,<span class="dv">4</span>)) <span class="co"># zwei Integer</span></span>
+<div id="b99619c0-8cf2-4ec5-bd09-4a694f78faa4" class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(multiply(<span class="dv">3</span>, <span class="dv">4</span>)) <span class="co"># zwei Integer</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(multiply(<span class="dv">2</span>, <span class="fl">3.2</span>)) <span class="co"># Integer und Float</span></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(multiply(<span class="dv">2</span><span class="op">+</span><span class="ot">2j</span>, <span class="dv">3</span><span class="op">-</span><span class="ot">1j</span>)) <span class="co"># zwei komplexe Zahlen</span></span>
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(multiply(<span class="st">"hi"</span>, <span class="dv">3</span>)) <span class="co"># String und Integer</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -546,18 +546,25 @@ hihihi</code></pre>
 <p>Hätten Sie geahnt, was alles mit dieser kleinen, unscheinbaren Funktion möglich ist?</p>
 <p>Es scheint fast alles möglich zu sein, aber eben nur <em>fast</em>! Rufen Sie die Funktion mit zwei Strings auf und Ihr Programm stürzt ab (wie sollen zwei Strings miteinander multipliziert werden?). Natürlich sind auch viele weitere Kombinationen nicht möglich (versuchen Sie z.B. zwei Listen miteinander zu multiplizieren oder eine Liste mit einem String). Manchmal ist es sogar noch schlimmer, wenn das Programm zwar nicht abstürzt, aber das Ergebnis völlig unerwartet ist (hätten Sie z.B. das Ergebnis der Multiplikation von String mit Integer in der Form erwartet?). Dann entstehen an einer anderen Stelle im Code womöglich überraschend Probleme und Sie müssen langwierig debuggen, bis Sie die Ursache finden.</p>
 <p>Daran erkennen Sie wieder: Python bietet große Flexibilität, aber Sie müssen damit verantwortungsbewusst umgehen!</p>
+<div class="exercises">
+<p><b>Übung:</b> Schreiben Sie eine Funktion <code>a_plus_b(a, b)</code>, die die Summe von zwei Parametern <code>a</code> und <code>b</code> zurückgibt.</p>
+<ol type="a">
+<li><p>Finden Sie mindestens fünf verschiedene Kombinationen von Datentypen, für die sich die Funktion ausführen lässt.</p></li>
+<li><p>Finden Sie mindestens fünf verschiedene Kombinationen von Datentypen, die zu einem Absturz führen!</p></li>
+</ol>
+</div>
 </section>
 <section id="funktionen-mit-beliebig-vielen-parametern" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="funktionen-mit-beliebig-vielen-parametern"><span class="header-section-number">7.4</span> Funktionen mit beliebig vielen Parametern</h2>
 <p>Wir kennen seit Beginn des Kurses eine Funktion, die beliebig viele Argumente entgegennehmen kann:</p>
-<div id="108f4af6-dac8-425f-8e07-f6a0a1cf0c32" class="cell" data-execution_count="206">
+<div id="108f4af6-dac8-425f-8e07-f6a0a1cf0c32" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()  <span class="co"># 0 Argumente</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hallo"</span>)  <span class="co"># 1 Argument</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hallo, "</span>, <span class="st">"Welt"</span>)  <span class="co"># 2 Argumente usw.</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hallo,"</span>, <span class="st">"Welt"</span>)  <span class="co"># 2 Argumente usw.</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Hallo
-Hallo,  Welt</code></pre>
+Hallo, Welt</code></pre>
 </div>
 </div>
 <p>Mit einem einfachen Trick, können Sie selbst solche Funktionen definieren: Stellen Sie vor ein Argument ein <code>*</code>, damit machen Sie deutlich, dass hier eine Sequenz von Argumenten übergeben werden kann. Innerhalb der Funktion können Sie über die Sequenz iterieren, z.B. mit der bekannten For-Schleife:</p>
@@ -649,17 +656,17 @@ Cell <span class="ansi-green-fg ansi-bold">In[234], line 6</span>
 </div>
 </div>
 <p>Hätten Sie die Ausgabe “John” erwartet? Python schützt uns: Beim Versuch die globale Variable zu verändern, hat Python eine Variable im lokalen Scope der Funktion angelegt. Diese bekam den Wert “John”, aber die Variable im globalen Scope wurde nicht angefasst. Machen wir das ruhig explizit:</p>
-<div id="5082e095-c95b-4e41-8513-198da1e6509a" class="cell" data-execution_count="283">
+<div id="5082e095-c95b-4e41-8513-198da1e6509a" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> change_name(new_name):</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> new_name</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"name innerhalb der Funktion: "</span>, name)</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"name innerhalb der Funktion:"</span>, name)</span>
 <span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Peter"</span></span>
 <span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>change_name(<span class="st">"John"</span>)</span>
-<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"name außerhalb: "</span> , name)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"name außerhalb:"</span>, name)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>name innerhalb der Funktion:  John
-name außerhalb:  Peter</code></pre>
+<pre><code>name innerhalb der Funktion: John
+name außerhalb: Peter</code></pre>
 </div>
 </div>
 <p>Man kann diesen Sicherheitsmechanismus mit dem Keyword <code>global</code> aushebeln:</p>
