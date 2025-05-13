@@ -255,7 +255,10 @@ window.Quarto = {
   <li><a href="#rückgabewerte" id="toc-rückgabewerte" class="nav-link" data-scroll-target="#rückgabewerte">Rückgabewerte</a></li>
   <li><a href="#keyword-argumente" id="toc-keyword-argumente" class="nav-link" data-scroll-target="#keyword-argumente">Keyword-Argumente</a></li>
   </ul></li>
-  <li><a href="#dynamische-typisierung-und-mögliche-gefahren" id="toc-dynamische-typisierung-und-mögliche-gefahren" class="nav-link" data-scroll-target="#dynamische-typisierung-und-mögliche-gefahren"><span class="header-section-number">7.3</span> Dynamische Typisierung und mögliche Gefahren</a></li>
+  <li><a href="#dynamische-typisierung-und-mögliche-gefahren" id="toc-dynamische-typisierung-und-mögliche-gefahren" class="nav-link" data-scroll-target="#dynamische-typisierung-und-mögliche-gefahren"><span class="header-section-number">7.3</span> Dynamische Typisierung und mögliche Gefahren</a>
+  <ul class="collapse">
+  <li><a href="#ergänzung-mit-isinstance-den-typ-von-parametern-prüfen" id="toc-ergänzung-mit-isinstance-den-typ-von-parametern-prüfen" class="nav-link" data-scroll-target="#ergänzung-mit-isinstance-den-typ-von-parametern-prüfen">Ergänzung: Mit <code>isinstance</code> den Typ von Parametern prüfen</a></li>
+  </ul></li>
   <li><a href="#funktionen-mit-beliebig-vielen-parametern" id="toc-funktionen-mit-beliebig-vielen-parametern" class="nav-link" data-scroll-target="#funktionen-mit-beliebig-vielen-parametern"><span class="header-section-number">7.4</span> Funktionen mit beliebig vielen Parametern</a></li>
   <li><a href="#scope" id="toc-scope" class="nav-link" data-scroll-target="#scope"><span class="header-section-number">7.5</span> Scope</a>
   <ul class="collapse">
@@ -294,7 +297,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2. Mai 2025</p>
+      <p class="date">13. Mai 2025</p>
     </div>
   </div>
   
@@ -314,7 +317,7 @@ window.Quarto = {
 <section id="was-ist-eine-funktion" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="was-ist-eine-funktion">Was ist eine Funktion?</h3>
 <p>Eine Funktion ist ein in sich geschlossener Block von Anweisungen, der eine bestimmte Aufgabe erfüllt. Vergleichen Sie eine Funktion mit einem Kochrezept: Das Rezept beschreibt eine schrittweise Anleitung zur Zubereitung eines Gerichts. Wann immer Sie das Gericht kochen, verwenden Sie dasselbe Rezept wieder und wieder. In der Programmierung würden wir sagen: “Sie rufen dieselbe Funktion immer wieder auf.” Von dem Rezept benötigen Sie aber nur ein einziges Exemplar (ganz egal, wie oft sie das Gericht kochen werden). So ist es auch mit dem Code, der in einer Funktion definiert wird: Sie schreiben ihn ein einziges Mal und verwenden ihn dann beliebig oft.</p>
-<p>Manchmal wird auch eine Analogie zu mathematischen Funktionen <span class="math inline">\(f(x)\)</span> gezogen. Diese Analogie hat aber einige Schwächen: Die mathematische Funktion bekommt immer einen <em>Input</em> (hier <span class="math inline">\(x\)</span>) und gibt immer einen Wert als <em>Output</em> (<span class="math inline">\(y = f(x)\)</span>) zurück. Das muss bei Funktionen in der Programmierung nicht sein! Eine Funktion in der Programmierung kommt auch ohne Input und Output aus, wie wir gleich sehen werden. Es liegt ganz in Ihrer Freiheit, ob Ihre Funktionen mit Inputs und Outputs arbeitet oder nicht.</p>
+<p>Manchmal wird auch eine Analogie zu mathematischen Funktionen <span class="math inline">\(f(x)\)</span> gezogen. Diese Analogie hat aber einige Schwächen: Die mathematische Funktion bekommt immer einen <em>Input</em> (hier <span class="math inline">\(x\)</span>) und gibt immer einen Wert als <em>Output</em> (<span class="math inline">\(y = f(x)\)</span>) zurück. Das muss bei Funktionen in der Programmierung nicht sein! Eine Funktion in der Programmierung kommt auch ohne Input und Output aus, wie wir gleich sehen werden. Es liegt ganz in Ihrer Freiheit, ob Ihre Funktionen mit Inputs und Outputs arbeitet oder nicht. Sie können sogar eine Funktion programmieren, die beliebig viele Inputs verarbeiten kann (eine solche Funktion haben wir bereits kennengelernt, wissen Sie welche?).</p>
 <p>Bevor wir konkret werden, fassen wir die Vorteile von Funktionen zusammen:</p>
 <ul>
 <li><p><strong>Modularisierung:</strong> Zerlegung des Codes in kleine, verständliche Einheiten.</p></li>
@@ -326,7 +329,7 @@ window.Quarto = {
 </section>
 <section id="funktionen-in-python" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="funktionen-in-python"><span class="header-section-number">7.2</span> Funktionen in Python</h2>
-<p>Python bietet eine einfache und flexible Syntax zur Definition von Funktionen. Eine Funktion wird mit dem Schlüsselwort <code>def</code> eingeleitet. In runden Klammern werden optional Eingangsparameter definiert, dann folgt ein Doppelpunkt. Der eigentliche Funktionsblock muss eingerückt werden (das kennen Sie schon von Code-Blöcken in Verzweigungen und Schleifen). Hier ein einfaches Beispiel ohne Eingangsparameter:</p>
+<p>Python bietet eine einfache und flexible Syntax zur Definition von Funktionen. Eine Funktion wird mit dem Schlüsselwort <code>def</code> eingeleitet, gefolgt vom Funktionsnamen (den Sie selbst festlegen). In runden Klammern werden optional Eingangsparameter definiert, dann folgt ein Doppelpunkt. Der eigentliche Funktionsblock muss eingerückt werden (das kennen Sie schon von Code-Blöcken in Verzweigungen und Schleifen). Hier ein einfaches Beispiel ohne Eingangsparameter:</p>
 <div id="2f1aff81-b8a2-45e9-86f8-b6cb5f5a2f17" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greeting():</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hello, world!"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -456,7 +459,7 @@ Optionale Parameter immer hinter nicht-optionalen Parametern!
 </div>
 </div>
 <p>Eine Besonderheit in Python ist, dass wir sogar mehr als einen Wert zurückgeben können! Das geht in vielen anderen Programmiersprachen nicht ohne Weiteres, in C oder C++ würde man dafür z.B. Datenstrukturen (als Container für mehrere Werte) oder Zeiger verwenden (die auf einen Bereich im Speicher verweisen, wo die Werte hintereinander abgelegt werden). In Python geht das ganz einfach, wie das folgende Beispiel zeigt:</p>
-<div id="cc4a843c-3c28-4b07-b1d2-6dcd2110968c" class="cell" data-execution_count="11">
+<div id="cc4a843c-3c28-4b07-b1d2-6dcd2110968c" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> <span class="bu">divmod</span>(a, b): </span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Division mit Rest</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># zwei Rückgabewerte durch Komma getrennt:</span></span>
@@ -467,11 +470,11 @@ Optionale Parameter immer hinter nicht-optionalen Parametern!
 <span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>quotient, remainder <span class="op">=</span> <span class="bu">divmod</span>(a,b)</span>
 <span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, <span class="st">" geteilt durch "</span>, b ,<span class="st">" ergibt:"</span>)</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(quotient, <span class="st">"mit Rest "</span>, remainder)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, <span class="st">"geteilt durch"</span>, b ,<span class="st">"ergibt:"</span>)</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(quotient, <span class="st">"mit Rest"</span>, remainder)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>13  geteilt durch  3  ergibt:
-4 mit Rest  1</code></pre>
+<pre><code>13 geteilt durch 3 ergibt:
+4 mit Rest 1</code></pre>
 </div>
 </div>
 <p>Die Reihenfolge der Rückgabewerte ist natürlich zu beachten, sonst geschehen leicht Fehler (würde man versehentlich <code>remainder, quotient = divmod(a,b)</code> schreiben, stünde in <code>quotient</code> der Rest und in <code>remainder</code> der Quotient).</p>
@@ -479,43 +482,57 @@ Optionale Parameter immer hinter nicht-optionalen Parametern!
 <section id="keyword-argumente" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="keyword-argumente">Keyword-Argumente</h3>
 <p>Python erlaubt uns, Funktionen mit sog. <strong>Keyword-Argumenten</strong> aufzurufen. Damit ist gemeint, dass die Argumente explizit benannt werden, anstatt sie anhand ihrer Reihenfolge zu identifizieren. Betrachten wir zunächst folgendes Beispiel, in dem wir eine Funktion wie gewohnt aufrufen:</p>
-<div id="5df1e025-7835-4fb0-ba5b-95aa328602f8" class="cell" data-execution_count="16">
+<div id="5df1e025-7835-4fb0-ba5b-95aa328602f8" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_personal_details(name, age, city):</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Name: "</span>, name)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Alter: "</span>, age)</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Wohnort: "</span>, city)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Name:"</span>, name)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Alter:"</span>, age)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Wohnort:"</span>, city)</span>
 <span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>print_personal_details(<span class="st">"Alice"</span>, <span class="dv">23</span>, <span class="st">"London"</span>) <span class="co"># wie gehabt</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Name:  Alice
-Alter:  23
-Wohnort:  London</code></pre>
+<pre><code>Name: Alice
+Alter: 23
+Wohnort: London</code></pre>
 </div>
 </div>
 <p>Jetzt zeigen wir Varianten mit Keyword-Argumenten:</p>
-<div id="586ca26b-f331-49c9-b524-c7cbc655db47" class="cell" data-execution_count="19">
+<div id="586ca26b-f331-49c9-b524-c7cbc655db47" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mit Verwendung von Keyword-Argumenten:</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>print_personal_details(name <span class="op">=</span> <span class="st">"John"</span>, city <span class="op">=</span> <span class="st">"Birmingham"</span>, age <span class="op">=</span> <span class="dv">32</span>) </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Name:  John
-Alter:  32
-Wohnort:  Birmingham</code></pre>
+<pre><code>Name: John
+Alter: 32
+Wohnort: Birmingham</code></pre>
 </div>
 </div>
-<div id="0c4344e9-e67c-4065-851d-6c866e267710" class="cell" data-execution_count="21">
+<div id="0c4344e9-e67c-4065-851d-6c866e267710" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># teilweise mit Keyword-Argumenten:</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>print_personal_details(<span class="st">"Marc"</span>, city <span class="op">=</span> <span class="st">"Hamburg"</span>, age <span class="op">=</span> <span class="dv">19</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Name:  Marc
-Alter:  19
-Wohnort:  Hamburg</code></pre>
+<pre><code>Name: Marc
+Alter: 19
+Wohnort: Hamburg</code></pre>
 </div>
 </div>
-<p>Wie Sie sehen, können Sie die Parameternamen explizit verwenden, um ein Argument zu definieren und dabei sogar von der Reihenfolge im Funktionskopf abweichen. Eine Regel gibt es allerdings auch hier wieder: Wenn Sie nur teilweise Keyword-Argumente verwenden (wie im Beispiel <code>"Marc"</code> oben), kommen die Keyword-Argumente immer am Schluss! So können alle Parameter eindeutig identifiziert werden und es kommt nicht zu Mehrdeutigkeiten.</p>
-<p>Zur namentlichen Abgrenzung von den Keyword-Argumenten, bezeichnet man die Argumente, die anhand ihrer Reihenfolge identifiziert werden, als <strong>Positions-Argumente</strong> (engl.: <em>keyword arguments and positional arguments</em>).</p>
+<p>Wie Sie sehen, können Sie die Parameternamen explizit verwenden, um ein Argument zu definieren und dabei sogar von der Reihenfolge im Funktionskopf abweichen. Eine Regel gibt es allerdings auch hier wieder: Wenn Sie nur teilweise Keyword-Argumente verwenden (wie im Beispiel <code>"Marc"</code> oben), kommen die Keyword-Argumente immer am Schluss! Zur namentlichen Abgrenzung von den Keyword-Argumenten, bezeichnet man die Argumente, die anhand ihrer Reihenfolge identifiziert werden, als <strong>Positionsargumente</strong> (engl.: <em>keyword arguments and positional arguments</em>). Halten wir also fest:</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Positions-Argumente zuerst, dann Keyword-Argumente!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Python weist zunächst die Argumente entsprechend ihrer Reihenfolge den Parametern zu (Positionsargumente). Danach können verbleibende Parameter explizit über Schlüsselworte (Keyword-Argumente) gesetzt werden.</p>
+</div>
+</div>
 <div class="exercises">
 <p><b>Übungen:</b></p>
 <ol type="1">
+<li>Schreiben Sie eine Funktion, die einen persönlichen Begrüßungstext auf verschiedenen Sprachen ausgeben kann. Die Standardsprache soll Deutsch sein, bieten Sie mindestens zwei weitere Sprachen an. Übergeben Sie neben der Sprache weitere Argumente, die Sie für eine personalisierte Begrüßung benötigen.<br>
+</li>
 <li>Ein Körper werde aus seiner Ruhelage beschleunigt. Implementieren Sie eine Funktion <code>accelerated_motion(a, t)</code>, die die Beschleunigung <code>a</code> und die Zeit <code>t</code> als Parameter erwartet und die zurückgelegte Strecke <span class="math inline">\(s(t)=\frac{1}{2}a\,t^2\)</span> und die Geschwindigkeit <span class="math inline">\(v(t)=a\cdot t\)</span> zurückgibt.</li>
 <li>Erweitern Sie die Funktion <code>accelerated_motion</code> um zwei optionale Parameter <code>s0</code> und <code>v0</code>, die eine Anfangsposition bzw. eine Anfangsgeschwindigkeit zum Zeitpunkt <span class="math inline">\(t=0\)</span> darstellen. Übergibt man keine Argumente, soll die Bewegung wie gehabt aus der Ruhelage beginnen.</li>
 </ol>
@@ -553,14 +570,40 @@ hihihi</code></pre>
 <li><p>Finden Sie mindestens fünf verschiedene Kombinationen von Datentypen, die zu einem Absturz führen!</p></li>
 </ol>
 </div>
+<section id="ergänzung-mit-isinstance-den-typ-von-parametern-prüfen" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="ergänzung-mit-isinstance-den-typ-von-parametern-prüfen">Ergänzung: Mit <code>isinstance</code> den Typ von Parametern prüfen</h3>
+<p>Mit der Funktion <code>isinstance</code> kann bei Bedarf der Typ von Übergabeparametern geprüft werden. Es ist somit möglich, eine Funktion gegen die Verwendung mit inkompatiblen Typen abzusichern. Im Beispiel sieht dies so aus:</p>
+<div id="07821d87-b14d-479f-aec3-7e9a761ea0d9" class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_and_sort_lists(a, b):</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">isinstance</span>(a, <span class="bu">list</span>) <span class="kw">and</span> <span class="bu">isinstance</span>(b, <span class="bu">list</span>):</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> a <span class="op">+</span> b</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>        c.sort()</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> c</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Inkompatible Typen"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="4b11c325-ff9b-40ec-b0a0-e7481af42703" class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>add_and_sort_lists([<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>], [<span class="dv">4</span>, <span class="dv">3</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="42">
+<pre><code>[1, 2, 3, 4, 5]</code></pre>
+</div>
+</div>
+<div id="6849e6c8-1b9a-4d59-b60a-fb624053c86b" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>add_lists([<span class="dv">1</span>, <span class="dv">2</span>], <span class="fl">3.4</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Inkompatible Typen</code></pre>
+</div>
+</div>
+<p>Hinweis: Eine Abfrage mit <code>type()</code> (z.B. <code>type(x) == int</code>) wird für diesen Zweck nicht empfohlen, da <code>isinstance()</code> im Gegensatz zu <code>type()</code> auch abgeleitete Datentypen erkennt (siehe Vererbung / objektorientierte Programmierung: Wenn eine Klasse <code>Dog</code> von einer Klasse <code>Animal</code> erbt, würde <code>isinstance</code> einen <code>Dog</code> auch als <code>Animal</code> erkennen.).</p>
+</section>
 </section>
 <section id="funktionen-mit-beliebig-vielen-parametern" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="funktionen-mit-beliebig-vielen-parametern"><span class="header-section-number">7.4</span> Funktionen mit beliebig vielen Parametern</h2>
 <p>Wir kennen seit Beginn des Kurses eine Funktion, die beliebig viele Argumente entgegennehmen kann:</p>
 <div id="108f4af6-dac8-425f-8e07-f6a0a1cf0c32" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()  <span class="co"># 0 Argumente</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hallo"</span>)  <span class="co"># 1 Argument</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hallo,"</span>, <span class="st">"Welt"</span>)  <span class="co"># 2 Argumente usw.</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()  <span class="co"># 0 Argumente</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hallo"</span>)  <span class="co"># 1 Argument</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hallo,"</span>, <span class="st">"Welt"</span>)  <span class="co"># 2 Argumente usw.</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Hallo
@@ -569,17 +612,17 @@ Hallo, Welt</code></pre>
 </div>
 <p>Mit einem einfachen Trick, können Sie selbst solche Funktionen definieren: Stellen Sie vor ein Argument ein <code>*</code>, damit machen Sie deutlich, dass hier eine Sequenz von Argumenten übergeben werden kann. Innerhalb der Funktion können Sie über die Sequenz iterieren, z.B. mit der bekannten For-Schleife:</p>
 <div id="b5533568-d0fc-4bef-ac53-8590ddc49ba3" class="cell" data-execution_count="220">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sum_numbers(<span class="op">*</span>numbers):</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> number <span class="kw">in</span> numbers:</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> number</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sum_numbers(<span class="op">-</span><span class="dv">2</span>))</span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sum_numbers(<span class="dv">5</span>, <span class="dv">10</span>))</span>
-<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sum_numbers(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)) </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sum_numbers(<span class="op">*</span>numbers):</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> number <span class="kw">in</span> numbers:</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>        result <span class="op">+=</span> number</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sum_numbers(<span class="op">-</span><span class="dv">2</span>))</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sum_numbers(<span class="dv">5</span>, <span class="dv">10</span>))</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sum_numbers(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)) </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>-2
 15
@@ -592,16 +635,16 @@ Hallo, Welt</code></pre>
 <p>In Python – und generell in der Programmierung – bezieht sich der Scope (Gültigkeitsbereich) auf den Bereich des Codes, in dem eine Variable sichtbar und zugänglich ist. Es gibt dabei zwei Hauptarten von Scope:</p>
 <ul>
 <li><p><strong>Lokaler Scope</strong>: Eine Variable, die innerhalb einer Funktion definiert wird, ist nur in dieser Funktion sichtbar und außerhalb nicht zugänglich.</p></li>
-<li><p><strong>Globaler Scope:</strong> Eine Variable, die außerhalb einer Funktion definiert wird, ist im gesamten Programm sichtbar. Python schützt uns aber davor, diese Variablen unbeabsichtigt zu verändern, es sei denn wir machen unsere Absicht explizit deutlich. Dafür gibt es in Python das Keyword <code>global</code>.</p></li>
+<li><p><strong>Globaler Scope:</strong> Eine Variable, die außerhalb einer Funktion definiert wird, ist nach ihrer Definition im gesamten Programm sichtbar (auch innerhalb einer Funktion). Python schützt uns aber davor, globale Variablen unbeabsichtigt im Inneren einer Funktion neu zuzuweisen, es sei denn wir machen unsere Absicht explizit deutlich. Dafür gibt es in Python das Keyword <code>global</code>.</p></li>
 </ul>
 <p>Beginnen wir mit einem Beispiel zum lokalen Scope:</p>
 <div id="6fc5f60f-0231-4d8d-82ef-cdf3661180dd" class="cell" data-execution_count="234">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_function(a, b):</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> a <span class="op">+</span> b</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> c<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>my_function(<span class="dv">2</span>,<span class="dv">3</span>)</span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c) <span class="co"># FEHLER!!!! c ist hier nicht bekannt. </span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_function(a, b):</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> a <span class="op">+</span> b</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> c<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>my_function(<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(c) <span class="co"># FEHLER!!!! c ist hier nicht bekannt. </span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg ansi-bold">---------------------------------------------------------------------------</span>
@@ -617,72 +660,71 @@ Cell <span class="ansi-green-fg ansi-bold">In[234], line 6</span>
 </div>
 <p>Auf die Variable <code>c</code> kann außerhalb der Funktion nicht zugegriffen werden, sie existiert nur im lokalen Scope der Funktion.</p>
 <p>Nun versuchen wir umgekehrt innerhalb der Funktion auf eine Variable zuzugreifen, die außerhalb definiert wurde:</p>
-<div id="1491ea42-2dd1-4290-8367-8a1c3595a495" class="cell" data-execution_count="278">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greeting():</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hallo,"</span>, name)  <span class="co"># name existiert nur außerhalb</span></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Peter"</span></span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>greeting()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="1491ea42-2dd1-4290-8367-8a1c3595a495" class="cell" data-execution_count="51">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greeting():</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hallo,"</span>, name)  <span class="co"># name existiert im globalen Scope</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Peter"</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>greeting()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hallo, Peter</code></pre>
 </div>
 </div>
 <p>Das Beispiel ist geglückt! Allerdings handelt es sich hierbei nicht um guten Programmierstil. Vielmehr sollte man <code>name</code> als Parameter der Funktion definieren. Was geschieht eigentlich, wenn es <code>name</code> im globalen und im lokalen Scope gibt?</p>
-<div id="66ccf16d-6d8a-4232-a71e-52d9960afbfe" class="cell" data-execution_count="262">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greeting(name):</span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hallo,"</span>, name)</span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Peter"</span></span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>greeting(<span class="st">"Tina"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="66ccf16d-6d8a-4232-a71e-52d9960afbfe" class="cell" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greeting(name):</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Hallo,"</span>, name)</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Peter"</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>greeting(<span class="st">"Tina"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hallo, Tina</code></pre>
 </div>
 </div>
-<p><strong>Der lokale Scope geht vor! Die Funktion sucht immer zuerst in ihrem lokalen Scope nach der Variable. Nur, wenn sie sie dort nicht findet, schaut sie im globalen Scope nach.</strong></p>
+<p><strong>Der lokale Scope geht vor! Die Funktion sucht immer zuerst in ihrem lokalen Scope nach der Variable. Nur, wenn sie sie dort nicht findet, schaut sie im globalen Scope nach.</strong> Diese Regel nennt man auch LEGB-Rule: Python sucht nach Variablennamen <em>von innen nach außen</em> über diese Stufen: L = local scope, E = enclosing scope (umschließende Funktionen), G = global scope, B = built-in scope (eingebaute Python-Bezeichner).</p>
 <section id="das-keyword-global-in-python" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="das-keyword-global-in-python">Das Keyword <code>global</code> in Python</h3>
-<p>Wie bereits erwähnt, schützt uns Python davor, unbeabsichtigt eine Variable im globalen Scope zu verändern. Wir können zwar ohne weiteres lesend darauf zugreifen, nicht aber schreibend, wie dieses Beispiel zeigt:</p>
+<p>Wie bereits erwähnt, schützt uns Python davor, unbeabsichtigt eine Variable aus dem globalen Scope neu zuzuweisen, wenn wir uns innerhalb einer Funktion befinden. Das wird im folgenden Beispiel illustriert:</p>
 <div id="48c029af-f599-45b2-84b0-2d7774f6fd44" class="cell" data-execution_count="260">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> change_name(new_name):</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> new_name</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Peter"</span></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>change_name(<span class="st">"John"</span>)</span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(name)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> change_name(new_name):</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> new_name</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Peter"</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>change_name(<span class="st">"John"</span>)</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(name)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Peter</code></pre>
 </div>
 </div>
-<p>Hätten Sie die Ausgabe “John” erwartet? Python schützt uns: Beim Versuch die globale Variable zu verändern, hat Python eine Variable im lokalen Scope der Funktion angelegt. Diese bekam den Wert “John”, aber die Variable im globalen Scope wurde nicht angefasst. Machen wir das ruhig explizit:</p>
+<p>Hätten Sie die Ausgabe “John” erwartet? Python schützt uns: Beim Versuch die globale Variable innerhalb einer Funktion neu zuzuweisen, hat Python stattdessen eine neue Variable im lokalen Scope der Funktion angelegt - mit demselben Bezeichner: <code>name</code>! Diese lokale Variable bekam den Wert “John”, aber die Variable im globalen Scope wurde nicht angefasst. Machen wir das ruhig explizit:</p>
 <div id="5082e095-c95b-4e41-8513-198da1e6509a" class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> change_name(new_name):</span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> new_name</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"name innerhalb der Funktion:"</span>, name)</span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Peter"</span></span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>change_name(<span class="st">"John"</span>)</span>
-<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"name außerhalb:"</span>, name)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> change_name(new_name):</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> new_name</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"name innerhalb der Funktion:"</span>, name)</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Peter"</span></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>change_name(<span class="st">"John"</span>)</span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"name außerhalb:"</span>, name)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>name innerhalb der Funktion: John
 name außerhalb: Peter</code></pre>
 </div>
 </div>
-<p>Man kann diesen Sicherheitsmechanismus mit dem Keyword <code>global</code> aushebeln:</p>
+<p>Wir haben nun bereits mehrfach gesehen, dass Variablen mit demselben Namen in unterschiedlichen Scopes existieren können. Python speichert die Variablennamen für jeden Scope in einer eigenen Liste, dem sog. Namespace, der zu diesem Scope gehört. Im obigen Beispiel existiert also eine Variable <code>name</code> im globalen Namespace und eine Variable <code>name</code> im Namespace der Funktion <code>change_name</code>. Obwohl diese beiden Variablen gleich heißen, handelt es sich doch um getrennte Variablen, die in der Regel unterschiedliche Instanzen referenzieren. Beim Aufruf von <code>print</code> innerhalb der Funktion wird gemäß der LEGB-Rule die lokale Variable zuerst gefunden und verwendet. Bei der Verwendung von <code>print</code> außerhalb der Funktion, findet Python stattdessen die globale Variable (Reminder: Python sucht immer <em>von innen nach außen</em>).</p>
+<p>Es gibt eine Möglichkeit, den vorgestellten Sicherheitsmechanismus auszuhebeln: mit dem Keyword <code>global</code>!</p>
 <div id="06eb25eb-8b3f-418b-a6c2-ee95b9248458" class="cell" data-execution_count="286">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> change_name(new_name):</span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> name  <span class="co"># hey Python, wir meinen die globale Variable!</span></span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> new_name</span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Peter"</span></span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>change_name(<span class="st">"John"</span>)</span>
-<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(name)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> change_name(new_name):</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> name  <span class="co"># hey Python, wir meinen die globale Variable!</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> new_name</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"Peter"</span></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>change_name(<span class="st">"John"</span>)</span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(name)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>John</code></pre>
 </div>
 </div>
-<p>Mit der Zeile <code>global name</code> weisen wir Python explizit an, die Variable <code>name</code> aus dem globalen Scope zu verwenden!</p>
+<p>Mit der Zeile <code>global name</code> weisen wir Python explizit an, die Variable <code>name</code> aus dem globalen Scope zu verwenden! In diesem Beispiel wird <strong>keine</strong> lokale Variante von <code>name</code> angelegt. Die Variable <code>name</code> existiert nur im globalen Namespace, kann aber in der Funktion frei verwendet werden.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -695,39 +737,39 @@ Verwendung globaler Variablen in Funktionen
 <div class="callout-body-container callout-body">
 <p>Finden Sie das alles noch ein wenig verwirrend? Gut so, denn Sie sollten von der Verwendung globaler Variablen in Funktionen sowieso besser absehen. Versuchen Sie stattdessen saubere Schnittstellen mithilfe von Parametern und Rückgabewerten zu definieren. Wann immer Sie geneigt sind, lesend auf einen globalen Wert zuzugreifen, übergeben Sie diesen lieber als Argument. Wann immer Sie geneigt sind, schreibend auf einen globalen Wert zuzugreifen, arbeiten Sie lieber mit einem Rückgabewert, den Sie im Hauptprogramm zuweisen können.</p>
 <p>Beispiel: Eine Zahl im globalen Scope soll durch ihre Quadratzahl ersetzt werden.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square(x):</span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span> <span class="co"># die Funktion führt die Rechnung durch</span></span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">42</span></span>
-<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> square(a) <span class="co"># die eigentliche Veränderung geschieht außerhalb der Funktion</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square(x):</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span> <span class="co"># die Funktion führt die Rechnung durch</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> square(a) <span class="co"># die eigentliche Veränderung geschieht außerhalb der Funktion</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
 </section>
 <section id="docstrings-und-typ-annotationen-meine-funktion-für-andere-dokumentieren" class="level2" data-number="7.6">
 <h2 data-number="7.6" class="anchored" data-anchor-id="docstrings-und-typ-annotationen-meine-funktion-für-andere-dokumentieren"><span class="header-section-number">7.6</span> Docstrings und Typ-Annotationen: Meine Funktion für andere dokumentieren</h2>
-<p>In großen Software-Projekten sind Sie nicht die einzige Person, die Ihre Funktionen benutzt. Sie können durch verständliche Dokumentation, die Nutzbarkeit Ihrer Funktionen enorm erhöhen. Eine einfache Möglichkeit sind sog. Docstrings: Dabei handelt es sich um eine spezielle Dokumentierung, direkt nach der definierenden Zeile:</p>
-<div id="dc648da2-9af1-433d-9313-7447b5880161" class="cell" data-execution_count="326">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bending_stress(moment, y, inertia):</span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Berechnet die Biegespannung in einem Balken.</span></span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Formel: sigma = (M * y) / I</span></span>
-<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a><span class="co">        moment (float): Biegemoment in Newton-Meter (Nm).</span></span>
-<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a><span class="co">        y (float): Abstand von der Neutralachse in Meter (m).</span></span>
-<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a><span class="co">        inertia (float): Flächenträgheitsmoment in m^4.</span></span>
-<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
-<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a><span class="co">        float: Biegespannung in Pascal (Pa).</span></span>
-<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> moment <span class="op">*</span> y <span class="op">/</span> inertia</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In großen Software-Projekten sind Sie nicht die einzige Person, die Ihre Funktionen benutzt. Sie können durch verständliche Dokumentation die Nutzbarkeit Ihrer Funktionen enorm erhöhen. Eine einfache Möglichkeit sind sog. Docstrings: Dabei handelt es sich um eine spezielle Kommentierung, direkt nach der definierenden Zeile:</p>
+<div id="dc648da2-9af1-433d-9313-7447b5880161" class="cell" data-execution_count="48">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bending_stress(moment, y, inertia):</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Berechnet die Biegespannung in einem Balken.</span></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Formel: sigma = (M * y) / I</span></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a><span class="co">        moment (float): Biegemoment in Newton-Meter (Nm).</span></span>
+<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a><span class="co">        y (float): Abstand von der Neutralachse in Meter (m).</span></span>
+<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a><span class="co">        inertia (float): Flächenträgheitsmoment in m^4.</span></span>
+<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a><span class="co">        float: Biegespannung in Pascal (Pa).</span></span>
+<span id="cb55-14"><a href="#cb55-14" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb55-15"><a href="#cb55-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb55-16"><a href="#cb55-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> moment <span class="op">*</span> y <span class="op">/</span> inertia</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Der Docstring wird mit <code>"""</code> eingeleitet, es folgt eine kurze Erklärung der Funktion, anschließend eine Erklärung der Argumente und der Rückgabewerte, und zum Abschluss wieder <code>"""</code>. Wie genau der Docstring formattiert wird, hängt von der gewählten Konvention ab (wir haben hier den Google-Style verwendet). Viele Editoren greifen Docstrings in unterstützenden Funktionen auf (Tooltips oder Autovervollständigungen). Insbesondere kann nun aber jeder Entwickler und jede Entwicklerin über die Funktion <code>help()</code>eine Hilfe zu Ihrer Funktion aufrufen:</p>
 <div id="55ded537-a8e4-43b2-af92-13202e87b61c" class="cell" data-execution_count="329">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(bending_stress)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(bending_stress)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Help on function bending_stress in module __main__:
 
@@ -748,38 +790,39 @@ bending_stress(moment, y, inertia)
 </div>
 <p>Eine weitere Unterstützung bieten <strong>Typ-Annotation</strong>, mit denen wir andere Entwickler bzw. Entwicklerinnen darüber informieren, welche Datentypen unsere Funktion erwartet bzw. zurückgibt. Aber Vorsicht: Diese Angaben sind rein informativ! Sie verhindern nicht, dass die Funktion mit anderen Datentypen aufgerufen wird! Unser Beispiel mit Typ-Annotationen:</p>
 <div id="1d94901b-a400-4388-84e8-9719b07bbe93" class="cell" data-execution_count="310">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bending_stress(moment: <span class="bu">float</span>, y: <span class="bu">float</span>, inertia: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Rest wie oben</span></span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span> <span class="co"># pass ist nur ein Platzhalter</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bending_stress(moment: <span class="bu">float</span>, y: <span class="bu">float</span>, inertia: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">float</span>:</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Rest wie oben</span></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span> <span class="co"># pass ist nur ein Platzhalter</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Die Typ-Annotationen geben an: Wir erwarten den Datentyp <code>float</code> für die Parameter <code>moment</code>, <code>y</code> und <code>inertia</code> und geben auch eine Float als Ergebnis zurück (<code>-&gt; float</code>).</p>
 <div class="exercises">
 <p><b>Übung:</b></p>
 <p>Schreiben Sie eine Funktion <code>ohms_law(R, U, I)</code>: Der Anwender übergibt für jeweils zwei der drei Parameter Zahlenwerte und für den dritten den String <code>"*"</code>. Daraufhin berechnet die Funktion den fehlenden Wert mithilfe des Ohmschen Gesetzes und gibt ihn zurück. Dokumentieren Sie die Funktion mit einem Docstring, der die Benutzung erklärt.</p>
 </div>
-<div id="b5eb4889-28ec-4e53-960e-d805ab1beeec" class="cell" data-execution_count="351">
+<div id="b5eb4889-28ec-4e53-960e-d805ab1beeec" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ohms_law(R, U, I):</span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Berechnet Widerstand, Spannung oder Strom mithilfe des Ohmschen Gesetzes. </span></span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Der fehlende Wert wird mit dem Argument "*" markiert; für die anderen beiden müssen Zahlen übergeben werden.</span></span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
-<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a><span class="co">        R (float oder string): El. Widerstand (Ohm) oder "*".</span></span>
-<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a><span class="co">        U (float oder string): El. Spannung (Volt) oder "*".</span></span>
-<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a><span class="co">        I (float oder string): El. Strom (A) oder "*".</span></span>
-<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
-<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a><span class="co">        float: fehlender Wert</span></span>
-<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
-<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (R<span class="op">==</span><span class="st">"*"</span>):</span>
-<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> U<span class="op">/</span>I</span>
-<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> (U<span class="op">==</span><span class="st">"*"</span>):</span>
-<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> R<span class="op">*</span>I</span>
-<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> (I <span class="op">==</span><span class="st">"*"</span>):</span>
-<span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> U<span class="op">/</span>R</span>
-<span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb54-20"><a href="#cb54-20" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ungültige Eingabe!"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ohms_law(R, U, I):</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Berechnet Widerstand, Spannung oder Strom mithilfe des Ohmschen Gesetzes. </span></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Der fehlende Wert wird mit dem Argument "*" markiert; für die anderen beiden müssen Zahlen übergeben werden.</span></span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a><span class="co">        R (float oder string): El. Widerstand (Ohm) oder "*".</span></span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a><span class="co">        U (float oder string): El. Spannung (Volt) oder "*".</span></span>
+<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a><span class="co">        I (float oder string): El. Strom (A) oder "*".</span></span>
+<span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a><span class="co">        float: fehlender Wert</span></span>
+<span id="cb59-11"><a href="#cb59-11" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb59-12"><a href="#cb59-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb59-13"><a href="#cb59-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> R <span class="op">==</span> <span class="st">"*"</span>:</span>
+<span id="cb59-14"><a href="#cb59-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> U <span class="op">/</span> I</span>
+<span id="cb59-15"><a href="#cb59-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> U <span class="op">==</span> <span class="st">"*"</span>:</span>
+<span id="cb59-16"><a href="#cb59-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> R <span class="op">*</span> I</span>
+<span id="cb59-17"><a href="#cb59-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> I <span class="op">==</span> <span class="st">"*"</span>:</span>
+<span id="cb59-18"><a href="#cb59-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> U <span class="op">/</span> R</span>
+<span id="cb59-19"><a href="#cb59-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb59-20"><a href="#cb59-20" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Ungültige Eingabe! Siehe Hilfe: "</span>)</span>
+<span id="cb59-21"><a href="#cb59-21" aria-hidden="true" tabindex="-1"></a>        <span class="bu">help</span>(ohms_law)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 

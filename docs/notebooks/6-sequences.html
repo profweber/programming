@@ -266,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2. Mai 2025</p>
+      <p class="date">13. Mai 2025</p>
     </div>
   </div>
   
@@ -330,7 +330,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 Original:  [22.5, 23.1, 21.8, 24.0, 22.5, 21.8]</code></pre>
 </div>
 </div>
-<p>Die implemenmtierten Sortieralgorithmen sind übrigens sehr effizient (schneller als der früher vorgestellte Bubble Sort).</p>
+<p>Die implementierten Sortieralgorithmen sind übrigens sehr effizient (schneller als der früher vorgestellte Bubble Sort).</p>
 </section>
 <section id="werte-extrahieren---indexzugriff-und-list-slicing" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="werte-extrahieren---indexzugriff-und-list-slicing">Werte extrahieren - Indexzugriff und List Slicing</h3>
@@ -633,7 +633,8 @@ Luftfeuchtigkeit:  40</code></pre>
 <pre><code>[1, 2, 3, 100]</code></pre>
 </div>
 </div>
-<p>Behalten Sie stets im Hinterkopf, dass es um die Instanz geht. Natürlich können Sie die Variable, die auf eine <strong>immutable</strong> Instanz zeigt, ändern. Dann zeigt sie aber auf eine andere Instanz.</p>
+<p>Wundern Sie sich, dass wir das Keyword <code>global</code> nicht gebraucht haben? Das liegt daran, dass wir keine Zuweisung in der Funktion vorgenommen haben. Wir haben nur eine bereits existierende Instanz verändert (was nur bei mutable Datentypen möglich ist). Auf diese sich verändernde Instanz zeigten zwei Referenzen: <code>l</code> im lokalen Scope der Funktion und <code>my_list</code> im globalen Scope. Beide sehen die Änderung!</p>
+<p>Hinweis: Behalten Sie stets im Hinterkopf, dass es bei den Begriffen <em>mutable</em> bzw. <em>immutable</em> immer um die Instanz geht, nicht um die Referenz. Natürlich können Sie die Variable, die auf eine <strong>immutable</strong> Instanz zeigt, ändern. Dann zeigt sie aber auf eine andere Instanz.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
