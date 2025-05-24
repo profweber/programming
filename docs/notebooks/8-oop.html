@@ -218,7 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#kurze-historie" id="toc-kurze-historie" class="nav-link" data-scroll-target="#kurze-historie">Kurze Historie</a></li>
   </ul></li>
-  <li><a href="#methoden-und-attribute" id="toc-methoden-und-attribute" class="nav-link" data-scroll-target="#methoden-und-attribute"><span class="header-section-number">10.2</span> Methoden und Attribute</a></li>
+  <li><a href="#bestandteile-einer-klasse-methoden-und-attribute" id="toc-bestandteile-einer-klasse-methoden-und-attribute" class="nav-link" data-scroll-target="#bestandteile-einer-klasse-methoden-und-attribute"><span class="header-section-number">10.2</span> Bestandteile einer Klasse: Methoden und Attribute</a></li>
   <li><a href="#erste-eigene-klassen" id="toc-erste-eigene-klassen" class="nav-link" data-scroll-target="#erste-eigene-klassen"><span class="header-section-number">10.3</span> Erste eigene Klassen</a></li>
   <li><a href="#uml-klassendiagramme" id="toc-uml-klassendiagramme" class="nav-link" data-scroll-target="#uml-klassendiagramme"><span class="header-section-number">10.4</span> UML-Klassendiagramme</a>
   <ul class="collapse">
@@ -226,12 +226,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#beziehungen-zwischen-klassen" id="toc-beziehungen-zwischen-klassen" class="nav-link" data-scroll-target="#beziehungen-zwischen-klassen">Beziehungen zwischen Klassen</a></li>
   <li><a href="#ergänzungen" id="toc-ergänzungen" class="nav-link" data-scroll-target="#ergänzungen">Ergänzungen</a></li>
   </ul></li>
-  <li><a href="#beispiel-bibliotheksverwaltung" id="toc-beispiel-bibliotheksverwaltung" class="nav-link" data-scroll-target="#beispiel-bibliotheksverwaltung"><span class="header-section-number">10.5</span> Beispiel: Bibliotheksverwaltung</a></li>
-  <li><a href="#public-protected-private" id="toc-public-protected-private" class="nav-link" data-scroll-target="#public-protected-private"><span class="header-section-number">10.6</span> Public, Protected, Private</a></li>
-  <li><a href="#abstrakte-klassen" id="toc-abstrakte-klassen" class="nav-link" data-scroll-target="#abstrakte-klassen"><span class="header-section-number">10.7</span> Abstrakte Klassen</a></li>
-  <li><a href="#magic-methods" id="toc-magic-methods" class="nav-link" data-scroll-target="#magic-methods"><span class="header-section-number">10.8</span> Magic Methods</a></li>
-  <li><a href="#operatoren-überladen" id="toc-operatoren-überladen" class="nav-link" data-scroll-target="#operatoren-überladen"><span class="header-section-number">10.9</span> Operatoren überladen</a></li>
-  <li><a href="#designpattern-der-oop" id="toc-designpattern-der-oop" class="nav-link" data-scroll-target="#designpattern-der-oop"><span class="header-section-number">10.10</span> Designpattern der OOP</a></li>
+  <li><a href="#beispiel-bibliotheksverwaltung" id="toc-beispiel-bibliotheksverwaltung" class="nav-link" data-scroll-target="#beispiel-bibliotheksverwaltung"><span class="header-section-number">10.5</span> Beispiel: Bibliotheksverwaltung</a>
+  <ul class="collapse">
+  <li><a href="#die-klasse-library" id="toc-die-klasse-library" class="nav-link" data-scroll-target="#die-klasse-library">Die Klasse <code>Library</code></a></li>
+  <li><a href="#die-klasse-medium-und-ihre-kindklassen-book-und-magazine" id="toc-die-klasse-medium-und-ihre-kindklassen-book-und-magazine" class="nav-link" data-scroll-target="#die-klasse-medium-und-ihre-kindklassen-book-und-magazine">Die Klasse <code>Medium</code> und ihre Kindklassen: <code>Book</code> und <code>Magazine</code></a></li>
+  <li><a href="#mit-super-auf-die-basisklasse-zugreifen" id="toc-mit-super-auf-die-basisklasse-zugreifen" class="nav-link" data-scroll-target="#mit-super-auf-die-basisklasse-zugreifen">Mit <code>super()</code> auf die Basisklasse zugreifen</a></li>
+  <li><a href="#die-implementierung" id="toc-die-implementierung" class="nav-link" data-scroll-target="#die-implementierung">Die Implementierung</a></li>
+  </ul></li>
+  <li><a href="#public-protected-private" id="toc-public-protected-private" class="nav-link" data-scroll-target="#public-protected-private"><span class="header-section-number">10.6</span> Public, Protected, Private</a>
+  <ul class="collapse">
+  <li><a href="#public---der-standard" id="toc-public---der-standard" class="nav-link" data-scroll-target="#public---der-standard">public - der Standard</a></li>
+  <li><a href="#protected---nur-für-den-internen-gebrauch" id="toc-protected---nur-für-den-internen-gebrauch" class="nav-link" data-scroll-target="#protected---nur-für-den-internen-gebrauch">protected - nur für den internen Gebrauch</a></li>
+  <li><a href="#private---gehört-nur-einer-einzigen-klasse" id="toc-private---gehört-nur-einer-einzigen-klasse" class="nav-link" data-scroll-target="#private---gehört-nur-einer-einzigen-klasse">private - Gehört nur einer einzigen Klasse!</a></li>
+  <li><a href="#getter-und-setter" id="toc-getter-und-setter" class="nav-link" data-scroll-target="#getter-und-setter">Getter und Setter</a></li>
+  </ul></li>
+  <li><a href="#magic-methods" id="toc-magic-methods" class="nav-link" data-scroll-target="#magic-methods"><span class="header-section-number">10.7</span> Magic Methods</a></li>
+  <li><a href="#abstrakte-klassen" id="toc-abstrakte-klassen" class="nav-link" data-scroll-target="#abstrakte-klassen"><span class="header-section-number">10.8</span> Abstrakte Klassen</a></li>
   </ul>
 </nav>
     </div>
@@ -264,7 +274,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">20. Mai 2025</p>
+      <p class="date">24. Mai 2025</p>
     </div>
   </div>
   
@@ -288,7 +298,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Polymorphie oder Polymorphismus (Polymorphism)</strong></p>
 <p>Objekte verschiedener Klassen können über die gleiche Schnittstelle angesprochen werden. Dadurch können Funktionen allgemeiner und flexibler gestaltet werden. Im obigen Beispiel kann eine Funktion, die ein Objekt der Klasse <em>Animal</em> erwartet, gleichermaßen mit einem <em>Dog</em>, einer <em>Cat</em> oder einer <em>Mouse</em> arbeiten. Für die Funktion ist nur relevant, dass es sich um ein Animal-Objekt handelt, nicht um dessen genaue Art. Polymorphismus unterstützt dadurch die Erweiterbarkeit und Anpassbarkeit von Programmen. Beispiel: In einer Tierarztpraxis werden alle Patienten in einer Datenbank verwaltet. Dabei ist es egal, ob es sich um Hunde, Katzen oder Mäuse handelt – alle Tiere werden als Instanzen der allgemeinen Klasse Tier gespeichert. Die spezifischen Eigenschaften (z.B. Hunderasse oder Lieblingsfutter der Katze) werden in abgeleiteten Klassen ergänzt.</p></li>
 <li><p><strong>Abstraktion (Abstraction)</strong></p>
-<p>Nur die wesentlichen Merkmale eines Objekts werden dargestellt; unwichtige Details werden ausgeblendet. Dies erleichtert die Handhabung komplexer Systeme. Dieses Prinzip entspricht dem allgemeinen Konzept der Modellbildung: Ein Modell sollte so präzise wie nötig, aber so einfach wie möglich sein. Eine vollständige Abbildung der Realität wäre genauso komplex wie die Realität selbst und damit unpraktisch. Daher ist Abstraktion immer ein bewusster Kompromiss – zugunsten besserer Verständlichkeit und Lösbarkeit von Problemen.</p></li>
+<p>Nur die wesentlichen Merkmale eines Objekts werden dargestellt; unwichtige Details werden ausgeblendet. Dies erleichtert die Handhabung komplexer Systeme. Dieses Prinzip entspricht dem allgemeinen Konzept der Modellbildung: Ein Modell sollte so präzise wie nötig, aber so einfach wie möglich sein. Eine vollständige Abbildung der Realität wäre genauso komplex wie die Realität selbst und damit unpraktisch. Daher ist Abstraktion immer ein bewusster Kompromiss – zugunsten besserer Verständlichkeit und Lösbarkeit von Problemen. In der objektorientierten Programmierung kann man sogar sog. abstrakte Klassen programmieren, die zwar selbst nicht instanziiert werden können, aber die Struktur aller abgeleiteten Klassen festlegen.</p></li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -312,7 +322,7 @@ Paradigmen der Programmierung
 <p>Hauptprinzipien: Kapselung, Vererbung, Polymorphismus, Abstraktion.</p>
 <p>Beispiele: Java, Python, C++.</p></li>
 <li><p><strong>Funktionale Programmierung</strong>:</p>
-<p>Funktionale Programmierung basiert auf der Verwendung von Funktionen als grundlegende Bausteine des Programms. Sie betont die Unveränderlichkeit von Daten und vermeidet Zustandsänderungen und Seiteneffekte. Funktionen werden als First-Class-Objekte behandelt, was bedeutet, dass sie als Argumente übergeben und als Rückgabewerte genutzt werden können.</p>
+<p>Funktionale Programmierung basiert auf der Verwendung von Funktionen als grundlegende Bausteine des Programms. Sie betont die Unveränderlichkeit von Daten und vermeidet Zustandsänderungen und Seiteneffekte. Funktionen werden als <em>First-Class-Objekte</em> behandelt, was bedeutet, dass sie als Argumente übergeben und als Rückgabewerte genutzt werden können.</p>
 <p>Hauptprinzipien: Unveränderliche Daten, Funktionen als Objekte, keine Seiteneffekte.</p>
 <p>Beispiele: Haskell, Scala.</p></li>
 <li><p><strong>Logische Programmierung</strong>:</p>
@@ -325,12 +335,12 @@ Paradigmen der Programmierung
 <section id="kurze-historie" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="kurze-historie">Kurze Historie</h3>
 <p>Die Grundlagen der objektorientierten Programmierung entstanden bereits in den 1960er Jahren: Simula 67 (entwickelt von Ole-Johan Dahl und Kristen Nygaard) gilt als die erste Programmiersprache mit objektorientierten Konzepten. In den 1980ern wurde OOP populärer, insbesondere durch die Sprache Smalltalk. Mit der Verbreitung von C++ und später Java wurde OOP zum dominanten Paradigma in der Softwareentwicklung.</p>
-<p>Heute wird die objektorientierte Programmierung (OOP) in vielen modernen Programmiersprachen wie Python, C# oder Ruby eingesetzt und ist ein fester Bestandteil der Informatikausbildung. Sie findet in zahlreichen Bereichen Anwendung, etwa in der Anwendungsentwicklung, der Spieleprogrammierung oder der Systementwicklung.</p>
+<p>Heute wird OOP in vielen modernen Programmiersprachen wie Python, C# oder Ruby eingesetzt und ist ein fester Bestandteil der Informatikausbildung. Sie findet in zahlreichen Bereichen Anwendung, etwa in der Anwendungsentwicklung, der Spieleprogrammierung oder der Systementwicklung.</p>
 <p>OOP ermöglicht es, große Softwareprojekte effizient zu entwickeln, indem die Komplexität in kleinere, logisch verbundene Einheiten zerlegt wird. In der Praxis werden dazu von Software-Architekt:innen zunächst die benötigten Klassen und deren Schnittstellen abstrakt definiert – häufig mithilfe von UML-Diagrammen –, bevor die konkrete Implementierung durch Programmiererinnen und Programmierer erfolgt.</p>
 </section>
 </section>
-<section id="methoden-und-attribute" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="methoden-und-attribute"><span class="header-section-number">10.2</span> Methoden und Attribute</h2>
+<section id="bestandteile-einer-klasse-methoden-und-attribute" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="bestandteile-einer-klasse-methoden-und-attribute"><span class="header-section-number">10.2</span> Bestandteile einer Klasse: Methoden und Attribute</h2>
 <p>Ohne genauer darauf hinzuweisen, haben wir bereits sehr oft mit Objekten gearbeitet: In Python 3 sind nämlich alle Datentypen in Wahrheit Klassen. Besonders auffällig ist dies bei der Verwendung von Datenstrukturen, wie Listen:</p>
 <div id="c6addd1e-b23f-4a02-81ce-68ef962310ec" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>]  <span class="co"># erzeugt ein Objekt der Klasse "list"</span></span>
@@ -397,6 +407,8 @@ Paradigmen der Programmierung
 <p><strong>Statisch</strong></p>
 <p>Statisch bezeichnet Elemente, die zur Klasse selbst gehören und nicht an einzelne Objekte gebunden sind. Statische Attribute und Methoden werden unabhängig von Instanzen verwendet.</p>
 <p>Beispiel: <code>datetime.now()</code></p>
+<p><strong>Members</strong></p>
+<p>Der Begriff <strong>Members</strong> fasst alle Bestandteile einer Klasse zusammen; alle Attribute und alle Methoden (auch statische) sind Members der Klasse.</p>
 </div>
 </div>
 </div>
@@ -404,18 +416,22 @@ Paradigmen der Programmierung
 <section id="erste-eigene-klassen" class="level2" data-number="10.3">
 <h2 data-number="10.3" class="anchored" data-anchor-id="erste-eigene-klassen"><span class="header-section-number">10.3</span> Erste eigene Klassen</h2>
 <p>Wir programmieren erste kleine Klassen, um uns an das Konzept und die Syntax zu gewöhnen.</p>
-<div id="538ac55a-648c-4d06-9f98-e05b69af81f7" class="cell" data-execution_count="132">
+<div id="538ac55a-648c-4d06-9f98-e05b69af81f7" class="cell" data-execution_count="78">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Animal:</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name  <span class="co"># Attribut name wird angelegt</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age  <span class="co"># Attribut age wird angelegt</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>):</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> macht ein Geräusch."</span>)</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> birthday(<span class="va">self</span>):</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Herzlichen Glückwunsch zum Geburtstag, </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">!"</span>)</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">+=</span> <span class="dv">1</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># mit der Methode __init__ - dem "Konstruktor" - fängt alles an:</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name  <span class="co"># Attribut name wird angelegt</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">=</span> age  <span class="co"># Attribut age wird angelegt</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># eine weitere Methode:</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>):</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> macht ein Geräusch."</span>)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># eine weitere Methode:</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> birthday(<span class="va">self</span>):</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Herzlichen Glückwunsch zum Geburtstag, </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">!"</span>)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.age <span class="op">+=</span> <span class="dv">1</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Wir erkennen die allgemeine Syntax zum Definieren einer Klasse:</p>
 <div id="9d44f5d5-d24b-4f92-b15e-edfd0cc7aa6c" class="cell" data-execution_count="135">
@@ -424,7 +440,7 @@ Paradigmen der Programmierung
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Definition aller Methoden</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Der Klassenname soll nach den offiziellen Empfehlungen mit einem Großbuchstaben beginnen und bei mehreren Wörtern in Camel Case geschrieben werden (z.B. <code>GameController</code> oder <code>WindowManager</code>). Im obigen Beispiel haben wir die Klasse <code>Animal</code> definiert und drei Methoden angelegt: <code>__init__(...)</code>, <code>speak(...)</code> und <code>birthday(...)</code>. Auffällig ist, dass alle Methoden einer Klasse als erstes Argument den Parameter <code>self</code> verwenden. Dieser Parameter verweist auf das aktuelle Objekt der Klasse. Das bedeutet, dass <code>self</code> die Instanz der Klasse repräsentiert, die die Methode gerade aufruft. Der Parameter wird automatisch gesetzt, wenn wir zum Beispiel <code>today.toordinal()</code> aufrufen (in diesem Fall entspricht <code>self</code> der Instanz von <code>today</code>).</p>
-<p>Ein weiteres auffälliges Merkmal ist die Methode <code>__init__</code>, die durch die doppelten Unterstriche vor und nach ihrem Namen hervorsticht. Diese Art von Methoden wird in Python als <strong>Magic Methods</strong> bezeichnet, da sie eine spezielle Bedeutung für den Python-Interpreter haben. In diesem Fall ist <code>__init__</code> der <strong>Konstruktor</strong> einer Klasse. Der Konstruktor wird automatisch aufgerufen, wenn ein neues Objekt dieser Klasse erstellt wird. Neben dem obligatorischen <code>self</code> erhält der Konstruktor die Argumente <code>name</code> und <code>age</code>, die dann über die Zuweisungen <code>self.name = name</code> und <code>self.age = age</code> als Attribute in der Instanz gespeichert werden. Die Übergabeparameter des Konstruktors müssen dabei nicht zwangsläufig genauso benannt werden wie die Attribute, allerdings ist es eine weit verbreitete Praxis, diese gleich zu benennen, um Verwechslungen zu vermeiden. Würden die Parameter in unserem Beispiel einfach <code>x</code> und <code>y</code> heißen, könnte es durch Unachtsamkeit leicht passieren, dass man Namen und Alter verwechselt, was zu Fehlern im Code führen würde. Durch die konsistente Benennung bleiben die Zusammenhänge zwischen Argumenten und Attributen klar und der Code somit leichter verständlich.</p>
+<p>Ein weiteres auffälliges Merkmal ist die Methode <code>__init__</code>, die durch die doppelten Unterstriche vor und nach ihrem Namen hervorsticht. Methoden dieser Art werden in Python als <strong>Magic Methods</strong> bezeichnet, da sie eine spezielle Bedeutung für den Python-Interpreter haben. In diesem Fall ist <code>__init__</code> der <strong>Konstruktor</strong> einer Klasse. Der Konstruktor wird automatisch aufgerufen, wenn ein neues Objekt dieser Klasse erstellt wird. Neben dem obligatorischen <code>self</code> erhält der Konstruktor die Argumente <code>name</code> und <code>age</code>, die dann über die Zuweisungen <code>self.name = name</code> und <code>self.age = age</code> als Attribute in der Instanz gespeichert werden. Die Übergabeparameter des Konstruktors müssen dabei nicht zwangsläufig genauso heißen wie die Attribute, allerdings ist das eine weit verbreitete Praxis, um Verwechslungen bei der Zuweisung zu vermeiden.</p>
 <p>Die Methoden <code>speak</code> und <code>birthday</code> sind relativ selbsterklärend: <code>speak</code> gibt eine allgemeine Ausgabe des Tieres zurück, während <code>birthday</code> zum Geburtstag gratuliert und das Alter um eins erhöht. Testen wir nun unsere Klasse:</p>
 <div id="a6d4d2ed-0e5a-4eb4-b43b-8bc9c78d9a49" class="cell" data-execution_count="138">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>my_dog <span class="op">=</span> Animal(<span class="st">"Bello"</span>, <span class="dv">5</span>)  <span class="co"># ruft den Konstruktor auf</span></span>
@@ -461,7 +477,7 @@ Paradigmen der Programmierung
 </div>
 </div>
 <p>Die <code>speak</code>-Methode ist noch sehr unzufriedenstellend. Ein Hund sollte doch bellen, eine Katze miauen. Allerdings ist <code>Animal</code> eine relativ abstrakte Basisklasse für alle Tiere und deshalb an dieser Stelle zwangsläufig unspezifisch. Wir können nun das Prinzip der Vererbung verwenden, um spezifische Tierklassen anzulegen:</p>
-<div id="a09763f4-5f8b-481a-a3b5-774a3b748dcc" class="cell" data-execution_count="148">
+<div id="a09763f4-5f8b-481a-a3b5-774a3b748dcc" class="cell" data-execution_count="80">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vererbung: Dog erbt von Animal</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog(Animal):</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>):</span>
@@ -472,8 +488,8 @@ Paradigmen der Programmierung
 <span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>):</span>
 <span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> miaut."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Die Basisklasse (hier: <code>Animal</code>) wird bei der Klassendefinition in Klammern angegeben. Das Anlegen der Klassen <code>Dog</code> und <code>Cat</code> ist sehr einfach, denn wir spezifizieren nur die Unterschiede zur Basisklasse, also die individuellen Realisierungen der Methode <code>speak</code>. Alles andere wird von der Basisklasse <code>Animal</code> übernommen. Probieren wir es aus:</p>
-<div id="e6bc8162-5076-4b26-b959-6055f18e6ebd" class="cell" data-execution_count="151">
+<p>Die Basisklasse (hier: <code>Animal</code>) wird bei der Klassendefinition in Klammern angegeben. Das Anlegen der Klassen <code>Dog</code> und <code>Cat</code> ist sehr einfach, denn wir spezifizieren nur die Unterschiede zur Basisklasse, also die individuellen Realisierungen der Methode <code>speak</code>. Alles andere wird von der Basisklasse <code>Animal</code> übernommen (die abgeleiteten Klassen werden deshalb auch “Subklassen” oder “Kindklassen” genannt). Probieren wir unsere neuen Klassen aus:</p>
+<div id="e6bc8162-5076-4b26-b959-6055f18e6ebd" class="cell" data-execution_count="81">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>my_dog <span class="op">=</span> Dog(<span class="st">"Bello"</span>, <span class="dv">6</span>)</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>my_cat <span class="op">=</span> Cat(<span class="st">"Liz"</span>, <span class="dv">1</span>)</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>my_turtle <span class="op">=</span> Animal(<span class="st">"Einstein"</span>, <span class="dv">100</span>)</span>
@@ -488,7 +504,7 @@ Einstein macht ein Geräusch.</code></pre>
 </div>
 </div>
 <p>Man sagt auch: Die Methode <code>speak</code> wurde in den Klassen <code>Dog</code> und <code>Cat</code> <em>überschrieben</em>. Mit Vererbung könnten wir noch deutlich spezifischere Klassen anlegen, z.B. konkrete Hunderassen (hierzu würden wir von <code>Dog</code> ableiten, z.B. <code>class Husky(Dog):</code>). Es entstehen beliebig komplexe Klassen-Hierarchien. An unserem Beispiel erkennen wir auch, dass die Basisklasse davon unbeschadet ist und weiterhin verwendet werden kann (<code>my_turtle</code> referenziert eine allgemeine <code>Animal</code>-Instanz).</p>
-<p>Alle Subklassen von <code>Animal</code> werden weiterhin als <code>Animal</code> betrachtet und können auch als solche verwendet werden. Das bedeutet, dass eine Funktion, die ein <code>Animal</code> erwartet, auch mit einem <code>Dog</code> oder einer <code>Cat</code> funktioniert. Dies ist ein Beispiel für Polymorphismus. Wichtig: Obwohl alle Tiere sind, sind nicht alle gleich - die gleiche Methode (hier <code>speak()</code>) wird je nach konkretem Typ unterschiedlich ausgeführt.</p>
+<p>Alle Subklassen von <code>Animal</code> werden weiterhin als <code>Animal</code> betrachtet und können auch als solche verwendet werden. Das bedeutet, dass eine Funktion, die ein <code>Animal</code> erwartet, auch mit einem <code>Dog</code> oder einer <code>Cat</code> funktioniert. Dies ist ein Beispiel für Polymorphismus. Wichtig: Obwohl alle Instanzen Tiere sind, sind sie nicht alle gleich - die gleiche Methode (hier <code>speak()</code>) wird je nach konkretem Typ unterschiedlich ausgeführt.</p>
 <p>Umgekehrt muss man vorsichtiger sein: Eine Subklasse kann zusätzliche Methoden oder Attribute haben, die in der Basisklasse nicht existieren. Wenn eine Funktion speziell auf diese neuen Methoden zugreifen möchte, muss sie den spezifischen Typ des Objekts kennen, anstatt nur die Basisklasse zu verwenden. Andernfalls könnte der Zugriff auf diese zusätzlichen Eigenschaften oder Methoden zu einem Fehler führen, falls das Objekt tatsächlich eine Instanz der Basisklasse und nicht der Subklasse ist. Beispielhaft erweitern wir unsere Klasse <code>Dog</code> um eine Methode <code>fetch()</code>:</p>
 <div id="da5a7154-f1c8-41a5-858a-1285152d1a83" class="cell" data-execution_count="159">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog(Animal):</span>
@@ -514,7 +530,7 @@ Einstein macht ein Geräusch.</code></pre>
 </section>
 <section id="uml-klassendiagramme" class="level2" data-number="10.4">
 <h2 data-number="10.4" class="anchored" data-anchor-id="uml-klassendiagramme"><span class="header-section-number">10.4</span> UML-Klassendiagramme</h2>
-<p>Wir wollen uns nun mit dem systematischen Design von Klassen befassen. Häufig wird dazu die Unified Modeling Language (UML) verwendet. Es handelt sich dabei um eine standardisierte grafische Sprache zur Modellierung und Visualisierung von Software-Systemen. UML ermöglicht es Entwickler:innen, die Struktur, das Verhalten und die Interaktionen eines Systems darzustellen. Ein besonders wichtiger Bestandteil von UML ist das Klassendiagramm. Es stellt die statische Struktur eines Systems dar, indem es die Klassen eines Systems sowie deren Beziehungen zueinander visualisiert. UML ist sehr mächtig und kann hier nur in kleinen Auszügen dargestellt werden.</p>
+<p>Wir wollen uns nun mit dem systematischen Design von Klassen befassen. Häufig wird dazu die <strong>Unified Modeling Language (UML)</strong> verwendet. Es handelt sich dabei um eine standardisierte grafische Sprache zur Modellierung und Visualisierung von Software-Systemen. UML ermöglicht es Entwickler:innen, die Struktur, das Verhalten und die Interaktionen eines Systems darzustellen. Ein besonders wichtiger Bestandteil von UML ist das Klassendiagramm. Es stellt die statische Struktur eines Systems dar, indem es die Klassen eines Systems sowie deren Beziehungen zueinander visualisiert. UML ist sehr mächtig und kann hier nur in kleinen Auszügen dargestellt werden.</p>
 <section id="grundstruktur-eines-klassendiagramms" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="grundstruktur-eines-klassendiagramms">Grundstruktur eines Klassendiagramms</h3>
 <p>Eine Klasse wird durch ein Rechteck dargestellt, welches vertikal in drei Felder unterteilt wird (siehe <a href="#fig-uml-class" class="quarto-xref">Abbildung&nbsp;<span>10.1</span></a>):</p>
@@ -526,7 +542,7 @@ Einstein macht ein Geräusch.</code></pre>
 <div id="fig-uml-class" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-uml-class-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/oop-uml-class.png" class="img-fluid figure-img" style="width:40.0%">
+<img src="images/oop-uml-class.png" class="img-fluid figure-img" style="width:30.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-uml-class-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Abbildung&nbsp;10.1: Aufbau eines UML-Klassendiagramms.
@@ -537,7 +553,7 @@ Abbildung&nbsp;10.1: Aufbau eines UML-Klassendiagramms.
 <div id="fig-uml-animal" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-uml-animal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/oop-uml-animal-class.png" class="img-fluid figure-img" style="width:40.0%">
+<img src="images/oop-uml-animal-class.png" class="img-fluid figure-img" style="width:30.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-uml-animal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Abbildung&nbsp;10.2: UML-Klassendiagramm für die Klasse <code>Animal</code>.
@@ -548,7 +564,7 @@ Abbildung&nbsp;10.2: UML-Klassendiagramm für die Klasse <code>Animal</code>.
 <div id="fig-uml-inheritance" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-uml-inheritance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/oop-uml-inheritance-dog-animal.png" class="img-fluid figure-img" style="width:40.0%">
+<img src="images/oop-uml-inheritance-dog-animal.png" class="img-fluid figure-img" style="width:30.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-uml-inheritance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Abbildung&nbsp;10.3: UML-Klassendiagramm mit Vererbung: <code>Dog</code> erbt von <code>Animal</code>.
@@ -582,7 +598,7 @@ m..n: mindestens m Instanzen, maximal n Instanzen (z.B. 3..10).</code></pre>
 <div id="fig-uml-association" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-uml-association-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/oop-uml-association.png" class="img-fluid figure-img" style="width:70.0%">
+<img src="images/oop-uml-association.png" class="img-fluid figure-img" style="width:60.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-uml-association-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Abbildung&nbsp;10.4: UML-Klassendiagramm mit Assoziation: Beziehung zwischen <code>Person</code> und <code>Animal</code>.
@@ -604,107 +620,139 @@ Abbildung&nbsp;10.4: UML-Klassendiagramm mit Assoziation: Beziehung zwischen <co
 <div id="fig-uml-lib" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-uml-lib-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/oop-uml-library.png" class="img-fluid figure-img" style="width:70.0%">
+<img src="images/oop-uml-library.png" class="img-fluid figure-img" style="width:75.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-uml-lib-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Abbildung&nbsp;10.5: UML-Klassendiagramm für die Bibliotheksverwaltung.
 </figcaption>
 </figure>
 </div>
-<p>Das einzige Attribut der Klasse <code>Library</code> eine Liste aller Medien. Über die Methoden der Klasse können Medien entliehen (<code>borrow_medium(medium_id)</code>) bzw. zurückgegeben (<code>return_medium(medium_id)</code>), dem Bestand hinzugefügt (<code>add_medium(medium)</code>) bzw. aus ihm entfernt (<code>remove_medium(medium_id)</code>) werden. Schließlich soll <code>get_media_info()</code> eine Übersicht über alle Medien der Bibliothek liefern.</p>
+<section id="die-klasse-library" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="die-klasse-library">Die Klasse <code>Library</code></h3>
+<p>Das einzige Attribut der Klasse <code>Library</code> ist <code>media_collection</code> und stellt eine Liste aller verfügbaren Medien dar. Über die Methoden der Klasse können Medien entliehen (<code>borrow_medium(medium_id)</code>) bzw. zurückgegeben (<code>return_medium(medium_id)</code>), dem Bestand hinzugefügt (<code>add_medium(medium)</code>) bzw. aus ihm entfernt (<code>remove_medium(medium_id)</code>) werden. Schließlich soll <code>get_media_info()</code> eine Übersicht über alle Medien der Bibliothek liefern.</p>
+</section>
+<section id="die-klasse-medium-und-ihre-kindklassen-book-und-magazine" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="die-klasse-medium-und-ihre-kindklassen-book-und-magazine">Die Klasse <code>Medium</code> und ihre Kindklassen: <code>Book</code> und <code>Magazine</code></h3>
 <p>Die Klasse <code>Medium</code> auf der anderen Seite stellt eine Basisklasse für alle in der Bibliothek verfügbaren Medien dar (in unserem Beispiel Bücher und Magazine). Alle Medien besitzen einen Titel und eine eindeutige ID. Außerdem kennzeichnet ein boolesches Attribut, ob sie zur Zeit verfügbar sind oder nicht (<code>available</code>). Die Methode <code>get_info()</code> soll die wesentlichen Informationen über das Medium und den aktuellen Ausleih-Status widergeben. Die Klassen <code>Book</code> und <code>Magazine</code> erben von <code>Medium</code> und erweitern die Basisklasse um spezifische Attribute. Die Methode <code>get_info()</code> soll jeweils überschrieben werden.</p>
 <p>Die Medien-ID hat eine wichtige Bedeutung: Wie wir an den Methoden zum Ausleihen und Zurückgeben erkennen, arbeitet die Bibliothek intern ausschließlich mit dieser eindeutigen Kennzeichnung und nicht etwa mit dem Titel oder anderen Attributen. Sie muss auf jeden Fall eindeutig sein! Es stellt sich noch die Frage, wann und durch wen ein Medium seine ID erhält. In der realen Welt sicherlich durch die Bibliothek, vermutlich in dem Moment, in dem es in den Bestand der Bibliothek aufgenommen wird. Wir wollen das Beispiel aber zunächst einfacher halten und weisen jedem Medium bei seiner Erzeugung händisch eine ID zu.</p>
-<p>Bevor wir mit dem Programmieren beginnen, möchten wir noch auf eine wichtige Besonderheit hinweisen: Da die abgeleiteten Klassen diesmal eigene zusätzliche Attribute besitzen, reicht es nicht aus, einfach den Konstruktor der Basisklasse zu übernehmen. Stattdessen müssen wir den Konstruktor in den Unterklassen selbst definieren. Dabei können wir jedoch weiterhin den bereits bestehenden Konstruktor der Basisklasse nutzen, um deren Attribute korrekt zu initialisieren. Dafür stellt Python die Funktion super() bereit. Mit ihrer Hilfe können wir gezielt Methoden der übergeordneten Klasse aufrufen. Konkret bedeutet das: Mit <code>super().__init__(...)</code> rufen wir den Konstruktor der Basisklasse auf und können ihm die entsprechenden Werte übergeben. Jetzt sind wir bereit für die Implementierung, wir beginnen auf der rechten Seite mit den Medien:</p>
-<div id="da9d19b1-4436-4683-b808-74502fd5d09d" class="cell" data-execution_count="132">
+</section>
+<section id="mit-super-auf-die-basisklasse-zugreifen" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="mit-super-auf-die-basisklasse-zugreifen">Mit <code>super()</code> auf die Basisklasse zugreifen</h3>
+<p>Bevor wir mit dem Programmieren beginnen, möchten wir noch auf eine wichtige Besonderheit hinweisen: Da die abgeleiteten Klassen diesmal eigene zusätzliche Attribute besitzen, reicht es nicht aus, einfach den Konstruktor der Basisklasse zu übernehmen. Stattdessen müssen wir den Konstruktor in den Unterklassen selbst definieren. Dabei können wir jedoch weiterhin den bereits bestehenden Konstruktor der Basisklasse nutzen, um deren Attribute korrekt zu initialisieren. Dafür stellt Python die Funktion <code>super()</code> bereit. Mit ihrer Hilfe können wir gezielt Methoden der übergeordneten Klasse aufrufen. Konkret bedeutet das: Mit <code>super().__init__(...)</code> rufen wir den Konstruktor der Basisklasse auf und können ihm die entsprechenden Werte übergeben.</p>
+</section>
+<section id="die-implementierung" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="die-implementierung">Die Implementierung</h3>
+<p>Jetzt sind wir bereit für die Implementierung, wir beginnen auf der rechten Seite mit den Medien:</p>
+<div id="da9d19b1-4436-4683-b808-74502fd5d09d" class="cell" data-execution_count="87">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Medium:</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, title, medium_id):</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.title <span class="op">=</span> title</span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.medium_id <span class="op">=</span> medium_id</span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.available <span class="op">=</span> <span class="va">False</span>  <span class="co"># wird auf False initialisiert</span></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_info(<span class="va">self</span>):</span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>        status <span class="op">=</span> <span class="st">"verfügbar"</span> <span class="cf">if</span> <span class="va">self</span>.available <span class="cf">else</span> <span class="st">"entliehen"</span></span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"ID: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>medium_id<span class="sc">}</span><span class="ss">, Titel: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>title<span class="sc">}</span><span class="ss">, Status: </span><span class="sc">{</span>status<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Book(Medium):</span>
-<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, title, medium_id, author, isbn):</span>
-<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Konstruktor der Basisklasse aufrufen:</span></span>
-<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>            <span class="bu">super</span>().<span class="fu">__init__</span>(title, medium_id)</span>
-<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>            <span class="co"># zusätzliche Attribute zuweisen:</span></span>
-<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.author <span class="op">=</span> author</span>
-<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.isbn <span class="op">=</span> isbn</span>
-<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> get_info(<span class="va">self</span>):     </span>
-<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Wir könnten auch hier super() verwenden,</span></span>
-<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>            <span class="co"># allerdings könnten wir dann die neuen Attribute </span></span>
-<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>            <span class="co"># nur darunter anfügen: </span></span>
-<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>            <span class="co"># super().get_info()</span></span>
-<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>            <span class="co"># print(f"Author: {self.author}, ISBN: {self.isbn}")</span></span>
-<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>            status <span class="op">=</span> <span class="st">"verfügbar"</span> <span class="cf">if</span> <span class="va">self</span>.available <span class="cf">else</span> <span class="st">"entliehen"</span></span>
-<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"ID: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>medium_id<span class="sc">}</span><span class="ss">, Titel: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>title<span class="sc">}</span><span class="ss">, Author: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>author<span class="sc">}</span><span class="ss">, ISBN: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>isbn<span class="sc">}</span><span class="ss">, Status: </span><span class="sc">{</span>status<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Magazine(Medium):</span>
-<span id="cb32-28"><a href="#cb32-28" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, title, medium_id, issue, year):</span>
-<span id="cb32-29"><a href="#cb32-29" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Konstruktor der Basisklasse aufrufen:</span></span>
-<span id="cb32-30"><a href="#cb32-30" aria-hidden="true" tabindex="-1"></a>            <span class="bu">super</span>().<span class="fu">__init__</span>(title, medium_id)</span>
-<span id="cb32-31"><a href="#cb32-31" aria-hidden="true" tabindex="-1"></a>            <span class="co"># zusätzliche Attribute zuweisen:</span></span>
-<span id="cb32-32"><a href="#cb32-32" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.issue <span class="op">=</span> issue</span>
-<span id="cb32-33"><a href="#cb32-33" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.year <span class="op">=</span> year</span>
-<span id="cb32-34"><a href="#cb32-34" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> get_info(<span class="va">self</span>):     </span>
-<span id="cb32-35"><a href="#cb32-35" aria-hidden="true" tabindex="-1"></a>            status <span class="op">=</span> <span class="st">"verfügbar"</span> <span class="cf">if</span> <span class="va">self</span>.available <span class="cf">else</span> <span class="st">"entliehen"</span></span>
-<span id="cb32-36"><a href="#cb32-36" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"ID: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>medium_id<span class="sc">}</span><span class="ss">, Titel: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>title<span class="sc">}</span><span class="ss">, Ausgabe: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>issue<span class="sc">}</span><span class="ss">, Jahr: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>year<span class="sc">}</span><span class="ss">, Status: </span><span class="sc">{</span>status<span class="sc">}</span><span class="ss">"</span>) </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, title, medium_id):</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.title <span class="op">=</span> title</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.medium_id <span class="op">=</span> medium_id</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.available <span class="op">=</span> <span class="va">True</span>  <span class="co"># wird auf True initialisiert</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_info(<span class="va">self</span>):</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>        status <span class="op">=</span> <span class="st">"verfügbar"</span> <span class="cf">if</span> <span class="va">self</span>.available <span class="cf">else</span> <span class="st">"entliehen"</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"ID: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>medium_id<span class="sc">}</span><span class="ss">, Titel: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>title<span class="sc">}</span><span class="ss">, Status: </span><span class="sc">{</span>status<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Book(Medium):</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, title, medium_id, author, isbn):</span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Konstruktor der Basisklasse aufrufen:</span></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>            <span class="bu">super</span>().<span class="fu">__init__</span>(title, medium_id)</span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>            <span class="co"># zusätzliche Attribute zuweisen:</span></span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.author <span class="op">=</span> author</span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.isbn <span class="op">=</span> isbn</span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> get_info(<span class="va">self</span>):     </span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Wir könnten auch hier super() verwenden,</span></span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>            <span class="co"># allerdings könnten wir dann die neuen Attribute </span></span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>            <span class="co"># nur darunter anfügen: </span></span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a>            <span class="co"># super().get_info()</span></span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a>            <span class="co"># print(f"Author: {self.author}, ISBN: {self.isbn}")</span></span>
+<span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb32-28"><a href="#cb32-28" aria-hidden="true" tabindex="-1"></a>            status <span class="op">=</span> <span class="st">"verfügbar"</span> <span class="cf">if</span> <span class="va">self</span>.available <span class="cf">else</span> <span class="st">"entliehen"</span></span>
+<span id="cb32-29"><a href="#cb32-29" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"ID: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>medium_id<span class="sc">}</span><span class="ss">, Titel: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>title<span class="sc">}</span><span class="ss">, Author: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>author<span class="sc">}</span><span class="ss">, ISBN: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>isbn<span class="sc">}</span><span class="ss">, Status: </span><span class="sc">{</span>status<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb32-30"><a href="#cb32-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-31"><a href="#cb32-31" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Magazine(Medium):</span>
+<span id="cb32-32"><a href="#cb32-32" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb32-33"><a href="#cb32-33" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, title, medium_id, issue, year):</span>
+<span id="cb32-34"><a href="#cb32-34" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Konstruktor der Basisklasse aufrufen:</span></span>
+<span id="cb32-35"><a href="#cb32-35" aria-hidden="true" tabindex="-1"></a>            <span class="bu">super</span>().<span class="fu">__init__</span>(title, medium_id)</span>
+<span id="cb32-36"><a href="#cb32-36" aria-hidden="true" tabindex="-1"></a>            <span class="co"># zusätzliche Attribute zuweisen:</span></span>
+<span id="cb32-37"><a href="#cb32-37" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.issue <span class="op">=</span> issue</span>
+<span id="cb32-38"><a href="#cb32-38" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.year <span class="op">=</span> year</span>
+<span id="cb32-39"><a href="#cb32-39" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb32-40"><a href="#cb32-40" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> get_info(<span class="va">self</span>):     </span>
+<span id="cb32-41"><a href="#cb32-41" aria-hidden="true" tabindex="-1"></a>            status <span class="op">=</span> <span class="st">"verfügbar"</span> <span class="cf">if</span> <span class="va">self</span>.available <span class="cf">else</span> <span class="st">"entliehen"</span></span>
+<span id="cb32-42"><a href="#cb32-42" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"ID: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>medium_id<span class="sc">}</span><span class="ss">, Titel: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>title<span class="sc">}</span><span class="ss">, Ausgabe: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>issue<span class="sc">}</span><span class="ss">, Jahr: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>year<span class="sc">}</span><span class="ss">, Status: </span><span class="sc">{</span>status<span class="sc">}</span><span class="ss">"</span>) </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Legen wir ein paar Beispiel-Medien an:</p>
-<div id="f985d864-07e5-4c30-a966-841c2cc9d35e" class="cell" data-execution_count="151">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>book1 <span class="op">=</span> Book(<span class="st">"Herr der Ringe"</span>, <span class="dv">1</span>, <span class="st">"Tolkien"</span>, <span class="st">"978-3-16-148410-0"</span>)</span>
+<div id="f985d864-07e5-4c30-a966-841c2cc9d35e" class="cell" data-execution_count="88">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>book1 <span class="op">=</span> Book(<span class="st">"Herr der Ringe"</span>, <span class="dv">1</span>, <span class="st">"Tolkien, J. R. R."</span>, <span class="st">"978-3-16-148410-0"</span>)</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>magazine1 <span class="op">=</span> Magazine(<span class="st">"Nature"</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">2004</span>)</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>book1.get_info()</span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>magazine1.get_info()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>ID: 1, Titel: Herr der Ringe, Author: Tolkien, ISBN: 978-3-16-148410-0, Status: entliehen
-ID: 2, Titel: Nature, Ausgabe: 5, Jahr: 2004, Status: entliehen</code></pre>
+<pre><code>ID: 1, Titel: Herr der Ringe, Author: Tolkien, J. R. R., ISBN: 978-3-16-148410-0, Status: verfügbar
+ID: 2, Titel: Nature, Ausgabe: 5, Jahr: 2004, Status: verfügbar</code></pre>
 </div>
 </div>
-<div id="06b955d6-27df-4bee-8b5a-284b563e3847" class="cell" data-execution_count="153">
+<div id="06b955d6-27df-4bee-8b5a-284b563e3847" class="cell" data-execution_count="92">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Library:</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.media_collection <span class="op">=</span> []</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> borrow_medium(<span class="va">self</span>, medium_id):</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> medium <span class="kw">in</span> <span class="va">self</span>.media_collection:</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> medium.medium_id <span class="op">==</span> medium_id:</span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> medium.available:</span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>                    medium.available <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>medium<span class="sc">.</span>title<span class="sc">}</span><span class="ss"> wurde entliehen."</span>)</span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>                <span class="cf">else</span>:</span>
-<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">print</span>(<span class="ss">f"AUSLEIHEN NICHT MÖGLICH! </span><span class="sc">{</span>medium<span class="sc">.</span>title<span class="sc">}</span><span class="ss"> ist bereits entliehen."</span>)</span>
-<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span></span>
-<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>                </span>
-<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Das gewünschte Medium befindet sich nicht im Bestand"</span>)</span>
-<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> return_medium(<span class="va">self</span>, medium_id):</span>
-<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> medium <span class="kw">in</span> <span class="va">self</span>.media_collection:</span>
-<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> medium.medium_id <span class="op">==</span> medium_id:</span>
-<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> <span class="kw">not</span> medium.available:</span>
-<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>                    medium.available <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>medium<span class="sc">.</span>title<span class="sc">}</span><span class="ss"> wurde zurückgegeben."</span>)</span>
-<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>                <span class="cf">else</span>:</span>
-<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">print</span>(<span class="ss">f"Fehler: </span><span class="sc">{</span>medium<span class="sc">.</span>title<span class="sc">}</span><span class="ss"> wurde noch nicht entliehen."</span>)</span>
-<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span></span>
-<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>                </span>
-<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Das Medium gehört nicht zum Bestand der Bibliothek"</span>)</span>
-<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> add_medium(<span class="va">self</span>, medium):</span>
-<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a>        medium.available <span class="op">=</span> <span class="va">True</span>  <span class="co"># Medium wird als verfügbar gekennzeichnet</span></span>
-<span id="cb35-30"><a href="#cb35-30" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.media_collection.append(medium)</span>
-<span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> remove_medium(<span class="va">self</span>):</span>
-<span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.media_collection.remove(medium)</span>
-<span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-35"><a href="#cb35-35" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_media_info(<span class="va">self</span>):</span>
-<span id="cb35-36"><a href="#cb35-36" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Bibliotheks-Bestand:"</span>)</span>
-<span id="cb35-37"><a href="#cb35-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> medium <span class="kw">in</span> <span class="va">self</span>.media_collection:</span>
-<span id="cb35-38"><a href="#cb35-38" aria-hidden="true" tabindex="-1"></a>            medium.get_info()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.media_collection <span class="op">=</span> []</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> borrow_medium(<span class="va">self</span>, medium_id):</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Bestand wird durchsucht </span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> medium <span class="kw">in</span> <span class="va">self</span>.media_collection:</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> medium.medium_id <span class="op">==</span> medium_id:</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>                <span class="co"># Das Medium wurde im Bestand gefunden </span></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> medium.available:</span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>                    medium.available <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>medium<span class="sc">.</span>title<span class="sc">}</span><span class="ss"> wurde entliehen."</span>)</span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>                <span class="cf">else</span>:</span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">print</span>(<span class="ss">f"AUSLEIHEN NICHT MÖGLICH! </span><span class="sc">{</span>medium<span class="sc">.</span>title<span class="sc">}</span><span class="ss"> ist bereits entliehen."</span>)</span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span></span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Das gewünschte Medium befindet sich nicht im Bestand"</span>)</span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> return_medium(<span class="va">self</span>, medium_id):</span>
+<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> medium <span class="kw">in</span> <span class="va">self</span>.media_collection:</span>
+<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> medium.medium_id <span class="op">==</span> medium_id:</span>
+<span id="cb35-30"><a href="#cb35-30" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> <span class="kw">not</span> medium.available:</span>
+<span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a>                    medium.available <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>medium<span class="sc">.</span>title<span class="sc">}</span><span class="ss"> wurde zurückgegeben."</span>)</span>
+<span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a>                <span class="cf">else</span>:</span>
+<span id="cb35-35"><a href="#cb35-35" aria-hidden="true" tabindex="-1"></a>                    <span class="bu">print</span>(<span class="ss">f"Fehler: </span><span class="sc">{</span>medium<span class="sc">.</span>title<span class="sc">}</span><span class="ss"> wurde noch nicht entliehen."</span>)</span>
+<span id="cb35-36"><a href="#cb35-36" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb35-37"><a href="#cb35-37" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span></span>
+<span id="cb35-38"><a href="#cb35-38" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb35-39"><a href="#cb35-39" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Das Medium gehört nicht zum Bestand der Bibliothek"</span>)</span>
+<span id="cb35-40"><a href="#cb35-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-41"><a href="#cb35-41" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> add_medium(<span class="va">self</span>, medium):</span>
+<span id="cb35-42"><a href="#cb35-42" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb35-43"><a href="#cb35-43" aria-hidden="true" tabindex="-1"></a>        medium.available <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb35-44"><a href="#cb35-44" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.media_collection.append(medium)</span>
+<span id="cb35-45"><a href="#cb35-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-46"><a href="#cb35-46" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> remove_medium(<span class="va">self</span>):</span>
+<span id="cb35-47"><a href="#cb35-47" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.media_collection.remove(medium)</span>
+<span id="cb35-48"><a href="#cb35-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-49"><a href="#cb35-49" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_media_info(<span class="va">self</span>):</span>
+<span id="cb35-50"><a href="#cb35-50" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Bibliotheks-Bestand:"</span>)</span>
+<span id="cb35-51"><a href="#cb35-51" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> medium <span class="kw">in</span> <span class="va">self</span>.media_collection:</span>
+<span id="cb35-52"><a href="#cb35-52" aria-hidden="true" tabindex="-1"></a>            medium.get_info()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="099d015a-9407-4815-9b14-384cb1371bd5" class="cell" data-execution_count="155">
+<div id="099d015a-9407-4815-9b14-384cb1371bd5" class="cell" data-execution_count="93">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Es folgen ein paar Tests unseres Systems</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>library <span class="op">=</span> Library()</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>library.add_medium(book1)</span>
@@ -712,17 +760,17 @@ ID: 2, Titel: Nature, Ausgabe: 5, Jahr: 2004, Status: entliehen</code></pre>
 <span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>library.get_media_info()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Bibliotheks-Bestand:
-ID: 1, Titel: Herr der Ringe, Author: Tolkien, ISBN: 978-3-16-148410-0, Status: verfügbar
+ID: 1, Titel: Herr der Ringe, Author: Tolkien, J. R. R., ISBN: 978-3-16-148410-0, Status: verfügbar
 ID: 2, Titel: Nature, Ausgabe: 5, Jahr: 2004, Status: verfügbar</code></pre>
 </div>
 </div>
-<div id="fd9b5d4b-cacb-46fa-bd5a-d128248baca4" class="cell" data-execution_count="157">
+<div id="fd9b5d4b-cacb-46fa-bd5a-d128248baca4" class="cell" data-execution_count="94">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>library.borrow_medium(<span class="dv">1</span>)</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>library.get_media_info()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Herr der Ringe wurde entliehen.
 Bibliotheks-Bestand:
-ID: 1, Titel: Herr der Ringe, Author: Tolkien, ISBN: 978-3-16-148410-0, Status: entliehen
+ID: 1, Titel: Herr der Ringe, Author: Tolkien, J. R. R., ISBN: 978-3-16-148410-0, Status: entliehen
 ID: 2, Titel: Nature, Ausgabe: 5, Jahr: 2004, Status: verfügbar</code></pre>
 </div>
 </div>
@@ -747,23 +795,457 @@ ID: 2, Titel: Nature, Ausgabe: 5, Jahr: 2004, Status: entliehen</code></pre>
 <li><p>Leiten Sie eine Klasse <code>EBook</code> von <code>Book</code> ab. Zusätzliche Attribute: Dateiformat und Dateigröße in MB. Fügen Sie der Bibliothek ein paar EBooks hinzu.</p></li>
 <li><p>Implementieren Sie in der Klasse <code>Library</code> eine Suchfunktion für Benutzer, die ein Medium anhand des Titels findet.</p></li>
 <li><p>Recherchieren Sie, was UUIDs sind und wie man diese in Python erzeugen kann. Jedes Medium soll bei der Aufnahme in den Bibliotheksbestand eine UUID als <code>medium_id</code> zugewiesen bekommen. Passen Sie den Konstruktor von <code>Medium</code> entsprechend an (initialisieren Sie <code>medium_id</code> z.B. mit -1).</p></li>
+<li><p>Ändern Sie die Klasse <code>Library</code> ab: Ersetzen Sie die Liste <code>media_collection</code> durch ein geeignetes Dictionary.</p></li>
 </ol>
 </div>
 </section>
+</section>
 <section id="public-protected-private" class="level2" data-number="10.6">
 <h2 data-number="10.6" class="anchored" data-anchor-id="public-protected-private"><span class="header-section-number">10.6</span> Public, Protected, Private</h2>
+<p>In objektorientierten Programmiersprachen wie Java oder C++ ist die Sichtbarkeit von Attributen und Methoden streng durch Zugriffsmodifikatoren geregelt: public, protected und private. Python kennt diese Schlüsselwörter nicht in derselben Weise, bietet aber eigene <strong>Konventionen</strong>, um gewünschte Zugriffseinschränkungen auf Klassenbestandteile auszudrücken.</p>
+<section id="public---der-standard" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="public---der-standard">public - der Standard</h3>
+<p>In Python ist alles standardmäßig public. Das bedeutet, dass auf Methoden und Attribute von außerhalb der Klasse direkt zugegriffen werden kann. In den bisherigen Beispielen konnte man sowohl auf Attribute (z.B. <code>issue</code> in unserer <code>Magazine</code>-Klasse), als auch auf Methoden (z.B. <code>get_info()</code>) uneingeschränkt zugreifen. Das ist in anderen Programmiersprachen eher die Ausnahme, als die Regel.</p>
 </section>
-<section id="abstrakte-klassen" class="level2" data-number="10.7">
-<h2 data-number="10.7" class="anchored" data-anchor-id="abstrakte-klassen"><span class="header-section-number">10.7</span> Abstrakte Klassen</h2>
+<section id="protected---nur-für-den-internen-gebrauch" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="protected---nur-für-den-internen-gebrauch">protected - nur für den internen Gebrauch</h3>
+<p>Python verwendet einen führenden Unterstrich (<code>_</code>), um zu signalisieren: Dieses Attribut oder diese Methode sollte von außen nicht direkt verwendet werden, sondern nur innerhalb der Klasse und ihrer abgeleiteten Klassen. Technisch ist der Zugriff aber <strong>weiterhin möglich</strong> – es handelt sich nur um eine Konvention, kein Verbot. Hier wird klar, dass Python stark auf die Verantwortung der Programmiererinnen und Programmierer setzt, statt auf strenge Zugriffsverbote. Ein Beispiel:</p>
+<div id="1ba87ee6-d083-4575-adc4-6b6a8c27d71e" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Vehicle:</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._fuel_level <span class="op">=</span> <span class="dv">100</span>  <span class="co"># protected: nur für interne Verwendung gedacht</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car(Vehicle):</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> show_fuel(<span class="va">self</span>):</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Aktueller Tankstand: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>_fuel_level<span class="sc">}</span><span class="ss">%"</span>)</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> refuel(<span class="va">self</span>):</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._fuel_level <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> drive(<span class="va">self</span>, velocity, distance):</span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span>  <span class="co"># Platzhalter für die Verbrauchsberechnung während einer Fahrt  </span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="magic-methods" class="level2" data-number="10.8">
-<h2 data-number="10.8" class="anchored" data-anchor-id="magic-methods"><span class="header-section-number">10.8</span> Magic Methods</h2>
+<section id="private---gehört-nur-einer-einzigen-klasse" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="private---gehört-nur-einer-einzigen-klasse">private - Gehört nur einer einzigen Klasse!</h3>
+<p>Private bedeutet, dass dieses Attribut oder diese Methode nur zu genau einer Klasse gehören soll und nicht zu davon abgeleiteten Klassen. Sie werden durch zwei führende Unterstriche (<code>__</code>) gekennzeichnet. Hier handelt es sich um mehr als nur eine Konvention: Python reagiert auf die beiden führenden Unterstriche mit <em>Name Mangling</em>: Das heißt, Python verändert intern den Namen und stellt den Namen der <em>besitzenden</em> Klasse voran (wiederum mit einem führenden Unterstrich). Kennt man den Mechanismus, könnte man über den neuen Namen wie gewohnt auf das Attribut oder die Methode zugreifen (auch von außerhalb oder innerhalb abgeleiteter Klassen), das ist aber nicht erwünscht. Beispiel:</p>
+<div id="924c6e05-7b5b-4b5b-ad7f-6415b03cfbe6" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Engine:</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.__power <span class="op">=</span> <span class="dv">150</span>  <span class="co"># private: gehört nur der Klasse Engine </span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> show_power(<span class="va">self</span>):</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Leistung: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>__power<span class="sc">}</span><span class="ss"> PS"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="54c4fc84-a4e4-42a4-8268-b632437b4b5b" class="cell" data-execution_count="98">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>test_engine <span class="op">=</span> Engine()</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="co"># So ist es gedacht:</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>test_engine.show_power()      </span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="co"># So nicht und es gibt einen Fehler:</span></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="co"># print(test_engine.__power)</span></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Grund: Intern heißt das Attribut nicht mehr __power, sondern _Engine__power.</span></span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(test_engine._Engine__power)  <span class="co"># funktioniert – aber unsauber!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Leistung: 150 PS
+150</code></pre>
+</div>
+</div>
+<p>Wichtig: <code>__power</code> ist nicht wirklich privat. Es wird intern als <code>_Engine__power</code> gespeichert. Über diesen Namen kann man darauf zugreifen, sollte es aber nicht tun. In anderen Sprachen heißt <code>private</code> auch wirklich <code>private</code>: kein Zugriff von außerhalb der Klasse ist möglich (auch nicht aus abgeleiteten Klassen heraus)!</p>
 </section>
-<section id="operatoren-überladen" class="level2" data-number="10.9">
-<h2 data-number="10.9" class="anchored" data-anchor-id="operatoren-überladen"><span class="header-section-number">10.9</span> Operatoren überladen</h2>
+<section id="getter-und-setter" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="getter-und-setter">Getter und Setter</h3>
+<p>Getter- und Setter-Methoden sind einfache Funktionen, die den kontrollierten Zugriff auf protected (<code>_attribute</code>) oder private (<code>__attribute</code>) Attribute ermöglichen. Die Idee: Über diese Funktionen wird eine öffentliche, kontrollierte Schnittstelle zu den geschützten Attributen angeboten.</p>
+<ul>
+<li><p><strong>Getter</strong> liefern den aktuellen Wert eines Attributs zurück.</p></li>
+<li><p><strong>Setter</strong> erlauben das Ändern eines Attributs, oft mit Prüfungen oder zusätzlicher Logik, um den gültigen Wertebereich einzuhalten.</p></li>
+</ul>
+<div id="b58488a1-2d3f-4edc-bed7-7b2da6e651a7" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Vehicle:</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._fuel_level <span class="op">=</span> <span class="dv">100</span>  <span class="co"># protected Attribut: nur intern direkt verwenden!</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_fuel_level(<span class="va">self</span>):  <span class="co"># Getter: zum Abrufen des Attributs von außen.</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._fuel_level</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> set_fuel_level(<span class="va">self</span>, value):  <span class="co"># Setter mit Validierung: zum kontrollierten Setzen des Attributs.</span></span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="dv">0</span> <span class="op">&lt;=</span> value <span class="op">&lt;=</span> <span class="dv">100</span>:</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>._fuel_level <span class="op">=</span> value</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Getter und Setter unterstützen das Prinzip der Kapselung und sind in der objektorientierten Programmierung stark verbreitet.</p>
 </section>
-<section id="designpattern-der-oop" class="level2" data-number="10.10">
-<h2 data-number="10.10" class="anchored" data-anchor-id="designpattern-der-oop"><span class="header-section-number">10.10</span> Designpattern der OOP</h2>
+</section>
+<section id="magic-methods" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="magic-methods"><span class="header-section-number">10.7</span> Magic Methods</h2>
+<p>Magic Methods – auch bekannt als <em>dunder methods</em> (wegen der doppelten Unterstriche: double underscore) – sind spezielle Methoden einer Klasse, die eine ganz bestimmte Bedeutung haben. Sie ermöglichen es selbstprogrammierten Objekten, sich wie eingebaute Python-Objekte zu verhalten, z. B. bei Vergleichen, Rechenoperationen oder der Darstellung im Print-Output. <em>Magisch</em> ist daran, dass diese Methoden automatisch von Python aufgerufen werden, wenn bestimmte Operationen auf einem Objekt durchgeführt werden – man muss sie nicht explizit aufrufen. Ein Beispiel ist der Konstruktor, der automatisch bei der Objekt-Erzeugung aufgerufen wird. Es gibt eine Vielzahl von Magic Methods, wir stellen einige vor:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 39%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Methode</th>
+<th>Wird aufgerufen bei …</th>
+<th>Zweck</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>__init__</code></td>
+<td>Objekt-Erzeugung</td>
+<td>Initialisierung des Objekts</td>
+</tr>
+<tr class="even">
+<td><code>__str__</code></td>
+<td><code>str(obj)</code> oder <code>print(obj)</code></td>
+<td>String-Repräsentation für Ausgaben</td>
+</tr>
+<tr class="odd">
+<td><code>__eq__</code></td>
+<td><code>obj1 == obj2</code></td>
+<td>Vergleich auf Gleichheit</td>
+</tr>
+<tr class="even">
+<td><code>__lt__</code></td>
+<td><code>obj1 &lt; obj2</code></td>
+<td>Kleiner-Vergleich</td>
+</tr>
+<tr class="odd">
+<td><code>__add__</code></td>
+<td><code>obj1 + obj2</code></td>
+<td>Addition mit benutzerdefinierter Logik</td>
+</tr>
+<tr class="even">
+<td><code>__len__</code></td>
+<td><code>len(obj)</code></td>
+<td>Länge eines Objekts</td>
+</tr>
+<tr class="odd">
+<td><code>__int__</code></td>
+<td><code>int(obj)</code></td>
+<td>Integer-Repräsentation des Objekts (analog für <code>float</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>Wir erweitern unsere Klasse <code>Book</code>, um einige Magic Methods exemplarisch vorzustellen:</p>
+<div id="e11fc2ea-2245-46a5-8f57-9a31acc52048" class="cell" data-execution_count="101">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Book(Medium): </span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, title, medium_id, author, isbn):</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>            <span class="bu">super</span>().<span class="fu">__init__</span>(title, medium_id)</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.author <span class="op">=</span> author</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.isbn <span class="op">=</span> isbn</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> get_info(<span class="va">self</span>):                </span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>            status <span class="op">=</span> <span class="st">"verfügbar"</span> <span class="cf">if</span> <span class="va">self</span>.available <span class="cf">else</span> <span class="st">"entliehen"</span></span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"ID: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>medium_id<span class="sc">}</span><span class="ss">, Titel: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>title<span class="sc">}</span><span class="ss">, Author: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>author<span class="sc">}</span><span class="ss">, ISBN: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>isbn<span class="sc">}</span><span class="ss">, Status: </span><span class="sc">{</span>status<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># der neue Teil: #</span></span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>        <span class="co">#----------------#</span></span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># wir definieren eine String-Repräsentation für Books:</span></span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="ss">f"'</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>title<span class="sc">}</span><span class="ss">' by </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>author<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a>        <span class="co"># wir definieren den Gleichheitsoperator für Books:</span></span>
+<span id="cb47-20"><a href="#cb47-20" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> <span class="fu">__eq__</span>(<span class="va">self</span>, other):</span>
+<span id="cb47-21"><a href="#cb47-21" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">self</span>.isbn <span class="op">==</span> other.isbn</span>
+<span id="cb47-22"><a href="#cb47-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-23"><a href="#cb47-23" aria-hidden="true" tabindex="-1"></a>        <span class="co"># wir definieren eine Integer-Repräsentation für Books:</span></span>
+<span id="cb47-24"><a href="#cb47-24" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> <span class="fu">__int__</span>(<span class="va">self</span>):</span>
+<span id="cb47-25"><a href="#cb47-25" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">self</span>.medium_id</span>
+<span id="cb47-26"><a href="#cb47-26" aria-hidden="true" tabindex="-1"></a>        </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="d31e0729-64ed-4cba-a257-351b17a9402e" class="cell" data-execution_count="102">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>book1 <span class="op">=</span> Book(<span class="st">"Herr der Ringe"</span>, <span class="dv">1</span>, <span class="st">"Tolkien, J. R. R."</span>, <span class="st">"978-3-16-148410-0"</span>)</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>book2 <span class="op">=</span> Book(<span class="st">"Harry Potter und der Feuerkelch"</span>, <span class="dv">2</span>, <span class="st">"Rowling, J. K."</span>, <span class="st">"756-2-12-165320-1"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="4603dbae-c665-417c-a02e-0a50b4e90f88" class="cell" data-execution_count="104">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(book1)  <span class="co"># String-Repräsetnation wird ausgegeben</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'Herr der Ringe' by Tolkien, J. R. R.</code></pre>
+</div>
+</div>
+<div id="17d209be-17a6-4744-8d85-61dca674c8ea" class="cell" data-execution_count="105">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(book2)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'Harry Potter und der Feuerkelch' by Rowling, J. K.</code></pre>
+</div>
+</div>
+<div id="8ebccdce-3bc3-4d46-89da-d0b578a9793e" class="cell" data-execution_count="106">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(book1)  <span class="co"># Casting nach int: wir erhalten die ID</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="106">
+<pre><code>1</code></pre>
+</div>
+</div>
+<div id="346d6b67-2b77-4136-be44-a0a85fb98250" class="cell" data-execution_count="107">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(book2)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="107">
+<pre><code>2</code></pre>
+</div>
+</div>
+<div id="784b1288-b629-4c89-8e5e-d773af34561d" class="cell" data-execution_count="108">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(book1 <span class="op">==</span> book2)  <span class="co"># ISBNs werden verglichen</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>False</code></pre>
+</div>
+</div>
+<div id="9c0ffe1b-f518-4071-be64-fda9aa9f17ed" class="cell" data-execution_count="109">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(book1 <span class="op">!=</span> book2)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div id="a887e7c9-31ca-4ae6-b54f-af3816efad64" class="cell" data-execution_count="110">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># book1 &lt; book2  # Diese Operation haben wir nicht definiert, sie führt deshalb zum Fehler!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Operatoren überladen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ein <strong>Operator</strong> ist eine Vorschrift, die aus einer Reihe von <strong>Operanden</strong> einen neuen Wert berechnet. Typische Beispiele sind Rechenoperatoren, wie <code>+</code> oder <code>*</code>, aber auch Vergleichsoperatoren wie <code>&lt;</code> oder <code>==</code> (bei letzteren ist das Ergebnis ein Wahrheitswert). Mit Magic Methods kann man in Python <strong>Operatoren überladen</strong> – also ihnen eine benutzerdefinierte Bedeutung für eigene Klassen geben.</p>
+<p>Wichtige Magic Methods für Rechenoperationen:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 39%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Magic Method</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>+</code></td>
+<td><code>__add__(self, other)</code></td>
+<td>Addition</td>
+</tr>
+<tr class="even">
+<td><code>-</code></td>
+<td><code>__sub__(self, other)</code></td>
+<td>Subtraktion</td>
+</tr>
+<tr class="odd">
+<td><code>*</code></td>
+<td><code>__mul__(self, other)</code></td>
+<td>Multiplikation</td>
+</tr>
+<tr class="even">
+<td><code>/</code></td>
+<td><code>__truediv__(self, other)</code></td>
+<td>Division (Gleitkomma)</td>
+</tr>
+<tr class="odd">
+<td><code>//</code></td>
+<td><code>__floordiv__(self, other)</code></td>
+<td>Ganzzahl-Division</td>
+</tr>
+<tr class="even">
+<td><code>%</code></td>
+<td><code>__mod__(self, other)</code></td>
+<td>Modulo (Rest)</td>
+</tr>
+<tr class="odd">
+<td><code>**</code></td>
+<td><code>__pow__(self, other)</code></td>
+<td>Potenz</td>
+</tr>
+<tr class="even">
+<td><code>abs(obj)</code></td>
+<td><code>__abs__(self)</code></td>
+<td>Absolutwert / Betrag</td>
+</tr>
+</tbody>
+</table>
+<p>Wichtige Magic Methods für Vergleichsoperationen:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Magic Method</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>==</code></td>
+<td><code>__eq__(self, other)</code></td>
+<td>Gleichheit</td>
+</tr>
+<tr class="even">
+<td><code>!=</code></td>
+<td><code>__ne__(self, other)</code></td>
+<td>Ungleichheit</td>
+</tr>
+<tr class="odd">
+<td><code>&lt;</code></td>
+<td><code>__lt__(self, other)</code></td>
+<td>Kleiner als</td>
+</tr>
+<tr class="even">
+<td><code>&lt;=</code></td>
+<td><code>__le__(self, other)</code></td>
+<td>Kleiner oder gleich</td>
+</tr>
+<tr class="odd">
+<td><code>&gt;</code></td>
+<td><code>__gt__(self, other)</code></td>
+<td>Größer als</td>
+</tr>
+<tr class="even">
+<td><code>&gt;=</code></td>
+<td><code>__ge__(self, other)</code></td>
+<td>Größer oder gleich</td>
+</tr>
+</tbody>
+</table>
+<p>Hinweis: Wenn <code>__eq__(...)</code> implementiert wird, nicht aber <code>__ne__(...)</code>, funktioniert <code>!=</code> automatisch als Negation von <code>__eq__(...)</code>.</p>
+</div>
+</div>
+<div class="exercises">
+<p><b>Übung:</b></p>
+<p>Implementieren Sie eine Klasse <code>Vector</code>, die Vektoren beliebiger Dimension repräsentiert und grundlegende Operationen der linearen Algebra mithilfe von Magic Methods unterstützt. Prüfen Sie bei allen Vektoroperationen, ob die Dimensionen übereinstimmen.</p>
+<p><strong>Anforderungen:</strong></p>
+<ul>
+<li>Der Konstruktor nimmt eine Liste von Zahlen entgegen (z. B. <code>v = Vector([1, 2, 3])</code>).</li>
+<li>Implementieren Sie eine String-Repräsentation, so dass <code>print(v)</code> aufgerufen werden kann.</li>
+<li><code>+</code>, <code>-</code> soll Vektoren komponentenweise addieren.</li>
+<li><code>*</code> soll ein Skalarprodukt zwischen zwei Vektoren realisieren.</li>
+<li><code>abs()</code> soll die Euklidische Norm des Vektors, also seine Länge zurückgeben.</li>
+<li>Die Operatoren <code>==</code> und <code>!=</code> sollen überprüfen, ob zwei Vektoren identisch sind.</li>
+<li>Die anderen Vergleichsoperatoren sollen sich auf die Länge der Vektoren beziehen.</li>
+</ul>
+</div>
+</section>
+<section id="abstrakte-klassen" class="level2" data-number="10.8">
+<h2 data-number="10.8" class="anchored" data-anchor-id="abstrakte-klassen"><span class="header-section-number">10.8</span> Abstrakte Klassen</h2>
+<p>Abstrakte Klassen sind spezielle Klassen, die man nicht direkt benutzen kann, um Objekte zu erstellen. Stattdessen dienen sie als Vorlage für andere Klassen. Sie definieren Methoden, die alle abgeleiteten Klassen verpflichtend selbst umsetzen müssen. Man könnte sagen: Die abstrakte Klasse gibt die Struktur für alle konkreten Klassen vor. Allerdings handelt es sich dabei um eine Art <em>Basisstruktur</em>, jede abgeleitete Klasse kann darüber hinaus weitere Attribute und Methoden anlegen.</p>
+<p>Im UML-Klassendiagramm kennzeichnen wir eine abstrakte Klasse durch ein <code>&lt;&lt;abstract&gt;&gt;</code> über dem Klassennamen (alternativ kann eine kursive Schrift für den Klassennamen verwendet werden, was aber leichter übersehen werden kann). Das folgende Beispiel illustriert das Konzept der abstrakten Klassen am Beispiel von geometrischen Figuren: <code>Shape</code> ist eine abstrakte Basisklasse mit zwei abstrakten Methoden, nämlich <code>area()</code> und <code>perimeter()</code> (Flächen- und Umfangsberechnung). Alle konkreten geometrischen Formen werden von dieser Basisklasse abgeleitet und müssen verpflichtend <code>area()</code> und <code>perimeter()</code> überschreiben. Dadurch wird ein einheitliches Design aller geometrischen Formen sichergestellt. Eine andere Sichtweise ist: Die abstrakte Klasse legt das Interface für die Benutzung der Klassen fest.</p>
+<div id="fig-uml-abstract" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-uml-abstract-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/oop-uml-abstract.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-uml-abstract-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;10.6: UML-Klassendiagramm mit abstrakter Basisklasse
+</figcaption>
+</figure>
+</div>
+<p>In Python nutzt man für die Umsetzung im Code das Modul <strong>abc</strong> (<em>abstract class</em>). Im folgenden Codebeispiel sehen wir, wie dies funktioniert:</p>
+<ul>
+<li>Die abstrakte Klasse wird von <code>ABC</code> abgeleitet.</li>
+<li>Ihre Methoden werden mit einem sog. Decorator, <code>@abstractmethod</code>, als abstrakte Methoden markiert.</li>
+</ul>
+<div id="5310a593-34e1-44a9-a918-9d15f28ba25c" class="cell" data-execution_count="112">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> abc <span class="im">import</span> ABC, abstractmethod</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Shape(ABC):</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">@abstractmethod</span></span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> area(<span class="va">self</span>):</span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Flächeninhalt berechnen"""</span></span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">@abstractmethod</span></span>
+<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> perimeter(<span class="va">self</span>):</span>
+<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""Umfang berechnen"""</span></span>
+<span id="cb62-12"><a href="#cb62-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Die abstrakte Klasse <code>Shape</code> kann natürlich nichts berechnen (Welche Fläche?! Welchen Umfang?!), sie dient nur als eine Art “Bauplan” für alle konkreten Klassen, die nun von ihr abgeleitet werden:</p>
+<div id="3134ecc9-d99a-44d5-a61b-e18e16485222" class="cell" data-execution_count="113">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Rectangle(Shape):</span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, width, height):</span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._width <span class="op">=</span> width</span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._height <span class="op">=</span> height</span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> area(<span class="va">self</span>):</span>
+<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._width <span class="op">*</span> <span class="va">self</span>._height</span>
+<span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> perimeter(<span class="va">self</span>):</span>
+<span id="cb63-11"><a href="#cb63-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">2</span> <span class="op">*</span> (<span class="va">self</span>._width <span class="op">+</span> <span class="va">self</span>._height)</span>
+<span id="cb63-12"><a href="#cb63-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-13"><a href="#cb63-13" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Circle(Shape):</span>
+<span id="cb63-14"><a href="#cb63-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, radius):</span>
+<span id="cb63-15"><a href="#cb63-15" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._radius <span class="op">=</span> radius</span>
+<span id="cb63-16"><a href="#cb63-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-17"><a href="#cb63-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> area(<span class="va">self</span>):</span>
+<span id="cb63-18"><a href="#cb63-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> math.pi <span class="op">*</span> <span class="va">self</span>._radius <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb63-19"><a href="#cb63-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-20"><a href="#cb63-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> perimeter(<span class="va">self</span>):</span>
+<span id="cb63-21"><a href="#cb63-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">2</span> <span class="op">*</span> math.pi <span class="op">*</span> <span class="va">self</span>._radius</span>
+<span id="cb63-22"><a href="#cb63-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-23"><a href="#cb63-23" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Triangle(Shape):</span>
+<span id="cb63-24"><a href="#cb63-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, a, b, c):</span>
+<span id="cb63-25"><a href="#cb63-25" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._a <span class="op">=</span> a</span>
+<span id="cb63-26"><a href="#cb63-26" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._b <span class="op">=</span> b</span>
+<span id="cb63-27"><a href="#cb63-27" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._c <span class="op">=</span> c</span>
+<span id="cb63-28"><a href="#cb63-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-29"><a href="#cb63-29" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> area(<span class="va">self</span>):</span>
+<span id="cb63-30"><a href="#cb63-30" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Heronsche Formel</span></span>
+<span id="cb63-31"><a href="#cb63-31" aria-hidden="true" tabindex="-1"></a>        s <span class="op">=</span> <span class="va">self</span>.perimeter() <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb63-32"><a href="#cb63-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> math.sqrt(s <span class="op">*</span> (s <span class="op">-</span> <span class="va">self</span>._a) <span class="op">*</span> (s <span class="op">-</span> <span class="va">self</span>._b) <span class="op">*</span> (s <span class="op">-</span> <span class="va">self</span>._c))</span>
+<span id="cb63-33"><a href="#cb63-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-34"><a href="#cb63-34" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> perimeter(<span class="va">self</span>):</span>
+<span id="cb63-35"><a href="#cb63-35" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._a <span class="op">+</span> <span class="va">self</span>._b <span class="op">+</span> <span class="va">self</span>._c</span>
+<span id="cb63-36"><a href="#cb63-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-37"><a href="#cb63-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Test</span></span>
+<span id="cb63-38"><a href="#cb63-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-39"><a href="#cb63-39" aria-hidden="true" tabindex="-1"></a>shapes <span class="op">=</span> [</span>
+<span id="cb63-40"><a href="#cb63-40" aria-hidden="true" tabindex="-1"></a>    Rectangle(<span class="dv">4</span>, <span class="dv">5</span>),</span>
+<span id="cb63-41"><a href="#cb63-41" aria-hidden="true" tabindex="-1"></a>    Circle(<span class="dv">3</span>),</span>
+<span id="cb63-42"><a href="#cb63-42" aria-hidden="true" tabindex="-1"></a>    Triangle(<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb63-43"><a href="#cb63-43" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb63-44"><a href="#cb63-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-45"><a href="#cb63-45" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> shape <span class="kw">in</span> shapes:</span>
+<span id="cb63-46"><a href="#cb63-46" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>shape<span class="sc">.</span>__class__<span class="sc">.</span><span class="va">__name__</span><span class="sc">}</span><span class="ss">: Fläche = </span><span class="sc">{</span>shape<span class="sc">.</span>area()<span class="sc">:.2f}</span><span class="ss">, Umfang = </span><span class="sc">{</span>shape<span class="sc">.</span>perimeter()<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rectangle: Fläche = 20.00, Umfang = 18.00
+Circle: Fläche = 28.27, Umfang = 18.85
+Triangle: Fläche = 6.00, Umfang = 12.00</code></pre>
+</div>
+</div>
+<p>Durch die Verwendung des Moduls <code>abc</code> garantieren wir, dass die abstrakten Methoden vollständig implementiert werden müssen. Im folgenden verletzten wir diese Regel und definieren eine unvollständige Klasse <code>Hexagon</code>, die die abstrakte Methode <code>perimeter</code> nicht implementiert:</p>
+<div id="f1f72136-b5d3-4f54-823c-55c9bd43aa29" class="cell" data-execution_count="114">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Hexagon(Shape):</span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, side_length):</span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._side_length <span class="op">=</span> side_length</span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> area(<span class="va">self</span>):</span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> (<span class="dv">3</span> <span class="op">*</span> math.sqrt(<span class="dv">3</span>) <span class="op">/</span> <span class="dv">2</span>) <span class="op">*</span> <span class="va">self</span>._side_length <span class="op">**</span> <span class="dv">2</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Beim Versuch ein <code>Hexagon</code> zu instanziieren, erhalten wir folgerichtig eine Fehlermeldung:</p>
+<div id="727f093d-0e4f-4b8d-a397-e9d6891da151" class="cell" data-execution_count="77">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>hexagon <span class="op">=</span> Hexagon(<span class="fl">3.0</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg ansi-bold">TypeError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg ansi-bold">In[77], line 1</span>
+<span class="ansi-green-fg ansi-bold">----&gt; 1</span> hexagon <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">Hexagon</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">3.0</span><span class="ansi-yellow-bg">)</span>
+
+<span class="ansi-red-fg ansi-bold">TypeError</span>: Can't instantiate abstract class Hexagon with abstract method perimeter</pre>
+</div>
+</div>
+</div>
+<div class="exercises">
+<p><b>Übungen:</b></p>
+<ol type="a">
+<li>Korrigieren Sie die Klasse <code>Hexagon</code> und testen Sie sie.</li>
+<li>Leiten Sie von <code>Rectangle</code> eine Klasse <code>Square</code> ab. Müssen Sie die abstrakten Methoden erneut implementieren?</li>
+<li>Recherchieren Sie zu <em>Decorators</em>: Wie kann man mit einem Decorator eine statische Methode erstellen? Welche anderen Decorators gibt es?</li>
+</ol>
+</div>
 
 
 </section>
