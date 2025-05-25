@@ -585,6 +585,15 @@ Wie initialisiert man ein Dictionary?
 </ul>
 </div>
 </div>
+<div class="exercises">
+<p><b>Übungen:</b></p>
+<ol type="1">
+<li>Erstellen Sie ein Dictionary, das ein einfaches Telefonbuch darstellt. Fügen Sie einige Namen und Telefonnummern hinzu. Greifen Sie auf einige Einträge zu, überschreiben Sie einen Eintrag und versuchen Sie auch auf einen Eintrag zuzugreifen, den es nicht gibt (einmal mit und einmal ohne <code>.get()</code>).</li>
+<li>Erstellen Sie ein beliebiges Dictionary und wandeln Sie es anschließend in eine Liste um. Welche Einträge finden Sie in der Liste?</li>
+<li>Recherchieren Sie, wie man in Python echte Zeitstempel erzeugt (Tipp: es gibt eine Bibliothek dafür). Schreiben Sie Code, der alle zwei Minuten einen echten Zeitstempel erzeugt und mit einem simulierten Sensorwert (z.B. einer Zufallszahl) in ein Dictionary schreibt. Programmieren Sie eine Abbruchbedingung nach 10 Minuten und untersuchen Sie das entstandene Dictionary (Tipp: Zum Testen kann man zunächst kürzere Zeitintervalle wählen).<br>
+</li>
+</ol>
+</div>
 </section>
 <section id="speichern-einer-zweiten-messgröße---anwendung-des-tupel-engl.-tuple" class="level2" data-number="8.4">
 <h2 data-number="8.4" class="anchored" data-anchor-id="speichern-einer-zweiten-messgröße---anwendung-des-tupel-engl.-tuple"><span class="header-section-number">8.4</span> Speichern einer zweiten Messgröße - Anwendung des Tupel (engl.: Tuple)</h2>
@@ -650,6 +659,10 @@ Wie initialisiert man ein Tupel?
 </ul>
 </div>
 </div>
+<div class="exercises">
+<p><b>Übung:</b></p>
+<p>Erstellen Sie ein Dictionary, das eine Kontaktliste darstellt: Zu jedem Namen speichert es ein Tupel aus Telefonnumer, Geburtsdatum und Adresse. Testen Sie Ihr Dictionary mit einigen Dummy-Einträgen. Lesen Sie dabei die drei Attribute eines Eintrags einzeln aus (wenn Sie beispielsweise nur am Geburtsdatum interessiert sind, wollen Sie nicht die Telefonnummer oder die Adresse ausgeben).</p>
+</div>
 </section>
 <section id="daten-mehrerer-sensoren---verschachtelte-dictionaries" class="level2" data-number="8.5">
 <h2 data-number="8.5" class="anchored" data-anchor-id="daten-mehrerer-sensoren---verschachtelte-dictionaries"><span class="header-section-number">8.5</span> Daten mehrerer Sensoren - verschachtelte Dictionaries</h2>
@@ -673,6 +686,10 @@ Wie initialisiert man ein Tupel?
 <span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a><span class="co"># So würde man Messwerte hinzufügen:</span></span>
 <span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>data[<span class="st">"Sensor3"</span>][<span class="st">"2025-03-23 10:00"</span>] <span class="op">=</span> (<span class="fl">25.2</span>, <span class="dv">62</span>) <span class="co"># Neuer Wert für Sensor 3</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="exercises">
+<p><b>Übung:</b></p>
+<p>Erstellen Sie ein verschachteltes Dictionary, das eine Kontaktliste darstellt: Zu jedem Namen speichert es ein weiteres Dictionary mit den Keys <code>"Telefon"</code>, <code>"Geburtsdatum"</code> und <code>"Adresse"</code>. Testen Sie Ihr Dictionary mit einigen Dummy-Einträgen. Greifen Sie für einen Namen auf jedes der drei Attribute einzeln zu.</p>
 </div>
 </section>
 <section id="exkurs-mutable-und-immutable-datentypen-in-python" class="level2" data-number="8.6">
