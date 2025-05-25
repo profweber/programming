@@ -223,7 +223,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#analyse-der-einzigartigen-messwerte-anwendung-des-sets" id="toc-analyse-der-einzigartigen-messwerte-anwendung-des-sets" class="nav-link" data-scroll-target="#analyse-der-einzigartigen-messwerte-anwendung-des-sets"><span class="header-section-number">8.2</span> Analyse der einzigartigen Messwerte – Anwendung des Sets</a></li>
   <li><a href="#hinzufügen-von-zeitstempeln-anwendung-des-dictionaries" id="toc-hinzufügen-von-zeitstempeln-anwendung-des-dictionaries" class="nav-link" data-scroll-target="#hinzufügen-von-zeitstempeln-anwendung-des-dictionaries"><span class="header-section-number">8.3</span> Hinzufügen von Zeitstempeln – Anwendung des Dictionaries</a></li>
-  <li><a href="#speichern-einer-zweiten-messgröße---anwendung-des-tuples" id="toc-speichern-einer-zweiten-messgröße---anwendung-des-tuples" class="nav-link" data-scroll-target="#speichern-einer-zweiten-messgröße---anwendung-des-tuples"><span class="header-section-number">8.4</span> Speichern einer zweiten Messgröße - Anwendung des Tuples</a></li>
+  <li><a href="#speichern-einer-zweiten-messgröße---anwendung-des-tupel-engl.-tuple" id="toc-speichern-einer-zweiten-messgröße---anwendung-des-tupel-engl.-tuple" class="nav-link" data-scroll-target="#speichern-einer-zweiten-messgröße---anwendung-des-tupel-engl.-tuple"><span class="header-section-number">8.4</span> Speichern einer zweiten Messgröße - Anwendung des Tupel (engl.: Tuple)</a></li>
   <li><a href="#daten-mehrerer-sensoren---verschachtelte-dictionaries" id="toc-daten-mehrerer-sensoren---verschachtelte-dictionaries" class="nav-link" data-scroll-target="#daten-mehrerer-sensoren---verschachtelte-dictionaries"><span class="header-section-number">8.5</span> Daten mehrerer Sensoren - verschachtelte Dictionaries</a></li>
   <li><a href="#exkurs-mutable-und-immutable-datentypen-in-python" id="toc-exkurs-mutable-und-immutable-datentypen-in-python" class="nav-link" data-scroll-target="#exkurs-mutable-und-immutable-datentypen-in-python"><span class="header-section-number">8.6</span> Exkurs: Mutable und immutable Datentypen in Python</a></li>
   <li><a href="#sicheres-kopieren-von-listen" id="toc-sicheres-kopieren-von-listen" class="nav-link" data-scroll-target="#sicheres-kopieren-von-listen"><span class="header-section-number">8.7</span> Sicheres Kopieren von Listen</a></li>
@@ -266,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">24. Mai 2025</p>
+      <p class="date">25. Mai 2025</p>
     </div>
   </div>
   
@@ -416,6 +416,7 @@ Vorletzter Messwert:  22.5</code></pre>
 <pre><code>True</code></pre>
 </div>
 </div>
+<p>Dabei muss intern aber jedes Element einzeln abgefragt werden, mit Pech also die gesamte Liste durchgegangen werden (die Datentypen <code>set</code> und <code>dict</code> sind hier deutlioch effizienter).</p>
 <p>Praktisch sind auch die Funktionen <code>min()</code> und <code>max()</code>:</p>
 <div id="e5d22cd1-736c-48e4-899c-470d46292cce" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Min: "</span>, <span class="bu">min</span>(temperatures))</span>
@@ -425,7 +426,25 @@ Vorletzter Messwert:  22.5</code></pre>
 Max:  24.0</code></pre>
 </div>
 </div>
-<p>Dabei muss intern aber jedes Element einzeln abgefragt werden, mit Pech also die gesamte Liste durchgegangen werden.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wie initialisiert man eine Liste?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Es gibt mehrere Möglichkeiten, eine neue Liste anzulegen - leer oder mit Inhalt:</p>
+<ul>
+<li><p>Leere Initialisierung: <code>[]</code> oder <code>list()</code></p></li>
+<li><p>Mit Werten: <code>[1, 2, 3]</code></p></li>
+<li><p>Aus anderen Datenstrukturen: <code>list(x)</code>, wobei <code>x</code> einen String, ein Set, ein Tuple oder ein Dictionary referenzieren kann. Im Falle vom String erhält man beispielsweise die Liste der Zeichen, im Falle des Dictionaries die Liste der Schlüssel.<br>
+</p></li>
+</ul>
+</div>
+</div>
 </section>
 </section>
 <section id="analyse-der-einzigartigen-messwerte-anwendung-des-sets" class="level2" data-number="8.2">
@@ -449,6 +468,25 @@ Max:  24.0</code></pre>
 </div>
 </div>
 <p>Die Abfrage mit dem Operator <code>in</code> ist übrigens bei Sets viel effizienter als bei Listen. Das liegt an einem Trick: Zu jedem Element eines Sets berechnet Python einen sog. “Hash-Wert”, der angibt, wo das Element im Speicher liegt. Fragt man, ob ein Element im Set liegt, muss Python nur den Hash-Wert für dieses Element berechnen und checken, ob der entsprechende Speicherplatz zum Set gehört. Daher ist der Aufwand - anders als bei Listen - unabhängig von der Größe des Sets!<!-- Deshalb dürfen Sets aber auch nur immutable Elemente beinhalten, denn nur diese sind hashable! --></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wie initialisiert man ein Set?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Es gibt mehrere Möglichkeiten, ein neues Set anzulegen - leer oder mit Inhalt:</p>
+<ul>
+<li><p>Leere Initialisierung: <code>set()</code> (<strong>Achtung: leere geschweifte Klammern initialisieren ein Dictionary und kein Set!</strong>)</p></li>
+<li><p>Mit Werten: <code>{1, 2, 3}</code></p></li>
+<li><p>Aus anderen Datenstrukturen: <code>set(x)</code>, wobei <code>x</code> einen String, eine Liste, ein Tuple oder ein Dictionary referenzieren kann. Im Falle vom String erhält man beispielsweise die Menge der Zeichen (Duplikate werden entfernt!), im Falle des Dictionaries die Menge Schlüssel.<br>
+</p></li>
+</ul>
+</div>
+</div>
 <div class="exercises">
 <p><b>Übungen:</b></p>
 <ol type="1">
@@ -529,9 +567,27 @@ None
 Datensatz fehlt</code></pre>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wie initialisiert man ein Dictionary?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Es gibt mehrere Möglichkeiten, ein neues Dictionary anzulegen - leer oder mit Inhalt:</p>
+<ul>
+<li><p>Leere Initialisierung: <code>{}</code> oder <code>dict()</code></p></li>
+<li><p>Mit Schlüssel-Wert-Paaren: <code>{"a": 1, "b": 2}</code></p></li>
+<li><p>Aus einer Liste von Tupeln: <code>dict([("a", 1), ("b", 2)])</code></p></li>
+</ul>
+</div>
+</div>
 </section>
-<section id="speichern-einer-zweiten-messgröße---anwendung-des-tuples" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="speichern-einer-zweiten-messgröße---anwendung-des-tuples"><span class="header-section-number">8.4</span> Speichern einer zweiten Messgröße - Anwendung des Tuples</h2>
+<section id="speichern-einer-zweiten-messgröße---anwendung-des-tupel-engl.-tuple" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="speichern-einer-zweiten-messgröße---anwendung-des-tupel-engl.-tuple"><span class="header-section-number">8.4</span> Speichern einer zweiten Messgröße - Anwendung des Tupel (engl.: Tuple)</h2>
 <p>Neben der Temperatur speichert der Sensor nun auch die relative Luftfeuchtigkeit. Wir speichern beide Messwerte als <strong>Tupel</strong>. Ein Tupel ist ähnlich wie eine Liste eine Kollektion von Elementen, aber mit dem Unterschied, dass diese unveränderlich sind. Man kann kein Element hinzufügen oder entfernen, auch keinen Wert überschreiben. Diese Einschränkungen machen das Tupel zu einem sehr effizienten und sicheren Datenformat. Syntaktisch erkennt man das Tupel an runden Klammern <code>()</code>:</p>
 <div id="e867f4c2-e098-49d9-8dee-8f6d4dd54187" class="cell" data-execution_count="155">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>measurement <span class="op">=</span> (<span class="fl">23.4</span>, <span class="dv">40</span>) <span class="co"># Tupel mit zwei Werten</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -573,6 +629,27 @@ Luftfeuchtigkeit:  40</code></pre>
 <li>Unveränderbarkeit: Tupel verhindern unbeabsichtigte Änderungen. (Will man bewusst einen Wert verändern, kann man in eine Liste umwandeln.)</li>
 <li>Effizienz: Tupel benötigen weniger Speicherplatz und sind schneller zu verarbeiten als Listen.</li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wie initialisiert man ein Tupel?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Es gibt mehrere Möglichkeiten, ein neues Tupel anzulegen - leer oder mit Inhalt:</p>
+<ul>
+<li><p>Leere Initialisierung: <code>()</code> oder <code>tuple()</code></p></li>
+<li><p>Mit Werten: <code>(1, 2, 3)</code></p></li>
+<li><p>Ohne Klammern: <code>t = 1, 2, 3</code> wird automatisch als Tupel interpretiert.</p></li>
+<li><p>Achtung Spezialfall - Tupel mit exakt einem Wert: <code>(42,)</code> oder <code>42,</code> (Merke: <em>Das Komma macht das Tupel, nicht die Klammern!</em>)</p></li>
+<li><p>Aus anderen Datenstrukturen: <code>tuple(x)</code>, wobei <code>x</code> einen String, eine Liste, ein Set oder ein Dictionary referenzieren kann. Im Falle vom String erhält man beispielsweise das Tupel der Zeichen, im Falle des Dictionaries das Tupel der Schlüssel.<br>
+</p></li>
+</ul>
+</div>
+</div>
 </section>
 <section id="daten-mehrerer-sensoren---verschachtelte-dictionaries" class="level2" data-number="8.5">
 <h2 data-number="8.5" class="anchored" data-anchor-id="daten-mehrerer-sensoren---verschachtelte-dictionaries"><span class="header-section-number">8.5</span> Daten mehrerer Sensoren - verschachtelte Dictionaries</h2>
