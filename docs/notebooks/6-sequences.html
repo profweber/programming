@@ -266,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">28. Mai 2025</p>
+      <p class="date">31. Mai 2025</p>
     </div>
   </div>
   
@@ -668,7 +668,7 @@ Luftfeuchtigkeit:  40</code></pre>
 <ul>
 <li>Semantik: Ein Tupel repräsentiert eine feste Kombination von Werten, z. B. Temperatur und Luftfeuchtigkeit, die logisch zusammengehören.</li>
 <li>Unveränderbarkeit: Tupel verhindern unbeabsichtigte Änderungen. (Will man bewusst einen Wert verändern, kann man in eine Liste umwandeln.)</li>
-<li>Effizienz: Tupel benötigen weniger Speicherplatz und sind schneller zu verarbeiten als Listen.</li>
+<li>Effizienz: Tupel benötigen weniger Speicherplatz und werden (etwas) schneller verarbeitet als Listen.</li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -917,6 +917,18 @@ Gültige Messwerte: [3.3, 2.5, 4.8, 2.1, 0.7]</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>Bereinigte Messwerte: [3.3, 5, 2.5, 4.8, 2.1, 5, 0.7]</code></pre>
 </div>
+</div>
+<div class="exercises">
+<p><b>Übungen:</b> Gegeben ist eine Liste, die Geschwindigkeitsmessungen in der Einheit km/h beinhaltet: <code>speeds = [30.0, 50.7, 45.3, 77.4, 100.9]</code></p>
+<ol type="1">
+<li>Erstellen Sie mit einer List Comprehension eine Liste, die die Geschwindigkeiten in der Einheit m/s beinhaltet.</li>
+<li>Passen Sie Ihre List Comprehension so an, dass nur Werte oberhalb 50 km/h umgerechnet und in die neue Liste aufgenommen werden.</li>
+</ol>
+<p>Gegeben ist eine Liste von Fahrten, jeweils als Tupel (Strecke in km, Zeit in Minuten): <code>trips = [(10, 30), (25, 60), (20, 20), (5, 10)]</code>.</p>
+<ol start="3" type="1">
+<li>Erstellen Sie mit einer List Comprehension eine Liste der jeweiligen Durchschnittsgeschwindigkeiten in der Einheit km/h.</li>
+<li>Erstellen Sie mit einer List Comprehension eine Liste aus Strings mit den Labeln “langsam” (für Fahrten mit einer Durchschnittsgeschwindigkeit unter 50 km/h) und “schnell” (für alle anderen).</li>
+</ol>
 </div>
 </section>
 <section id="performance" class="level3 unnumbered">
