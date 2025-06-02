@@ -266,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">31. Mai 2025</p>
+      <p class="date">2. Juni 2025</p>
     </div>
   </div>
   
@@ -744,28 +744,36 @@ Wie initialisiert man ein Tupel?
 </div>
 </div>
 <p>Wenn die Instanz in diesem Beispiel über eine der beiden Referenzen geändert wird, hat das auch Auswirkungen auf die zweite Referenz:</p>
-<div id="c9fe2599-7a92-48d1-add4-153cd95dcd21" class="cell" data-execution_count="60">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>my_shopping_list.append(<span class="st">'shoes'</span>)  <span class="co"># Instanz verändert sich!</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(your_shopping_list)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['apples', 'oranges', 'paper', 'shoes']</code></pre>
-</div>
-</div>
+<p>my_shopping_list.append(‘shoes’) # Instanz verändert sich! print(your_shopping_list)</p>
 <p>Seiteneffekte können auch durch den Aufruf von Funktionen auftreten: Wir übergeben an Funktionen eine Referenz auf eine Instanz. Wenn die Instanz mutable ist, kann die Funktion die Instanz verändern! Hierzu eine Demo:</p>
-<div id="44e26f9b-b5f8-4606-bdc9-f12a9673cd61" class="cell" data-execution_count="206">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> append_a(l:<span class="bu">list</span>, a:<span class="bu">int</span>):</span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>    l.append(a)</span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]</span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>append_a(my_list, <span class="dv">100</span>)</span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_list)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="44e26f9b-b5f8-4606-bdc9-f12a9673cd61" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> append_a(l:<span class="bu">list</span>, a:<span class="bu">int</span>):</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>    l.append(a)</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>append_a(my_list, <span class="dv">100</span>)</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_list)  <span class="co"># my_list wurde verändert</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1, 2, 3, 100]</code></pre>
 </div>
 </div>
-<p>Wundern Sie sich, dass wir das Keyword <code>global</code> nicht gebraucht haben? Das liegt daran, dass wir keine Zuweisung in der Funktion vorgenommen haben. Wir haben nur eine bereits existierende Instanz verändert (was nur bei mutable Datentypen möglich ist). Auf diese sich verändernde Instanz zeigten zwei Referenzen: <code>l</code> im lokalen Scope der Funktion und <code>my_list</code> im globalen Scope. Beide sehen die Änderung!</p>
-<p>Hinweis: Behalten Sie stets im Hinterkopf, dass es bei den Begriffen <em>mutable</em> bzw. <em>immutable</em> immer um die Instanz geht, nicht um die Referenz. Natürlich können Sie die Variable, die auf eine <strong>immutable</strong> Instanz zeigt, ändern. Dann zeigt sie aber auf eine andere Instanz.</p>
+<p>In diesem Beispiel gibt es zwei Referenzen auf ein veränderliche Instanz: <code>l</code> im lokalen Scope der Funktion und <code>my_list</code> im globalen Scope. Beide sehen die Änderung, die durch <code>.append(...)</code> hervorgerufen wird!</p>
+<p>Besonders überraschend ist vielleicht das folgende Beispiel:</p>
+<div id="3d7825ad-e989-4817-a0f8-e0044ea1152e" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> append_a_to_global_list(a:<span class="bu">int</span>):</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>    my_list.append(a) <span class="co"># my_list wird über die LEGB-Rule im globalen Namespace gefunden</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>append_a_to_global_list(<span class="dv">100</span>)</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_list)  <span class="co"># my_list wurde verändert</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 2, 3, 100]</code></pre>
+</div>
+</div>
+<p>Wundern Sie sich, dass wir das Keyword <code>global</code> nicht gebraucht haben? Der Grund ist einfach: In der Funktion wurde keine neue Zuweisung an <code>my_list</code> vorgenommen. Stattdessen haben wir lediglich die bereits existierende Instanz verändert – und das funktioniert nur bei veränderbaren (mutable) Datentypen. Das Keyword <code>global</code> wäre nur dann erforderlich gewesen, wenn wir <code>my_list</code> innerhalb der Funktion eine neue Instanz zugewiesen hätten, also z. B. mit <code>my_list = [4, 5, 6]</code>. In diesem Fall müssten wir – wie bekannt – mit <code>global my_list</code> deutlich machen, dass sich die Zuweisung auf die globale Variable beziehen soll (und nicht nur auf eine lokale im Namespace der Funktion).</p>
+<p>Abschließender Hinweis: Behalten Sie stets im Hinterkopf, dass es bei den Begriffen <em>mutable</em> bzw. <em>immutable</em> immer um die Instanz geht, nicht um die Referenz. Natürlich können Sie eine Variable, die auf eine <strong>immutable</strong> Instanz zeigt, ändern. Dann zeigt sie aber auf eine andere Instanz.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
