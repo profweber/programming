@@ -266,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">3. Juni 2025</p>
+      <p class="date">5. Juni 2025</p>
     </div>
   </div>
   
@@ -929,7 +929,7 @@ Gültige Messwerte: [3.3, 2.5, 4.8, 2.1, 0.7]</code></pre>
 <div class="exercises">
 <p><b>Übungen:</b> Gegeben ist eine Liste, die Geschwindigkeitsmessungen in der Einheit km/h beinhaltet: <code>speeds = [30.0, 50.7, 45.3, 77.4, 100.9]</code></p>
 <ol type="1">
-<li>Erstellen Sie mit einer List Comprehension eine Liste, die die Geschwindigkeiten in der Einheit m/s beinhaltet.</li>
+<li>Erstellen Sie mit einer List Comprehension eine Liste, die die Geschwindigkeiten in der Einheit m/s, gerundet auf zwei Nachkommastellen, beinhaltet.</li>
 <li>Passen Sie Ihre List Comprehension so an, dass nur Werte oberhalb 50 km/h umgerechnet und in die neue Liste aufgenommen werden.</li>
 </ol>
 <p>Gegeben ist eine Liste von Fahrten, jeweils als Tupel (Strecke in km, Zeit in Minuten): <code>trips = [(10, 30), (25, 60), (20, 20), (5, 10)]</code>.</p>
@@ -938,33 +938,60 @@ Gültige Messwerte: [3.3, 2.5, 4.8, 2.1, 0.7]</code></pre>
 <li>Erstellen Sie mit einer List Comprehension eine Liste aus Strings mit den Labeln “langsam” (für Fahrten mit einer Durchschnittsgeschwindigkeit unter 50 km/h) und “schnell” (für alle anderen).</li>
 </ol>
 </div>
+<div id="2ac4a400-95c5-4717-8311-085240ba9b16" class="cell" data-execution_count="8">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>speeds <span class="op">=</span> [<span class="fl">30.0</span>, <span class="fl">50.7</span>, <span class="fl">45.3</span>, <span class="fl">77.4</span>, <span class="fl">100.9</span>]</span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 1: Einheit umrechnen nach km/h</span></span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Umrechnungsfaktor ist *1000/3600 (oder dividieren durch 3.6)</span></span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a><span class="co"># runden auf 2 Nachkommastellen: mit round(..., 2)</span></span>
+<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a>speeds_ms <span class="op">=</span> [<span class="bu">round</span>(kmh <span class="op">*</span> <span class="dv">1000</span><span class="op">/</span><span class="dv">3600</span>, <span class="dv">2</span>) <span class="cf">for</span> kmh <span class="kw">in</span> speeds]</span>
+<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ergebnis Übung 1:"</span>, speeds_ms)</span>
+<span id="cb67-8"><a href="#cb67-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-9"><a href="#cb67-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 2: nur für solche mit kmh &gt; 50</span></span>
+<span id="cb67-10"><a href="#cb67-10" aria-hidden="true" tabindex="-1"></a>fast_speeds_ms <span class="op">=</span> [<span class="bu">round</span>(kmh <span class="op">*</span> <span class="dv">1000</span><span class="op">/</span><span class="dv">3600</span>, <span class="dv">2</span>) <span class="cf">for</span> kmh <span class="kw">in</span> speeds <span class="cf">if</span> kmh <span class="op">&gt;</span> <span class="dv">50</span>]</span>
+<span id="cb67-11"><a href="#cb67-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ergebnis Übung 2:"</span>, fast_speeds_ms)</span>
+<span id="cb67-12"><a href="#cb67-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-13"><a href="#cb67-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 3</span></span>
+<span id="cb67-14"><a href="#cb67-14" aria-hidden="true" tabindex="-1"></a>trips <span class="op">=</span> [(<span class="dv">10</span>, <span class="dv">30</span>), (<span class="dv">25</span>, <span class="dv">60</span>), (<span class="dv">20</span>, <span class="dv">20</span>), (<span class="dv">5</span>, <span class="dv">10</span>)]</span>
+<span id="cb67-15"><a href="#cb67-15" aria-hidden="true" tabindex="-1"></a><span class="co"># gesuchte Durchschnittsgeschwindigkeit: Strecke in km / Zeit in h</span></span>
+<span id="cb67-16"><a href="#cb67-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Die Zeiten müssen von min in h umgerechnet werden: durch 60 dividieren  </span></span>
+<span id="cb67-17"><a href="#cb67-17" aria-hidden="true" tabindex="-1"></a>average_speeds <span class="op">=</span> [trip[<span class="dv">0</span>]<span class="op">/</span>(trip[<span class="dv">1</span>]<span class="op">/</span><span class="dv">60</span>) <span class="cf">for</span> trip <span class="kw">in</span> trips]</span>
+<span id="cb67-18"><a href="#cb67-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ergebnis Übung 3:"</span>, average_speeds)</span>
+<span id="cb67-19"><a href="#cb67-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-20"><a href="#cb67-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 4</span></span>
+<span id="cb67-21"><a href="#cb67-21" aria-hidden="true" tabindex="-1"></a>trip_labels <span class="op">=</span> [<span class="st">"langsam"</span> <span class="cf">if</span> v <span class="op">&lt;</span> <span class="dv">50</span> <span class="cf">else</span> <span class="st">"schnell"</span> <span class="cf">for</span> v <span class="kw">in</span> average_speeds]</span>
+<span id="cb67-22"><a href="#cb67-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ergebnis Übung 4:"</span>, trip_labels)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </section>
 <section id="performance" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="performance">Performance</h3>
 <p>List Comprehensions sind in der Regel schneller als eine klassische Schleife mit <code>append()</code>, da sie in Python auf C-Ebene optimiert sind. Das bedeutet, viele Schritte (wie Funktionsaufrufe oder das Anhängen an eine Liste) passieren effizient im Hintergrund. Eine kleine Demo:</p>
 <div id="910aa7bc-8de0-4a0c-8575-8318f2e8562b" class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time  <span class="co"># zum Messen von Zeiten</span></span>
-<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Klassische For-Loop mit append</span></span>
-<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a>start <span class="op">=</span> time.time()</span>
-<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> []</span>
-<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000000</span>):</span>
-<span id="cb67-8"><a href="#cb67-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb67-9"><a href="#cb67-9" aria-hidden="true" tabindex="-1"></a>        result.append(i <span class="op">*</span> <span class="dv">2</span>)</span>
-<span id="cb67-10"><a href="#cb67-10" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> time.time()</span>
-<span id="cb67-11"><a href="#cb67-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-12"><a href="#cb67-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"For-Loop Dauer: </span><span class="sc">{</span><span class="bu">round</span>(end <span class="op">-</span> start,<span class="dv">2</span>)<span class="sc">}</span><span class="ss"> Sekunden"</span>)</span>
-<span id="cb67-13"><a href="#cb67-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-14"><a href="#cb67-14" aria-hidden="true" tabindex="-1"></a><span class="co"># List Comprehension mit demselben Ergebnis</span></span>
-<span id="cb67-15"><a href="#cb67-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-16"><a href="#cb67-16" aria-hidden="true" tabindex="-1"></a>start <span class="op">=</span> time.time()</span>
-<span id="cb67-17"><a href="#cb67-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-18"><a href="#cb67-18" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> [i <span class="op">*</span> <span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000000</span>) <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]</span>
-<span id="cb67-19"><a href="#cb67-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-20"><a href="#cb67-20" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> time.time()</span>
-<span id="cb67-21"><a href="#cb67-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-22"><a href="#cb67-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"List Comprehension Dauer: </span><span class="sc">{</span><span class="bu">round</span>(end <span class="op">-</span> start,<span class="dv">2</span>)<span class="sc">}</span><span class="ss"> Sekunden"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time  <span class="co"># zum Messen von Zeiten</span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Klassische For-Loop mit append</span></span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>start <span class="op">=</span> time.time()</span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> []</span>
+<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000000</span>):</span>
+<span id="cb68-8"><a href="#cb68-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb68-9"><a href="#cb68-9" aria-hidden="true" tabindex="-1"></a>        result.append(i <span class="op">*</span> <span class="dv">2</span>)</span>
+<span id="cb68-10"><a href="#cb68-10" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> time.time()</span>
+<span id="cb68-11"><a href="#cb68-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-12"><a href="#cb68-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"For-Loop Dauer: </span><span class="sc">{</span><span class="bu">round</span>(end <span class="op">-</span> start,<span class="dv">2</span>)<span class="sc">}</span><span class="ss"> Sekunden"</span>)</span>
+<span id="cb68-13"><a href="#cb68-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-14"><a href="#cb68-14" aria-hidden="true" tabindex="-1"></a><span class="co"># List Comprehension mit demselben Ergebnis</span></span>
+<span id="cb68-15"><a href="#cb68-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-16"><a href="#cb68-16" aria-hidden="true" tabindex="-1"></a>start <span class="op">=</span> time.time()</span>
+<span id="cb68-17"><a href="#cb68-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-18"><a href="#cb68-18" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> [i <span class="op">*</span> <span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000000</span>) <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]</span>
+<span id="cb68-19"><a href="#cb68-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-20"><a href="#cb68-20" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> time.time()</span>
+<span id="cb68-21"><a href="#cb68-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-22"><a href="#cb68-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"List Comprehension Dauer: </span><span class="sc">{</span><span class="bu">round</span>(end <span class="op">-</span> start,<span class="dv">2</span>)<span class="sc">}</span><span class="ss"> Sekunden"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>For-Loop Dauer: 2.12 Sekunden
 List Comprehension Dauer: 1.01 Sekunden</code></pre>
