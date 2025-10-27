@@ -300,7 +300,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">5. Juni 2025</p>
+      <p class="date">27. Oktober 2025</p>
     </div>
   </div>
   
@@ -314,7 +314,7 @@ window.Quarto = {
 
 <p>Beim Programmieren arbeiten wir ständig mit Daten – Zahlen, Texte, Wahrheitswerte und mehr. Wie aus dieser Aufzählung hervorgeht, gibt es unterschiedliche <strong>Datentypen</strong>, und jeder Typ hat einen Einfluss darauf, wie Daten dargestellt, verarbeitet und gespeichert werden. In diesem Kapitel lernen wir die wichtigsten Datentypen kennen und werfen einen genaueren Blick darauf, wie diese Daten gespeichert und verwaltet werden.</p>
 <p>Im Speicher des Computers liegen Daten als sog. <strong>Instanzen</strong>. Wie wir sehen werden, fungieren Variablen als <strong>Referenzen</strong> auf diese Instanzen (man könnte sagen: <em>Wegweiser zu den Instanzen</em>).</p>
-<p>Zuletzt wollen wir noch verstehen, wie Instanzen von unterschiedlichen Datentypen eigentlich für den Computer aussehen, denn dieser versteht nur eine Sprache: das Binärsystem! Für jeden Datentyp existieren daher Kodierungen, die die jeweilige Information (ob Zahl oder Text) als Binärzahl ausdrückt.</p>
+<p>Zuletzt wollen wir noch verstehen, wie Instanzen von unterschiedlichen Datentypen eigentlich für den Computer aussehen, denn dieser versteht nur eine Sprache: das Binärsystem! Für jeden Datentyp existieren daher Kodierungen, die die jeweilige Information (ob Zahl oder Text) als Binärzahl ausdrücken.</p>
 <p>Zum Abschluss des Kapitels zeigen wir, wie Datentypen ineinander umgewandelt werden können.</p>
 <section id="grundlegende-datentypen" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="grundlegende-datentypen"><span class="header-section-number">5.1</span> Grundlegende Datentypen</h2>
@@ -665,6 +665,20 @@ Kurze Zusammenfassung
 </div>
 <p><strong>Die ursprüngliche Liste wurde verändert, obwohl wir die Variable <code>my_shopping_list</code> gar nicht angefasst haben!</strong> Man spricht in diesem Zusammenhang von einem <strong>Seiteneffekt</strong>.</p>
 <p>Später gehen wir genauer auf dieses Phänomen ein (es tritt nur bei sog. <em>mutable Datentypen</em> auf, zu denen die Liste gehört: Instanzen dieser Datentypen sind veränderlich, während bei <em>immutable Datentypen</em> keine nachträgliche Veränderung von Instanzen erlaubt ist). An dieser Stelle soll es nur illustrieren, warum das Verständnis von Instanzen und Referenzen so wichtig für angehende Programmiererinnen und Programmierer ist. Vielleicht haben Sie auch bereits von <em>Pointern</em> in der Sprache C gehört: Obwohl sich das Konzept von den hier vorgestellten Referenzen unterscheidet, besteht dieselbe Gefahr: Mehrere Pointer können auf dasselbe Objekt zeigen; eine Code-Stelle kann Änderungen bewirken, mit denen man an einer anderen Stelle gar nicht rechnet.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nicht verwechseln: Gleichheit und Identität
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>x == y</code> (Gleichheit) prüft, ob die Instanzen von <code>x</code> und <code>y</code> denselben Wert haben.</p>
+<p><code>x is y</code> (Identität) prüft, ob <code>x</code> und <code>y</code> auf dieselbe Instanz zeigen. In diesem Fall gilt selbstverständlich auch <code>x == y</code>, die Umkehrung ist falsch.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="binäre-darstellung-von-daten" class="level2" data-number="5.3">
@@ -676,7 +690,7 @@ Kurze Zusammenfassung
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exkurs: Einführung ins Binärsystem
+Einführung ins Binärsystem
 </div>
 </div>
 <div class="callout-body-container callout-body">
