@@ -257,7 +257,12 @@ window.Quarto = {
   <li><a href="#identität-einer-instanz" id="toc-identität-einer-instanz" class="nav-link" data-scroll-target="#identität-einer-instanz">Identität einer Instanz</a></li>
   <li><a href="#exkurs-seiteneffekte---wenn-mehrere-referenzen-auf-dieselbe-instanz-zeigen." id="toc-exkurs-seiteneffekte---wenn-mehrere-referenzen-auf-dieselbe-instanz-zeigen." class="nav-link" data-scroll-target="#exkurs-seiteneffekte---wenn-mehrere-referenzen-auf-dieselbe-instanz-zeigen.">Exkurs: Seiteneffekte - Wenn mehrere Referenzen auf dieselbe Instanz zeigen.</a></li>
   </ul></li>
-  <li><a href="#binäre-darstellung-von-daten" id="toc-binäre-darstellung-von-daten" class="nav-link" data-scroll-target="#binäre-darstellung-von-daten"><span class="header-section-number">5.3</span> Binäre Darstellung von Daten</a></li>
+  <li><a href="#binäre-darstellung-von-daten" id="toc-binäre-darstellung-von-daten" class="nav-link" data-scroll-target="#binäre-darstellung-von-daten"><span class="header-section-number">5.3</span> Binäre Darstellung von Daten</a>
+  <ul class="collapse">
+  <li><a href="#binäre-darstellung-von-ganzzahlen" id="toc-binäre-darstellung-von-ganzzahlen" class="nav-link" data-scroll-target="#binäre-darstellung-von-ganzzahlen">Binäre Darstellung von Ganzzahlen</a></li>
+  <li><a href="#binäre-darstellung-von-gleitkommazahlen" id="toc-binäre-darstellung-von-gleitkommazahlen" class="nav-link" data-scroll-target="#binäre-darstellung-von-gleitkommazahlen">Binäre Darstellung von Gleitkommazahlen</a></li>
+  <li><a href="#binäre-darstellung-von-strings" id="toc-binäre-darstellung-von-strings" class="nav-link" data-scroll-target="#binäre-darstellung-von-strings">Binäre Darstellung von Strings</a></li>
+  </ul></li>
   <li><a href="#casting-typumwandlung" id="toc-casting-typumwandlung" class="nav-link" data-scroll-target="#casting-typumwandlung"><span class="header-section-number">5.4</span> Casting (Typumwandlung)</a>
   <ul class="collapse">
   <li><a href="#implizites-casting" id="toc-implizites-casting" class="nav-link" data-scroll-target="#implizites-casting">Implizites Casting</a></li>
@@ -737,6 +742,8 @@ Einführung ins Hexadezimalzystem
 <p>Das Hexadezimalsystem erfreut sich in der Informatik großer Beliebtheit, weil es hilft, Bytes sehr übersichtlich und kompakt auszudrücken. Vier Bits entsprechen gerade einer Hexadezimalstelle, ein Byte (8 Bits) also genau zwei Hexadezimalstellen. Man teilt das Byte in zwei Viererblöcke auf und wandelt diese jeweils ins Hexadezimalsystem um (das ist sehr einfach, da nur die Zahlen 0 - 15 vorkommen). Dann schreibt man die Hexadezimalziffern hintereinander. <strong>Beispiel:</strong>\ 0b10011110 = 0b1001 1110 = 0x9E. Hierzu haben wir 0b1001 = 0x9 und 0b1110 = 0xE verwendet.<br>
 ##### Python-Funktion <code>hex()</code> {.unnumbered} Mit der Funktion <code>hex()</code> können Integer-Literale ins Hexadezimalystem umgewandelt werden. Z. B. <code>hex(4711)</code> (von Dezimal- nach Hexadezimalsystem) oder <code>hex(0b11001111)</code> (von Binär- nach Hexadezimalystem).</p>
 </section>
+</div>
+</div>
 <section id="binäre-darstellung-von-ganzzahlen" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="binäre-darstellung-von-ganzzahlen">Binäre Darstellung von Ganzzahlen</h3>
 <p>Ganzzahlen (Integer) werden direkt im Binärsystem gespeichert. Dabei gibt es eine Unterscheidung:</p>
@@ -756,15 +763,15 @@ Dezimal: 423 Binär: 0b110100111</code></pre>
 </div>
 </div>
 <p>Umgekehrt geht es sogar noch viel einfacher, wie die folgenden Beispiele zeigen:</p>
-<div id="08326d78" class="cell" data-execution_count="89">
+<div id="08326d78" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ein binäres Literal 0b... wird automatisch umgewandelt: </span></span>
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Binär:"</span>, <span class="st">"0b1011"</span>, <span class="st">"Dezimal:"</span>, <span class="bn">0b1011</span>) </span>
 <span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Binär:"</span>, <span class="st">"0b1101"</span>, <span class="st">"Dezimal:"</span>, <span class="bn">0b1101</span>)</span>
-<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Binär:"</span>, <span class="st">"0b110100111"</span>, <span class="st">"Dezimal"</span>, <span class="bn">0b110100111</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Binär:"</span>, <span class="st">"0b110100111"</span>, <span class="st">"Dezimal:"</span>, <span class="bn">0b110100111</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Binär: 0b1011 Dezimal: 11
 Binär: 0b1101 Dezimal: 13
-Binär: 0b110100111 Dezimal 423</code></pre>
+Binär: 0b110100111 Dezimal: 423</code></pre>
 </div>
 </div>
 </section>
@@ -806,7 +813,22 @@ Beispiel Gleitkommazahl-Darstellung
 <li><p><strong>Unicode (UTF-8):</strong> Unicode ist ein universeller Zeichensatz, der mehrere Sprachen mit nur einem Zeichensatz umfassen soll. Es gibt mehrere Kodierungen für Unicode, von denen UTF-8 (UTF = Unicode Transformation Format) die am weitesten verbreite Variante darstellt. UTF-8 kodiert Zeichen mit variabler Byte-Anzahl: Dabei wird ein Unicodezeichen in 1 bis 4 Bytes kodiert (die 8 im Namen UTF-8 bezieht sich auf die kleinste Einheit beim Kodieren: 8 Bits, also 1 Byte). Die Codewerte 0 bis 127 entsprechen dem ASCII-Zeichensatz und werden in einem einzigen Byte kodiert, wobei das höchstwertige Bit stets 0 ist. Mithilfe von fest definierten Steuerzeichen können längere Unicode-Zeichen eingeleitet werden, die sich auf 2, 3 oder 4 Bytes erstrecken. Beispiele: A → 01000001 (1 Byte), 😊 → 11110000 10011111 10011000 10000010 (4 Bytes). Im zweiten Beispiel (der Smiley) sind 11110 vom ersten Byte und 10 von den Folge-Bytes jeweils Steuerzeichen. 11110 kündigt ein Zeichen aus insgesamt vier Bytes an, 10 leitet jeweils die Folgebytes ein. Die reine Information, die den Smiley eindeutig definiert, steckt daher in den übrigen Bits: 0000011111011000001010, wobei man die führenden Nullen noch streichen kann, also 11111011000001010. Diese Bits heißen auch <strong>Codepunkt</strong>.</p></li>
 <li><p><strong>Die Funktionen <code>ord()</code> und <code>chr()</code></strong> Die Funktion <code>ord()</code> liefert den Codepunkt eines Unicode-Zeichens zurück, z. B. <code>ord("A")</code> oder <code>ord(“😂“)</code>. Die Funktion <code>chr()</code> ist die Umkehrung von <code>ord()</code>, d.&nbsp;h. <code>chr(0b01000001)</code> liefert das Zeichen zum Codepunkt <code>0b01000001 = 65</code> (das ASCII-Zeichen <code>"A"</code>).</p></li>
 </ul>
-</section>
+<div id="b7b6081b-3efa-4cf8-94c3-1ff99a0282de" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiele mit ord():</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bin</span>(<span class="bu">ord</span>(<span class="st">"A"</span>)))</span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">hex</span>(<span class="bu">ord</span>(<span class="st">"😂"</span>)))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0b1000001
+0x1f602</code></pre>
+</div>
+</div>
+<div id="34668705-bd48-44da-8bc5-f0a8e9432908" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiele mit chr():</span></span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">chr</span>(<span class="dv">65</span>))</span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">chr</span>(<span class="bn">0xAE</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>A
+®</code></pre>
 </div>
 </div>
 <p>Abschließend stellen wir unser früheres Beispiel für Instanzen und Referenzen noch einmal dar, diesmal aber mit binär kodierten Werten (<a href="#fig-memory-binary" class="quarto-xref">Abbildung&nbsp;<span>5.3</span></a>).</p>
@@ -828,12 +850,13 @@ Abbildung&nbsp;5.3: Instanzen und Referenzen revisited. Diesmal mit binär kodie
 <li>Mit der Funktion <code>getsizeof()</code> aus der Bibliothek <code>sys</code> können Sie die Zahl der Bytes abfragen. Beispiel:</li>
 </ul>
 <div id="f441f06f-c047-4df7-8bac-93a31d0c1e99" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>sys.getsizeof(<span class="st">"42"</span>)  <span class="co"># Antwort: Größe in Bytes</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>sys.getsizeof(<span class="st">"42"</span>)  <span class="co"># Antwort: Größe in Bytes</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>51</code></pre>
 </div>
 </div>
+</section>
 </section>
 <section id="casting-typumwandlung" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="casting-typumwandlung"><span class="header-section-number">5.4</span> Casting (Typumwandlung)</h2>
@@ -842,20 +865,20 @@ Abbildung&nbsp;5.3: Instanzen und Referenzen revisited. Diesmal mit binär kodie
 <h3 class="unnumbered anchored" data-anchor-id="implizites-casting">Implizites Casting</h3>
 <p>Die Programmiersprache übernimmt die Typumwandlung automatisch bei kompatiblen Typen (z.B. Integer zu Float). Im folgenden Beispiel wird eine Integer-Zahl zu einer Float gecastet, um eine Summe zu bilden (das Ergebnis ist wieder ein Float):</p>
 <div id="9e79ed14" class="cell" data-execution_count="109">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>int_number <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>float_number <span class="op">=</span> <span class="fl">3.2</span></span>
-<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> int_number <span class="op">+</span> float_number</span>
-<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(result)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>int_number <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>float_number <span class="op">=</span> <span class="fl">3.2</span></span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> int_number <span class="op">+</span> float_number</span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(result)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="109">
 <pre><code>float</code></pre>
 </div>
 </div>
 <p>Ein zweites Beispiel demonstriert das implizite Casting von Wahrheitswerten zu Integern:</p>
 <div id="80d92a09" class="cell" data-execution_count="125">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="dv">11</span></span>
-<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>boolean <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> number <span class="op">+</span> boolean  <span class="co"># implizites Casting von bool zu int</span></span>
-<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Result: "</span>, result)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="dv">11</span></span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>boolean <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> number <span class="op">+</span> boolean  <span class="co"># implizites Casting von bool zu int</span></span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Result: "</span>, result)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Result:  12</code></pre>
 </div>
@@ -872,8 +895,8 @@ Vorsicht
 <div class="callout-body-container callout-body">
 <p>Unbeabsichtigtes implizites Casting kann zu unerwarteten Fehlern führen!</p>
 <p>In C kompiliert beispielsweise folgender Code:</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> x <span class="op">=</span> <span class="fl">3.99</span><span class="op">;</span></span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> y <span class="op">=</span> x<span class="op">;</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> x <span class="op">=</span> <span class="fl">3.99</span><span class="op">;</span></span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> y <span class="op">=</span> x<span class="op">;</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Allerdings ist der Wert von <code>y</code> nicht <code>3.99</code> und auch nicht <code>4</code>, sondern <code>3</code>. Beim impliziten Casting von float nach int gehen alle Nachkommastellen verloren!</p>
 </div>
 </div>
@@ -884,51 +907,51 @@ Vorsicht
 <p>Beim expliziten Casting fordern wir beim Programmieren die Typumwandlung ausdrücklich an. Das ist z.B. dann erforderlich, wenn die Programmiersprache implizites Casting an einer Stelle nicht unterstützt, wir die Umwandlung aber bewusst durchführen wollen. Python bietet hierfür intuitive Funktionen an, die nach dem gewünschten Zieltyp benannt sind (<code>float()</code>, <code>int()</code>, <code>str()</code>, <code>bool()</code>). Diese Funktionen übernehmen einen Input-Wert, versuchen diesen in den gewünschten Zieltyp umzuwandeln und geben das gecastete Ergebnis zurück. Der zurückgegebene Wert kann z.B. wieder einer Variable zugewiesen werden.</p>
 <p>Beispiele:</p>
 <div id="e4c373bf" class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"Meine Glückszahl ist "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">11</span>) <span class="co"># Int -&gt; Str</span></span>
-<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text)</span>
-<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> <span class="st">"Das Messergebnis beträgt "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="fl">5.4e-2</span>) <span class="op">+</span> <span class="st">" A."</span></span>
-<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"Meine Glückszahl ist "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">11</span>) <span class="co"># Int -&gt; Str</span></span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(text)</span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> <span class="st">"Das Messergebnis beträgt "</span> <span class="op">+</span> <span class="bu">str</span>(<span class="fl">5.4e-2</span>) <span class="op">+</span> <span class="st">" A."</span></span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Meine Glückszahl ist 11
 Das Messergebnis beträgt 0.054 A.</code></pre>
 </div>
 </div>
 <div id="59c39d86" class="cell" data-execution_count="113">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>pi <span class="op">=</span> <span class="fl">3.14</span></span>
-<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>pi <span class="op">=</span> <span class="bu">int</span>(pi)  <span class="co"># Float -&gt; Int</span></span>
-<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pi)  <span class="co"># alle Nachkommastellen gingen verloren!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>pi <span class="op">=</span> <span class="fl">3.14</span></span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>pi <span class="op">=</span> <span class="bu">int</span>(pi)  <span class="co"># Float -&gt; Int</span></span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pi)  <span class="co"># alle Nachkommastellen gingen verloren!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>3</code></pre>
 </div>
 </div>
 <div id="cfcaeea6" class="cell" data-execution_count="134">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="dv">123</span></span>
-<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>condition <span class="op">=</span> <span class="bu">bool</span>(<span class="dv">123</span>)  <span class="co"># Int -&gt; Bool</span></span>
-<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(condition)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="dv">123</span></span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>condition <span class="op">=</span> <span class="bu">bool</span>(<span class="dv">123</span>)  <span class="co"># Int -&gt; Bool</span></span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(condition)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>True</code></pre>
 </div>
 </div>
 <div id="66c10abb" class="cell" data-execution_count="136">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>condition <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="bu">int</span>(condition)  <span class="co"># Casting Bool -&gt; Int</span></span>
-<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(number)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>condition <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="bu">int</span>(condition)  <span class="co"># Casting Bool -&gt; Int</span></span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(number)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0</code></pre>
 </div>
 </div>
 <div id="10e3d027" class="cell" data-execution_count="140">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>condition <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a><span class="co">"The condition is "</span> <span class="op">+</span> <span class="bu">str</span>(condition)  <span class="co"># Bool -&gt; String</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>condition <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a><span class="co">"The condition is "</span> <span class="op">+</span> <span class="bu">str</span>(condition)  <span class="co"># Bool -&gt; String</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="140">
 <pre><code>'The condition is False'</code></pre>
 </div>
 </div>
 <p>Wir haben bereits die <code>input</code>-Funktion kennengelernt und darauf hingewiesen, dass sie stets Strings zurückgibt. Wenn man aber mit einer User-Eingabe rechnen möchte, muss diese zunächst in einen Zahlentyp umgewandelt werden. Hierzu folgende Beispiele:</p>
 <div id="4455d2e0-6f2e-4c4e-b558-e50fe8639292" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Wie alt sind Sie? "</span>))  <span class="co"># Casting: str -&gt; int</span></span>
-<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">+=</span> <span class="dv">10</span>  <span class="co"># wäre mit str nicht möglich!</span></span>
-<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"In 10 Jahren sind Sie </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss"> Jahre alt."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Wie alt sind Sie? "</span>))  <span class="co"># Casting: str -&gt; int</span></span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">+=</span> <span class="dv">10</span>  <span class="co"># wäre mit str nicht möglich!</span></span>
+<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"In 10 Jahren sind Sie </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss"> Jahre alt."</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdin">
 <pre><code>Wie alt sind Sie?  22</code></pre>
 </div>
@@ -937,10 +960,10 @@ Das Messergebnis beträgt 0.054 A.</code></pre>
 </div>
 </div>
 <div id="756aa12b-6422-486c-9676-9eb6968aafde" class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>width <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Breite: "</span>))  <span class="co"># Casting: str -&gt; float</span></span>
-<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>height <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Höhe: "</span>))  <span class="co"># Casting: str -&gt; float</span></span>
-<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a>area <span class="op">=</span> width <span class="op">*</span> height  <span class="co"># wäre mit str nicht möglich</span></span>
-<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Fläche: "</span>, area)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>width <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Breite: "</span>))  <span class="co"># Casting: str -&gt; float</span></span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a>height <span class="op">=</span> <span class="bu">float</span>(<span class="bu">input</span>(<span class="st">"Höhe: "</span>))  <span class="co"># Casting: str -&gt; float</span></span>
+<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a>area <span class="op">=</span> width <span class="op">*</span> height  <span class="co"># wäre mit str nicht möglich</span></span>
+<span id="cb87-4"><a href="#cb87-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Fläche: "</span>, area)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdin">
 <pre><code>Breite:  12.4
 Höhe:  7.8</code></pre>
@@ -951,9 +974,9 @@ Höhe:  7.8</code></pre>
 </div>
 <p>Aber auch explizites Casting ist nicht in jedem Fall möglich und kann zu Fehlern führen. Z.B. weiß der Python-Interpreter nicht, wie er die folgenden Castings durchführen soll:</p>
 <div id="cdc43a37-724d-45c1-a75f-46b1a237af8b" class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(<span class="st">"Apfel"</span>)  <span class="co"># Fehler! Wie soll "Apfel" als float interpretiert werden?</span></span>
-<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(<span class="st">"Haus"</span>)  <span class="co"># Fehler!</span></span>
-<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="fl">1.2</span>]) <span class="co"># Fehler! Wie soll list -&gt; int gecastet werden?</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(<span class="st">"Apfel"</span>)  <span class="co"># Fehler! Wie soll "Apfel" als float interpretiert werden?</span></span>
+<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(<span class="st">"Haus"</span>)  <span class="co"># Fehler!</span></span>
+<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="fl">1.2</span>]) <span class="co"># Fehler! Wie soll list -&gt; int gecastet werden?</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
