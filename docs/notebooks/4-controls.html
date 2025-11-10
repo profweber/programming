@@ -686,7 +686,7 @@ Kritischer Messwert gefunden: 23.2 V</code></pre>
 <pre><code>&lt;class 'range'&gt;</code></pre>
 </div>
 </div>
-<p>Wie wir sehen, erzeugt <code>range</code> keine Liste, sondern einen eigenen Datentyp, der ebenfalls <code>range</code> heißt. Dieser Datentyp ist für die Zählschleife optimiert: Im Gegensatz zu einer Liste, speichert er nicht alle Werte ab, sondern erzeugt diese <em>on-the-fly</em>, also dann, wenn sie gebraucht werden. Eine Liste mit 1 Million Zahlen würde viel Speicher brauchen; <code>range</code> dagegen speichert nur drei Werte (<code>start</code>, <code>stop</code> und <code>step</code>). Die Berechnung der jeweils nächsten Zahl erfolgt in C und ist daher sehr schnell!</p>
+<p>Wie wir sehen, erzeugt <code>range</code> keine Liste, sondern einen eigenen Datentyp, der ebenfalls <code>range</code> heißt. Dieser Datentyp ist für die Zählschleife optimiert: Im Gegensatz zu einer Liste speichert er nicht alle Werte ab, sondern erzeugt diese <em>on-the-fly</em>, also dann, wenn sie gebraucht werden. Eine Liste mit 1 Million Zahlen würde viel Speicher brauchen; <code>range</code> dagegen speichert nur drei Werte (<code>start</code>, <code>stop</code> und <code>step</code>). Die Berechnung der jeweils nächsten Zahl erfolgt in C und ist daher sehr schnell!</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
