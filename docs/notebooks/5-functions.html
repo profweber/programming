@@ -252,7 +252,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#funktionen-für-ein--und-ausgabe" id="toc-funktionen-für-ein--und-ausgabe" class="nav-link" data-scroll-target="#funktionen-für-ein--und-ausgabe">Funktionen für Ein- und Ausgabe</a></li>
   <li><a href="#funktionen-für-typumwandlungen-casting" id="toc-funktionen-für-typumwandlungen-casting" class="nav-link" data-scroll-target="#funktionen-für-typumwandlungen-casting">Funktionen für Typumwandlungen (Casting)</a></li>
-  <li><a href="#allgemeine-informationsfunktionen" id="toc-allgemeine-informationsfunktionen" class="nav-link" data-scroll-target="#allgemeine-informationsfunktionen"><span class="header-section-number">7.2.1</span> Allgemeine Informationsfunktionen</a></li>
+  <li><a href="#allgemeine-informationsfunktionen" id="toc-allgemeine-informationsfunktionen" class="nav-link" data-scroll-target="#allgemeine-informationsfunktionen">Allgemeine Informationsfunktionen</a></li>
   </ul></li>
   <li><a href="#numerische-funktionen" id="toc-numerische-funktionen" class="nav-link" data-scroll-target="#numerische-funktionen">Numerische Funktionen</a>
   <ul class="collapse">
@@ -352,8 +352,8 @@ window.Quarto = {
 <p><code>int(x)</code>, <code>float(x)</code>, <code>str(x)</code>, … – konvertiert in den entsprechenden Datentyp.</p>
 <p>Diese Funktionen können auch genutzt werden, um leere Instanzen zu erzeugen, z.B. <code>str()</code> (ein String ohne Zeichen) oder <code>list()</code> (eine Liste ohne Elemente).</p>
 </section>
-<section id="allgemeine-informationsfunktionen" class="level3" data-number="7.2.1">
-<h3 data-number="7.2.1" class="anchored" data-anchor-id="allgemeine-informationsfunktionen"><span class="header-section-number">7.2.1</span> Allgemeine Informationsfunktionen</h3>
+<section id="allgemeine-informationsfunktionen" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="allgemeine-informationsfunktionen">Allgemeine Informationsfunktionen</h3>
 <p><code>type(x)</code> – gibt den Datentyp einer Instanz zurück.</p>
 <p><code>id(x)</code> – liefert die eindeutige Identität einer Instanz.</p>
 <p><code>help(x)</code> – zeigt die Hilfeseite an (kann mit Objekten oder Funktionen verwendet werden).</p>
@@ -409,18 +409,21 @@ bin(number, /)
 <p><code>len(x)</code> – gibt die Länge einer Sequenz zurück, z. B. Anzahl der Zeichen von einem String oder Anzahl der Elemente in einer Liste.</p>
 <p><code>sum(x)</code> – summiert alle Werte in einer Sequenz.</p>
 <p><code>max(x)</code> und <code>min(x)</code> – gibt das Maximum bzw. Minimum in einer Sequenz zurück.</p>
-<div id="03c13895-e488-4792-9fae-f9b2058ec151" class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiele zur Verwendung von len, sum, max und min:</span></span>
+<p><code>sorted(x)</code> - gibt eine sortierte Kopie der Sequenz zurück.</p>
+<div id="03c13895-e488-4792-9fae-f9b2058ec151" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiele zur Verwendung von len, sum, max, min und sorted:</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">0.25</span>, <span class="op">-</span><span class="fl">0.5</span>, <span class="dv">2</span>]</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"len:"</span>, <span class="bu">len</span>(my_list))</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"sum:"</span>, <span class="bu">sum</span>(my_list))</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"max:"</span>, <span class="bu">max</span>(my_list))</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"min:"</span>, <span class="bu">min</span>(my_list))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"min:"</span>, <span class="bu">min</span>(my_list))</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"sorted:"</span>, <span class="bu">sorted</span>(my_list))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>len: 5
 sum: 3.25
 max: 2
-min: -0.5</code></pre>
+min: -0.5
+sorted: [-0.5, 0.25, 0.5, 1, 2]</code></pre>
 </div>
 </div>
 </section>
