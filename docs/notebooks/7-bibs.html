@@ -715,7 +715,7 @@ x = -1.87 , sin(x)= -0.95</code></pre>
 <span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Es folgen Einstellungen zur Darstellung (z.B. Beschriftung)</span></span>
 <span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"$y = x^2$"</span>)  <span class="co"># Titel</span></span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="vs">r"$y = x^2$"</span>)  <span class="co"># Titel </span></span>
 <span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)  <span class="co"># Beschriftung x-Achse</span></span>
 <span id="cb38-17"><a href="#cb38-17" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"y"</span>)  <span class="co"># Beschriftung y-Achse</span></span>
 <span id="cb38-18"><a href="#cb38-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout() <span class="co"># optimiert bei Bedarf den Zeichenbereich, damit nix abgeschnitten wird</span></span>
@@ -734,6 +734,26 @@ x = -1.87 , sin(x)= -0.95</code></pre>
 <p><img src="7-bibs_files/figure-html/cell-22-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Verwendung von LaTeX-Befehlen in Strings
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Beim Plotten von Funktionen verwendet man häufig LaTeX-Befehle, um Achsen, Titel oder Labels zu beschriften. Beispielsweise kann die Funktion</p>
+<p><span class="math inline">\(f(x)=\frac{1}{1+x^2}\)</span></p>
+<p>in Matplotlib so als String dargestellt werden:</p>
+<p><code>"$\frac{1}{1+x^2}$"</code></p>
+<p>In Python hat der Backslash <code>\</code> jedoch die Bedeutung eines <em>Escape-Zeichens</em>, z. B. für Zeilenumbrüche (<code>\n</code>) oder Tabulatoren (<code>\t</code>). Damit Python den Backslash in LaTeX-Befehlen <strong>wörtlich</strong> interpretiert, verwendet man <strong>Raw Strings</strong>, indem man ein kleines <strong>r</strong> vor das String-Literal setzt:</p>
+<p><code>r"\frac{1}{1+x^2}"</code></p>
+<p><code>r"\sqrt{x}"</code></p>
+<p>Dieses r teilt dem Python-Interpreter mit, dass alle Backslashes in diesem String unverändert bleiben, wodurch LaTeX-Befehle korrekt dargestellt werden.</p>
 </div>
 </div>
 </section>
@@ -832,7 +852,7 @@ x = -1.87 , sin(x)= -0.95</code></pre>
 </ol>
 </div>
 <p>Lösungen:</p>
-<div id="75b1b872-ff6f-4f62-ba83-6159092f1def" class="cell" data-execution_count="166">
+<div id="75b1b872-ff6f-4f62-ba83-6159092f1def" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -844,7 +864,7 @@ x = -1.87 , sin(x)= -0.95</code></pre>
 <span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>plt.plot(xs, ys)</span>
 <span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Ü1: $f(x)= 1 + 3</span><span class="ch">\\</span><span class="st">sqrt</span><span class="sc">{x}</span><span class="st">$"</span>)</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="vs">r"Ü1: $f(x)= 1 + 3\sqrt</span><span class="sc">{x}</span><span class="vs">$"</span>)  <span class="co"># das kleine r: raw string, damit der Backslash \ als solcher erkannt wird</span></span>
 <span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
 <span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"y"</span>)</span>
 <span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
@@ -898,17 +918,17 @@ x = -1.87 , sin(x)= -0.95</code></pre>
 10,1457.8562653828417,36.17824929221712,25.32555101961123,3.9630387647710816,399.6263414315312
 ...</code></pre>
 <p>Mit pandas ist es ein Leichtes, die Daten zu analysieren! Wir zeigen nur ein paar wenige der vielen Features, die pandas anbietet.</p>
-<div id="f32b5c8c-d289-4192-9383-87dd13a30297" class="cell" data-execution_count="198">
+<div id="f32b5c8c-d289-4192-9383-87dd13a30297" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="co"># CSV einlesen</span></span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"./data/pruefstand.csv"</span>)  <span class="co"># oder auch aus einer URL oder Excel-Datei</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="vs">r"./data/pruefstand.csv"</span>)  <span class="co"># oder auch aus einer URL oder Excel-Datei</span></span>
 <span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Die Abkürzung df ist sehr gebräuchlich und steht für 'Data Frame' = eine Tabelle</span></span>
 <span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Kurze Übersicht der Daten</span></span>
 <span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>df.head()  <span class="co"># Zeigt die ersten 5 Zeilen</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="198">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 
@@ -976,9 +996,9 @@ x = -1.87 , sin(x)= -0.95</code></pre>
 </div>
 </div>
 </div>
-<div id="67605482-359b-4e37-acda-4e3c4bb61426" class="cell" data-execution_count="199">
+<div id="67605482-359b-4e37-acda-4e3c4bb61426" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>df.describe()  <span class="co"># liefert statistische Kennzahlen aller Größen</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="199">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
 
@@ -1074,7 +1094,7 @@ x = -1.87 , sin(x)= -0.95</code></pre>
 </div>
 </div>
 <p>Der <code>describe</code>-Befehl ist sehr nützlich: Wir sehen auf einen Blick, dass unsere Datei 500 Zeilen beinhaltet und erhalten Mittelwerte, Standardabweichungen, Wertebereiche und Quantile aller Messgrößen. Ein erster aufschlussreicher Überblick über unsere Daten!</p>
-<div id="c3b8c921-7868-40cc-a5ea-0249bfc8d8e4" class="cell" data-execution_count="119">
+<div id="c3b8c921-7868-40cc-a5ea-0249bfc8d8e4" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mittelwerte oder andere Kennzahlen können </span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ganz einfach auch einzeln abgefragt werden:</span></span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1093,10 +1113,10 @@ Mittlere Temperatur: 45.0 °C</code></pre>
 </div>
 </div>
 <p>Sie können auch einfach neue Spalten erzeugen, wie das folgende Beispiel zeigt:</p>
-<div id="0d6062f7-994d-4a86-b012-97e34d63e2ad" class="cell" data-execution_count="201">
+<div id="0d6062f7-994d-4a86-b012-97e34d63e2ad" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"power_W"</span>]<span class="op">=</span>df[<span class="st">"strom_A"</span>]<span class="op">*</span>df[<span class="st">"spannung_V"</span>]</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>df.head()  <span class="co"># achten Sie auf die neue Spalte.</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="201">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
 
@@ -1171,7 +1191,7 @@ Mittlere Temperatur: 45.0 °C</code></pre>
 </div>
 </div>
 <p>Selbstverständlich können wir nun auch Matplotlib in Kombination mit Pandas einsetzen, um Daten zu visualisieren:</p>
-<div id="09310df9-7c82-4296-a095-6c01c70547be" class="cell" data-execution_count="203">
+<div id="09310df9-7c82-4296-a095-6c01c70547be" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot: Temperatur über Zeit</span></span>
