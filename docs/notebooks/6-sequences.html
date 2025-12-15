@@ -266,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">1. Dezember 2025</p>
+      <p class="date">15. Dezember 2025</p>
     </div>
   </div>
   
@@ -1093,6 +1093,26 @@ tiefe Kopie:  [[1, 2, 100], 3, 4]</code></pre>
 </div>
 </div>
 <p>Die Änderungen an der flachen Kopie hatten noch Auswirkungen auf das Original, weil beide die Referenz auf das erste Element teilten, welches mutable war. Nur bei der tiefen Kopie handelt es sich um eine völlig autarke Kopie, die nichts mehr mit dem Original gemein hat.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Vier Wege zur flachen Kopie
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die folgenden vier Varianten erzeugen alle eine <strong>flache Kopie</strong>:</p>
+<ol type="1">
+<li>Slicing: <code>my_copy = original[:]</code></li>
+<li><code>list</code>-Funktion: <code>my_copy = list(original)</code></li>
+<li>Methode <code>.copy()</code>: <code>my_copy = original.copy()</code></li>
+<li>Funktion <code>copy()</code> aus Modul <code>copy</code>: <code>my_copy = copy.copy(original)</code></li>
+</ol>
+</div>
+</div>
+<p>In Python ist die tiefe Kopie (copy.deepcopy) bewusst nicht als Built-in-Funktion verfügbar. Der Grund liegt in der Designphilosophie <em>„Explicit is better than implicit“</em>: Eine tiefe Kopie sollte nur dann eingesetzt werden, wenn man sie wirklich benötigt. Da die Operation rekursiv alle enthaltenen Objekte dupliziert, ist sie vergleichsweise aufwendig in Bezug auf Laufzeit und Speicherverbrauch. In vielen Fällen ist es daher sinnvoller, benötigte Datenstrukturen gezielt neu aufzubauen oder nur Teilstrukturen zu kopieren, anstatt pauschal eine tiefe Kopie der gesamten Struktur zu erzeugen.</p>
 </section>
 <section id="list-comprehensions" class="level2" data-number="8.8">
 <h2 data-number="8.8" class="anchored" data-anchor-id="list-comprehensions"><span class="header-section-number">8.8</span> List Comprehensions</h2>
@@ -1263,6 +1283,24 @@ List Comprehension Dauer: 1.01 Sekunden</code></pre>
 <section id="fazit-für-die-praxis" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="fazit-für-die-praxis">Fazit für die Praxis</h3>
 <p>List Comprehensions sind oft eine gute Wahl, wenn eine neue Liste erzeugt werden soll. Sie führen in der Regel zu kürzerem und verständlicherem Code. Allerdings sollte man sie nur verwenden, wenn Bedingungen und Ausdrücke einfach genug sind, um die Lesbarkeit nicht zu gefährden. Bei komplexerer Logik ist eine klassische Schleife oft die bessere Wahl, um die Wartbarkeit zu sichern. Sollte Performance eine entscheidende Rolle spielen, kann es sich lohnen, größere Schleifen in eine List Comprehension umzuschreiben – vorausgesetzt, die Lesbarkeit bleibt erhalten.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Set- und Dictionary-Comprehensions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Auch mit geschweiften Klammern lassen sich Comprehensions erzeugen, probieren Sie es aus:</p>
+<p><code>my_set = {i**2 for i in range(10)}  # Set-Comprehension</code></p>
+<p><code>my_dict = {x: x**2 for x in range(10)} # Dict-Comprehension</code></p>
+<p><strong>Hinweis:</strong> Wenn man stattdessen runde Klammern verwendet, entsteht <strong>kein Tuple</strong>, wie man erwarten könnte, sondern ein <em>Generator-Objekt</em>. Generatoren gehen über den Rahmen dieser Einführung hinaus. Hier sei nur erwähnt, dass das Generator-Objekt an die Funktion <code>tuple()</code> übergeben werden kann, um auf diese Weise ein Tuple zu erzeugen:</p>
+<p><code>my_tuple = tuple((i**2 for i in range(10)))  # Generator-Objekt wird an tuple() übergeben</code></p>
+<p>So erhält man funktional eine <em>Tuple-Comprehension</em>, obwohl es dafür in Python keine direkte Syntax gibt.</p>
+</div>
+</div>
 
 
 </section>
