@@ -266,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">30. Dezember 2025</p>
+      <p class="date">22. März 2026</p>
     </div>
   </div>
   
@@ -287,7 +287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Sie sollen einen Eindruck davon gewinnen, wie verschiedene Datenstrukturen für bestimmte Fragstellungen und Anwendungen ihre Stärken ausspielen.</p>
 <section id="ein-sensor-speichert-stündlich-temperaturdaten-anwendung-der-liste" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="ein-sensor-speichert-stündlich-temperaturdaten-anwendung-der-liste"><span class="header-section-number">8.1</span> Ein Sensor speichert stündlich Temperaturdaten – Anwendung der Liste</h2>
-<p>Ein Sensor misst stündlich die Temperatur (z.B. in einem Raum oder einer Maschine). Diese Daten speichern wir der Reihe nach in einer Liste, einer der einfachsten Datenstrukturen. Die Liste ist ideal für lineares Speichern (Messwert für Messwert hintereinander). Sie ermöglicht den einfachen Zugriff auf Elemente anhand ihrer Position, stellt aber auch nützliche Funktionen zum Arbeiten mit den Daten bereit.</p>
+<p>Ein Sensor misst stündlich die Temperatur (z.B. in einem Raum oder einer Maschine). Diese Daten speichern wir der Reihe nach in einer Liste, einer der einfachsten Datenstrukturen, die wir bereits im Kapitel über Datentypen kennengelernt haben. Die Liste ist ideal für lineares Speichern (Messwert für Messwert hintereinander). Sie ermöglicht den einfachen Zugriff auf Elemente anhand ihrer Position, stellt aber auch nützliche Funktionen zum Arbeiten mit den Daten bereit. Im Folgenden wiederholen wir einige wesentliche Eigenschaften von Listen und lernen weitere Möglichkeiten der Datenverarbeitung kennen.</p>
 <section id="speichern-der-daten" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="speichern-der-daten">Speichern der Daten</h3>
 <div id="d59285c5-f25a-4451-8910-341f1b8e478c" class="cell" data-execution_count="4">
@@ -304,7 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[22.5, 23.1, 21.8, 24.0, 22.5, 21.8]</code></pre>
 </div>
 </div>
-<p>In der Praxis würde an einer bestimmten Stelle im Code (einmal pro Stunde) mithilfe von <code>append</code> der aktuelle Messwert in der Liste gespeichert werden. Auffällig ist, dass die Funktion <code>append</code> zu unserer Liste selbst gehört, beim Aufruf verwenden wir einen <code>.</code> zwischen der Referenz auf die Liste und der Funktion. Solche Funktionen werden auch <strong>Methoden</strong> genannt und sind ein wesentlicher Bestandteil der objektorientierten Programmierung: Die Instanz einer Liste bietet Benutzern diese Funktion an, um ihren Inhalt zu manipulieren.</p>
+<p>In der Praxis würde an einer bestimmten Stelle im Code (einmal pro Stunde) mithilfe von <code>append</code> der aktuelle Messwert in der Liste gespeichert werden.</p>
 </section>
 <section id="sortieren-der-messungen" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="sortieren-der-messungen">Sortieren der Messungen</h3>
@@ -317,8 +317,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Sortierte Temperaturen: [21.8, 21.8, 22.5, 22.5, 23.1, 24.0]</code></pre>
 </div>
 </div>
-<p>Wir können nun direkt ablesen, dass der Wertebereich zwischen 21.8 und 24.0 liegt. Allerdings haben wir unsere Originalliste durch das Sortieren verändert! Das war womöglich gar nicht unsere Absicht, denn wir wollen weiterhin die Information besitzen, wann welcher Wert erhoben wurde. Für diesen Zweck gibt es eine Lösung: Anstelle der Methode <code>.sort()</code> verwenden wir die Funktion <code>sorted()</code>, die eine sortierte Liste zurückgibt <strong>ohne das Original zu verändern</strong>:</p>
-<div id="eea3ae66-4fb6-4a02-9e7f-052f81c6eec8" class="cell" data-execution_count="5">
+<p>Wir können nun direkt ablesen, dass der Wertebereich zwischen 21.8 und 24.0 liegt. Allerdings haben wir unsere Originalliste durch das Sortieren verändert! Das war womöglich gar nicht unsere Absicht, denn wir wollen weiterhin die Information besitzen, wann welcher Wert erhoben wurde. Für diesen Zweck gibt es eine Lösung: Anstelle der Methode <code>.sort()</code> verwenden wir die built-in Funktion <code>sorted()</code>, die eine sortierte Liste zurückgibt <strong>ohne das Original zu verändern</strong>:</p>
+<div id="eea3ae66-4fb6-4a02-9e7f-052f81c6eec8" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wir stellen zunächst das Original wieder her</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>temperatures <span class="op">=</span> [<span class="fl">22.5</span>, <span class="fl">23.1</span>, <span class="fl">21.8</span>, <span class="fl">24.0</span>, <span class="fl">22.5</span>, <span class="fl">21.8</span>]</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -331,11 +331,26 @@ Original:  [22.5, 23.1, 21.8, 24.0, 22.5, 21.8]</code></pre>
 </div>
 </div>
 <p>Die implementierten Sortieralgorithmen sind übrigens sehr effizient (schneller als der früher vorgestellte Bubble Sort).</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wichtig
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Beachten Sie unbedingt den Unterschied zwischen <code>.sort()</code> und <code>sorted()</code>:</p>
+<p><code>my_list.sort()  # Original verändert!</code></p>
+<p><code>sorted_list = sorted(my_list)  # Original unverändert!</code></p>
+</div>
+</div>
 </section>
 <section id="werte-extrahieren---indexzugriff-und-list-slicing" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="werte-extrahieren---indexzugriff-und-list-slicing">Werte extrahieren - Indexzugriff und List Slicing</h3>
-<p>Wir können auf die Werte in einer Liste ganz einfach über ihren Index zugreifen und dabei ist besonders nützlich, dass Python auch negative Indizes erlaubt: der Index -1 entspricht immer dem letzten Element, -2 dem vorletzten usw. Wir demonstrieren die Verwendung von Indizes:</p>
-<div id="bee2f479-63a5-4512-85b3-57610e50093a" class="cell" data-execution_count="10">
+<p>Wie bereits bekannt, kann man über Indizes auf die einzelnen Elemente zugreifen:</p>
+<div id="bee2f479-63a5-4512-85b3-57610e50093a" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"1. Messwert: "</span> , temperatures[<span class="dv">0</span>])</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Letzter Messwert: "</span> , temperatures[<span class="op">-</span><span class="dv">1</span>])</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Min: "</span> , sorted_data[<span class="dv">0</span>])</span>
@@ -351,17 +366,18 @@ Max:  24.0
 Vorletzter Messwert:  22.5</code></pre>
 </div>
 </div>
-<p>Oft interessiert man sich für Bereiche von Messwerten und kann diese in Python sehr effizient mit sog. “List Slicing” <em>ausschneiden</em>: Hierfür verwendet man einen Start- und Endindex, getrennt durch ein <code>:</code>. Zu beachten ist, dass der Anfangsindex inkludiert wird, das Slicing aber einen Schritt vor dem Endindex aufhört:</p>
+<p>Oft interessiert man sich für ganze Bereiche von Messwerten und kann diese in Python sehr effizient mit sog. “List Slicing” <em>ausschneiden</em>: Hierfür verwendet man einen Start- und Endindex, getrennt durch ein <code>:</code>. Zu beachten ist, dass der Anfangsindex inkludiert wird, das Slicing aber einen Schritt vor dem Endindex aufhört:</p>
 <div id="ea8e467e-d005-42ac-9e4d-6c5a3062407c" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Slicing: Werte gesucht ...</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ... mit Indizes: 0,1,2</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[<span class="dv">0</span>:<span class="dv">3</span>])  </span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ... mit Indizes: 2,3,4</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[<span class="dv">2</span>:<span class="dv">5</span>])  </span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># ... mit Indizes: 1,2,3...,vorletztes</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>])  </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ... mit Indizes: 0,1,2</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[<span class="dv">0</span>:<span class="dv">3</span>])  </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ... mit Indizes: 2,3,4</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[<span class="dv">2</span>:<span class="dv">5</span>])  </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># ... mit Indizes: 1,2,3,...,vorletztes</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[<span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>])  </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[22.5, 23.1, 21.8]
 [21.8, 24.0, 22.5]
@@ -371,14 +387,15 @@ Vorletzter Messwert:  22.5</code></pre>
 <p>Man kann auch Start- und Endindex weglassen und meint damit “von Anfang” oder “bis Ende”:</p>
 <div id="71e7a400-63b4-4271-960e-c64a436a17e6" class="cell" data-execution_count="49">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Slicing: Werte gesucht ...</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ... von Anfang bis Index 2</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[:<span class="dv">3</span>]) </span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ... von Index 4 bis Schluss</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[<span class="dv">4</span>:]) </span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Die ganze Liste als großer Slice:</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[:]) </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ... von Anfang bis Index 2</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[:<span class="dv">3</span>]) </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># ... von Index 4 bis Schluss</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[<span class="dv">4</span>:]) </span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Die ganze Liste als großer Slice:</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[:]) </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[22.5, 23.1, 21.8]
 [22.5, 21.8]
@@ -416,99 +433,17 @@ Vorletzter Messwert:  22.5</code></pre>
 <pre><code>True</code></pre>
 </div>
 </div>
-<p>Dabei muss intern aber jedes Element einzeln abgefragt werden, mit Pech also die gesamte Liste durchgegangen werden (die Datentypen <code>set</code> und <code>dict</code> sind hier deutlioch effizienter).</p>
-<p>Praktisch sind auch die Funktionen <code>min()</code> und <code>max()</code>:</p>
-<div id="e5d22cd1-736c-48e4-899c-470d46292cce" class="cell" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Min: "</span>, <span class="bu">min</span>(temperatures))</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Max: "</span>, <span class="bu">max</span>(temperatures))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Dabei muss intern aber jedes Element einzeln abgefragt werden, mit Pech also die gesamte Liste durchgegangen werden (die Datentypen <code>set</code> und <code>dict</code> sind hier deutlich effizienter).</p>
+<p>Darüber hinaus sind die Built-in-Functions <code>max()</code>, <code>min()</code>,<code>len()</code> oder <code>sum()</code> nützlich.</p>
+<div id="e5d22cd1-736c-48e4-899c-470d46292cce" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel: Verwendung von Built-in-Functions min, max, len</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Min: "</span>, <span class="bu">min</span>(temperatures))</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Max: "</span>, <span class="bu">max</span>(temperatures))</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Anzahl der Elemente: "</span>, <span class="bu">len</span>(temperatures))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Min:  21.8
-Max:  24.0</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Wie initialisiert man eine Liste?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Es gibt mehrere Möglichkeiten, eine neue Liste anzulegen - leer oder mit Inhalt:</p>
-<ul>
-<li><p>Leere Initialisierung: <code>[]</code> oder <code>list()</code></p></li>
-<li><p>Mit Werten: <code>[1, 2, 3]</code></p></li>
-<li><p>Aus anderen Datenstrukturen: <code>list(x)</code>, wobei <code>x</code> einen String, ein Set, ein Tuple oder ein Dictionary referenzieren kann. Im Falle vom String erhält man beispielsweise die Liste der Zeichen, im Falle des Dictionaries die Liste der Schlüssel.<br>
-</p></li>
-</ul>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Wichtige Methoden der Liste
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 45%">
-<col style="width: 55%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Methode</th>
-<th>Bedeutung</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>.append(x)</code></td>
-<td>Fügt das Element x am Ende der Liste hinzu.</td>
-</tr>
-<tr class="even">
-<td><code>.pop()</code> bzw. <code>.pop(i)</code></td>
-<td>Entfernt das letzte Element bzw. das Element mit Index i und gibt es zurück.</td>
-</tr>
-<tr class="odd">
-<td><code>.index(x)</code></td>
-<td>Gibt den Index des ersten Auftretens von x zurück. (Achtung: Fehler, wenn x nicht vorkommt!)</td>
-</tr>
-<tr class="even">
-<td><code>.remove(x)</code></td>
-<td>Entfernt das erste Vorkommen von x. (Fehler, wenn x nicht vorhanden!)</td>
-</tr>
-<tr class="odd">
-<td><code>.insert(i, x)</code></td>
-<td>Fügt das Element x an Position i ein.</td>
-</tr>
-<tr class="even">
-<td><code>.clear()</code></td>
-<td>Entfernt alle Elemente.</td>
-</tr>
-<tr class="odd">
-<td><code>.count(x)</code></td>
-<td>Zählt das Vorkommen von x in der Liste.</td>
-</tr>
-<tr class="even">
-<td><code>.sort()</code></td>
-<td>Sortiert die Liste <em>in-place</em> (das Original wird verändert!).</td>
-</tr>
-<tr class="odd">
-<td><code>.reverse()</code></td>
-<td>Kehrt die Reihenfolge aller Elemente in-place um.</td>
-</tr>
-</tbody>
-</table>
-<p>Erinnerung: Darüber hinaus sind die Built-in-Functions <code>max()</code>, <code>min()</code>,<code>len()</code>, <code>sum()</code>, <code>sorted()</code> und der <code>in</code>-Operator nützlich!</p>
-<p>Beachten Sie unbedingt den Unterschied zwischen <code>.sort()</code> und <code>sorted()</code>:</p>
-<p><code>my_list.sort()  # Original verändert!</code></p>
-<p><code>sorted(my_list) # Original unverändert!</code></p>
+Max:  24.0
+Anzahl der Elemente:  6</code></pre>
 </div>
 </div>
 </section>
