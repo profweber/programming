@@ -263,7 +263,8 @@ window.Quarto = {
   <li><a href="#instanzen" id="toc-instanzen" class="nav-link" data-scroll-target="#instanzen">Instanzen</a></li>
   <li><a href="#referenzen" id="toc-referenzen" class="nav-link" data-scroll-target="#referenzen">Referenzen</a></li>
   <li><a href="#identität-einer-instanz" id="toc-identität-einer-instanz" class="nav-link" data-scroll-target="#identität-einer-instanz">Identität einer Instanz</a></li>
-  <li><a href="#exkurs-seiteneffekte---wenn-mehrere-referenzen-auf-dieselbe-instanz-zeigen." id="toc-exkurs-seiteneffekte---wenn-mehrere-referenzen-auf-dieselbe-instanz-zeigen." class="nav-link" data-scroll-target="#exkurs-seiteneffekte---wenn-mehrere-referenzen-auf-dieselbe-instanz-zeigen.">Exkurs: Seiteneffekte - Wenn mehrere Referenzen auf dieselbe Instanz zeigen.</a></li>
+  <li><a href="#seiteneffekte---wenn-mehrere-referenzen-auf-dieselbe-instanz-zeigen." id="toc-seiteneffekte---wenn-mehrere-referenzen-auf-dieselbe-instanz-zeigen." class="nav-link" data-scroll-target="#seiteneffekte---wenn-mehrere-referenzen-auf-dieselbe-instanz-zeigen.">Seiteneffekte - Wenn mehrere Referenzen auf dieselbe Instanz zeigen.</a></li>
+  <li><a href="#mutable-und-immutable-datentypen" id="toc-mutable-und-immutable-datentypen" class="nav-link" data-scroll-target="#mutable-und-immutable-datentypen">Mutable und immutable Datentypen</a></li>
   </ul></li>
   <li><a href="#binäre-darstellung-von-daten" id="toc-binäre-darstellung-von-daten" class="nav-link" data-scroll-target="#binäre-darstellung-von-daten"><span class="header-section-number">5.5</span> Binäre Darstellung von Daten</a>
   <ul class="collapse">
@@ -303,7 +304,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">22. März 2026</p>
+      <p class="date">23. März 2026</p>
     </div>
   </div>
   
@@ -554,47 +555,50 @@ Höhe:  7.8</code></pre>
 </div>
 </div>
 <p>Aber auch explizites Casting ist nicht in jedem Fall möglich und kann zu Fehlern führen. Z.B. weiß der Python-Interpreter nicht, wie er die folgenden Castings durchführen soll:</p>
-<div id="cdc43a37-724d-45c1-a75f-46b1a237af8b" class="cell" data-execution_count="33">
+<div id="cdc43a37-724d-45c1-a75f-46b1a237af8b" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(<span class="st">"Apfel"</span>)  <span class="co"># Fehler! Wie soll "Apfel" als float interpretiert werden?</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(<span class="st">"Haus"</span>)  <span class="co"># Fehler!</span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="fl">1.2</span>]) <span class="co"># Fehler! Wie soll list -&gt; int gecastet werden?</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Das folgende Beispiel verwendet eine Liste, </span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="co"># die wir im nächsten Abschnitt kennenlernen werden:</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="fl">1.2</span>]) <span class="co"># Fehler! Wie soll list -&gt; int gecastet werden?</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
 <section id="listen" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="listen"><span class="header-section-number">5.3</span> Listen</h2>
 <p>Mit der sogenannten <strong>Liste</strong> bzw. dem Datentyp <strong><code>list</code></strong> lernen wir einen wichtigen grundlegenden Datentyp kennen, der es ermöglicht, nicht nur einzelne Werte, sondern eine Sammlung mehrerer Werte gemeinsam zu speichern und zu verarbeiten. Solche Datentypen werden auch als Datenstrukturen bezeichnet (weitere Datenstrukturen werden wir später im gleichnamigen Kapitel kennenlernen).</p>
-<p>Die Elemente einer Liste werden – wie im folgenden Beispiel – in eckigen Klammern (<code>[]</code>) notiert und durch Kommas voneinander getrennt.</p>
-<div id="6d59346d-3270-4bd1-ac05-b116262bbf3c" class="cell" data-execution_count="2">
+<p>Die Elemente einer Liste werden – wie im folgenden Beispiel – in eckigen Klammern (<code>[]</code>) notiert und durch Kommata voneinander getrennt.</p>
+<div id="6d59346d-3270-4bd1-ac05-b116262bbf3c" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>shopping_list <span class="op">=</span> [<span class="st">'apples'</span>, <span class="st">'bananas'</span>, <span class="st">'bread'</span>]</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(shopping_list)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>list</code></pre>
 </div>
 </div>
-<p>Die Liste ist eine geordnete Sammlung von Elementen, das heißt, die Elemente besitzen eine feste Reihenfolge. In unserem Beispiel ist <code>'apples'</code> das erste Element, <code>'bananas'</code> das zweite usw.</p>
-<p>Über den sogenannten Indexzugriff können wir gezielt auf einzelne Elemente einer Liste zugreifen, dabei ist es unbedingt zu beachten, dass der Index stets bei Null beginnt:</p>
-<div id="5168539b-da5c-4579-b790-8c0b99f8ba9a" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>shopping_list[<span class="dv">0</span>]  <span class="co"># Index 0 gehört zum ersten Element</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>'apples'</code></pre>
+<p>Die Liste ist eine <strong>geordnete</strong> Sammlung von Elementen, das heißt, die Elemente besitzen eine feste Reihenfolge. In unserem Beispiel ist <code>'apples'</code> das erste Element, <code>'bananas'</code> das zweite usw.</p>
+<p>Über den sogenannten <strong>Indexzugriff</strong> können wir gezielt auf einzelne Elemente einer Liste zugreifen. Dabei ist unbedingt zu beachten, dass der Index stets bei Null beginnt:</p>
+<div id="5168539b-da5c-4579-b790-8c0b99f8ba9a" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(shopping_list[<span class="dv">0</span>])  <span class="co"># Index 0 gehört zum ersten Element</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>apples</code></pre>
 </div>
 </div>
-<div id="8e4cec20-e696-4784-9512-043b0de616e6" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>shopping_list[<span class="dv">1</span>]  <span class="co"># Index 1 entspricht dem zweiten Element</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>'bananas'</code></pre>
+<div id="8e4cec20-e696-4784-9512-043b0de616e6" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(shopping_list[<span class="dv">1</span>])  <span class="co"># Index 1 entspricht dem zweiten Element</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>bananas</code></pre>
 </div>
 </div>
-<div id="cc350c8f-c6be-4ab8-971e-d0099c302b44" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>shopping_list[<span class="dv">2</span>]  <span class="co"># Index 2 entspricht dem dritten Element</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>'bread'</code></pre>
+<div id="cc350c8f-c6be-4ab8-971e-d0099c302b44" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(shopping_list[<span class="dv">2</span>])  <span class="co"># Index 2 entspricht dem dritten Element</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>bread</code></pre>
 </div>
 </div>
 <p>Python erlaubt auch negative Indizes: der <strong>Index -1</strong> entspricht immer <strong>dem letzten Element</strong>, -2 dem vorletzten usw. Beispiel:</p>
-<div id="c8de1508-b70f-4db3-bdb8-2f6e5fa4b4ba" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(shopping_list[<span class="op">-</span><span class="dv">1</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="c8de1508-b70f-4db3-bdb8-2f6e5fa4b4ba" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(shopping_list[<span class="op">-</span><span class="dv">1</span>])  <span class="co"># Index -1 liefert das letzte Element</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>bread</code></pre>
 </div>
@@ -605,7 +609,7 @@ Höhe:  7.8</code></pre>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">0</span>, <span class="fl">1.2</span>, <span class="st">"Hallo"</span>] </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Auch Listen innerhalb von Listen sind möglich und kommen in der Praxis häufig vor. Dadurch entstehen sogenannte <strong>verschachtelte Strukturen</strong>, wie im folgenden Beispiel:</p>
-<div id="8e0cfe65-1aac-4917-9056-c0c5a72088e0" class="cell" data-execution_count="5">
+<div id="8e0cfe65-1aac-4917-9056-c0c5a72088e0" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># in dieser Liste befinden sich Einträge vom Typ</span></span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="co"># int, float, str und wiederum list</span></span>
 <span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>crazy_list <span class="op">=</span> [<span class="dv">1</span>, <span class="fl">0.5</span>, <span class="st">"Monty Python"</span>, [<span class="dv">42</span>, <span class="va">True</span>]]</span>
@@ -614,21 +618,21 @@ Höhe:  7.8</code></pre>
 <pre><code>[1, 0.5, 'Monty Python', [42, True]]</code></pre>
 </div>
 </div>
-<div id="eb7dea02-f66e-4d7e-9aa3-5e1325d4ffea" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>crazy_list[<span class="dv">0</span>]  <span class="co"># erstes Element: der Integer 1</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div id="eb7dea02-f66e-4d7e-9aa3-5e1325d4ffea" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(crazy_list[<span class="dv">0</span>])  <span class="co"># erstes Element: der Integer 1</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
 <pre><code>1</code></pre>
 </div>
 </div>
-<div id="d7fef20c-b329-406b-a0fa-d40620df23de" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>crazy_list[<span class="dv">3</span>]  <span class="co"># viertes Element: die Liste [42, True]</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div id="d7fef20c-b329-406b-a0fa-d40620df23de" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(crazy_list[<span class="dv">3</span>])  <span class="co"># viertes Element: die Liste [42, True]</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
 <pre><code>[42, True]</code></pre>
 </div>
 </div>
-<div id="08a4e790-cec0-486f-ba5f-877c93e5a360" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>crazy_list[<span class="dv">3</span>][<span class="dv">0</span>]  <span class="co"># Zugriff auf das erste Element der Liste [42, True]</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div id="08a4e790-cec0-486f-ba5f-877c93e5a360" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(crazy_list[<span class="dv">3</span>][<span class="dv">0</span>])  <span class="co"># Zugriff auf das erste Element der Liste [42, True]</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
 <pre><code>42</code></pre>
 </div>
 </div>
@@ -644,7 +648,7 @@ Wie initialisiert man eine Liste?
 <div class="callout-body-container callout-body">
 <p>Es gibt mehrere Möglichkeiten, eine neue Liste anzulegen - leer oder mit Inhalt:</p>
 <ul>
-<li><p>Leere Initialisierung: <code>my_new_list = []</code> oder <code>my_new_list = list()</code></p></li>
+<li><p>Leere Initialisierung: <code>my_list = []</code> oder <code>my_list = list()</code></p></li>
 <li><p>Mit Werten: <code>my_list = [1, 2, 3]</code></p></li>
 <li><p>Aus anderen Datenstrukturen: <code>my_list = list(x)</code>, wobei <code>x</code> einen String oder eine andere Datenstruktur (siehe später: Set, Tuple, Dict) sein kann. Im Falle vom String erhält man beispielsweise die Liste der Zeichen.<br>
 </p></li>
@@ -684,8 +688,8 @@ Wie initialisiert man eine Liste?
 Es sind 0 Kirschen in der Liste</code></pre>
 </div>
 </div>
-<div id="2365ce60-4891-4eed-892d-74779d046689" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Beispiel: sort</span></span>
+<div id="2365ce60-4891-4eed-892d-74779d046689" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Beispiel: Die Methode sort</span></span>
 <span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="st">'banana'</span>, <span class="st">'apple'</span>, <span class="st">'orange'</span>, <span class="st">'cherry'</span>]</span>
 <span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>my_list.sort()  <span class="co"># sortiert die Elemente der Liste</span></span>
 <span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_list)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -756,6 +760,43 @@ Wichtige Methoden der Liste
 </table>
 </div>
 </div>
+<div class="exercises">
+<p><b>Übungen:</b></p>
+<ol type="1">
+<li>Legen Sie eine Liste an, die die folgenden Namen in der gegebenen Reihenfolge beinhaltet: Charly, Bernd, Anna, Emily, Tom, Jana, Xaver, Anton. Führen Sie die folgenden Operationen nacheinander aus.</li>
+<li>Sortieren Sie die Liste.</li>
+<li>Kehren Sie die Liste um.</li>
+<li>Fügen Sie den Namen “Anna” am Ende dazu.</li>
+<li>Entfernen Sie den Namen “Jana” aus der Liste.</li>
+<li>Zählen Sie, wie oft “Anna” bzw. “Jana” in der Liste vorkommen und geben Sie die Anzahlen aus.</li>
+<li>Geben Sie den Index von “Emily” aus.</li>
+<li>Fügen Sie ganz vorne den Namen “Walter” ein.</li>
+<li>Fügen Sie die Liste mit den Elementen 10, 20 und 30 hinten an.</li>
+<li>Greifen Sie auf das Element 20 der zuletzt hinzugefügten Liste zu.</li>
+<li>Leeren Sie die gesamte Liste und überzeugen Sie sich davon, dass die Liste leer ist.</li>
+</ol>
+</div>
+<p>Lösungen:</p>
+<div id="289ca9cc-7bb5-49d8-b00c-d857c2224c44" class="cell" data-execution_count="34">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">"Charly"</span>, <span class="st">"Bernd"</span>, <span class="st">"Anna"</span>, <span class="st">"Emily"</span>, <span class="st">"Tom"</span>, <span class="st">"Jana"</span>, <span class="st">"Xaver"</span>, <span class="st">"Anton"</span>]  <span class="co"># 1.</span></span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>names.sort()  <span class="co"># 2.</span></span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>names.reverse()  <span class="co"># 3.</span></span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a>names.append(<span class="st">"Anna"</span>)  <span class="co"># 4.</span></span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>names.remove(<span class="st">"Jana"</span>)  <span class="co"># 5.</span></span>
+<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a>num_anna <span class="op">=</span> names.count(<span class="st">"Anna"</span>)  <span class="co"># 6.</span></span>
+<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a>num_jana <span class="op">=</span> names.count(<span class="st">"Jana"</span>)</span>
+<span id="cb67-8"><a href="#cb67-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Anzahl Anna (Aufgabe 6):"</span>, num_anna, <span class="st">"Anzahl Jana:"</span>, num_jana)</span>
+<span id="cb67-9"><a href="#cb67-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Index von Emily (Aufgabe 7):"</span>, names.index(<span class="st">"Emily"</span>))  <span class="co"># 7.</span></span>
+<span id="cb67-10"><a href="#cb67-10" aria-hidden="true" tabindex="-1"></a>names.insert(<span class="dv">0</span>, <span class="st">"Walter"</span>)  <span class="co"># 8.</span></span>
+<span id="cb67-11"><a href="#cb67-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Liste nach Aufgabe 8:"</span>, names)</span>
+<span id="cb67-12"><a href="#cb67-12" aria-hidden="true" tabindex="-1"></a>names.append([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>])  <span class="co"># 9.</span></span>
+<span id="cb67-13"><a href="#cb67-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Aufgabe 10:"</span>, names[<span class="op">-</span><span class="dv">1</span>][<span class="dv">1</span>])  <span class="co"># 10.</span></span>
+<span id="cb67-14"><a href="#cb67-14" aria-hidden="true" tabindex="-1"></a>names.clear()  <span class="co"># 11.</span></span>
+<span id="cb67-15"><a href="#cb67-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Aufgabe 11:"</span>, names)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </section>
 </section>
 <section id="instanzen-und-referenzen" class="level2" data-number="5.4">
@@ -779,7 +820,7 @@ Abbildung&nbsp;5.1: Vereinfachtes Speichermodell
 <h3 class="unnumbered anchored" data-anchor-id="instanzen">Instanzen</h3>
 <p>Wenn wir einen bestimmten Wert speichern wollen (z.B. eine Zahl oder einen Text), brauchen wir in der Regel mehr als eine Speicherstelle. Die genaue Größe hängt davon ab, welcher Datentyp gespeichert wird und wie viel Information dieser enthält (ein einzelner Buchstabe ist sicherlich weniger Information als ein ganzer Satz). Daten werden also je nach Datentyp und Informationsgehalt in unterschiedlich vielen Speicherzellen gespeichert. Um die Verwaltung des Speichers kümmert sich der Python-Interpreter, er ermittelt also auch wie viele Zellen benötigt werden und speichert die Daten. Nun aber Schritt für Schritt: Was passiert, wenn wir folgende einfache Zeile programmieren?</p>
 <div id="929326f1-7263-42ce-949d-8eb860d44e32" class="cell" data-execution_count="96">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"Hi"</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"Hi"</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Zunächst ermittelt der Interpreter den Speicherbedarf für den String-Wert <code>"Hi"</code>, weist ihm einen freien Platz im Speicher zu und speichert dort die Daten ab (natürlich nicht in menschenlesbarer Form, sondern binär kodiert, wie wir später noch genauer erklären werden). Das Ergebnis nennt man eine <strong>Instanz</strong>: Eine Instanz ist ein konkretes Datenobjekt im Speicher, das nach den Vorgaben eines bestimmten Datentyps erzeugt und gespeichert wurde. Es kann sich dabei auch um eine Zahl handeln, z.B. <code>-5.25</code>. Wichtig an dieser Stelle: <strong>Zu einer Instanz gehört ein bestimmter Datentyp!</strong></p>
 <p>Bisher haben wir nur die rechte Seite der Zuweisung betrachtet: Das Literal erzeugt eine Instanz im Speicher. Was bewirkt die linke Seite der Zuweisung?</p>
@@ -813,15 +854,15 @@ Abbildung&nbsp;5.2: Referenzen und Instanzen. Instanzen sind konkrete Datenobjek
 <h3 class="unnumbered anchored" data-anchor-id="identität-einer-instanz">Identität einer Instanz</h3>
 <p>Jede Instanz besitzt in Python eine eindeutige <strong>Identität</strong>, die durch die Funtkion <code>id()</code> abgefragt werden kann und wie ein Fingerabdruck der Instanz verstanden werden kann:</p>
 <div id="60780525-75ff-4b96-b2c1-f48c1b02a157" class="cell" data-execution_count="97">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="bu">id</span>(text)  <span class="co"># mit id() erhält man die Identität</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="bu">id</span>(text)  <span class="co"># mit id() erhält man die Identität</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="97">
 <pre><code>2122758446064</code></pre>
 </div>
 </div>
 <p>Hier wurde die eindeutige ID der Instanz ausgegeben, die von <code>text</code> referenziert wird. Wenn wir die Variable auf eine andere Instanz zeigen lassen, ändert sich auch die Identität:</p>
 <div id="fce24001-f65d-413e-9eea-28dcd717cf5c" class="cell" data-execution_count="98">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"Guten Tag"</span></span>
-<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="bu">id</span>(text)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"Guten Tag"</span></span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="bu">id</span>(text)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="98">
 <pre><code>2122752622320</code></pre>
 </div>
@@ -840,69 +881,68 @@ Kurze Zusammenfassung
 </div>
 </div>
 </section>
-<section id="exkurs-seiteneffekte---wenn-mehrere-referenzen-auf-dieselbe-instanz-zeigen." class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="exkurs-seiteneffekte---wenn-mehrere-referenzen-auf-dieselbe-instanz-zeigen.">Exkurs: Seiteneffekte - Wenn mehrere Referenzen auf dieselbe Instanz zeigen.</h3>
+<section id="seiteneffekte---wenn-mehrere-referenzen-auf-dieselbe-instanz-zeigen." class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="seiteneffekte---wenn-mehrere-referenzen-auf-dieselbe-instanz-zeigen.">Seiteneffekte - Wenn mehrere Referenzen auf dieselbe Instanz zeigen.</h3>
 <p>Es kann vorkommen, dass mehrere Variablen auf ein und dieselbe Instanz zeigen und dadurch unerwartete Effekte passieren. Dazu betrachten wir zunächst ein Beispiel ohne Seiteneffekte und danach ein zweites mit solchen Effekten.</p>
 <p><strong>Erstes Beispiel (keine Seiteneffekte):</strong></p>
-<div id="551f7903-9cee-4282-ae54-09cadccb30cf" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">12</span></span>
-<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a  <span class="co"># a wird b zugewiesen</span></span>
-<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(a), <span class="bu">id</span>(b))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="551f7903-9cee-4282-ae54-09cadccb30cf" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">12</span></span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a  <span class="co"># a wird b zugewiesen</span></span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(a), <span class="bu">id</span>(b))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>140715933117208 140715933117208</code></pre>
+<pre><code>140725879743752 140725879743752</code></pre>
 </div>
 </div>
 <p>An dieser Stelle erhalten wir identische Identitäten, d.h. <code>a</code> und <code>b</code> referenzieren dieselbe Instanz! Python hat festgestellt, dass es keinen Grund gibt, eine zweite Instanz anzulegen und verhält sich ökonomisch (Speicher sparend und Laufzeit sparend, denn das Anlegen von Instanzen kostet Zeit). Wir führen unser Beispiel fort:</p>
-<div id="88977fa3-5a8b-45ef-affa-4c09897094e8" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">+=</span> <span class="dv">10</span>  <span class="co"># b wird verändert</span></span>
-<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(a),<span class="bu">id</span>(b))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="88977fa3-5a8b-45ef-affa-4c09897094e8" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>b <span class="op">+=</span> <span class="dv">10</span>  <span class="co"># b wird verändert</span></span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(a),<span class="bu">id</span>(b))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>140715933117208 140715933117528</code></pre>
+<pre><code>140725879743752 140725879744072</code></pre>
 </div>
 </div>
 <p>Wie wir sehen, zeigt <code>b</code> jetzt auf eine andere Instanz (eine mit Wert 22), während <code>a</code> immer noch unverändert auf die ursprüngliche verweist. In diesem Beispiel ist nichts unerwartetes geschehen. Damit wir nicht immer die Identitäten mühsam miteinander vergleichen müssen, können wir auch den Operator <code>is</code> verwenden:</p>
-<div id="c26ba996-e45f-4ba0-9cbb-401c5bf20b12" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>a <span class="kw">is</span> b  <span class="co"># vergleicht die Identitäten der referenzierten Instanzen</span></span>
-<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="co"># True heißt: a und b zeigen auf dieselbe Instanz</span></span>
-<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="co"># False heißt: a und b zeigen auf unterschiedliche Instanzen</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div id="c26ba996-e45f-4ba0-9cbb-401c5bf20b12" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="kw">is</span> b)  <span class="co"># vergleicht die Identitäten der referenzierten Instanzen</span></span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a><span class="co"># True heißt: a und b zeigen auf dieselbe Instanz</span></span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a><span class="co"># False heißt: a und b zeigen auf unterschiedliche Instanzen</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
 <pre><code>False</code></pre>
 </div>
 </div>
 <p><strong>Zweites Beispiel (mit Seiteneffekten):</strong></p>
 <p>Wir wiederholen das Experiment von oben, diesmal aber mit einem anderen Datentyp (einer Liste):</p>
-<div id="aff78186-497f-4cf3-a5ab-68d7c03fd19b" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>my_shopping_list <span class="op">=</span> [<span class="st">'apples'</span>, <span class="st">'oranges'</span>, <span class="st">'paper'</span>]</span>
-<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>your_shopping_list <span class="op">=</span> my_shopping_list</span>
-<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(my_shopping_list), <span class="bu">id</span>(your_shopping_list))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="aff78186-497f-4cf3-a5ab-68d7c03fd19b" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>my_shopping_list <span class="op">=</span> [<span class="st">'apples'</span>, <span class="st">'oranges'</span>, <span class="st">'paper'</span>]</span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>your_shopping_list <span class="op">=</span> my_shopping_list</span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(my_shopping_list), <span class="bu">id</span>(your_shopping_list))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>3130323362688 3130323362688</code></pre>
+<pre><code>2108606717056 2108606717056</code></pre>
 </div>
 </div>
 <p>Bis hierin verhalten sich die beiden Beispiele gleich. Jetzt manipulieren wir eine der Variablen:</p>
-<div id="c31d084c-93ef-4fcb-b0d5-cbce5ddd3201" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>your_shopping_list.append(<span class="st">'shoes'</span>)</span>
-<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(my_shopping_list), <span class="bu">id</span>(your_shopping_list))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="c31d084c-93ef-4fcb-b0d5-cbce5ddd3201" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>your_shopping_list.append(<span class="st">'shoes'</span>)</span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">id</span>(my_shopping_list), <span class="bu">id</span>(your_shopping_list))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>3130323362688 3130323362688</code></pre>
+<pre><code>2108606717056 2108606717056</code></pre>
 </div>
 </div>
 <p>Die Identitäten sind immer noch gleich! Das bestätigt auch der <code>is</code>-Operator:</p>
-<div id="e6a302bc-d329-423b-8cb4-164a88df6fd6" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>your_shopping_list <span class="kw">is</span> my_shopping_list</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="17">
+<div id="e6a302bc-d329-423b-8cb4-164a88df6fd6" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(your_shopping_list <span class="kw">is</span> my_shopping_list)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
 <pre><code>True</code></pre>
 </div>
 </div>
 <p>Aber was bedeutet das für die ursprüngliche Liste?</p>
-<div id="df7c3b2e-bafd-4dd6-8ee9-09f2cee6c991" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_shopping_list)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="df7c3b2e-bafd-4dd6-8ee9-09f2cee6c991" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_shopping_list)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['apples', 'oranges', 'paper', 'shoes']</code></pre>
 </div>
 </div>
 <p><strong>Die ursprüngliche Liste wurde verändert, obwohl wir die Variable <code>my_shopping_list</code> gar nicht angefasst haben!</strong> Man spricht in diesem Zusammenhang von einem <strong>Seiteneffekt</strong>.</p>
-<p>Später gehen wir genauer auf dieses Phänomen ein (es tritt nur bei sog. <em>mutable Datentypen</em> auf, zu denen die Liste gehört: Instanzen dieser Datentypen sind veränderlich, während bei <em>immutable Datentypen</em> keine nachträgliche Veränderung von Instanzen erlaubt ist). An dieser Stelle soll es nur illustrieren, warum das Verständnis von Instanzen und Referenzen so wichtig für angehende Programmiererinnen und Programmierer ist. Vielleicht haben Sie auch bereits von <em>Pointern</em> in der Sprache C gehört: Obwohl sich das Konzept von den hier vorgestellten Referenzen unterscheidet, besteht dieselbe Gefahr: Mehrere Pointer können auf dasselbe Objekt zeigen; eine Code-Stelle kann Änderungen bewirken, mit denen man an einer anderen Stelle gar nicht rechnet.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -915,6 +955,30 @@ Nicht verwechseln: Gleichheit und Identität
 <div class="callout-body-container callout-body">
 <p><code>x == y</code> (Gleichheit) prüft, ob die Instanzen von <code>x</code> und <code>y</code> denselben Wert haben.</p>
 <p><code>x is y</code> (Identität) prüft, ob <code>x</code> und <code>y</code> auf dieselbe Instanz zeigen. In diesem Fall gilt selbstverständlich auch <code>x == y</code>, die Umkehrung ist im Allgemeinen falsch.</p>
+</div>
+</div>
+</section>
+<section id="mutable-und-immutable-datentypen" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="mutable-und-immutable-datentypen">Mutable und immutable Datentypen</h3>
+<p>Python unterscheidet zwischen <strong>immutable</strong> (unveränderlichen) und <strong>mutable</strong> (veränderlichen) Datentypen. Diese Begriffe beziehen sich auf Instanzen eines bestimmten Datentyps:</p>
+<ul>
+<li><p>Wenn eine Instanz <strong>immutable</strong> ist, kann sich ihr Wert nie verändern! Python wird deshalb denselben Wert nicht mehrmals speichern, sondern genau einmal. Wenn der Wert einer Variable, die auf eine immutable Instanz zeigt, sich verändert, zeigt die Variable hinterher auf eine andere Instanz! Integers, Floats, Bools, Strings und Tuples (lernen wir später kennen) sind in Python immutable. Bei diesen Datentypen kann es <strong>keine Seiteneffekte</strong> geben!</p></li>
+<li><p>Anders bei den <strong>mutable</strong> Datentypen: Hier kann die Instanz verändert werden. Dies führt zu <strong>Seiteneffekten</strong>, wenn mehrere Variablen dieselbe Instanz referenzieren. Listen, Dictionaries (siehe später) und Sets (siehe später) sind mutable.</p></li>
+</ul>
+<p>Das Phänomen der Seiteneffekte belegt, warum ein Verständnis von Instanzen und Referenzen so wichtig ist für angehende Programmiererinnen und Programmierer.</p>
+<p>Abschließender Hinweis: Behalten Sie stets im Hinterkopf, dass es bei den Begriffen <em>mutable</em> bzw. <em>immutable</em> immer um die Instanz geht, nicht um die Referenz. Natürlich können Sie eine Variable, die auf eine immutable Instanz zeigt, ändern. Dann zeigt sie aber auf eine andere Instanz.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wie ist das in anderen Sprachen?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Das Konzept der Immutability, wie wir es in Python kennengelernt haben, existiert nicht genauso in anderen Sprachen. Auch der prinzipielle Umgang mit Speicher unterscheidet sich teils grundlegend. Sprachen wie Java oder C# sind Python ähnlicher, da sie Instanzen und Referenzen verwenden und teilweise Immutability durch Sprachmechanismen unterstützen, wie z. B. immutable Strings oder immutable Klassen.</p>
+<p>In C hingegen gibt es keine Sprachmechanismen für immutable Instanzen. Stattdessen operiert C als Low-Level-Sprache sehr nahe am Speicher. Das Konzept der <em>Pointer</em> ist dabei entscheidend und wird Ihnen bekannt vorkommen: Pointer verweisen direkt auf Speicheradressen und mehrere Pointer können auf denselben Speicherbereich zeigen. Dadurch können – ähnlich wie in Python – Seiteneffekte entstehen. Allerdings gibt es in C keine sprachseitigen Schutzmechanismen, die solche Effekte verhindern. Diese größere Freiheit bedeutet mehr Kontrolle, erfordert aber auch mehr Verantwortung, da Fehler schneller auftreten können.</p>
 </div>
 </div>
 </section>
@@ -996,9 +1060,9 @@ Einführung ins Hexadezimalzystem
 </ul>
 <p>Integer können in Python mit dem Befehl <code>bin()</code> ganz einfach ins Binärsystem umgewandelt werden:</p>
 <div id="602fefcc" class="cell" data-execution_count="106">
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Dezimal:"</span>, <span class="dv">11</span>, <span class="st">"Binär:"</span>, <span class="bu">bin</span>(<span class="dv">11</span>))</span>
-<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Dezimal:"</span>, <span class="dv">13</span>, <span class="st">"Binär:"</span>, <span class="bu">bin</span>(<span class="dv">13</span>))</span>
-<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Dezimal:"</span>, <span class="dv">423</span>, <span class="st">"Binär:"</span>, <span class="bu">bin</span>(<span class="dv">423</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Dezimal:"</span>, <span class="dv">11</span>, <span class="st">"Binär:"</span>, <span class="bu">bin</span>(<span class="dv">11</span>))</span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Dezimal:"</span>, <span class="dv">13</span>, <span class="st">"Binär:"</span>, <span class="bu">bin</span>(<span class="dv">13</span>))</span>
+<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Dezimal:"</span>, <span class="dv">423</span>, <span class="st">"Binär:"</span>, <span class="bu">bin</span>(<span class="dv">423</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Dezimal: 11 Binär: 0b1011
 Dezimal: 13 Binär: 0b1101
@@ -1007,10 +1071,10 @@ Dezimal: 423 Binär: 0b110100111</code></pre>
 </div>
 <p>Umgekehrt geht es sogar noch viel einfacher, wie die folgenden Beispiele zeigen:</p>
 <div id="08326d78" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ein binäres Literal 0b... wird automatisch umgewandelt: </span></span>
-<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Binär:"</span>, <span class="st">"0b1011"</span>, <span class="st">"Dezimal:"</span>, <span class="bn">0b1011</span>) </span>
-<span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Binär:"</span>, <span class="st">"0b1101"</span>, <span class="st">"Dezimal:"</span>, <span class="bn">0b1101</span>)</span>
-<span id="cb88-4"><a href="#cb88-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Binär:"</span>, <span class="st">"0b110100111"</span>, <span class="st">"Dezimal:"</span>, <span class="bn">0b110100111</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ein binäres Literal 0b... wird automatisch umgewandelt: </span></span>
+<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Binär:"</span>, <span class="st">"0b1011"</span>, <span class="st">"Dezimal:"</span>, <span class="bn">0b1011</span>) </span>
+<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Binär:"</span>, <span class="st">"0b1101"</span>, <span class="st">"Dezimal:"</span>, <span class="bn">0b1101</span>)</span>
+<span id="cb89-4"><a href="#cb89-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Binär:"</span>, <span class="st">"0b110100111"</span>, <span class="st">"Dezimal:"</span>, <span class="bn">0b110100111</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Binär: 0b1011 Dezimal: 11
 Binär: 0b1101 Dezimal: 13
@@ -1057,18 +1121,18 @@ Beispiel Gleitkommazahl-Darstellung
 <li><p><strong>Die Funktionen <code>ord()</code> und <code>chr()</code></strong>: Die Funktion <code>ord()</code> liefert den Codepunkt eines Unicode-Zeichens zurück, z. B. <code>ord("A")</code> oder <code>ord(“😂“)</code>. Die Funktion <code>chr()</code> ist die Umkehrung von <code>ord()</code>, d.&nbsp;h. <code>chr(0b01000001)</code> liefert das Zeichen zum Codepunkt <code>0b01000001 = 65</code> (das ASCII-Zeichen <code>"A"</code>).</p></li>
 </ul>
 <div id="b7b6081b-3efa-4cf8-94c3-1ff99a0282de" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiele mit ord():</span></span>
-<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bin</span>(<span class="bu">ord</span>(<span class="st">"A"</span>)))</span>
-<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">hex</span>(<span class="bu">ord</span>(<span class="st">"😂"</span>)))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiele mit ord():</span></span>
+<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bin</span>(<span class="bu">ord</span>(<span class="st">"A"</span>)))</span>
+<span id="cb91-3"><a href="#cb91-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">hex</span>(<span class="bu">ord</span>(<span class="st">"😂"</span>)))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0b1000001
 0x1f602</code></pre>
 </div>
 </div>
 <div id="34668705-bd48-44da-8bc5-f0a8e9432908" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiele mit chr():</span></span>
-<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">chr</span>(<span class="dv">65</span>))</span>
-<span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">chr</span>(<span class="bn">0xAE</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiele mit chr():</span></span>
+<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">chr</span>(<span class="dv">65</span>))</span>
+<span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">chr</span>(<span class="bn">0xAE</span>))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>A
 ®</code></pre>
@@ -1093,8 +1157,8 @@ Abbildung&nbsp;5.3: Instanzen und Referenzen revisited. Diesmal mit binär kodie
 <li>Mit der Funktion <code>getsizeof()</code> aus der Bibliothek <code>sys</code> können Sie die Zahl der Bytes abfragen. Beispiel:</li>
 </ul>
 <div id="f441f06f-c047-4df7-8bac-93a31d0c1e99" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>sys.getsizeof(<span class="st">"42"</span>)  <span class="co"># Antwort: Größe in Bytes</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a>sys.getsizeof(<span class="st">"42"</span>)  <span class="co"># Antwort: Größe in Bytes</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>51</code></pre>
 </div>
