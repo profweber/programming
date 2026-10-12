@@ -289,7 +289,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">23. April 2026</p>
+      <p class="date">12. Oktober 2026</p>
     </div>
   </div>
   
@@ -955,39 +955,52 @@ Comparison Chains in Python
 </section>
 <section id="zum-abschluss-des-kapitels-ein-wenig-fachsprache" class="level2" data-number="4.5">
 <h2 data-number="4.5" class="anchored" data-anchor-id="zum-abschluss-des-kapitels-ein-wenig-fachsprache"><span class="header-section-number">4.5</span> Zum Abschluss des Kapitels: ein wenig Fachsprache</h2>
-<p>Wir können bereits eine Menge tun in Python. An dieser Stelle wollen wir kurz auf das bisher Gelernte zurückschauen und dabei zwei wichtige Fachtermini einführen, die Ihnen immer wieder begegnen werden. Es handelt sich um die Begriffe “Ausdruck” und “Literal”.</p>
+<p>Wir können bereits eine Menge tun in Python. An dieser Stelle wollen wir kurz auf das bisher Gelernte zurückschauen und dabei wichtige Fachtermini einführen, die Ihnen immer wieder begegnen werden. Es handelt sich um die Begriffe “Anweisung”, “Ausdruck” und “Literal”.</p>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<p><strong>Ausdruck (engl. expression):</strong> Ein Ausdruck in der Programmierung ist eine Kombination von Werten, Variablen und Operatoren, die zusammen ein Ergebnis berechnen. Ein Ausdruck wird ausgewertet und liefert immer einen Wert, der in einer Variablen gespeichert oder direkt weiterverwendet werden kann.</p>
+<p><strong>Anweisung (engl. statement):</strong> Ein vollständiger Befehl, der ausgeführt wird – meist eine Zeile.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Ausdruck (engl. expression):</strong> Eine Kombination von Werten, Variablen und Operatoren, die ausgewertet wird und immer einen Wert liefert. Dieser kann in einer Variablen gespeichert oder direkt weiterverwendet werden.</p>
 </div>
 </div>
 </div>
 <p>Wir haben bereits verschiedene Ausdrücke kennengelernt: <strong>Arithmetische</strong> und <strong>logische Ausdrücke</strong>.</p>
-<div id="b6bc21bc-3281-49d1-ad20-206d5a7940b8" class="cell" data-execution_count="28">
+<div id="b6bc21bc-3281-49d1-ad20-206d5a7940b8" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb115"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="op">+</span> <span class="dv">3</span>  <span class="co"># ist ein arithmetischer Ausdruck. Wert: 8</span></span>
-<span id="cb115-2"><a href="#cb115-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span> <span class="op">+</span> <span class="dv">3</span> <span class="co"># nur die rechte Seite ist ein Ausdruck</span></span>
-<span id="cb115-3"><a href="#cb115-3" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="op">*</span> x <span class="op">+</span> <span class="dv">4</span>  <span class="co"># ist ein arithmetischer Ausdruck</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb115-2"><a href="#cb115-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span> <span class="op">+</span> <span class="dv">3</span> <span class="co"># Eine Zuweisung ist eine Anweisung; die rechte Seite ist ein Ausdruck.</span></span>
+<span id="cb115-3"><a href="#cb115-3" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="op">*</span> x <span class="op">+</span> <span class="dv">4</span>  <span class="co"># ist ein arithmetischer Ausdruck</span></span>
+<span id="cb115-4"><a href="#cb115-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">3</span> <span class="op">*</span> x <span class="op">+</span> <span class="dv">4</span> <span class="co"># Eine Zuweisung ist eine Anweisung; die rechte Seite ist ein Ausdruck </span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Im letzten Beispiel ist die Zuweisung selbst kein Ausdruck, sondern nur die rechte Seite. In manchen Programmiersprachen sind aber auch Zuweisungen Ausdrücke: In C gibt die Zuweisung x=3 gleichzeitig den Wert 3 zurück und ist somit auch ein Ausdruck. Es sind dann auch solche Zuweisungen möglich: y = (x = 3). In Python geht das nicht!</p>
-<div id="5b11b0b5-5f96-4421-8fff-a0d0bb673b7d" class="cell" data-execution_count="75">
+<p>Beachten Sie, dass in Python eine Zuweisung selbst kein Ausdruck ist, auf ihrer rechten Seite steht aber ein Ausdruck. In manchen Programmiersprachen sind dagegen auch Zuweisungen Ausdrücke: In C weist x = 3 der Variablen x den Wert 3 zu und liefert gleichzeitig den Wert 3. Deshalb ist es in C nicht überraschend, dass y = x = 3 funktioniert: Zuerst wird x = 3 ausgeführt, und der gelieferte Wert 3 wird anschließend y zugewiesen.</p>
+<p>In Python funktioniert y = x = 3 ebenfalls, wird intern aber anders verarbeitet: Der Interpreter erkennt eine Zuweisung mit zwei Zielen, wertet den Ausdruck 3 einmal aus und weist ihn von links nach rechts zu, also zuerst y = 3 und dann x = 3.</p>
+<div id="5b11b0b5-5f96-4421-8fff-a0d0bb673b7d" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb116"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span> <span class="op">&gt;</span> <span class="dv">5</span>  <span class="co"># ist ein logischer Ausdruck</span></span>
 <span id="cb116-2"><a href="#cb116-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="op">==</span> <span class="dv">1</span>  <span class="co"># ist ein logischer Ausdruck</span></span>
-<span id="cb116-3"><a href="#cb116-3" aria-hidden="true" tabindex="-1"></a>comparison <span class="op">=</span> <span class="dv">99</span> <span class="op">&gt;</span> <span class="dv">42</span>  <span class="co"># nur die rechte Seite ist ein Ausdruck</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb116-3"><a href="#cb116-3" aria-hidden="true" tabindex="-1"></a>comparison <span class="op">=</span> <span class="dv">99</span> <span class="op">&gt;</span> <span class="dv">42</span>  <span class="co"># Eine Zuweisung, also eine Anweisung; nur die rechte Seite ist ein Ausdruck.</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Weiterhin können Funktionsaufrufe einen Ausdruck darstellen, wie zum Beispiel:</p>
-<div id="01ca2efe-3c3e-4618-90c7-ce49b21f4f7b" class="cell" data-execution_count="78">
-<div class="sourceCode cell-code" id="cb117"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(<span class="st">'Apfel'</span>)  <span class="co"># gibt den Wert 5 zurück</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="78">
-<pre><code>5</code></pre>
-</div>
+<p>Weiterhin stellen Funktionsaufrufe einen Ausdruck dar, wie zum Beispiel:</p>
+<div id="01ca2efe-3c3e-4618-90c7-ce49b21f4f7b" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb117"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(<span class="st">'Apfel'</span>)  <span class="co"># gibt den Wert 5 zurück</span></span>
+<span id="cb117-2"><a href="#cb117-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">len</span>(<span class="st">'Apfel'</span>) <span class="co"># der Ausdruck wird als rechte Seite einer Zuweisung verwendet</span></span>
+<span id="cb117-3"><a href="#cb117-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="bu">print</span>(<span class="st">"Hallo"</span>) <span class="co"># probieren Sie dieses Beispiel einmal aus: Was gibt print(...) zurück?</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Auch Variablen selbst können als Ausdruck betrachtet werden, denn sie geben ihren Wert zurück:</p>
-<div id="18aac535-043c-475d-91ea-44f195254470" class="cell" data-execution_count="82">
-<div class="sourceCode cell-code" id="cb119"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a>x  <span class="co"># ist ein Ausdruck, gibt den Wert von x zurück</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="18aac535-043c-475d-91ea-44f195254470" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb118-2"><a href="#cb118-2" aria-hidden="true" tabindex="-1"></a>z  <span class="co"># ist ein Ausdruck, gibt den Wert von z zurück</span></span>
+<span id="cb118-3"><a href="#cb118-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> z <span class="co"># eine Zuweisung mit dem Ausdruck z auf der rechten Seite</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-simple callout-note no-icon">
 <div class="callout-body d-flex">
@@ -1001,13 +1014,13 @@ Comparison Chains in Python
 </div>
 <p>Es folgen einige Beispiele (die Datentypen erklären wir später):</p>
 <div id="3543bc26-e667-42d5-80a0-4a979465ee4c" class="cell" data-execution_count="46">
-<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="co">"Hello, World"</span>  <span class="co"># String-Literal (Zeichenkette)</span></span>
-<span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a><span class="fl">4.2</span>  <span class="co"># Float-Literal (Gleitkommazahl)</span></span>
-<span id="cb120-3"><a href="#cb120-3" aria-hidden="true" tabindex="-1"></a><span class="op">-</span><span class="dv">3</span>  <span class="co"># Integer-Literal (Ganzzahl)</span></span>
-<span id="cb120-4"><a href="#cb120-4" aria-hidden="true" tabindex="-1"></a><span class="va">True</span>  <span class="co"># Boolean-Literal (Wahrheitswert)</span></span>
-<span id="cb120-5"><a href="#cb120-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb120-6"><a href="#cb120-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Alle diese Literale sind gleichzeitig Ausdrücke:</span></span>
-<span id="cb120-7"><a href="#cb120-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Sie geben sich selbst als Wert zurück.</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb119"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="co">"Hello, World"</span>  <span class="co"># String-Literal (Zeichenkette)</span></span>
+<span id="cb119-2"><a href="#cb119-2" aria-hidden="true" tabindex="-1"></a><span class="fl">4.2</span>  <span class="co"># Float-Literal (Gleitkommazahl)</span></span>
+<span id="cb119-3"><a href="#cb119-3" aria-hidden="true" tabindex="-1"></a><span class="op">-</span><span class="dv">3</span>  <span class="co"># Integer-Literal (Ganzzahl)</span></span>
+<span id="cb119-4"><a href="#cb119-4" aria-hidden="true" tabindex="-1"></a><span class="va">True</span>  <span class="co"># Boolean-Literal (Wahrheitswert)</span></span>
+<span id="cb119-5"><a href="#cb119-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb119-6"><a href="#cb119-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Alle diese Literale sind gleichzeitig Ausdrücke:</span></span>
+<span id="cb119-7"><a href="#cb119-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Sie geben sich selbst als Wert zurück.</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Warum sollte man diese Begriffe kennen?<br>
 Wenn Sie mit anderen Programmiererinnen und Programmierern sprechen, fallen diese Begriffe. Zum Beispiel, wenn man sich über verschiedene Programmiersprachen unterhält (“Wie sieht ein String-Literal in deiner Sprache aus?”, “Welche logischen Ausdrücke kennt deine Sprache?”). Für Sie sind das jetzt keine Fremdwörter mehr!</p>
