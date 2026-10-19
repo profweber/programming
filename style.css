@@ -1,0 +1,47 @@
+.exercises {
+    background-color: lightblue;
+    padding: 10px
+}
+
+/* Dark Mode */
+body.quarto-dark .exercises {
+  background-color: #1e2f44;
+  padding: 10px
+}
+
+/* Dark Mode: weniger grelle Code-Blöcke */
+body.quarto-dark pre,
+body.quarto-dark code {
+  background-color: #1c1c1c;
+}
+.exercises ul,
+.exercises ol {
+    margin-top: 0;
+    margin-bottom: 1em;
+    padding-left: 2em;
+}
+
+.exercises li {
+    margin-bottom: 0.5em;
+}
+
+/* Kopfleiste: Hell/Dunkel-Schalter und PDF-Download gut sichtbar als beschriftete Buttons */
+.quarto-color-scheme-toggle,
+.quarto-navigation-tool[href$=".pdf"] {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.65rem !important;
+  margin-left: 0.4rem;
+  border: 1px solid rgba(128, 128, 128, 0.45);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.quarto-color-scheme-toggle .bi::before,
+.quarto-navigation-tool[href$=".pdf"] .bi::before {
+  font-size: 1.1rem;
+}
+.quarto-navigation-tool[href$=".pdf"]::after { content: "PDF"; }
+.quarto-color-scheme-toggle::after { content: "Dunkel"; }
+body.quarto-dark .quarto-color-scheme-toggle::after { content: "Hell"; }

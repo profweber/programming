@@ -6,7 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Prof.&nbsp;Dr.&nbsp;Maik Weber">
 
 <title>9&nbsp; Die Verwendung von Bibliotheken – Programmierung für Ingenieurinnen und Ingenieure</title>
 <style>
@@ -79,11 +78,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-ef31e3f4d9d6eef55c54bdf6b9cd68ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-f92e9cd00cfa24dbc31d4226c6e5e52e.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -142,10 +141,24 @@ window.Quarto = {
 <link rel="stylesheet" href="../style.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Programmierung für Ingenieurinnen und Ingenieure</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+    <a href="../Programmierung-für-Ingenieurinnen-und-Ingenieure.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Dunkelmodus umschalten"><i class="bi"></i></a>
+</div>
+          <div id="quarto-search" class="" title="Suchen"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -154,32 +167,18 @@ window.Quarto = {
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/7-bibs.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Die Verwendung von Bibliotheken</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../logo.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">Programmierung für Ingenieurinnen und Ingenieure</a> 
-        <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Dunkelmodus umschalten"><i class="bi"></i></a>
-</div>
-    </div>
       </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Suchen"></div>
-        </div>
-        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -242,6 +241,41 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Objektorientierte Programmierung (OOP)</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Anhang</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/A-dateien.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Dateien lesen und schreiben</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/B-fehlerbehandlung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Fehlerbehandlung</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/C-gui.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Interaktivität und grafische Oberflächen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/D-micropython.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">MicroPython: Python auf Mikrocontrollern</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -272,7 +306,7 @@ window.Quarto = {
   <li><a href="#messwerte-in-einem-streudiagramm-darstellen" id="toc-messwerte-in-einem-streudiagramm-darstellen" class="nav-link" data-scroll-target="#messwerte-in-einem-streudiagramm-darstellen">Messwerte in einem Streudiagramm darstellen</a></li>
   <li><a href="#ein-einfaches-balkendiagramm" id="toc-ein-einfaches-balkendiagramm" class="nav-link" data-scroll-target="#ein-einfaches-balkendiagramm">Ein einfaches Balkendiagramm</a></li>
   </ul></li>
-  <li><a href="#pandas" id="toc-pandas" class="nav-link" data-scroll-target="#pandas"><span class="header-section-number">9.4</span> Pandas</a></li>
+  <li><a href="#pandas" id="toc-pandas" class="nav-link" data-scroll-target="#pandas"><span class="header-section-number">9.4</span> pandas</a></li>
   </ul>
 </nav>
     </div>
@@ -285,29 +319,10 @@ window.Quarto = {
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Autor:in</div>
-  <div class="quarto-title-meta-heading">Zugehörigkeit</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Prof.&nbsp;Dr.&nbsp;Maik Weber </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Hochschule Trier
-          </p>
-      </div>
-  </div>
 
 <div class="quarto-title-meta">
 
-      
-    <div>
-    <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">12. Oktober 2026</p>
-    </div>
-  </div>
+    
   
     
   </div>
@@ -317,11 +332,30 @@ window.Quarto = {
 </header>
 
 
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lernziele
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Nach diesem Kapitel können Sie …</p>
+<ul>
+<li>Module importieren, Aliase verwenden, fehlende Pakete installieren und die Begriffe Modul, Paket und Bibliothek unterscheiden</li>
+<li>NumPy-Arrays erzeugen und für Matrixoperationen, Vektorisierung und Broadcasting nutzen</li>
+<li>Funktionen und Messwerte mit Matplotlib darstellen (Linien-, Streu- und Balkendiagramm) und eine Ausgleichskurve anpassen</li>
+<li>Messdaten mit pandas einlesen, sich einen Überblick verschaffen und neue Größen berechnen</li>
+</ul>
+</div>
+</div>
 <p>In diesem Kapitel führen wir kurz in die Verwendung von Bibliotheken ein. Es gibt unzählige praktische Bibliotheken, die Entwicklerinnen und Entwicklern auf der ganzen Welt das Leben leichter machen. Natürlich können wir im Rahmen dieser Einführung nur einen kurzen Einblick geben: Wir erklären allgemein, was eine Bibliothek ist, wie man sie verwendet und installiert, und werfen dann einen exemplarischen Blick auf bekannte Bibliotheken, die Ihnen mit hoher Wahrscheinlichkeit in Ihren Projekten begegnen und helfen werden.</p>
 <section id="einführung" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="einführung"><span class="header-section-number">9.1</span> Einführung</h2>
-<p>Eine <strong>Bibliothek</strong> ist eine Sammlung von fertigem Code, die Sie in Ihrem Programm nutzen können. So müssen Sie das Rad nicht immer wieder neu erfinden! Außerdem sind Bibliotheken oft hochoptimiert, teilweise “unter der Haube” in anderen Programmiersprachen geschrieben, um eine bessere Performance zu erzielen (z. B. in C oder C++).</p>
-<p>Bevor wir eine Bibliothek in unserem Programm verwenden können, müssen wir Sie <strong>importieren</strong>:</p>
+<p>Eine <strong>Bibliothek</strong> ist eine Sammlung von fertigem Code, die Sie in Ihrem Programm nutzen können. So müssen Sie das Rad nicht immer wieder neu erfinden! Außerdem sind Bibliotheken oft hochoptimiert, teilweise “unter der Haube” in anderen Programmiersprachen geschrieben, um eine bessere Performance zu erzielen (z.B. in C oder C++).</p>
+<p>Bevor wir eine Bibliothek in unserem Programm verwenden können, müssen wir sie <strong>importieren</strong>:</p>
 <div id="ac3c6d1d-f9b0-4edf-914c-7992bec7777e" class="cell" data-execution_count="168">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math  <span class="co"># importiert die Bibliothek math </span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -405,14 +439,14 @@ window.Quarto = {
 <td>tensorflow</td>
 <td>tf</td>
 <td>import tensorflow as tf</td>
-<td>Machinelles Lernen / Neuronale Netze</td>
+<td>Maschinelles Lernen / Neuronale Netze</td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="installation" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="installation">Installation</h3>
-<p>Nicht alle Bibliotheken sind auf unserem System vorinstalliert, sondern müssen bei Bedarf erst heruntergeladen und installiert werden. Das geht zum Glück mithilfe von Paketverwaltungssoftware wie <em>pip</em> oder <em>anaconda</em> sehr einfach. Nehmen wir an, wir möchten die Bibliothek <code>requests</code> (für http-Requests) installieren:</p>
+<p>Nicht alle Bibliotheken sind auf unserem System vorinstalliert; manche müssen bei Bedarf erst heruntergeladen und installiert werden. Das geht zum Glück mithilfe von Paketverwaltungssoftware wie <em>pip</em> oder <em>conda</em> sehr einfach. Nehmen wir an, wir möchten die Bibliothek <code>requests</code> (für HTTP-Requests) installieren:</p>
 <ul>
 <li><p><strong>Mit pip (für Standard-Python ohne Anaconda)</strong></p>
 <p>Im Terminal oder in der Konsole eingeben:</p>
@@ -423,8 +457,8 @@ window.Quarto = {
 <li><p><strong>Über die grafische Oberfläche von Anaconda</strong></p>
 <ol type="1">
 <li>Starten Sie <strong>Anaconda Navigator</strong>.</li>
-<li>Wählen Sie „Environments“ und setzen Sie den Filter auf “not installed” oder “all”.</li>
-<li>Verwenden Sie “Search Packages”, um das gewünschte Paket zu finden (z. B. requests).</li>
+<li>Wählen Sie „Environments“ und setzen Sie den Filter auf „not installed“ oder „all“.</li>
+<li>Verwenden Sie „Search Packages“, um das gewünschte Paket zu finden (z.B. requests).</li>
 <li>Häkchen setzen und „Apply“ klicken.</li>
 </ol></li>
 </ul>
@@ -436,35 +470,35 @@ window.Quarto = {
 <li><strong>Modul:</strong><br>
 Eine einzelne Datei mit Python-Code (.py), die Funktionen, Klassen oder Variablen enthält.</li>
 <li><strong>Paket:</strong> Ein strukturierter Ordner mit mehreren Modulen.</li>
-<li><strong>Bibliothek:</strong> Ein allgemeiner Begriff für Module und Pakete, die bestimmte Aufgaben lösen (z. B. Datenanalyse).</li>
+<li><strong>Bibliothek:</strong> Ein allgemeiner Begriff für Module und Pakete, die bestimmte Aufgaben lösen (z.B. Datenanalyse).</li>
 </ul>
-<p>Bei der praktischen Verwendung von Bibliotheken ist die Unterscheidung in der Regel nicht so wichtig: Wir importieren <code>math</code> (ein Modul) oder <code>pandas</code> (ein Paket), um Probleme zu lösen, die uns in unseren Projekten begegnen. Wenn wir dagegen selbst Module oder Bibliotheken für die Community entwicklen möchten, werden die Details natürlich wichtig.</p>
+<p>Bei der praktischen Verwendung von Bibliotheken ist die Unterscheidung in der Regel nicht so wichtig: Wir importieren <code>math</code> (ein Modul) oder <code>pandas</code> (ein Paket), um Probleme zu lösen, die uns in unseren Projekten begegnen. Wenn wir dagegen selbst Module oder Bibliotheken für die Community entwickeln möchten, werden die Details natürlich wichtig.</p>
 </section>
 </section>
 <section id="numpy" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="numpy"><span class="header-section-number">9.2</span> NumPy</h2>
 <section id="überblick" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="überblick">Überblick</h3>
-<p><strong>NumPy (Numerical Python)</strong> ist eine der zentralen Bibliotheken im wissenschaftlichen Rechnen mit Python. Sie bietet leistungsfähige Datenstrukturen, insbesondere das n-dimensionale Arrays, und eine breite Palette mathematischer Funktionen zur effizienten Verarbeitung großer Datenmengen. Für Ingenieurinnen und Ingenieure ist NumPy besonders wertvoll, da es numerische Simulationen, Datenanalyse und Algorithmenentwicklung deutlich vereinfacht und beschleunigt. Damit es keine Missverständnisse gibt: Numerisch bedeutet, dass wir in Numpy immer mit konkreten Zahlen rechnen und solche als Ergebnisse erhalten. Das Gegenteil wären symbolische Berechnungen, bei denen es darum geht eine Formel als Lösung für ein Problem zu finden. Hierfür gibt es übrigens auch eine Python-Bibliothek: <em>SymPy (Symbolic Python)</em>.</p>
+<p><strong>NumPy (Numerical Python)</strong> ist eine der zentralen Bibliotheken im wissenschaftlichen Rechnen mit Python. Sie bietet leistungsfähige Datenstrukturen, insbesondere das n-dimensionale Array, und eine breite Palette mathematischer Funktionen zur effizienten Verarbeitung großer Datenmengen. Für Ingenieurinnen und Ingenieure ist NumPy besonders wertvoll, da es numerische Simulationen, Datenanalyse und Algorithmenentwicklung deutlich vereinfacht und beschleunigt. Damit es keine Missverständnisse gibt: Numerisch bedeutet, dass wir in NumPy immer mit konkreten Zahlen rechnen und solche als Ergebnisse erhalten. Das Gegenteil wären symbolische Berechnungen, bei denen es darum geht, eine Formel als Lösung für ein Problem zu finden. Hierfür gibt es übrigens auch eine Python-Bibliothek: <em>SymPy (Symbolic Python)</em>.</p>
 <p>Drei Highlights von NumPy für die Ingenieurpraxis:</p>
 <ul>
-<li><p>Effiziente Matrixoperationen: Lineare Algebra ist das Rückgrat vieler ingenieurtechnischer Berechnungen, z. B. in der Statik, Regelungstechnik oder Signalverarbeitung. NumPy ermöglicht schnelle und speichereffiziente Operationen auf Matrizen – inklusive Inversion, Eigenwertberechnung oder Lösung linearer Gleichungssysteme.</p></li>
-<li><p>Schnelle Datenverarbeitung: Dank einer optimierten Implementierung (die Bibliothek wurde in C geschrieben!) ist NumPy um ein Vielfaches schneller als Standard-Python-Schleifen. Das ist ideal für Messdatenanalysen oder Simulationen, bei denen Zeit eine kritische Rolle spielt.</p></li>
+<li><p>Effiziente Matrixoperationen: Lineare Algebra ist das Rückgrat vieler ingenieurtechnischer Berechnungen, z.B. in der Statik, Regelungstechnik oder Signalverarbeitung. NumPy ermöglicht schnelle und speichereffiziente Operationen auf Matrizen – inklusive Inversion, Eigenwertberechnung oder Lösung linearer Gleichungssysteme.</p></li>
+<li><p>Schnelle Datenverarbeitung: Dank einer optimierten Implementierung (der rechenintensive Kern ist in C geschrieben) ist NumPy um ein Vielfaches schneller als Standard-Python-Schleifen. Das ist ideal für Messdatenanalysen oder Simulationen, bei denen Zeit eine kritische Rolle spielt.</p></li>
 <li><p>Nahtlose Integration mit anderen Tools: NumPy bildet die Grundlage für viele andere wissenschaftliche Bibliotheken wie SciPy, pandas oder Matplotlib. So lässt es sich leicht in bestehende Arbeitsabläufe integrieren – vom Datenimport bis zur Visualisierung der Ergebnisse.</p></li>
 </ul>
-<p>Numpy wird üblicherweise mit dem Alias <code>np</code> importiert:</p>
+<p>NumPy wird üblicherweise mit dem Alias <code>np</code> importiert:</p>
 <div id="b0847cc3-8d7d-4cc0-bf75-d3a0810959b3" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="arrays" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="arrays">Arrays</h3>
-<p>In Numpy arbeitet man mit dem optimierten Datentyp <code>ndarray</code>. Wir sagen auch vereinfacht nur “Array” oder “Numpy-Array”. Das “nd” steht für “n-dimensional”, denn ein Numpy-Array kann genau wie die Liste als Vektor, Matrix oder höher-dimensionaler Tensor (Verallgemeinerung einer Matrix auf mehr Dimensionen) angelegt werden. Es gibt einen wichtigen Unterschied zur Liste: <strong>Alle Elemente eines Numpy-Arrays müssen denselben Datentyp haben!</strong></p>
+<p>In NumPy arbeitet man mit dem optimierten Datentyp <code>ndarray</code>. Wir sagen auch vereinfacht nur “Array” oder “NumPy-Array”. Das “nd” steht für “n-dimensional”, denn ein NumPy-Array kann genau wie die Liste als Vektor, Matrix oder höherdimensionaler Tensor (Verallgemeinerung einer Matrix auf mehr Dimensionen) angelegt werden. Es gibt einen wichtigen Unterschied zur Liste: <strong>Alle Elemente eines NumPy-Arrays müssen denselben Datentyp haben!</strong></p>
 <section id="erzeugung-von-arrays" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="erzeugung-von-arrays">Erzeugung von Arrays</h4>
 <p>Arrays werden typischerweise aus Listen erzeugt oder mit speziellen Funktionen:</p>
 <div id="565814d7-c682-4c7f-87ca-65c91e934d0c" class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1-dimensionaler Array aus einer Python-Liste</span></span>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1-dimensionales Array aus einer Python-Liste</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>vector <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(vector)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -478,7 +512,7 @@ Eine einzelne Datei mit Python-Code (.py), die Funktionen, Klassen oder Variable
 </div>
 </div>
 <div id="7e4b9a34-4ff0-48fd-b155-2e477c678969" class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2-dimensionaler Array aus einer Python-Liste</span></span>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2-dimensionales Array aus einer Python-Liste</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>matrix <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>],[<span class="dv">3</span>, <span class="dv">4</span>]])</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(matrix)  <span class="co"># erkennen Sie den Unterschied zu der Ausgabe einer verschachtelten Liste?</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -512,7 +546,7 @@ Eine einzelne Datei mit Python-Code (.py), die Funktionen, Klassen oder Variable
 </div>
 <div id="2341a821-47d0-4f80-9b42-ae098651d364" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mit np.arange(start, stop, step)</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># verhält sich analog zu range(start, stop, step), aber step kann auch eine Float sein!</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># verhält sich analog zu range(start, stop, step), aber step kann auch ein Float sein!</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>arange_test <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>) </span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arange_test)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -520,15 +554,17 @@ Eine einzelne Datei mit Python-Code (.py), die Funktionen, Klassen oder Variable
 </div>
 </div>
 <div id="f7668bf7-994d-49a2-b640-4176f03aea5e" class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>arange_test2 <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">5</span>, <span class="fl">0.5</span>)  <span class="co"># step ist hier eine Float</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arange_test2)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>arange_test2 <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">5</span>, <span class="fl">0.5</span>)  <span class="co"># step ist hier ein Float</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Vorsicht: Bei Float-Schrittweiten können Rundungsfehler ein Element zu viel oder zu wenig</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># erzeugen – für eine feste Anzahl Punkte besser np.linspace verwenden (siehe unten).</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arange_test2)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[0.  0.5 1.  1.5 2.  2.5 3.  3.5 4.  4.5]</code></pre>
 </div>
 </div>
 <div id="1a64682b-3b48-4094-b741-c96ebca05ad9" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mit np.linspace(start, stop, num) </span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># erzeugt man einen Array mit äquidistanten Punkten zwischen</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># erzeugt man ein Array mit äquidistanten Punkten zwischen</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># den Grenzen start und stop (standardmäßig beide eingeschlossen!). </span></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Es werden insgesamt num Punkte erzeugt.</span></span>
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
@@ -561,14 +597,14 @@ Der Parameter <code>endpoint</code> von <code>np.linspace</code>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Bei <code>np.linspace(start, stop, num)</code> sind Anfangs- <strong>und</strong> Endwert standardmäßig inkludiert! Dies ist ein wichtiger Unterschied zu <code>np.arange(start, stop, step)</code> oder <code>range(start, stop, end)</code>.</p>
+<p>Bei <code>np.linspace(start, stop, num)</code> sind Anfangs- <strong>und</strong> Endwert standardmäßig inkludiert! Dies ist ein wichtiger Unterschied zu <code>np.arange(start, stop, step)</code> oder <code>range(start, stop, step)</code>.</p>
 <p>Möchte man den Endwert bei <code>np.linspace</code> bewusst exkludieren, kann dies über das Keyword-Argument <code>endpoint</code> erfolgen: <code>np.linspace(start, stop, num, endpoint = False) # Endpunkt ausgeschlossen</code></p>
 </div>
 </div>
 </section>
 <section id="dimensionen-und-shape" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="dimensionen-und-shape">Dimensionen und Shape</h4>
-<p>Jedes Array hat die Attribute <code>.ndim</code> (Anzahl Dimensionen), <code>.shape</code> (Größe pro Dimension) und <code>.size</code> (Gesamtzahl der Elemente)</p>
+<p>Jedes Array hat die Attribute <code>.ndim</code> (Anzahl Dimensionen), <code>.shape</code> (Größe pro Dimension) und <code>.size</code> (Gesamtzahl der Elemente):</p>
 <div id="ecb86089-9fec-404d-b79b-05717da906ab" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>my_array <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Array:"</span>)</span>
@@ -623,7 +659,7 @@ my_array[2, 1] = 80</code></pre>
 </div>
 </div>
 <div id="5628946d-108f-4abf-8b6b-79694bcde74d" class="cell" data-execution_count="49">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Slicing (Logik wie bei Python Listen)</span></span>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Slicing (Logik wie bei Python-Listen)</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Komplette Matrix:</span><span class="ch">\n</span><span class="st">"</span>, my_array)</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Erste Zeile:"</span>, my_array[<span class="dv">0</span>, :])</span>
 <span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Zweite Spalte:"</span>, my_array[:, <span class="dv">1</span>])</span>
@@ -640,42 +676,77 @@ Teilarray:
  [70 80 90]]</code></pre>
 </div>
 </div>
+<p>Ein wichtiger Unterschied zu Python-Listen betrifft das Slicing. Bei einer Liste erzeugt ein Slice wie <code>liste[0:2]</code> eine (flache) <strong>Kopie</strong> der Liste (siehe Kapitel <em>Datenstrukturen</em>). Bei einem NumPy-Array entsteht dagegen <strong>keine Kopie</strong>, sondern eine sog. <strong>View</strong> (Ansicht): ein neues Array-Objekt, das auf dieselben Daten im Speicher zeigt. NumPy spart sich so das Kopieren, was bei großen Arrays viel Zeit und Speicher spart. Die Kehrseite: Ändert man die View, ändert sich auch das ursprüngliche Array – ein Seiteneffekt, wie wir ihn von Listen kennen, wenn zwei Variablen auf dieselbe Liste zeigen:</p>
+<div id="cebfd068" class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>                 [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>row <span class="op">=</span> data[<span class="dv">0</span>, :]   <span class="co"># View auf die erste Zeile (keine Kopie!)</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>row[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">99</span>        <span class="co"># wir ändern die View ...</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data)        <span class="co"># ... und das Original hat sich mitgeändert!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[99  2  3]
+ [ 4  5  6]]</code></pre>
+</div>
+</div>
+<p>Zum Vergleich dasselbe Vorgehen mit einer Liste. Hier ist der Slice eine Kopie, das Original bleibt unverändert:</p>
+<div id="d27fe202" class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>part <span class="op">=</span> numbers[<span class="dv">0</span>:<span class="dv">2</span>]  <span class="co"># Kopie der ersten beiden Elemente</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>part[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">99</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numbers)       <span class="co"># unverändert</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 2, 3]</code></pre>
+</div>
+</div>
+<p>Wenn Sie mit einem Ausschnitt eines Arrays weiterarbeiten wollen, ohne das Original zu verändern, erzeugen Sie mit <code>.copy()</code> ausdrücklich eine Kopie:</p>
+<div id="88a4b098" class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>row_copy <span class="op">=</span> data[<span class="dv">1</span>, :].copy()  <span class="co"># echte Kopie der zweiten Zeile</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>row_copy[<span class="dv">0</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">1</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(row_copy)</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data)                   <span class="co"># unverändert</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[-1  5  6]
+[[99  2  3]
+ [ 4  5  6]]</code></pre>
+</div>
+</div>
 </section>
 </section>
 <section id="demo-matrixoperationen-mit-arrays" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="demo-matrixoperationen-mit-arrays">Demo: Matrixoperationen mit Arrays</h3>
 <div id="b7cca466-5e45-4ac8-9b58-a2e11be3754d" class="cell" data-execution_count="78">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 3x3 Matrix als np.array</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>],</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">4</span>],</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">0</span>]])</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ein Vektor</span></span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrix mal Vektor v = A * b:</span></span>
-<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> np.dot(A, b)</span>
-<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a><span class="co"># WARNUNG: Es ist wichtig, np.dot zu verwenden und nicht *</span></span>
-<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Letzteres führt kein Vektorprodukt, sondern eine </span></span>
-<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a><span class="co"># elementweise Multiplikation durch! </span></span>
-<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"A * b = "</span>,v)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 3x3 Matrix als np.array</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>],</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">4</span>],</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">0</span>]])</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ein Vektor</span></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrix mal Vektor (Matrix-Vektor-Produkt):</span></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> np.dot(A, b)</span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a><span class="co"># WARNUNG: Es ist wichtig, np.dot zu verwenden und nicht *</span></span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Letzteres führt kein Matrix-Vektor-Produkt, sondern eine </span></span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a><span class="co"># elementweise Multiplikation durch! </span></span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"np.dot(A, b) ="</span>, v)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>A * b =  [13 10  9]</code></pre>
+<pre><code>np.dot(A, b) = [13 10  9]</code></pre>
 </div>
 </div>
 <p>Es gibt auch eine Kurzschreibweise für <code>np.dot(..)</code> mit dem <code>@</code>-Operator:</p>
 <div id="408b1815-bd24-4925-ab4d-bfffeeab1c4b" class="cell" data-execution_count="79">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"A * b = "</span>, A <span class="op">@</span> b)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"A @ b ="</span>, A <span class="op">@</span> b)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>A * b =  [13 10  9]</code></pre>
+<pre><code>A @ b = [13 10  9]</code></pre>
 </div>
 </div>
 <p>Wir demonstrieren einmal, was passiert, wenn man mit dem <code>*</code>-Operator multipliziert:</p>
 <div id="52820815-7e9a-4130-a153-1800db708512" class="cell" data-execution_count="82">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(A <span class="op">*</span> b) <span class="co"># elementweise Multiplikation! Das ist NICHT das Matrixprodukt!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(A <span class="op">*</span> b) <span class="co"># elementweise Multiplikation! Das ist NICHT das Matrixprodukt!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[ 2  2  9]
  [ 0 -2 12]
@@ -688,27 +759,27 @@ Teilarray:
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Vektor- und Matrixprodukte immer mit <code>np.dot(...)</code> oder dem <code>@</code>-Operator!
+Skalar- und Matrixprodukte immer mit <code>np.dot(...)</code> oder dem <code>@</code>-Operator!
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
-<p>Auch das <strong>Kreuzprodukt</strong> ist in Numpy verfügbar:</p>
+<p>Auch das <strong>Kreuzprodukt</strong> ist in NumPy verfügbar:</p>
 <div id="14a485c3-fd88-4d93-b4c0-67e9b360489f" class="cell" data-execution_count="56">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>])</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> np.cross(v, w)</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(z)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> np.array([<span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>])</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> np.cross(v, w)</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(z)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[ 5 -1 -1]</code></pre>
 </div>
 </div>
 <p>Wir können viele Operationen aus der linearen Algebra direkt ausführen:</p>
 <div id="c8534d99-5059-4bb2-af92-5af35c270b39" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>A.T  <span class="co"># liefert die transponierte Matrix</span></span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="co"># alternativ: np.transpose(A)</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>A.T  <span class="co"># liefert die transponierte Matrix</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="co"># alternativ: np.transpose(A)</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>array([[ 2,  0,  5],
        [ 1, -1,  2],
@@ -716,13 +787,13 @@ Vektor- und Matrixprodukte immer mit <code>np.dot(...)</code> oder dem <code>@</
 </div>
 </div>
 <div id="1d8755c0-b82e-40c7-a287-ac0cb74ca3e7" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>np.linalg.eigvals(A)  <span class="co"># liefert die Eigenwerte von A</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>np.linalg.eigvals(A)  <span class="co"># liefert die Eigenwerte von A</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>array([ 5.83891641, -0.80708431, -4.0318321 ])</code></pre>
 </div>
 </div>
 <div id="f0fbdbae-c49f-47b1-ada0-2c9ffb782d71" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>np.linalg.eig(A)  <span class="co"># liefert Eigenwerte und Eigenvektoren von A</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>np.linalg.eig(A)  <span class="co"># liefert Eigenwerte und Eigenvektoren von A</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>EigResult(eigenvalues=array([ 5.83891641, -0.80708431, -4.0318321 ]), eigenvectors=array([[-0.62757479, -0.37722073, -0.16597401],
        [-0.39307122,  0.92504816, -0.78589196],
@@ -730,7 +801,7 @@ Vektor- und Matrixprodukte immer mit <code>np.dot(...)</code> oder dem <code>@</
 </div>
 </div>
 <section id="lineare-gleichungssysteme-mit-numpy-lösen" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="lineare-gleichungssysteme-mit-numpy-lösen">Lineare Gleichungssysteme mit Numpy lösen</h4>
+<h4 class="unnumbered anchored" data-anchor-id="lineare-gleichungssysteme-mit-numpy-lösen">Lineare Gleichungssysteme mit NumPy lösen</h4>
 <p>Gesucht ist die Lösung eines linearen Gleichungssystems:</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -757,98 +828,98 @@ x_3
 3
 \end{pmatrix}
 \]</span></p>
-<p>In Numpy legen wir die Koeffizientenmatrix und den Vektor auf der rechten Seite als Arrays an:</p>
+<p>In NumPy legen wir die Koeffizientenmatrix und den Vektor auf der rechten Seite als Arrays an:</p>
 <div id="8b5cd891-0b46-463f-a6ae-cf403354c497" class="cell" data-execution_count="65">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="fl">2.</span>, <span class="fl">1.</span>, <span class="fl">3.</span>],</span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>              [<span class="fl">0.</span>, <span class="op">-</span><span class="fl">1.</span>, <span class="fl">4.</span>],</span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>              [<span class="fl">5.</span>, <span class="fl">2.</span>, <span class="fl">0.</span>]])</span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="fl">1.</span>, <span class="fl">2.</span>, <span class="fl">3.</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="fl">2.</span>, <span class="fl">1.</span>, <span class="fl">3.</span>],</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>              [<span class="fl">0.</span>, <span class="op">-</span><span class="fl">1.</span>, <span class="fl">4.</span>],</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>              [<span class="fl">5.</span>, <span class="fl">2.</span>, <span class="fl">0.</span>]])</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="fl">1.</span>, <span class="fl">2.</span>, <span class="fl">3.</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Der Aufruf <code>np.linalg.solve(A, b)</code> löst das lineare Gleichungssystem:</p>
 <div id="9897da8e-4b12-4aa7-9088-af61aea4694b" class="cell" data-execution_count="66">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linalg.solve(A, b)  <span class="co"># finde x, so dass A x = b</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linalg.solve(A, b)  <span class="co"># finde x, so dass A x = b</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[ 1.31578947 -1.78947368  0.05263158]</code></pre>
 </div>
 </div>
 <p>Überprüfen wir das Ergebnis, indem wir <code>A x</code> berechnen und mit <code>b</code> vergleichen:</p>
 <div id="595bedc2-9034-4e8b-8b46-1a7061a51fd4" class="cell" data-execution_count="67">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(A <span class="op">@</span> x, <span class="st">"Zum Vergleich: "</span>, b)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(A <span class="op">@</span> x, <span class="st">"Zum Vergleich: "</span>, b)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1. 2. 3.] Zum Vergleich:  [1. 2. 3.]</code></pre>
 </div>
 </div>
 <div class="exercises">
-<p><b>Übung:</b> Lineare Gleichungssysteme begegnen uns bei der Lösung verschiedener technischer Probleme, z. B. bei statischen Berechnungen oder der Bestimmung von Strömen und Spannungen in Schaltkreisen. Als Beispiel sei das folgende System für drei unbekannte Ströme gegeben, das mithilfe der Kirchhoffschen Regeln für Gleichstromnetze hergeleitet wurde [<a href="https://www.leifiphysik.de/elektrizitaetslehre/komplexere-schaltkreise/grundwissen/kirchhoffsche-gesetze-fuer-fortgeschrittene">Komplette Aufgabe “Stromkreis mit drei Maschen”</a>]: <span class="math display">\[
+<p><b>Übung:</b> Lineare Gleichungssysteme begegnen uns bei der Lösung verschiedener technischer Probleme, z.B. bei statischen Berechnungen oder der Bestimmung von Strömen und Spannungen in Schaltkreisen. Als Beispiel sei das folgende System für drei unbekannte Ströme gegeben, das mithilfe der kirchhoffschen Regeln für Gleichstromnetze hergeleitet wurde [<a href="https://www.leifiphysik.de/elektrizitaetslehre/komplexere-schaltkreise/grundwissen/kirchhoffsche-gesetze-fuer-fortgeschrittene">Komplette Aufgabe “Stromkreis mit drei Maschen”</a>]: <span class="math display">\[
 \begin{aligned}
 I_1 - I_2 - I_3 &amp;= 0 \\
 -10.8 \,V + I_1\cdot 6\,\Omega + I_2\cdot 8\,\Omega &amp;= 0 \\
 3.2\,V + I_3 \cdot 4\,\Omega - I_2\cdot 8\,\Omega &amp;= 0
 \end{aligned}
 \]</span></p>
-<p>Bestimmen Sie die drei unbekannten Ströme <span class="math inline">\(I_1, I_2, I_3\)</span> mithilfe von Numpy!</p>
+<p>Bestimmen Sie die drei unbekannten Ströme <span class="math inline">\(I_1, I_2, I_3\)</span> mithilfe von NumPy!</p>
 </div>
 <div id="3487f3a7-7ada-4cc9-a442-69e8d51f857d" class="cell" data-execution_count="73">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Die Lösung erfolgt in 3 Schritten:</span></span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Zunächst bringen wir das Gleichungssystem in die richtige Form! </span></span>
-<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Da nur SI-Einheiten verwendet werden, können wir alle Einheiten weglassen und wissen, dass das Ergebnis in Ampère sein wird.</span></span>
-<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a><span class="co">#1 I_1 - 1 I_2 - 1 I_3 = 0 </span></span>
-<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a><span class="co">#6 I_1 + 8 I_2 + 0 I_3 = 10.8 </span></span>
-<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a><span class="co">#0 I_1 - 8 I_2 + 4 I_3 = -3.2</span></span>
-<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Jetzt legen wir Matrix und rechte Seite als Arrays an: </span></span>
-<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="fl">1.</span>, <span class="op">-</span><span class="fl">1.</span>, <span class="op">-</span><span class="fl">1.</span>], [<span class="fl">6.</span>, <span class="fl">8.</span>, <span class="fl">0.</span>], [<span class="fl">0.</span>, <span class="op">-</span><span class="fl">8.</span>, <span class="dv">4</span>]])</span>
-<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="fl">0.</span>, <span class="fl">10.8</span>, <span class="op">-</span><span class="fl">3.2</span>])</span>
-<span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-14"><a href="#cb55-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Jetzt lösen wir das System:</span></span>
-<span id="cb55-15"><a href="#cb55-15" aria-hidden="true" tabindex="-1"></a>I <span class="op">=</span> np.linalg.solve(A, b)</span>
-<span id="cb55-16"><a href="#cb55-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-17"><a href="#cb55-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Die drei unbekannten Stromstärken sind:"</span>)</span>
-<span id="cb55-18"><a href="#cb55-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"I_1 = </span><span class="sc">{</span>I[<span class="dv">0</span>]<span class="sc">: .2f}</span><span class="ss"> A"</span>)</span>
-<span id="cb55-19"><a href="#cb55-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"I_2 = </span><span class="sc">{</span>I[<span class="dv">1</span>]<span class="sc">: .2f}</span><span class="ss"> A"</span>)</span>
-<span id="cb55-20"><a href="#cb55-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"I_3 = </span><span class="sc">{</span>I[<span class="dv">2</span>]<span class="sc">: .2f}</span><span class="ss"> A"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Die Lösung erfolgt in 3 Schritten:</span></span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Zunächst bringen wir das Gleichungssystem in die richtige Form! </span></span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Da nur SI-Einheiten verwendet werden, können wir alle Einheiten weglassen und wissen, dass das Ergebnis in Ampere sein wird.</span></span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a><span class="co">#1 I_1 - 1 I_2 - 1 I_3 = 0 </span></span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a><span class="co">#6 I_1 + 8 I_2 + 0 I_3 = 10.8 </span></span>
+<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a><span class="co">#0 I_1 - 8 I_2 + 4 I_3 = -3.2</span></span>
+<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-10"><a href="#cb61-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Jetzt legen wir Matrix und rechte Seite als Arrays an: </span></span>
+<span id="cb61-11"><a href="#cb61-11" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="fl">1.</span>, <span class="op">-</span><span class="fl">1.</span>, <span class="op">-</span><span class="fl">1.</span>], [<span class="fl">6.</span>, <span class="fl">8.</span>, <span class="fl">0.</span>], [<span class="fl">0.</span>, <span class="op">-</span><span class="fl">8.</span>, <span class="dv">4</span>]])</span>
+<span id="cb61-12"><a href="#cb61-12" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.array([<span class="fl">0.</span>, <span class="fl">10.8</span>, <span class="op">-</span><span class="fl">3.2</span>])</span>
+<span id="cb61-13"><a href="#cb61-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-14"><a href="#cb61-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Jetzt lösen wir das System:</span></span>
+<span id="cb61-15"><a href="#cb61-15" aria-hidden="true" tabindex="-1"></a>I <span class="op">=</span> np.linalg.solve(A, b)</span>
+<span id="cb61-16"><a href="#cb61-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-17"><a href="#cb61-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Die drei unbekannten Stromstärken sind:"</span>)</span>
+<span id="cb61-18"><a href="#cb61-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"I_1 = </span><span class="sc">{</span>I[<span class="dv">0</span>]<span class="sc">: .2f}</span><span class="ss"> A"</span>)</span>
+<span id="cb61-19"><a href="#cb61-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"I_2 = </span><span class="sc">{</span>I[<span class="dv">1</span>]<span class="sc">: .2f}</span><span class="ss"> A"</span>)</span>
+<span id="cb61-20"><a href="#cb61-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"I_3 = </span><span class="sc">{</span>I[<span class="dv">2</span>]<span class="sc">: .2f}</span><span class="ss"> A"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 </section>
 <section id="demo-vektorisierung" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="demo-vektorisierung">Demo: Vektorisierung</h3>
-<p>NumPy bietet vektorisierten Code, d. h. mathematische Operationen wie Addition, Subtraktion, Multiplikation auf Arrays werden auf allen Elementen gleichzeitig angewendet. Dies ist viel schneller als manuelle Schleifen über Listen!</p>
+<p>NumPy bietet vektorisierten Code, d. h. mathematische Operationen wie Addition, Subtraktion, Multiplikation auf Arrays werden auf alle Elemente angewendet, ohne dass wir eine Schleife schreiben müssen (die Schleife läuft intern in schnellem, kompiliertem Code). Dies ist viel schneller als manuelle Schleifen über Listen!</p>
 <p>Wir erstellen zunächst ein Array mit <span class="math inline">\(x\)</span>-Werten, an denen wir eine Funktion auswerten wollen:</p>
 <div id="967a13e1-5ae5-4430-bb26-11b96d0c7fee" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>x_values <span class="op">=</span> np.array(<span class="bu">range</span>(<span class="dv">10</span>))  <span class="co"># Array mit den x-Werten 0, 1, 2, ..., 9  </span></span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x_values)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>x_values <span class="op">=</span> np.array(<span class="bu">range</span>(<span class="dv">10</span>))  <span class="co"># Array mit den x-Werten 0, 1, 2, ..., 9  </span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x_values)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[0 1 2 3 4 5 6 7 8 9]</code></pre>
 </div>
 </div>
-<p>An diesen Stellen sollen Funktionswerte der folgenden Funktion berechnet werden:<span class="math inline">\(f(x) = 3\,x^3 - x^2 + 2\,x + 1\)</span>. Vektorisierung bedeutet, dass wir die Rechenoperationen mit dem Array <code>x_values</code> durchführen können und NumPy diese elementweise durchführt. Das ist kinderleicht:</p>
+<p>An diesen Stellen sollen Funktionswerte der folgenden Funktion berechnet werden: <span class="math inline">\(f(x) = 3\,x^3 - x^2 + 2\,x + 1\)</span>. Vektorisierung bedeutet, dass wir die Rechenoperationen mit dem Array <code>x_values</code> durchführen können und NumPy diese elementweise durchführt. Das ist kinderleicht:</p>
 <div id="a1b18790-111f-4b6a-8379-448ed8aa6486" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>f_values <span class="op">=</span> <span class="dv">3</span> <span class="op">*</span> x_values<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> x_values<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span> <span class="op">*</span> x_values <span class="op">+</span> <span class="dv">1</span>  <span class="co"># berechnet f(x) für jeden x-Wert</span></span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f_values) <span class="co"># das Ergebnis ist wieder ein Array!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>f_values <span class="op">=</span> <span class="dv">3</span> <span class="op">*</span> x_values<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> x_values<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span> <span class="op">*</span> x_values <span class="op">+</span> <span class="dv">1</span>  <span class="co"># berechnet f(x) für jeden x-Wert</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(f_values) <span class="co"># das Ergebnis ist wieder ein Array!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[   1    5   25   79  185  361  625  995 1489 2125]</code></pre>
 </div>
 </div>
-<p>Wir benötigen keine Schleife und die Operationen werden sogar optimiert, also sehr schnell, ausgeführt. In der numerischen Mathematik kommen solche Operationen sehr häufig vor. Im folgenden Abschnitt werden wir sehen, wie man Vektorisierung verwendet, um mit wenigen Zeilen einen Funktionsgraphen zu zeichnen.</p>
+<p>Wir benötigen keine Schleife und die Operationen werden sogar optimiert, also sehr schnell, ausgeführt. In der numerischen Mathematik kommen solche Operationen sehr häufig vor. Im Abschnitt zu Matplotlib werden wir sehen, wie man Vektorisierung verwendet, um mit wenigen Zeilen einen Funktionsgraphen zu zeichnen.</p>
 <p>Wir können natürlich auch komplexere mathematische Funktionen berechnen. Das wollen wir an <span class="math inline">\(g(x) =\frac{1}{2} \sqrt{x}\)</span> und <span class="math inline">\(h(x) = x\, e^{x^2}\)</span> demonstrieren:</p>
 <div id="b7453641-2936-4a06-85ad-6ec19c63bf11" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>g_values <span class="op">=</span> <span class="dv">1</span><span class="op">/</span><span class="dv">2</span> <span class="op">*</span> np.sqrt(x_values)  <span class="co"># berechnet Funktionswerte von g an den x-Stellen</span></span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(g_values)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>g_values <span class="op">=</span> <span class="dv">1</span><span class="op">/</span><span class="dv">2</span> <span class="op">*</span> np.sqrt(x_values)  <span class="co"># berechnet Funktionswerte von g an den x-Stellen</span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(g_values)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[0.         0.5        0.70710678 0.8660254  1.         1.11803399
  1.22474487 1.32287566 1.41421356 1.5       ]</code></pre>
 </div>
 </div>
 <div id="f255fcd5-cec3-4615-a8d7-458cd3c4e2bc" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>h_values <span class="op">=</span> x_values <span class="op">*</span> np.exp(x_values<span class="op">**</span><span class="dv">2</span>) <span class="co"># berechnet Funktionswerte von h an den x-Stellen</span></span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(h_values)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>h_values <span class="op">=</span> x_values <span class="op">*</span> np.exp(x_values<span class="op">**</span><span class="dv">2</span>) <span class="co"># berechnet Funktionswerte von h an den x-Stellen</span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(h_values)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[0.00000000e+00 2.71828183e+00 1.09196300e+02 2.43092518e+04
  3.55444421e+07 3.60024497e+11 2.58673893e+16 1.33514260e+22
@@ -856,14 +927,14 @@ I_1 - I_2 - I_3 &amp;= 0 \\
 </div>
 </div>
 <p>Wichtig ist, dass wir in den beiden letzten Beispielen die Mathe-Funktionen aus NumPy verwendet haben, also <code>np.sqrt(...)</code> bzw. <code>np.exp(...)</code>. Andere Mathebibliotheken (z.B. <code>math</code>) sind nicht für vektorisierte Operationen auf NumPy-Arrays ausgelegt.</p>
-<p>Die beiden Funktionen <code>np.linspace(...)</code> und <code>np.arange(...)</code> werden oft zusammen mit Vektorisierung verwendet. Zum Beispiel erstellt man mit <code>np.linspace(...)</code> einen Array von <span class="math inline">\(x\)</span>-Werten und berechnet dann mithilfe von Vektorisierung die zugehörigen <span class="math inline">\(y\)</span>-Werte einer Funktion. Das könnte so aussehen wie im folgenden Beispiel:</p>
+<p>Die beiden Funktionen <code>np.linspace(...)</code> und <code>np.arange(...)</code> werden oft zusammen mit Vektorisierung verwendet. Zum Beispiel erstellt man mit <code>np.linspace(...)</code> ein Array von <span class="math inline">\(x\)</span>-Werten und berechnet dann mithilfe von Vektorisierung die zugehörigen <span class="math inline">\(y\)</span>-Werte einer Funktion. Das könnte so aussehen wie im folgenden Beispiel:</p>
 <div id="9e5b4c89-7df0-4f40-b1cc-90f73b8fbd61" class="cell" data-execution_count="74">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> np.linspace(<span class="op">-</span>np.pi, np.pi, <span class="dv">100</span>)  <span class="co"># 100 Punkte zwischen -pi und pi</span></span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>ys <span class="op">=</span> np.sin(xs)  <span class="co"># Funktionswerte von sin(x) an den zuvor berechneten Stellen</span></span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Auswertung an einer Beispielstelle:"</span>)</span>
-<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"x ="</span>, <span class="bu">round</span>(xs[<span class="dv">20</span>],<span class="dv">2</span>), <span class="st">", sin(x)="</span>, <span class="bu">round</span>(ys[<span class="dv">20</span>],<span class="dv">2</span>))</span>
-<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Teaser: Matplotlib kann mit diesen Werten einen Funktionsgraphen zeichnen!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> np.linspace(<span class="op">-</span>np.pi, np.pi, <span class="dv">100</span>)  <span class="co"># 100 Punkte zwischen -pi und pi</span></span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>ys <span class="op">=</span> np.sin(xs)  <span class="co"># Funktionswerte von sin(x) an den zuvor berechneten Stellen</span></span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Auswertung an einer Beispielstelle:"</span>)</span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"x ="</span>, <span class="bu">round</span>(xs[<span class="dv">20</span>],<span class="dv">2</span>), <span class="st">", sin(x)="</span>, <span class="bu">round</span>(ys[<span class="dv">20</span>],<span class="dv">2</span>))</span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Teaser: Matplotlib kann mit diesen Werten einen Funktionsgraphen zeichnen!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Auswertung an einer Beispielstelle:
 x = -1.87 , sin(x)= -0.95</code></pre>
@@ -875,71 +946,71 @@ x = -1.87 , sin(x)= -0.95</code></pre>
 <p>NumPy unterstützt sog. “Broadcasting”, sodass auch Arrays unterschiedlicher Formen miteinander rechnen können, ohne dass wir diese mühsam aneinander anpassen müssen.</p>
 <p>Ein Beispiel zu Broadcasting:</p>
 <div id="32e33b15-1e47-4ad2-b452-855a82ab8740" class="cell" data-execution_count="190">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>],</span>
-<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>],</span>
-<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">3</span>]])</span>
-<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
-<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> A <span class="op">+</span> v  <span class="co"># das passt eigentlich nicht!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>],</span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>],</span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">3</span>]])</span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-7"><a href="#cb72-7" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> A <span class="op">+</span> v  <span class="co"># das passt eigentlich nicht!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Die letzte Zeile führt überraschenderweise nicht zu einem Programmfehler, obwohl die Dimensionen von A und v überhaupt nicht zusammenpassen. In solchen Fällen geschieht Broadcasting: “Was nicht passt, wird passend gemacht (<em>falls möglich</em>)!”. Schauen wir uns das Ergebnis genauer an:</p>
+<p>Die letzte Zeile führt überraschenderweise nicht zu einem Programmfehler, obwohl man A und v mathematisch gar nicht addieren kann. In solchen Fällen geschieht Broadcasting: “Was nicht passt, wird passend gemacht (<em>falls möglich</em>)!”. Schauen wir uns das Ergebnis genauer an:</p>
 <div id="8032a609-8aff-4a18-aaa6-9f4f721806c2" class="cell" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(B)  </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(B)  </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[2 2 3]
  [1 4 3]
  [1 2 6]]</code></pre>
 </div>
 </div>
-<p>Wir sehen: Der Vektor v wurde zeilenweise addiert. Für das Broadcasting gibt es ein klar definiertes Vorgehen, wie Arrays aneinander angeglichen werden und in welchen Fällen es überhaupt möglich ist. Man muss aufpassen, dass man kein unbeabsichtigtes Broadcasting durchführt und unerwartete Ergebnisse erhält. Aber so tief wollen wir an dieser Stelle nicht einsteigen.</p>
+<p>Wir sehen: Der Vektor v wurde zu jeder Zeile von A addiert – so, als hätte man ihn dreimal untereinander geschrieben. Die Regel dahinter: NumPy vergleicht die Formen (<em>shapes</em>) der Arrays von hinten. Zwei Dimensionen passen zusammen, wenn sie gleich sind oder eine davon 1 ist bzw. fehlt. Entlang einer solchen Dimension mit Größe 1 (bzw. einer fehlenden) wird das Array gedanklich vervielfältigt – hier wird aus der Form (3,) die Form (3, 3). Passen die Formen nicht zusammen, meldet NumPy einen <code>ValueError</code>. Man muss aufpassen, dass man kein unbeabsichtigtes Broadcasting durchführt und unerwartete Ergebnisse erhält.</p>
 <div class="exercises">
 <p><b>Übungen:</b></p>
 <ol type="1">
 <li>Erzeugen Sie 100 <span class="math inline">\(x\)</span>-Werte zwischen <span class="math inline">\(-2\)</span> und <span class="math inline">\(5\)</span> und berechnen Sie zu jedem dieser Werte den Funktionswert von <span class="math inline">\(f(x) = \frac{e^{-x}}{1 + x^2}\)</span>. Geben Sie exemplarisch den Funktionswert für ein zufällig ausgewähltes <span class="math inline">\(x\)</span> aus (auf zwei Nachkommastellen gerundet)!</li>
-<li>Erzeugen Sie einen Array, der 1000 Zeitpunkte zwischen t=0 s und t= 100 s beinhaltet. Ein Körper befinde sich zum Zeitpunkt t=0 an der Position x(0)=0 und bewege sich gleichmäßig mit der Geschwindigkeit v= 2.5 m/s in positive x-Richtung. Erstellen Sie einen Array, der die x-Position zu jedem Zeitpunkt t angibt. Geben Sie die Position zum Zeitpunkt t=100 s aus.</li>
+<li>Erzeugen Sie ein Array, das 1000 Zeitpunkte zwischen t=0 s und t= 100 s beinhaltet. Ein Körper befinde sich zum Zeitpunkt t=0 an der Position x(0)=0 und bewege sich gleichmäßig mit der Geschwindigkeit v= 2.5 m/s in positive x-Richtung. Erstellen Sie ein Array, das die x-Position zu jedem Zeitpunkt t angibt. Geben Sie die Position zum Zeitpunkt t=100 s aus.</li>
 <li>Multiplizieren Sie zwei 3x3 Matrizen miteinander.</li>
-<li>Wie können Sie Broadcasting und transponieren kombinieren, um einen Vektor v zu jeder Spalte einer Matrix zu addieren?</li>
+<li>Wie können Sie Broadcasting und Transponieren kombinieren, um einen Vektor v zu jeder Spalte einer Matrix zu addieren?</li>
 </ol>
 </div>
 <p>Lösungen:</p>
 <div id="92fe45f7-55f4-40ac-9f6b-2dadd9b02088" class="cell" data-execution_count="75">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 1 </span></span>
-<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">100</span>)</span>
-<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>ys <span class="op">=</span> np.exp(<span class="op">-</span>xs)<span class="op">/</span>(<span class="dv">1</span> <span class="op">+</span> xs<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Übung 1: f(</span><span class="sc">{</span><span class="bu">round</span>(xs[<span class="dv">30</span>],<span class="dv">2</span>)<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span><span class="bu">round</span>(ys[<span class="dv">30</span>],<span class="dv">2</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-7"><a href="#cb69-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 2</span></span>
-<span id="cb69-8"><a href="#cb69-8" aria-hidden="true" tabindex="-1"></a>ts <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">100</span>, <span class="dv">1000</span>)</span>
-<span id="cb69-9"><a href="#cb69-9" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> <span class="fl">2.5</span> <span class="op">*</span> ts  <span class="co"># x = velocity * time</span></span>
-<span id="cb69-10"><a href="#cb69-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Übung 2:</span><span class="ch">\n</span><span class="st">x(t = 100s) ="</span>, xs[<span class="op">-</span><span class="dv">1</span>])</span>
-<span id="cb69-11"><a href="#cb69-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-12"><a href="#cb69-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 3</span></span>
-<span id="cb69-13"><a href="#cb69-13" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
-<span id="cb69-14"><a href="#cb69-14" aria-hidden="true" tabindex="-1"></a>     [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
-<span id="cb69-15"><a href="#cb69-15" aria-hidden="true" tabindex="-1"></a>     [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]])</span>
-<span id="cb69-16"><a href="#cb69-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-17"><a href="#cb69-17" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.ones((<span class="dv">3</span>, <span class="dv">3</span>))</span>
-<span id="cb69-18"><a href="#cb69-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-19"><a href="#cb69-19" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> np.dot(A, B)  <span class="co"># oder C = A @ B</span></span>
-<span id="cb69-20"><a href="#cb69-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-21"><a href="#cb69-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Übung 3:"</span>, <span class="st">"A ="</span>, A, <span class="st">"B = "</span>,B, <span class="st">"A * B = "</span>, C, sep<span class="op">=</span><span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb69-22"><a href="#cb69-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-23"><a href="#cb69-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 4</span></span>
-<span id="cb69-24"><a href="#cb69-24" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
-<span id="cb69-25"><a href="#cb69-25" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
-<span id="cb69-26"><a href="#cb69-26" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]])</span>
-<span id="cb69-27"><a href="#cb69-27" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> np.array([<span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">2</span>])  <span class="co"># soll zu jeder Spalte addiert werden</span></span>
-<span id="cb69-28"><a href="#cb69-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-29"><a href="#cb69-29" aria-hidden="true" tabindex="-1"></a><span class="co"># A wird transponiert und v addiert,</span></span>
-<span id="cb69-30"><a href="#cb69-30" aria-hidden="true" tabindex="-1"></a><span class="co"># dann wird das Ergebnis zurücktransponiert:</span></span>
-<span id="cb69-31"><a href="#cb69-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-32"><a href="#cb69-32" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> (A.T <span class="op">+</span> v).T</span>
-<span id="cb69-33"><a href="#cb69-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-34"><a href="#cb69-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Übung 3:"</span>,<span class="st">"A ="</span>, A,<span class="st">"v ="</span>,v, <span class="st">"A + v (spaltenweise)"</span>, result, sep<span class="op">=</span><span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 1 </span></span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">100</span>)</span>
+<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a>ys <span class="op">=</span> np.exp(<span class="op">-</span>xs)<span class="op">/</span>(<span class="dv">1</span> <span class="op">+</span> xs<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Übung 1: f(</span><span class="sc">{</span><span class="bu">round</span>(xs[<span class="dv">30</span>],<span class="dv">2</span>)<span class="sc">}</span><span class="ss">) = </span><span class="sc">{</span><span class="bu">round</span>(ys[<span class="dv">30</span>],<span class="dv">2</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb75-6"><a href="#cb75-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-7"><a href="#cb75-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 2</span></span>
+<span id="cb75-8"><a href="#cb75-8" aria-hidden="true" tabindex="-1"></a>ts <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">100</span>, <span class="dv">1000</span>)</span>
+<span id="cb75-9"><a href="#cb75-9" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> <span class="fl">2.5</span> <span class="op">*</span> ts  <span class="co"># x = velocity * time</span></span>
+<span id="cb75-10"><a href="#cb75-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Übung 2:</span><span class="ch">\n</span><span class="st">x(t = 100s) ="</span>, xs[<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb75-11"><a href="#cb75-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-12"><a href="#cb75-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 3</span></span>
+<span id="cb75-13"><a href="#cb75-13" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb75-14"><a href="#cb75-14" aria-hidden="true" tabindex="-1"></a>     [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb75-15"><a href="#cb75-15" aria-hidden="true" tabindex="-1"></a>     [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]])</span>
+<span id="cb75-16"><a href="#cb75-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-17"><a href="#cb75-17" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.ones((<span class="dv">3</span>, <span class="dv">3</span>))</span>
+<span id="cb75-18"><a href="#cb75-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-19"><a href="#cb75-19" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> np.dot(A, B)  <span class="co"># oder C = A @ B</span></span>
+<span id="cb75-20"><a href="#cb75-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-21"><a href="#cb75-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Übung 3:"</span>, <span class="st">"A ="</span>, A, <span class="st">"B = "</span>,B, <span class="st">"A @ B = "</span>, C, sep<span class="op">=</span><span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb75-22"><a href="#cb75-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-23"><a href="#cb75-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 4</span></span>
+<span id="cb75-24"><a href="#cb75-24" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb75-25"><a href="#cb75-25" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb75-26"><a href="#cb75-26" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]])</span>
+<span id="cb75-27"><a href="#cb75-27" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> np.array([<span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">2</span>])  <span class="co"># soll zu jeder Spalte addiert werden</span></span>
+<span id="cb75-28"><a href="#cb75-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-29"><a href="#cb75-29" aria-hidden="true" tabindex="-1"></a><span class="co"># A wird transponiert und v addiert,</span></span>
+<span id="cb75-30"><a href="#cb75-30" aria-hidden="true" tabindex="-1"></a><span class="co"># dann wird das Ergebnis zurücktransponiert:</span></span>
+<span id="cb75-31"><a href="#cb75-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-32"><a href="#cb75-32" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> (A.T <span class="op">+</span> v).T</span>
+<span id="cb75-33"><a href="#cb75-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-34"><a href="#cb75-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Übung 4:"</span>,<span class="st">"A ="</span>, A,<span class="st">"v ="</span>,v, <span class="st">"A + v (spaltenweise)"</span>, result, sep<span class="op">=</span><span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
@@ -948,44 +1019,44 @@ x = -1.87 , sin(x)= -0.95</code></pre>
 <h2 data-number="9.3" class="anchored" data-anchor-id="matplotlib"><span class="header-section-number">9.3</span> Matplotlib</h2>
 <p><strong>Matplotlib</strong> ist die Standard-Bibliothek in Python zum Erstellen von Diagrammen. Der am häufigsten verwendete Teil ist das Untermodul <strong>pyplot</strong> (eine Schnittstelle, über die das Modul leicht zu bedienen ist), das man fast immer mit dem Alias <code>plt</code> importiert.</p>
 <div id="eca32535-ec74-4d06-92eb-8387c8f3fa53" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt  <span class="co"># Standard-Import für matplotlib</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt  <span class="co"># Standard-Import für matplotlib</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Mit Matplotlib kann man die unterschiedlichsten Arten von Diagrammen erzeugen. Auch hier können wir nur ein paar exemplarische Beispiele demonstrieren.</p>
 <section id="eine-funktion-plotten" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="eine-funktion-plotten">Eine Funktion plotten</h3>
-<p>Um eine Funktion zu plotten, arbeiten wir mit Matplotlib und NumpPy zusammen: NumPy erzeugt die x- und y-Werte, Matplotlib stellt diese in einem einfachen Linienplot dar. Linienplot heißt, dass gerade Linien von Punkt zu Punkt gezogen werden. Wenn es ausreichend viele Punkte sind, entsteht der Eindruck einer glatten Kurve. Los geht’s:</p>
+<p>Um eine Funktion zu plotten, arbeiten wir mit Matplotlib und NumPy zusammen: NumPy erzeugt die x- und y-Werte, Matplotlib stellt diese in einem einfachen Linienplot dar. Linienplot heißt, dass gerade Linien von Punkt zu Punkt gezogen werden. Wenn es ausreichend viele Punkte sind, entsteht der Eindruck einer glatten Kurve. Los geht’s:</p>
 <div id="8c3f48d2-4694-4f3e-88be-821327a0d6a7" class="cell" data-execution_count="40">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Punkte erzeugen mit Numpy</span></span>
-<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a>x_values <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">50</span>, <span class="dv">100</span>) <span class="co"># 100 Punkte zwischen 0 und 50</span></span>
-<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a>y_values <span class="op">=</span> x_values<span class="op">**</span><span class="dv">2</span> <span class="co"># Vektorisierung: so einfach rechnet man mit Numpy-Arrays!</span></span>
-<span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-9"><a href="#cb71-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Liniendiagramm erzeugen mit Matplotlib </span></span>
-<span id="cb71-10"><a href="#cb71-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-11"><a href="#cb71-11" aria-hidden="true" tabindex="-1"></a>plt.plot(x_values, y_values)</span>
-<span id="cb71-12"><a href="#cb71-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-13"><a href="#cb71-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Es folgen Einstellungen zur Darstellung (z.B. Beschriftung)</span></span>
-<span id="cb71-14"><a href="#cb71-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-15"><a href="#cb71-15" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="vs">r"$y = x^2$"</span>)  <span class="co"># Titel </span></span>
-<span id="cb71-16"><a href="#cb71-16" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)  <span class="co"># Beschriftung x-Achse</span></span>
-<span id="cb71-17"><a href="#cb71-17" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"y"</span>)  <span class="co"># Beschriftung y-Achse</span></span>
-<span id="cb71-18"><a href="#cb71-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout() <span class="co"># optimiert bei Bedarf den Zeichenbereich, damit nix abgeschnitten wird</span></span>
-<span id="cb71-19"><a href="#cb71-19" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>) <span class="co"># zeigt ein Gitter zum einfacheren Ablesen der Werte</span></span>
-<span id="cb71-20"><a href="#cb71-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-21"><a href="#cb71-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Finally:</span></span>
-<span id="cb71-22"><a href="#cb71-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Der eigentliche Befehl zum Rendern (= Zeichnen).</span></span>
-<span id="cb71-23"><a href="#cb71-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-24"><a href="#cb71-24" aria-hidden="true" tabindex="-1"></a>plt.show()  <span class="co"># öffnet ein Fenster (oder rendert im Notebook) und zeigt den Plot.</span></span>
-<span id="cb71-25"><a href="#cb71-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-26"><a href="#cb71-26" aria-hidden="true" tabindex="-1"></a><span class="co"># PS: Der Befehl plt.show() wird von Jupyter oft automatisch aufgerufen, an anderer Stelle braucht man</span></span>
-<span id="cb71-27"><a href="#cb71-27" aria-hidden="true" tabindex="-1"></a><span class="co"># ihn aber explizit. Wir schreiben ihn daher immer hin.  </span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Punkte erzeugen mit NumPy</span></span>
+<span id="cb77-5"><a href="#cb77-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-6"><a href="#cb77-6" aria-hidden="true" tabindex="-1"></a>x_values <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">50</span>, <span class="dv">100</span>) <span class="co"># 100 Punkte zwischen 0 und 50</span></span>
+<span id="cb77-7"><a href="#cb77-7" aria-hidden="true" tabindex="-1"></a>y_values <span class="op">=</span> x_values<span class="op">**</span><span class="dv">2</span> <span class="co"># Vektorisierung: so einfach rechnet man mit NumPy-Arrays!</span></span>
+<span id="cb77-8"><a href="#cb77-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-9"><a href="#cb77-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Liniendiagramm erzeugen mit Matplotlib </span></span>
+<span id="cb77-10"><a href="#cb77-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-11"><a href="#cb77-11" aria-hidden="true" tabindex="-1"></a>plt.plot(x_values, y_values)</span>
+<span id="cb77-12"><a href="#cb77-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-13"><a href="#cb77-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Es folgen Einstellungen zur Darstellung (z.B. Beschriftung)</span></span>
+<span id="cb77-14"><a href="#cb77-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-15"><a href="#cb77-15" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="vs">r"$y = x^2$"</span>)  <span class="co"># Titel </span></span>
+<span id="cb77-16"><a href="#cb77-16" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)  <span class="co"># Beschriftung x-Achse</span></span>
+<span id="cb77-17"><a href="#cb77-17" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"y"</span>)  <span class="co"># Beschriftung y-Achse</span></span>
+<span id="cb77-18"><a href="#cb77-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout() <span class="co"># optimiert bei Bedarf den Zeichenbereich, damit nichts abgeschnitten wird</span></span>
+<span id="cb77-19"><a href="#cb77-19" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>) <span class="co"># zeigt ein Gitter zum einfacheren Ablesen der Werte</span></span>
+<span id="cb77-20"><a href="#cb77-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-21"><a href="#cb77-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Finally:</span></span>
+<span id="cb77-22"><a href="#cb77-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Der eigentliche Befehl zum Rendern (= Zeichnen).</span></span>
+<span id="cb77-23"><a href="#cb77-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-24"><a href="#cb77-24" aria-hidden="true" tabindex="-1"></a>plt.show()  <span class="co"># öffnet ein Fenster (oder rendert im Notebook) und zeigt den Plot.</span></span>
+<span id="cb77-25"><a href="#cb77-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-26"><a href="#cb77-26" aria-hidden="true" tabindex="-1"></a><span class="co"># PS: Der Befehl plt.show() wird von Jupyter oft automatisch aufgerufen, an anderer Stelle braucht man</span></span>
+<span id="cb77-27"><a href="#cb77-27" aria-hidden="true" tabindex="-1"></a><span class="co"># ihn aber explizit. Wir schreiben ihn daher immer hin.  </span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="7-bibs_files/figure-html/cell-40-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="7-bibs_files/figure-html/cell-43-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1004,69 +1075,69 @@ Verwendung von LaTeX-Befehlen in Strings
 <p><span class="math inline">\(f(x)=\frac{1}{1+x^2}\)</span></p>
 <p>in Matplotlib so als String dargestellt werden:</p>
 <p><code>"$\frac{1}{1+x^2}$"</code></p>
-<p>In Python hat der Backslash <code>\</code> jedoch die Bedeutung eines <em>Escape-Zeichens</em>, z. B. für Zeilenumbrüche (<code>\n</code>) oder Tabulatoren (<code>\t</code>). Damit Python den Backslash in LaTeX-Befehlen <strong>wörtlich</strong> interpretiert, verwendet man <strong>Raw Strings</strong>, indem man ein kleines <strong>r</strong> vor das String-Literal setzt:</p>
-<p><code>r"\frac{1}{1+x^2}"</code></p>
-<p><code>r"\sqrt{x}"</code></p>
+<p>In Python hat der Backslash <code>\</code> jedoch die Bedeutung eines <em>Escape-Zeichens</em>, z.B. für Zeilenumbrüche (<code>\n</code>) oder Tabulatoren (<code>\t</code>). Damit Python den Backslash in LaTeX-Befehlen <strong>wörtlich</strong> interpretiert, verwendet man <strong>Raw Strings</strong>, indem man ein kleines <strong>r</strong> vor das String-Literal setzt:</p>
+<p><code>r"$\frac{1}{1+x^2}$"</code></p>
+<p><code>r"$\sqrt{x}$"</code></p>
 <p>Dieses r teilt dem Python-Interpreter mit, dass alle Backslashes in diesem String unverändert bleiben, wodurch LaTeX-Befehle korrekt dargestellt werden.</p>
 </div>
 </div>
 </section>
 <section id="messwerte-in-einem-streudiagramm-darstellen" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="messwerte-in-einem-streudiagramm-darstellen">Messwerte in einem Streudiagramm darstellen</h3>
-<div id="419353a1-5181-40c7-ae16-bcca13e209c4" class="cell" data-execution_count="79">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Messwerte</span></span>
-<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>dehnung <span class="op">=</span> [<span class="fl">0.0</span>, <span class="fl">0.01</span>, <span class="fl">0.02</span>, <span class="fl">0.03</span>, <span class="fl">0.04</span>, <span class="fl">0.05</span>]</span>
-<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a>spannung <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">190</span>, <span class="dv">270</span>, <span class="dv">330</span>, <span class="dv">360</span>]  <span class="co"># in MPa</span></span>
-<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb72-7"><a href="#cb72-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Streudiagramm mit Matplotlib erzeugen</span></span>
-<span id="cb72-8"><a href="#cb72-8" aria-hidden="true" tabindex="-1"></a>plt.scatter(dehnung, spannung, color<span class="op">=</span><span class="st">'darkred'</span>)</span>
-<span id="cb72-9"><a href="#cb72-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb72-10"><a href="#cb72-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Einstellungen für die Darstellung:</span></span>
-<span id="cb72-11"><a href="#cb72-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Spannung-Dehnung (Stahlprobe)"</span>)</span>
-<span id="cb72-12"><a href="#cb72-12" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Dehnung (ε)"</span>)</span>
-<span id="cb72-13"><a href="#cb72-13" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Spannung (σ in MPa)"</span>)</span>
-<span id="cb72-14"><a href="#cb72-14" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb72-15"><a href="#cb72-15" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb72-16"><a href="#cb72-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb72-17"><a href="#cb72-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Finally: Rendern</span></span>
-<span id="cb72-18"><a href="#cb72-18" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="419353a1-5181-40c7-ae16-bcca13e209c4" class="cell">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Messwerte</span></span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>dehnung <span class="op">=</span> [<span class="fl">0.0</span>, <span class="fl">0.01</span>, <span class="fl">0.02</span>, <span class="fl">0.03</span>, <span class="fl">0.04</span>, <span class="fl">0.05</span>]</span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a>spannung <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">19</span>, <span class="dv">27</span>, <span class="dv">33</span>, <span class="dv">36</span>]  <span class="co"># in MPa</span></span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Streudiagramm mit Matplotlib erzeugen</span></span>
+<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a>plt.scatter(dehnung, spannung, color<span class="op">=</span><span class="st">'darkred'</span>)</span>
+<span id="cb78-9"><a href="#cb78-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-10"><a href="#cb78-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Einstellungen für die Darstellung:</span></span>
+<span id="cb78-11"><a href="#cb78-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Spannung-Dehnung (Kunststoffprobe)"</span>)</span>
+<span id="cb78-12"><a href="#cb78-12" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Dehnung (ε)"</span>)</span>
+<span id="cb78-13"><a href="#cb78-13" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Spannung (σ in MPa)"</span>)</span>
+<span id="cb78-14"><a href="#cb78-14" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb78-15"><a href="#cb78-15" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb78-16"><a href="#cb78-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-17"><a href="#cb78-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Finally: Rendern</span></span>
+<span id="cb78-18"><a href="#cb78-18" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="7-bibs_files/figure-html/cell-41-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="7-bibs_files/figure-html/cell-44-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Haben Sie auch sofort den Gedanken: <em>“Kann ich da eine Kurve durchlegen?”</em></p>
-<p>Sie können! Allerdings muss die Kurve zunächst berechnet werden, Matplotlib ist nur für die visuelle Darstellung verantwortlich. Eine einfache Möglichkeit bietet Numpy mit polynomialer Regression: Ein Polynom vorgegebenen Grades wird an die Messwerte angepasst. Das sieht im Ergebnis zum Beispiel so aus:</p>
-<div id="ddbc93aa-2db8-42f7-8507-b8f485466e1a" class="cell" data-execution_count="195">
+<p>Sie können! Allerdings muss die Kurve zunächst berechnet werden, Matplotlib ist nur für die visuelle Darstellung verantwortlich. Eine einfache Möglichkeit bietet NumPy mit polynomialer Regression: Ein Polynom vorgegebenen Grades wird an die Messwerte angepasst. Das sieht im Ergebnis zum Beispiel so aus:</p>
+<div id="ddbc93aa-2db8-42f7-8507-b8f485466e1a" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Polynom 2. Ordnung fitten</span></span>
-<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>koeff <span class="op">=</span> np.polyfit(dehnung, spannung, deg<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>polynom <span class="op">=</span> np.poly1d(koeff)</span>
-<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a>x_poly <span class="op">=</span> np.linspace(<span class="bu">min</span>(dehnung), <span class="bu">max</span>(dehnung), <span class="dv">200</span>) <span class="co"># x-Werte für das Polynom</span></span>
-<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotten</span></span>
-<span id="cb73-7"><a href="#cb73-7" aria-hidden="true" tabindex="-1"></a>plt.scatter(dehnung, spannung, label<span class="op">=</span><span class="st">"Messdaten"</span>, color<span class="op">=</span><span class="st">'darkred'</span>)</span>
-<span id="cb73-8"><a href="#cb73-8" aria-hidden="true" tabindex="-1"></a>plt.plot(x_poly, polynom(x_poly), label<span class="op">=</span><span class="st">"Polynom 2. Ordnung"</span>, color<span class="op">=</span><span class="st">"green"</span>)</span>
-<span id="cb73-9"><a href="#cb73-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-10"><a href="#cb73-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Einstellungen zur Darstellung</span></span>
-<span id="cb73-11"><a href="#cb73-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Spannung-Dehnung (Stahlprobe) mit Polynom-Fit"</span>)</span>
-<span id="cb73-12"><a href="#cb73-12" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb73-13"><a href="#cb73-13" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb73-14"><a href="#cb73-14" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb73-15"><a href="#cb73-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-16"><a href="#cb73-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Finally: Rendern</span></span>
-<span id="cb73-17"><a href="#cb73-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Polynom 2. Ordnung fitten</span></span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy.polynomial <span class="im">import</span> Polynomial</span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a>polynom <span class="op">=</span> Polynomial.fit(dehnung, spannung, deg<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a>x_poly <span class="op">=</span> np.linspace(<span class="bu">min</span>(dehnung), <span class="bu">max</span>(dehnung), <span class="dv">200</span>) <span class="co"># x-Werte für das Polynom</span></span>
+<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotten</span></span>
+<span id="cb79-7"><a href="#cb79-7" aria-hidden="true" tabindex="-1"></a>plt.scatter(dehnung, spannung, label<span class="op">=</span><span class="st">"Messdaten"</span>, color<span class="op">=</span><span class="st">'darkred'</span>)</span>
+<span id="cb79-8"><a href="#cb79-8" aria-hidden="true" tabindex="-1"></a>plt.plot(x_poly, polynom(x_poly), label<span class="op">=</span><span class="st">"Polynom 2. Ordnung"</span>, color<span class="op">=</span><span class="st">"green"</span>)</span>
+<span id="cb79-9"><a href="#cb79-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-10"><a href="#cb79-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Einstellungen zur Darstellung</span></span>
+<span id="cb79-11"><a href="#cb79-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Spannung-Dehnung (Kunststoffprobe) mit Polynom-Fit"</span>)</span>
+<span id="cb79-12"><a href="#cb79-12" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb79-13"><a href="#cb79-13" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb79-14"><a href="#cb79-14" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb79-15"><a href="#cb79-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-16"><a href="#cb79-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Finally: Rendern</span></span>
+<span id="cb79-17"><a href="#cb79-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="7-bibs_files/figure-html/cell-42-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="7-bibs_files/figure-html/cell-45-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1075,24 +1146,24 @@ Verwendung von LaTeX-Befehlen in Strings
 <section id="ein-einfaches-balkendiagramm" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="ein-einfaches-balkendiagramm">Ein einfaches Balkendiagramm</h3>
 <div id="082ee882-f0f3-4834-b3f8-ac49b249b6a0" class="cell" data-execution_count="196">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Daten</span></span>
-<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>werkstoffe <span class="op">=</span> [<span class="st">"Aluminium"</span>, <span class="st">"Stahl"</span>, <span class="st">"Kupfer"</span>]</span>
-<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>festigkeit <span class="op">=</span> [<span class="dv">150</span>, <span class="dv">400</span>, <span class="dv">210</span>]  <span class="co"># in MPa</span></span>
-<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotten</span></span>
-<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a>plt.bar(werkstoffe, festigkeit, color<span class="op">=</span><span class="st">'steelblue'</span>)</span>
-<span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb74-8"><a href="#cb74-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Einstellungen zur Darstellung</span></span>
-<span id="cb74-9"><a href="#cb74-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Zugfestigkeit verschiedener Werkstoffe"</span>)</span>
-<span id="cb74-10"><a href="#cb74-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Zugfestigkeit (MPa)"</span>)</span>
-<span id="cb74-11"><a href="#cb74-11" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb74-12"><a href="#cb74-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb74-13"><a href="#cb74-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Finally: Rendern</span></span>
-<span id="cb74-14"><a href="#cb74-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Daten</span></span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>werkstoffe <span class="op">=</span> [<span class="st">"Aluminium"</span>, <span class="st">"Stahl"</span>, <span class="st">"Kupfer"</span>]</span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>festigkeit <span class="op">=</span> [<span class="dv">150</span>, <span class="dv">400</span>, <span class="dv">210</span>]  <span class="co"># in MPa</span></span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotten</span></span>
+<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a>plt.bar(werkstoffe, festigkeit, color<span class="op">=</span><span class="st">'steelblue'</span>)</span>
+<span id="cb80-7"><a href="#cb80-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-8"><a href="#cb80-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Einstellungen zur Darstellung</span></span>
+<span id="cb80-9"><a href="#cb80-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Zugfestigkeit verschiedener Werkstoffe"</span>)</span>
+<span id="cb80-10"><a href="#cb80-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Zugfestigkeit (MPa)"</span>)</span>
+<span id="cb80-11"><a href="#cb80-11" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb80-12"><a href="#cb80-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-13"><a href="#cb80-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Finally: Rendern</span></span>
+<span id="cb80-14"><a href="#cb80-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="7-bibs_files/figure-html/cell-43-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="7-bibs_files/figure-html/cell-46-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1109,79 +1180,82 @@ Verwendung von LaTeX-Befehlen in Strings
 <div id="75b1b872-ff6f-4f62-ba83-6159092f1def" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 1</span></span>
-<span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">500</span>)</span>
-<span id="cb75-6"><a href="#cb75-6" aria-hidden="true" tabindex="-1"></a>ys <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> <span class="dv">3</span> <span class="op">*</span> np.sqrt(xs)</span>
-<span id="cb75-7"><a href="#cb75-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-8"><a href="#cb75-8" aria-hidden="true" tabindex="-1"></a>plt.plot(xs, ys)</span>
-<span id="cb75-9"><a href="#cb75-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-10"><a href="#cb75-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="vs">r"Ü1: $f(x)= 1 + 3\sqrt</span><span class="sc">{x}</span><span class="vs">$"</span>)  <span class="co"># das kleine r: raw string, damit der Backslash \ als solcher erkannt wird</span></span>
-<span id="cb75-11"><a href="#cb75-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
-<span id="cb75-12"><a href="#cb75-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"y"</span>)</span>
-<span id="cb75-13"><a href="#cb75-13" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb75-14"><a href="#cb75-14" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb75-15"><a href="#cb75-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-16"><a href="#cb75-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb75-17"><a href="#cb75-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-18"><a href="#cb75-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 2</span></span>
-<span id="cb75-19"><a href="#cb75-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-20"><a href="#cb75-20" aria-hidden="true" tabindex="-1"></a>days <span class="op">=</span> [<span class="st">'Mo'</span>, <span class="st">'Di'</span>, <span class="st">'Mi'</span>, <span class="st">'Do'</span>, <span class="st">'Fr'</span>, <span class="st">'Sa'</span>, <span class="st">'So'</span>]</span>
-<span id="cb75-21"><a href="#cb75-21" aria-hidden="true" tabindex="-1"></a>temperatures <span class="op">=</span> np.array([<span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">14</span>, <span class="dv">20</span>, <span class="dv">22</span>, <span class="dv">19</span>, <span class="dv">16</span>])</span>
-<span id="cb75-22"><a href="#cb75-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-23"><a href="#cb75-23" aria-hidden="true" tabindex="-1"></a>plt.plot(days, temperatures, marker<span class="op">=</span><span class="st">'o'</span>) <span class="co"># mit marker='o' markieren wir die Einzelpunkte</span></span>
-<span id="cb75-24"><a href="#cb75-24" aria-hidden="true" tabindex="-1"></a><span class="co"># scatter-Plot wäre auch möglich</span></span>
-<span id="cb75-25"><a href="#cb75-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-26"><a href="#cb75-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-27"><a href="#cb75-27" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Ü2: Temperaturverlauf"</span>)</span>
-<span id="cb75-28"><a href="#cb75-28" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Tag"</span>)</span>
-<span id="cb75-29"><a href="#cb75-29" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"mittlere Temperatur [°C]"</span>)</span>
-<span id="cb75-30"><a href="#cb75-30" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb75-31"><a href="#cb75-31" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb75-32"><a href="#cb75-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-33"><a href="#cb75-33" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb75-34"><a href="#cb75-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-35"><a href="#cb75-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 3</span></span>
-<span id="cb75-36"><a href="#cb75-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-37"><a href="#cb75-37" aria-hidden="true" tabindex="-1"></a>products <span class="op">=</span> [<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>]</span>
-<span id="cb75-38"><a href="#cb75-38" aria-hidden="true" tabindex="-1"></a>sales_numbers <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">75</span>, <span class="dv">30</span>, <span class="dv">90</span>]</span>
-<span id="cb75-39"><a href="#cb75-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-40"><a href="#cb75-40" aria-hidden="true" tabindex="-1"></a>plt.bar(products, sales_numbers)</span>
-<span id="cb75-41"><a href="#cb75-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-42"><a href="#cb75-42" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Ü3: Verkaufszahlen im letzten Monat"</span>)</span>
-<span id="cb75-43"><a href="#cb75-43" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Verkäufe"</span>)</span>
-<span id="cb75-44"><a href="#cb75-44" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb75-45"><a href="#cb75-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-46"><a href="#cb75-46" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 1</span></span>
+<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">500</span>)</span>
+<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a>ys <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> <span class="dv">3</span> <span class="op">*</span> np.sqrt(xs)</span>
+<span id="cb81-7"><a href="#cb81-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-8"><a href="#cb81-8" aria-hidden="true" tabindex="-1"></a>plt.plot(xs, ys)</span>
+<span id="cb81-9"><a href="#cb81-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-10"><a href="#cb81-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="vs">r"Ü1: $f(x)= 1 + 3\sqrt</span><span class="sc">{x}</span><span class="vs">$"</span>)  <span class="co"># das kleine r: raw string, damit der Backslash \ als solcher erkannt wird</span></span>
+<span id="cb81-11"><a href="#cb81-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
+<span id="cb81-12"><a href="#cb81-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"y"</span>)</span>
+<span id="cb81-13"><a href="#cb81-13" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb81-14"><a href="#cb81-14" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb81-15"><a href="#cb81-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-16"><a href="#cb81-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb81-17"><a href="#cb81-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-18"><a href="#cb81-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 2</span></span>
+<span id="cb81-19"><a href="#cb81-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-20"><a href="#cb81-20" aria-hidden="true" tabindex="-1"></a>days <span class="op">=</span> [<span class="st">'Mo'</span>, <span class="st">'Di'</span>, <span class="st">'Mi'</span>, <span class="st">'Do'</span>, <span class="st">'Fr'</span>, <span class="st">'Sa'</span>, <span class="st">'So'</span>]</span>
+<span id="cb81-21"><a href="#cb81-21" aria-hidden="true" tabindex="-1"></a>temperatures <span class="op">=</span> np.array([<span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">14</span>, <span class="dv">20</span>, <span class="dv">22</span>, <span class="dv">19</span>, <span class="dv">16</span>])</span>
+<span id="cb81-22"><a href="#cb81-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-23"><a href="#cb81-23" aria-hidden="true" tabindex="-1"></a>plt.plot(days, temperatures, marker<span class="op">=</span><span class="st">'o'</span>) <span class="co"># mit marker='o' markieren wir die Einzelpunkte</span></span>
+<span id="cb81-24"><a href="#cb81-24" aria-hidden="true" tabindex="-1"></a><span class="co"># scatter-Plot wäre auch möglich</span></span>
+<span id="cb81-25"><a href="#cb81-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-26"><a href="#cb81-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-27"><a href="#cb81-27" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Ü2: Temperaturverlauf"</span>)</span>
+<span id="cb81-28"><a href="#cb81-28" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Tag"</span>)</span>
+<span id="cb81-29"><a href="#cb81-29" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"mittlere Temperatur [°C]"</span>)</span>
+<span id="cb81-30"><a href="#cb81-30" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb81-31"><a href="#cb81-31" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb81-32"><a href="#cb81-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-33"><a href="#cb81-33" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb81-34"><a href="#cb81-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-35"><a href="#cb81-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 3</span></span>
+<span id="cb81-36"><a href="#cb81-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-37"><a href="#cb81-37" aria-hidden="true" tabindex="-1"></a>products <span class="op">=</span> [<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>]</span>
+<span id="cb81-38"><a href="#cb81-38" aria-hidden="true" tabindex="-1"></a>sales_numbers <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">75</span>, <span class="dv">30</span>, <span class="dv">90</span>]</span>
+<span id="cb81-39"><a href="#cb81-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-40"><a href="#cb81-40" aria-hidden="true" tabindex="-1"></a>plt.bar(products, sales_numbers)</span>
+<span id="cb81-41"><a href="#cb81-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-42"><a href="#cb81-42" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Ü3: Verkaufszahlen im letzten Monat"</span>)</span>
+<span id="cb81-43"><a href="#cb81-43" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Verkäufe"</span>)</span>
+<span id="cb81-44"><a href="#cb81-44" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb81-45"><a href="#cb81-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-46"><a href="#cb81-46" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 </section>
 <section id="pandas" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="pandas"><span class="header-section-number">9.4</span> Pandas</h2>
-<p><strong>Pandas</strong> ist eine Python-Bibliothek zur Datenanalyse und -verarbeitung. Sie macht es einfach, mit tabellarischen Daten zu arbeiten – wie man es von Excel oder MATLAB kennt, nur viel mächtiger! Sie ist ideal für CSV-Dateien, Zeitreihen, Sensorlogs, usw.</p>
-<p>Stellen Sie sich vor, Sie hätten eine CSV-Datei <code>pruefstand.csv</code>, die Messdaten von einem Elektromotor-Prüfstand auflistet, evtl. mit Tausenden oder Zehntausenden an Einträgen (Die folgenden Beispieldaten wurden von ChatGPT erzeugt, keine Garantie für Realitätsnähe…):</p>
+<h2 data-number="9.4" class="anchored" data-anchor-id="pandas"><span class="header-section-number">9.4</span> pandas</h2>
+<p><strong>pandas</strong> ist eine Python-Bibliothek zur Datenanalyse und -verarbeitung. Sie macht es einfach, mit tabellarischen Daten zu arbeiten – wie man es von Excel oder MATLAB kennt, nur viel mächtiger! Sie ist ideal für CSV-Dateien, Zeitreihen, Sensorlogs usw. (Wie man Text- und CSV-Dateien auch ohne pandas liest und schreibt, zeigt <a href="../notebooks/A-dateien.html">Anhang A</a>.)</p>
+<p>Stellen Sie sich vor, Sie hätten eine CSV-Datei <code>pruefstand.csv</code>, die Messdaten von einem Elektromotor-Prüfstand auflistet, evtl. mit Tausenden oder Zehntausenden an Einträgen (die folgenden Beispieldaten sind simuliert, orientieren sich aber an einem typischen 5,5-kW-Asynchronmotor):</p>
 <pre><code>zeit_s,drehzahl_rpm,drehmoment_Nm,temperatur_C,strom_A,spannung_V
-0,1497.922347561229,35.05722879661618,24.85808662838076,4.7097920725170965,400.7142291370718
-2,1483.1458149725818,37.49724149349054,25.967905384436204,4.846946612598922,400.8845878170255
-4,1543.0030557077196,34.68875783535333,25.033300464465054,4.003363546678268,401.7643521013756
-6,1478.8807509664023,33.57562248247703,25.72209534542697,3.8818618381400865,401.1119992202271
-8,1509.488872431028,34.695091353612426,25.009793428416128,4.252818267303441,399.13730139977235
-10,1457.8562653828417,36.17824929221712,25.32555101961123,3.9630387647710816,399.6263414315312
+0,1467.2924821489682,33.81031628726315,24.628518648371458,10.215086869820023,400.3974511569548
+2,1461.4533926626523,35.36085692530741,25.32622786824618,10.628453711233902,400.8363769172621
+4,1459.7331276504278,32.1555104756014,25.657537051768216,9.701252783384483,400.41566280600614
+6,1453.9484770091583,37.09365756516304,25.88773307868301,11.153416913010403,400.690401682028
+8,1455.7907345141277,35.957442111392325,25.807826294286944,10.844172930105008,398.82854176534335
+10,1461.721999729195,34.56192877217096,25.848570214283473,10.556782004465514,400.4478068464831
 ...</code></pre>
 <p>Mit pandas ist es ein Leichtes, die Daten zu analysieren! Wir zeigen nur ein paar wenige der vielen Features, die pandas anbietet.</p>
 <div id="f32b5c8c-d289-4192-9383-87dd13a30297" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a><span class="co"># CSV einlesen</span></span>
-<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="vs">r"./data/pruefstand.csv"</span>)  <span class="co"># oder auch aus einer URL oder Excel-Datei</span></span>
-<span id="cb77-5"><a href="#cb77-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-6"><a href="#cb77-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Die Abkürzung df ist sehr gebräuchlich und steht für 'Data Frame' = eine Tabelle</span></span>
-<span id="cb77-7"><a href="#cb77-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb77-8"><a href="#cb77-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Kurze Übersicht der Daten</span></span>
-<span id="cb77-9"><a href="#cb77-9" aria-hidden="true" tabindex="-1"></a>df.head()  <span class="co"># Zeigt die ersten 5 Zeilen</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a><span class="co"># CSV einlesen (statt eines Dateipfads ist auch eine URL möglich)</span></span>
+<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="vs">r"./data/pruefstand.csv"</span>)</span>
+<span id="cb83-5"><a href="#cb83-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-6"><a href="#cb83-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Excel-Dateien liest man analog mit pd.read_excel("datei.xlsx") ein</span></span>
+<span id="cb83-7"><a href="#cb83-7" aria-hidden="true" tabindex="-1"></a><span class="co"># (benötigt das Paket openpyxl, in Anaconda bereits enthalten)</span></span>
+<span id="cb83-8"><a href="#cb83-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-9"><a href="#cb83-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Die Abkürzung df ist sehr gebräuchlich und steht für 'Data Frame' = eine Tabelle</span></span>
+<span id="cb83-10"><a href="#cb83-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-11"><a href="#cb83-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Kurze Übersicht der Daten</span></span>
+<span id="cb83-12"><a href="#cb83-12" aria-hidden="true" tabindex="-1"></a>df.head()  <span class="co"># Zeigt die ersten 5 Zeilen</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
@@ -1202,47 +1276,47 @@ Verwendung von LaTeX-Befehlen in Strings
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
 <td>0</td>
-<td>1497.922348</td>
-<td>35.057229</td>
-<td>24.858087</td>
-<td>4.709792</td>
-<td>400.714229</td>
+<td>1467.292482</td>
+<td>33.810316</td>
+<td>24.628519</td>
+<td>10.215087</td>
+<td>400.397451</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>2</td>
-<td>1483.145815</td>
-<td>37.497241</td>
-<td>25.967905</td>
-<td>4.846947</td>
-<td>400.884588</td>
+<td>1461.453393</td>
+<td>35.360857</td>
+<td>25.326228</td>
+<td>10.628454</td>
+<td>400.836377</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>4</td>
-<td>1543.003056</td>
-<td>34.688758</td>
-<td>25.033300</td>
-<td>4.003364</td>
-<td>401.764352</td>
+<td>1459.733128</td>
+<td>32.155510</td>
+<td>25.657537</td>
+<td>9.701253</td>
+<td>400.415663</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
 <td>6</td>
-<td>1478.880751</td>
-<td>33.575622</td>
-<td>25.722095</td>
-<td>3.881862</td>
-<td>401.111999</td>
+<td>1453.948477</td>
+<td>37.093658</td>
+<td>25.887733</td>
+<td>11.153417</td>
+<td>400.690402</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
 <td>8</td>
-<td>1509.488872</td>
-<td>34.695091</td>
-<td>25.009793</td>
-<td>4.252818</td>
-<td>399.137301</td>
+<td>1455.790735</td>
+<td>35.957442</td>
+<td>25.807826</td>
+<td>10.844173</td>
+<td>398.828542</td>
 </tr>
 </tbody>
 </table>
@@ -1251,7 +1325,7 @@ Verwendung von LaTeX-Befehlen in Strings
 </div>
 </div>
 <div id="67605482-359b-4e37-acda-4e3c4bb61426" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>df.describe()  <span class="co"># liefert statistische Kennzahlen aller Größen</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>df.describe()  <span class="co"># liefert statistische Kennzahlen aller Größen</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
@@ -1281,65 +1355,65 @@ Verwendung von LaTeX-Befehlen in Strings
 <tr class="even">
 <td data-quarto-table-cell-role="th">mean</td>
 <td>499.000000</td>
-<td>1498.925139</td>
-<td>34.886097</td>
-<td>45.000590</td>
-<td>4.178905</td>
-<td>400.101695</td>
+<td>1459.727502</td>
+<td>35.047270</td>
+<td>51.742815</td>
+<td>10.586593</td>
+<td>399.899417</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">std</td>
 <td>288.963666</td>
-<td>29.086169</td>
-<td>1.713803</td>
-<td>11.613131</td>
-<td>0.363051</td>
-<td>0.983697</td>
+<td>3.537586</td>
+<td>1.571831</td>
+<td>10.276739</td>
+<td>0.479168</td>
+<td>0.963109</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">min</td>
 <td>0.000000</td>
-<td>1407.077718</td>
-<td>29.012827</td>
-<td>24.858087</td>
-<td>3.188436</td>
-<td>396.918353</td>
+<td>1448.249747</td>
+<td>29.378879</td>
+<td>24.628519</td>
+<td>8.965309</td>
+<td>396.941205</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">25%</td>
 <td>249.500000</td>
-<td>1479.236970</td>
-<td>33.701481</td>
-<td>34.897158</td>
-<td>3.920708</td>
-<td>399.481565</td>
+<td>1457.498059</td>
+<td>33.962797</td>
+<td>45.445497</td>
+<td>10.220183</td>
+<td>399.231993</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">50%</td>
 <td>499.000000</td>
-<td>1499.585548</td>
-<td>34.930608</td>
-<td>44.786135</td>
-<td>4.169030</td>
-<td>400.070542</td>
+<td>1459.804317</td>
+<td>35.094876</td>
+<td>55.402018</td>
+<td>10.580069</td>
+<td>399.918036</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">75%</td>
 <td>748.500000</td>
-<td>1516.939953</td>
-<td>36.059463</td>
-<td>55.105094</td>
-<td>4.442258</td>
-<td>400.795715</td>
+<td>1462.151006</td>
+<td>36.080189</td>
+<td>60.201944</td>
+<td>10.890667</td>
+<td>400.562544</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">max</td>
 <td>998.000000</td>
-<td>1583.667191</td>
-<td>38.831586</td>
-<td>65.451653</td>
-<td>5.151121</td>
-<td>403.723784</td>
+<td>1471.917075</td>
+<td>39.726362</td>
+<td>63.147595</td>
+<td>12.028734</td>
+<td>403.333527</td>
 </tr>
 </tbody>
 </table>
@@ -1349,27 +1423,28 @@ Verwendung von LaTeX-Befehlen in Strings
 </div>
 <p>Der <code>describe</code>-Befehl ist sehr nützlich: Wir sehen auf einen Blick, dass unsere Datei 500 Zeilen beinhaltet und erhalten Mittelwerte, Standardabweichungen, Wertebereiche und Quantile aller Messgrößen. Ein erster aufschlussreicher Überblick über unsere Daten!</p>
 <div id="c3b8c921-7868-40cc-a5ea-0249bfc8d8e4" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mittelwerte oder andere Kennzahlen können </span></span>
-<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ganz einfach auch einzeln abgefragt werden:</span></span>
-<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a>mean_torque <span class="op">=</span> df[<span class="st">"drehmoment_Nm"</span>].mean()</span>
-<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Mittleres Drehmoment: </span><span class="sc">{</span><span class="bu">round</span>(mean_torque, <span class="dv">2</span>)<span class="sc">}</span><span class="ss"> Nm"</span>)</span>
-<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb79-7"><a href="#cb79-7" aria-hidden="true" tabindex="-1"></a>mean_temperature <span class="op">=</span> df[<span class="st">"temperatur_C"</span>].mean()</span>
-<span id="cb79-8"><a href="#cb79-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Mittlere Temperatur: </span><span class="sc">{</span><span class="bu">round</span>(mean_temperature, <span class="dv">2</span>)<span class="sc">}</span><span class="ss"> °C"</span>)</span>
-<span id="cb79-9"><a href="#cb79-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb79-10"><a href="#cb79-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Wie diese Beispiele zeigen, greift man auf einzelne Spalten</span></span>
-<span id="cb79-11"><a href="#cb79-11" aria-hidden="true" tabindex="-1"></a><span class="co"># eines Data Frames über einen Indexzugriff zu, ganz analog zu</span></span>
-<span id="cb79-12"><a href="#cb79-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Dictionaries.</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mittelwerte oder andere Kennzahlen können </span></span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ganz einfach auch einzeln abgefragt werden:</span></span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a>mean_torque <span class="op">=</span> df[<span class="st">"drehmoment_Nm"</span>].mean()</span>
+<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Mittleres Drehmoment: </span><span class="sc">{</span><span class="bu">round</span>(mean_torque, <span class="dv">2</span>)<span class="sc">}</span><span class="ss"> Nm"</span>)</span>
+<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-7"><a href="#cb85-7" aria-hidden="true" tabindex="-1"></a>mean_temperature <span class="op">=</span> df[<span class="st">"temperatur_C"</span>].mean()</span>
+<span id="cb85-8"><a href="#cb85-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Mittlere Temperatur: </span><span class="sc">{</span><span class="bu">round</span>(mean_temperature, <span class="dv">2</span>)<span class="sc">}</span><span class="ss"> °C"</span>)</span>
+<span id="cb85-9"><a href="#cb85-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-10"><a href="#cb85-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Wie diese Beispiele zeigen, greift man auf einzelne Spalten</span></span>
+<span id="cb85-11"><a href="#cb85-11" aria-hidden="true" tabindex="-1"></a><span class="co"># eines Data Frames über einen Indexzugriff zu, ganz analog zu</span></span>
+<span id="cb85-12"><a href="#cb85-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Dictionaries.</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Mittleres Drehmoment: 34.89 Nm
-Mittlere Temperatur: 45.0 °C</code></pre>
+<pre><code>Mittleres Drehmoment: 35.05 Nm
+Mittlere Temperatur: 51.74 °C</code></pre>
 </div>
 </div>
-<p>Sie können auch einfach neue Spalten erzeugen, wie das folgende Beispiel zeigt:</p>
+<p>Sie können auch einfach neue Spalten erzeugen, wie das folgende Beispiel zeigt. Wir berechnen aus dem Drehmoment <span class="math inline">\(M\)</span> (in Nm) und der Drehzahl <span class="math inline">\(n\)</span> (in Umdrehungen pro Minute) die mechanische Leistung <span class="math inline">\(P = M \cdot 2\pi n / 60\)</span> in Watt:</p>
 <div id="0d6062f7-994d-4a86-b012-97e34d63e2ad" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"power_W"</span>]<span class="op">=</span>df[<span class="st">"strom_A"</span>]<span class="op">*</span>df[<span class="st">"spannung_V"</span>]</span>
-<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>df.head()  <span class="co"># achten Sie auf die neue Spalte.</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co"># neue Spalte: mechanische Leistung P = M · ω mit ω = 2π · n / 60</span></span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"p_mech_W"</span>] <span class="op">=</span> df[<span class="st">"drehmoment_Nm"</span>] <span class="op">*</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> df[<span class="st">"drehzahl_rpm"</span>] <span class="op">/</span> <span class="dv">60</span></span>
+<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a>df.head()  <span class="co"># achten Sie auf die neue Spalte.</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
@@ -1384,59 +1459,59 @@ Mittlere Temperatur: 45.0 °C</code></pre>
 <th data-quarto-table-cell-role="th">temperatur_C</th>
 <th data-quarto-table-cell-role="th">strom_A</th>
 <th data-quarto-table-cell-role="th">spannung_V</th>
-<th data-quarto-table-cell-role="th">power_W</th>
+<th data-quarto-table-cell-role="th">p_mech_W</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
 <td>0</td>
-<td>1497.922348</td>
-<td>35.057229</td>
-<td>24.858087</td>
-<td>4.709792</td>
-<td>400.714229</td>
-<td>1887.280700</td>
+<td>1467.292482</td>
+<td>33.810316</td>
+<td>24.628519</td>
+<td>10.215087</td>
+<td>400.397451</td>
+<td>5195.107562</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>2</td>
-<td>1483.145815</td>
-<td>37.497241</td>
-<td>25.967905</td>
-<td>4.846947</td>
-<td>400.884588</td>
-<td>1943.066195</td>
+<td>1461.453393</td>
+<td>35.360857</td>
+<td>25.326228</td>
+<td>10.628454</td>
+<td>400.836377</td>
+<td>5411.733090</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>4</td>
-<td>1543.003056</td>
-<td>34.688758</td>
-<td>25.033300</td>
-<td>4.003364</td>
-<td>401.764352</td>
-<td>1608.408762</td>
+<td>1459.733128</td>
+<td>32.155510</td>
+<td>25.657537</td>
+<td>9.701253</td>
+<td>400.415663</td>
+<td>4915.384443</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
 <td>6</td>
-<td>1478.880751</td>
-<td>33.575622</td>
-<td>25.722095</td>
-<td>3.881862</td>
-<td>401.111999</td>
-<td>1557.061363</td>
+<td>1453.948477</td>
+<td>37.093658</td>
+<td>25.887733</td>
+<td>11.153417</td>
+<td>400.690402</td>
+<td>5647.773785</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
 <td>8</td>
-<td>1509.488872</td>
-<td>34.695091</td>
-<td>25.009793</td>
-<td>4.252818</td>
-<td>399.137301</td>
-<td>1697.458407</td>
+<td>1455.790735</td>
+<td>35.957442</td>
+<td>25.807826</td>
+<td>10.844173</td>
+<td>398.828542</td>
+<td>5481.713820</td>
 </tr>
 </tbody>
 </table>
@@ -1444,41 +1519,64 @@ Mittlere Temperatur: 45.0 °C</code></pre>
 </div>
 </div>
 </div>
-<p>Selbstverständlich können wir nun auch Matplotlib in Kombination mit Pandas einsetzen, um Daten zu visualisieren:</p>
+<p>Selbstverständlich können wir nun auch Matplotlib in Kombination mit pandas einsetzen, um Daten zu visualisieren:</p>
 <div id="09310df9-7c82-4296-a095-6c01c70547be" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot: Temperatur über Zeit</span></span>
-<span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a>plt.plot(df[<span class="st">"zeit_s"</span>], df[<span class="st">"temperatur_C"</span>], label<span class="op">=</span><span class="st">"Temperatur [°C]"</span>, color<span class="op">=</span><span class="st">"red"</span>)</span>
-<span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb82-6"><a href="#cb82-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Zeit [s]"</span>)</span>
-<span id="cb82-7"><a href="#cb82-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Temperatur [°C]"</span>)</span>
-<span id="cb82-8"><a href="#cb82-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Prüfstandsdaten"</span>)</span>
-<span id="cb82-9"><a href="#cb82-9" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb82-10"><a href="#cb82-10" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
-<span id="cb82-11"><a href="#cb82-11" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb82-12"><a href="#cb82-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb82-13"><a href="#cb82-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot: Temperatur über Zeit</span></span>
+<span id="cb88-4"><a href="#cb88-4" aria-hidden="true" tabindex="-1"></a>plt.plot(df[<span class="st">"zeit_s"</span>], df[<span class="st">"temperatur_C"</span>], label<span class="op">=</span><span class="st">"Temperatur [°C]"</span>, color<span class="op">=</span><span class="st">"red"</span>)</span>
+<span id="cb88-5"><a href="#cb88-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb88-6"><a href="#cb88-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Zeit [s]"</span>)</span>
+<span id="cb88-7"><a href="#cb88-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Temperatur [°C]"</span>)</span>
+<span id="cb88-8"><a href="#cb88-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Prüfstandsdaten"</span>)</span>
+<span id="cb88-9"><a href="#cb88-9" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb88-10"><a href="#cb88-10" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb88-11"><a href="#cb88-11" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb88-12"><a href="#cb88-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb88-13"><a href="#cb88-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="7-bibs_files/figure-html/cell-49-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="7-bibs_files/figure-html/cell-52-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
+<div class="exercises">
+<p><b>Übung:</b> Der Motor am Prüfstand ist ein Drehstrommotor. Seine aufgenommene elektrische Wirkleistung berechnet sich aus der Leiterspannung <span class="math inline">\(U\)</span>, dem Strom <span class="math inline">\(I\)</span> und dem Leistungsfaktor <span class="math inline">\(\cos\varphi\)</span> (laut Typenschild 0,83) zu <span class="math inline">\(P_{el} = \sqrt{3} \cdot U \cdot I \cdot \cos\varphi\)</span>.</p>
+<ol type="1">
+<li>Fügen Sie dem Data Frame eine Spalte <code>p_el_W</code> mit der elektrischen Leistung hinzu.</li>
+<li>Berechnen Sie für jeden Zeitpunkt den Wirkungsgrad <span class="math inline">\(\eta = P_{mech} / P_{el}\)</span> als neue Spalte und geben Sie den mittleren Wirkungsgrad aus.</li>
+<li>Ist das Ergebnis plausibel? (Typische Wirkungsgrade von Asynchronmotoren dieser Größe liegen bei 85 bis 90 %.)</li>
+</ol>
+</div>
+<p>Lösung:</p>
+<div id="6c22d1df" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Elektrische Wirkleistung (Drehstrom)</span></span>
+<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a>cos_phi <span class="op">=</span> <span class="fl">0.83</span></span>
+<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"p_el_W"</span>] <span class="op">=</span> np.sqrt(<span class="dv">3</span>) <span class="op">*</span> df[<span class="st">"spannung_V"</span>] <span class="op">*</span> df[<span class="st">"strom_A"</span>] <span class="op">*</span> cos_phi</span>
+<span id="cb89-4"><a href="#cb89-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb89-5"><a href="#cb89-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Wirkungsgrad je Zeitpunkt und Mittelwert</span></span>
+<span id="cb89-6"><a href="#cb89-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"wirkungsgrad"</span>] <span class="op">=</span> df[<span class="st">"p_mech_W"</span>] <span class="op">/</span> df[<span class="st">"p_el_W"</span>]</span>
+<span id="cb89-7"><a href="#cb89-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Mittlerer Wirkungsgrad: </span><span class="sc">{</span>df[<span class="st">'wirkungsgrad'</span>]<span class="sc">.</span>mean()<span class="sc">:.1%}</span><span class="ss">"</span>)</span>
+<span id="cb89-8"><a href="#cb89-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb89-9"><a href="#cb89-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Mit rund 88 % liegt der Wirkungsgrad im typischen Bereich – die Messdaten sind plausibel.</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <p>Ein Data Frame kann auch aus einem Dictionary erzeugt werden:</p>
 <div id="8c62e7c8-48e9-43fc-b916-d716c7c4b041" class="cell" data-execution_count="212">
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
-<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Produkt'</span>: [<span class="st">'Produkt A'</span>, <span class="st">'Produkt B'</span>, <span class="st">'Produkt C'</span>, <span class="st">'Produkt D'</span>],</span>
-<span id="cb83-5"><a href="#cb83-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Preis'</span>: [<span class="dv">20</span>, <span class="dv">35</span>, <span class="dv">50</span>, <span class="dv">15</span>],</span>
-<span id="cb83-6"><a href="#cb83-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Verkaufte Menge'</span>: [<span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">80</span>, <span class="dv">200</span>]</span>
-<span id="cb83-7"><a href="#cb83-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb83-8"><a href="#cb83-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb83-9"><a href="#cb83-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
-<span id="cb83-10"><a href="#cb83-10" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb90-4"><a href="#cb90-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Produkt'</span>: [<span class="st">'Produkt A'</span>, <span class="st">'Produkt B'</span>, <span class="st">'Produkt C'</span>, <span class="st">'Produkt D'</span>],</span>
+<span id="cb90-5"><a href="#cb90-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Preis'</span>: [<span class="dv">20</span>, <span class="dv">35</span>, <span class="dv">50</span>, <span class="dv">15</span>],</span>
+<span id="cb90-6"><a href="#cb90-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Verkaufte Menge'</span>: [<span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">80</span>, <span class="dv">200</span>]</span>
+<span id="cb90-7"><a href="#cb90-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb90-8"><a href="#cb90-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb90-9"><a href="#cb90-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb90-10"><a href="#cb90-10" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="212">
 <div>
 
@@ -1525,45 +1623,50 @@ Mittlere Temperatur: 45.0 °C</code></pre>
 </div>
 <div class="exercises">
 <p><b>Übungen:</b> Erzeugen Sie das Data Frame, wie im letzten Beispiel gezeigt.</p>
-<pre><code>1. Fügen Sie eine Spalte Umsatz hinzu (Umsatz = Preis * Verkaufte Menge). 
-2. Finden Sie das Produkt mit dem höchsten Umsatz. 
-3. Erstellen Sie ein Balkendiagramm mit Matplotlib, das den Umsatz jedes Produkts zeigt.
-4. Wie groß sind Mittelwert und Standardabweichung des Umsatzes?</code></pre>
+<ol type="1">
+<li>Fügen Sie eine Spalte Umsatz hinzu (Umsatz = Preis * Verkaufte Menge).</li>
+<li>Finden Sie das Produkt mit dem höchsten Umsatz.</li>
+<li>Erstellen Sie ein Balkendiagramm mit Matplotlib, das den Umsatz jedes Produkts zeigt.</li>
+<li>Wie groß sind Mittelwert und Standardabweichung des Umsatzes?</li>
+</ol>
 </div>
 <p>Lösung:</p>
 <div id="cc2173ad-b528-4ef6-8efa-d64ef9f8995a" class="cell" data-execution_count="216">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Daten erstellen</span></span>
-<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
-<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Produkt'</span>: [<span class="st">'Produkt A'</span>, <span class="st">'Produkt B'</span>, <span class="st">'Produkt C'</span>, <span class="st">'Produkt D'</span>],</span>
-<span id="cb85-7"><a href="#cb85-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Preis'</span>: [<span class="dv">20</span>, <span class="dv">35</span>, <span class="dv">50</span>, <span class="dv">15</span>],</span>
-<span id="cb85-8"><a href="#cb85-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Verkaufte Menge'</span>: [<span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">80</span>, <span class="dv">200</span>]</span>
-<span id="cb85-9"><a href="#cb85-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb85-10"><a href="#cb85-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb85-11"><a href="#cb85-11" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
-<span id="cb85-12"><a href="#cb85-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb85-13"><a href="#cb85-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Umsatz berechnen und als Spalte hinzufügen</span></span>
-<span id="cb85-14"><a href="#cb85-14" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Umsatz'</span>] <span class="op">=</span> df[<span class="st">'Preis'</span>] <span class="op">*</span> df[<span class="st">'Verkaufte Menge'</span>]</span>
-<span id="cb85-15"><a href="#cb85-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb85-16"><a href="#cb85-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Kann durch einfaches print gelöst werden:</span></span>
-<span id="cb85-17"><a href="#cb85-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)  <span class="co"># Produkt B hat den höchsten Umsatz!</span></span>
-<span id="cb85-18"><a href="#cb85-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb85-19"><a href="#cb85-19" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Balkendiagramm erstellen</span></span>
-<span id="cb85-20"><a href="#cb85-20" aria-hidden="true" tabindex="-1"></a>plt.bar(df[<span class="st">'Produkt'</span>], df[<span class="st">'Umsatz'</span>], color<span class="op">=</span>[<span class="st">'red'</span>, <span class="st">'blue'</span>, <span class="st">'green'</span>, <span class="st">'purple'</span>])</span>
-<span id="cb85-21"><a href="#cb85-21" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Umsatz der Produkte'</span>)</span>
-<span id="cb85-22"><a href="#cb85-22" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Produkt'</span>)</span>
-<span id="cb85-23"><a href="#cb85-23" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Umsatz'</span>)</span>
-<span id="cb85-24"><a href="#cb85-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb85-25"><a href="#cb85-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb85-26"><a href="#cb85-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb85-27"><a href="#cb85-27" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Statistische Kennzahlen</span></span>
-<span id="cb85-28"><a href="#cb85-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mittlerer Umsatz: "</span>, df[<span class="st">'Umsatz'</span>].mean(), <span class="st">"Standardabweichung: "</span>, df[<span class="st">'Umsatz'</span>].std())</span>
-<span id="cb85-29"><a href="#cb85-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Kann auch über describe abgelesen werden: </span></span>
-<span id="cb85-30"><a href="#cb85-30" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb91-3"><a href="#cb91-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb91-4"><a href="#cb91-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Daten erstellen</span></span>
+<span id="cb91-5"><a href="#cb91-5" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {</span>
+<span id="cb91-6"><a href="#cb91-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Produkt'</span>: [<span class="st">'Produkt A'</span>, <span class="st">'Produkt B'</span>, <span class="st">'Produkt C'</span>, <span class="st">'Produkt D'</span>],</span>
+<span id="cb91-7"><a href="#cb91-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Preis'</span>: [<span class="dv">20</span>, <span class="dv">35</span>, <span class="dv">50</span>, <span class="dv">15</span>],</span>
+<span id="cb91-8"><a href="#cb91-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Verkaufte Menge'</span>: [<span class="dv">100</span>, <span class="dv">150</span>, <span class="dv">80</span>, <span class="dv">200</span>]</span>
+<span id="cb91-9"><a href="#cb91-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb91-10"><a href="#cb91-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb91-11"><a href="#cb91-11" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data)</span>
+<span id="cb91-12"><a href="#cb91-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb91-13"><a href="#cb91-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Umsatz berechnen und als Spalte hinzufügen</span></span>
+<span id="cb91-14"><a href="#cb91-14" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Umsatz'</span>] <span class="op">=</span> df[<span class="st">'Preis'</span>] <span class="op">*</span> df[<span class="st">'Verkaufte Menge'</span>]</span>
+<span id="cb91-15"><a href="#cb91-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb91-16"><a href="#cb91-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Kann durch einfaches print gelöst werden:</span></span>
+<span id="cb91-17"><a href="#cb91-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)  <span class="co"># Produkt B hat den höchsten Umsatz!</span></span>
+<span id="cb91-18"><a href="#cb91-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb91-19"><a href="#cb91-19" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Balkendiagramm erstellen</span></span>
+<span id="cb91-20"><a href="#cb91-20" aria-hidden="true" tabindex="-1"></a>plt.bar(df[<span class="st">'Produkt'</span>], df[<span class="st">'Umsatz'</span>], color<span class="op">=</span>[<span class="st">'red'</span>, <span class="st">'blue'</span>, <span class="st">'green'</span>, <span class="st">'purple'</span>])</span>
+<span id="cb91-21"><a href="#cb91-21" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Umsatz der Produkte'</span>)</span>
+<span id="cb91-22"><a href="#cb91-22" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Produkt'</span>)</span>
+<span id="cb91-23"><a href="#cb91-23" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Umsatz'</span>)</span>
+<span id="cb91-24"><a href="#cb91-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb91-25"><a href="#cb91-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb91-26"><a href="#cb91-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb91-27"><a href="#cb91-27" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Statistische Kennzahlen</span></span>
+<span id="cb91-28"><a href="#cb91-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mittlerer Umsatz: "</span>, df[<span class="st">'Umsatz'</span>].mean(), <span class="st">"Standardabweichung: "</span>, df[<span class="st">'Umsatz'</span>].std())</span>
+<span id="cb91-29"><a href="#cb91-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Hinweis: pandas teilt bei .std() durch n-1 (Stichproben-Standardabweichung), np.std() dagegen</span></span>
+<span id="cb91-30"><a href="#cb91-30" aria-hidden="true" tabindex="-1"></a><span class="co"># standardmäßig durch n. Bei großen Datenmengen spielt das kaum eine Rolle, bei nur 4 Werten wie</span></span>
+<span id="cb91-31"><a href="#cb91-31" aria-hidden="true" tabindex="-1"></a><span class="co"># hier ist der Unterschied aber deutlich (np.std() ergäbe ca. 1204 statt 1390).</span></span>
+<span id="cb91-32"><a href="#cb91-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Kann auch über describe abgelesen werden: </span></span>
+<span id="cb91-33"><a href="#cb91-33" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 

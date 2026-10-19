@@ -1,0 +1,27 @@
+# Quarto-Zwischendateien
+/.quarto/
+**/*.quarto_ipynb
+
+# Nebenprodukte, wenn einzelne Notebooks außerhalb des Buch-Builds gerendert werden
+# (das eigentliche Skript liegt in docs/ und wird NICHT ignoriert)
+/index.html
+/site_libs/
+/notebooks/*.html
+/notebooks/*_files/
+
+# LaTeX-Zwischendateien (keep-tex: true)
+/*.tex
+*.log
+*.aux
+
+# Jupyter / Python
+.ipynb_checkpoints/
+__pycache__/
+
+# Dateien, die Anhang A beim Ausführen erzeugt
+notebooks/data/messprotokoll.txt
+notebooks/data/bericht_T1.txt
+notebooks/data/bericht_T1_excel.csv
+notebooks/data/quadrate.txt
+notebooks/data/pruefstand_config.json
+notebooks/data/leistung.csv

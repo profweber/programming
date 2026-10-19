@@ -1,0 +1,8 @@
+# Pakete für das Skript "Programmierung für Ingenieurinnen und Ingenieure"
+# Erstellt und getestet mit Python 3.13 (mindestens Python 3.10 erforderlich)
+# Installation: pip install -r requirements.txt
+numpy>=2.0
+pandas>=2.2
+matplotlib>=3.8
+ipywidgets>=8.0      # nur für Anhang D (Schieberegler im Notebook)
+jupyterlab           # oder eine andere Umgebung für Jupyter Notebooks

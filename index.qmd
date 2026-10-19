@@ -1,0 +1,28 @@
+---
+title: "Vorwort"
+author: "Prof. Dr. Maik Weber"
+date: today
+lang: de
+format:
+  html:
+    toc: true
+    number-sections: true
+  pdf:
+    toc: true
+    number-sections: true
+---
+Version: {{< meta version >}}
+
+Willkommen zu dieser Einführung in die Programmierung! Dieses Skript bildet die Basis für die Vorlesungen „Ingenieurinformatik 1“ und „Grundlagen der Programmierung“ an der Hochschule Trier. Keine Sorge, Vorkenntnisse in Programmierung oder Informatik sind nicht erforderlich!
+
+Wir werden die grundlegenden Konzepte und deren praktische Umsetzung in der Programmiersprache Python erkunden. Der Kurs richtet sich an Studierende der Ingenieurwissenschaften in den ersten beiden Semestern, ist aber auch für Interessierte mit anderen Hintergründen geeignet. 
+
+Obwohl Python unsere exemplarische Programmiersprache ist, handelt es sich nicht um einen reinen Python-Kurs. Unser Ziel ist es, ein umfassendes Grundverständnis der Programmierung zu vermitteln: Wie funktioniert sie? Welche fundamentalen Konzepte gibt es in nahezu allen Programmiersprachen und wie können diese genutzt werden, um Probleme zu lösen? Um den Blick für das große Ganze zu bewahren, ziehen wir immer wieder Vergleiche mit anderen Programmiersprachen und vermeiden es, zu tief in die spezifischen Details von Python einzutauchen.
+
+Nach erfolgreichem Abschluss des Kurses werden Sie in der Lage sein, die Themen, die für Ihren persönlichen Weg von besonderer Bedeutung sind, eigenständig zu vertiefen. Das Gelernte wird Ihnen auch ein sicheres Fundament geben, wenn Sie eine andere Sprache als Python lernen müssen (oder wollen). Abschließend sei noch auf den Folgekurs „Ingenieurinformatik 2“ hingewiesen, der auf diesem Kurs aufbaut und den Fokus stärker auf Anwendung und Problemlösung legt.   
+
+Die Codebeispiele wurden mit Python 3.13 erstellt und ausgeführt. Neben Python selbst werden die Pakete NumPy, pandas und Matplotlib benötigt, für Anhang C außerdem ipywidgets; in Anaconda und Google Colab sind sie bereits enthalten. Mit anderen Versionen können einzelne Ausgaben leicht abweichen.
+
+No one is perfect: Trotz sorgfältiger Durchsicht werden sich Fehler eingeschlichen haben (wie übrigens auch in jedem größeren Programm). Hinweise bitte an den Autor: m.weber@hochschule-trier.de
+
+Viel Erfolg bei diesem Kurs – oder wie man unter Programmierer*innen sagt: Happy Coding!

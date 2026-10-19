@@ -6,7 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Prof.&nbsp;Dr.&nbsp;Maik Weber">
 
 <title>8&nbsp; Datenstrukturen in Python – Programmierung für Ingenieurinnen und Ingenieure</title>
 <style>
@@ -79,11 +78,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/bootstrap/bootstrap-ef31e3f4d9d6eef55c54bdf6b9cd68ca.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark-f92e9cd00cfa24dbc31d4226c6e5e52e.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -110,10 +109,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../style.css">
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Programmierung für Ingenieurinnen und Ingenieure</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+    <a href="../Programmierung-für-Ingenieurinnen-und-Ingenieure.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Dunkelmodus umschalten"><i class="bi"></i></a>
+</div>
+          <div id="quarto-search" class="" title="Suchen"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -122,32 +135,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../notebooks/6-sequences.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Datenstrukturen in Python</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
       <img src="../logo.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">Programmierung für Ingenieurinnen und Ingenieure</a> 
-        <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Dunkelmodus umschalten"><i class="bi"></i></a>
-</div>
-    </div>
       </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Suchen"></div>
-        </div>
-        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -210,6 +209,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Objektorientierte Programmierung (OOP)</span></span></a>
   </div>
 </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Anhang</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/A-dateien.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Dateien lesen und schreiben</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/B-fehlerbehandlung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Fehlerbehandlung</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/C-gui.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Interaktivität und grafische Oberflächen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../notebooks/D-micropython.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">MicroPython: Python auf Mikrocontrollern</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -224,12 +258,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#speichern-der-daten" id="toc-speichern-der-daten" class="nav-link" data-scroll-target="#speichern-der-daten">Speichern der Daten</a></li>
   <li><a href="#sortieren-der-messungen" id="toc-sortieren-der-messungen" class="nav-link" data-scroll-target="#sortieren-der-messungen">Sortieren der Messungen</a></li>
-  <li><a href="#werte-extrahieren---indexzugriff-und-list-slicing" id="toc-werte-extrahieren---indexzugriff-und-list-slicing" class="nav-link" data-scroll-target="#werte-extrahieren---indexzugriff-und-list-slicing">Werte extrahieren - Indexzugriff und List Slicing</a></li>
+  <li><a href="#werte-extrahieren-indexzugriff-und-list-slicing" id="toc-werte-extrahieren-indexzugriff-und-list-slicing" class="nav-link" data-scroll-target="#werte-extrahieren-indexzugriff-und-list-slicing">Werte extrahieren – Indexzugriff und List Slicing</a></li>
   </ul></li>
-  <li><a href="#analyse-der-einzigartigen-messwerte-anwendung-des-sets" id="toc-analyse-der-einzigartigen-messwerte-anwendung-des-sets" class="nav-link" data-scroll-target="#analyse-der-einzigartigen-messwerte-anwendung-des-sets"><span class="header-section-number">8.2</span> Analyse der einzigartigen Messwerte – Anwendung des Sets</a></li>
+  <li><a href="#analyse-der-verschiedenen-messwerte-anwendung-des-sets" id="toc-analyse-der-verschiedenen-messwerte-anwendung-des-sets" class="nav-link" data-scroll-target="#analyse-der-verschiedenen-messwerte-anwendung-des-sets"><span class="header-section-number">8.2</span> Analyse der verschiedenen Messwerte – Anwendung des Sets</a></li>
   <li><a href="#hinzufügen-von-zeitstempeln-anwendung-des-dictionaries" id="toc-hinzufügen-von-zeitstempeln-anwendung-des-dictionaries" class="nav-link" data-scroll-target="#hinzufügen-von-zeitstempeln-anwendung-des-dictionaries"><span class="header-section-number">8.3</span> Hinzufügen von Zeitstempeln – Anwendung des Dictionaries</a></li>
-  <li><a href="#speichern-einer-zweiten-messgröße---anwendung-des-tupels-engl.-tuple" id="toc-speichern-einer-zweiten-messgröße---anwendung-des-tupels-engl.-tuple" class="nav-link" data-scroll-target="#speichern-einer-zweiten-messgröße---anwendung-des-tupels-engl.-tuple"><span class="header-section-number">8.4</span> Speichern einer zweiten Messgröße - Anwendung des Tupels (engl.: tuple)</a></li>
-  <li><a href="#daten-mehrerer-sensoren---verschachtelte-dictionaries" id="toc-daten-mehrerer-sensoren---verschachtelte-dictionaries" class="nav-link" data-scroll-target="#daten-mehrerer-sensoren---verschachtelte-dictionaries"><span class="header-section-number">8.5</span> Daten mehrerer Sensoren - verschachtelte Dictionaries</a></li>
+  <li><a href="#speichern-einer-zweiten-messgröße-anwendung-des-tupels-engl.-tuple" id="toc-speichern-einer-zweiten-messgröße-anwendung-des-tupels-engl.-tuple" class="nav-link" data-scroll-target="#speichern-einer-zweiten-messgröße-anwendung-des-tupels-engl.-tuple"><span class="header-section-number">8.4</span> Speichern einer zweiten Messgröße – Anwendung des Tupels (engl.: tuple)</a></li>
+  <li><a href="#daten-mehrerer-sensoren-verschachtelte-dictionaries" id="toc-daten-mehrerer-sensoren-verschachtelte-dictionaries" class="nav-link" data-scroll-target="#daten-mehrerer-sensoren-verschachtelte-dictionaries"><span class="header-section-number">8.5</span> Daten mehrerer Sensoren – verschachtelte Dictionaries</a></li>
   <li><a href="#mutable-und-immutable-datenstrukturen" id="toc-mutable-und-immutable-datenstrukturen" class="nav-link" data-scroll-target="#mutable-und-immutable-datenstrukturen"><span class="header-section-number">8.6</span> Mutable und immutable Datenstrukturen</a></li>
   <li><a href="#sicheres-kopieren-von-listen" id="toc-sicheres-kopieren-von-listen" class="nav-link" data-scroll-target="#sicheres-kopieren-von-listen"><span class="header-section-number">8.7</span> Sicheres Kopieren von Listen</a></li>
   <li><a href="#list-comprehensions" id="toc-list-comprehensions" class="nav-link" data-scroll-target="#list-comprehensions"><span class="header-section-number">8.8</span> List Comprehensions</a>
@@ -239,6 +273,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#performance" id="toc-performance" class="nav-link" data-scroll-target="#performance">Performance</a></li>
   <li><a href="#fazit-für-die-praxis" id="toc-fazit-für-die-praxis" class="nav-link" data-scroll-target="#fazit-für-die-praxis">Fazit für die Praxis</a></li>
   </ul></li>
+  <li><a href="#sec-enumerate-zip" id="toc-sec-enumerate-zip" class="nav-link" data-scroll-target="#sec-enumerate-zip"><span class="header-section-number">8.9</span> Eleganter iterieren: <code>enumerate()</code> und <code>zip()</code></a></li>
   </ul>
 </nav>
     </div>
@@ -251,29 +286,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Autor:in</div>
-  <div class="quarto-title-meta-heading">Zugehörigkeit</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Prof.&nbsp;Dr.&nbsp;Maik Weber </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Hochschule Trier
-          </p>
-      </div>
-  </div>
 
 <div class="quarto-title-meta">
 
-      
-    <div>
-    <div class="quarto-title-meta-heading">Veröffentlichungsdatum</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">12. Oktober 2026</p>
-    </div>
-  </div>
+    
   
     
   </div>
@@ -283,14 +299,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lernziele
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Nach diesem Kapitel können Sie …</p>
+<ul>
+<li>Liste, Set, Dictionary und Tupel unterscheiden und für eine Aufgabe die passende Struktur wählen</li>
+<li>per Index und Slicing auf Listenelemente zugreifen und Listen sortieren</li>
+<li>mit Sets eindeutige Werte ermitteln und Mengenoperationen ausführen</li>
+<li>Daten mit (verschachtelten) Dictionaries strukturieren</li>
+<li>Listen sicher kopieren und flache von tiefer Kopie unterscheiden</li>
+<li>List-, Set- und Dictionary-Comprehensions schreiben</li>
+<li>mit <code>enumerate()</code> und <code>zip()</code> übersichtlich über Positionen und parallele Sequenzen iterieren</li>
+</ul>
+</div>
+</div>
 <p><strong>Datenstrukturen</strong> und <strong>Datentypen</strong> sind zentrale Begriffe in der Informatik, die eng miteinander verbunden, aber dennoch voneinander zu unterscheiden sind:</p>
 <ul>
-<li><p>Datentypen beschreiben die Art und den Wertebereich von Daten, wie Zahlen (z. B. int, float), Zeichenketten (z. B. str) oder Wahrheitswerte (bool). Sie definieren die grundlegenden Eigenschaften eines Werts und wie dieser vom Computer verarbeitet wird. Damit haben wir uns bereits ausführlich beschäftigt.</p></li>
+<li><p>Datentypen beschreiben die Art und den Wertebereich von Daten, wie Zahlen (z.B. int, float), Zeichenketten (z.B. str) oder Wahrheitswerte (bool). Sie definieren die grundlegenden Eigenschaften eines Werts und wie dieser vom Computer verarbeitet wird. Damit haben wir uns bereits ausführlich beschäftigt.</p></li>
 <li><p>Datenstrukturen hingegen organisieren mehrere Werte in einer bestimmten Weise, sodass sie effizient gespeichert und verarbeitet werden können. Sie kombinieren oft mehrere Datentypen, um komplexe Informationen abzubilden. Beispiele hierfür sind Listen, Dictionaries oder Sets in Python.</p></li>
 </ul>
 <p>Während Datentypen also die Bausteine sind, definieren Datenstrukturen den Bauplan, wie diese Bausteine miteinander in Beziehung stehen und verarbeitet werden. In diesem Kapitel fokussieren wir uns auf grundlegende Datenstrukturen und deren Anwendung in Python anhand eines praxisnahen Beispiels: der Organisation und Analyse von Sensordaten. Das Beispiel wird im Verlauf des Kapitels sukzessive komplexer und damit auch realistischer.</p>
-<p>Sie sollen einen Eindruck davon gewinnen, wie verschiedene Datenstrukturen für bestimmte Fragstellungen und Anwendungen ihre Stärken ausspielen.</p>
-<p>Am Ende des Kapitels gehen wir noch auf wichtige Eigenschaften wie Mutability von Datenstrukturen ein und stellen mit den sogenannten List Comprehensions ein elegantes Werkzeug zur Erzeugung von Listen vor.</p>
+<p>Sie sollen einen Eindruck davon gewinnen, wie verschiedene Datenstrukturen für bestimmte Fragestellungen und Anwendungen ihre Stärken ausspielen.</p>
+<p>Am Ende des Kapitels gehen wir noch auf wichtige Eigenschaften wie Mutability von Datenstrukturen ein und stellen mit den sogenannten List Comprehensions ein elegantes Werkzeug zur Erzeugung von Listen vor und zeigen, wie man mit <code>enumerate()</code> und <code>zip()</code> übersichtlicher über Listen iteriert.</p>
 <section id="ein-sensor-speichert-stündlich-temperaturdaten-anwendung-der-liste" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="ein-sensor-speichert-stündlich-temperaturdaten-anwendung-der-liste"><span class="header-section-number">8.1</span> Ein Sensor speichert stündlich Temperaturdaten – Anwendung der Liste</h2>
 <p>Ein Sensor misst stündlich die Temperatur (z.B. in einem Raum oder einer Maschine). Diese Daten speichern wir der Reihe nach in einer Liste, einer der einfachsten Datenstrukturen, die wir bereits im Kapitel über Datentypen kennengelernt haben. Die Liste ist ideal für lineares Speichern (Messwert für Messwert hintereinander). Sie ermöglicht den einfachen Zugriff auf Elemente anhand ihrer Position, stellt aber auch nützliche Funktionen zum Arbeiten mit den Daten bereit. Im Folgenden wiederholen wir einige wesentliche Eigenschaften von Listen und lernen weitere Möglichkeiten der Datenverarbeitung kennen.</p>
@@ -323,7 +361,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Sortierte Temperaturen: [21.8, 21.8, 22.5, 22.5, 23.1, 24.0]</code></pre>
 </div>
 </div>
-<p>Wir können nun direkt ablesen, dass der Wertebereich zwischen 21.8 und 24.0 liegt. Allerdings haben wir unsere Originalliste durch das Sortieren verändert! Das war womöglich gar nicht unsere Absicht, denn wir wollen weiterhin die Information besitzen, wann welcher Wert erhoben wurde. Für diesen Zweck gibt es eine Lösung: Anstelle der Methode <code>.sort()</code> verwenden wir die built-in Funktion <code>sorted()</code>, die eine sortierte Liste zurückgibt <strong>ohne das Original zu verändern</strong>:</p>
+<p>Wir können nun direkt ablesen, dass der Wertebereich zwischen 21.8 und 24.0 liegt. Allerdings haben wir unsere Originalliste durch das Sortieren verändert! Das war womöglich gar nicht unsere Absicht, denn wir wollen weiterhin die Information besitzen, wann welcher Wert erhoben wurde. Für diesen Zweck gibt es eine Lösung: Anstelle der Methode <code>.sort()</code> verwenden wir die bereits bekannte Built-in Function <code>sorted()</code> (siehe Kapitel <em>Funktionen</em>), die eine sortierte Liste zurückgibt, <strong>ohne das Original zu verändern</strong>:</p>
 <div id="eea3ae66-4fb6-4a02-9e7f-052f81c6eec8" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wir stellen zunächst das Original wieder her</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>temperatures <span class="op">=</span> [<span class="fl">22.5</span>, <span class="fl">23.1</span>, <span class="fl">21.8</span>, <span class="fl">24.0</span>, <span class="fl">22.5</span>, <span class="fl">21.8</span>]</span>
@@ -353,8 +391,8 @@ Wichtig
 </div>
 </div>
 </section>
-<section id="werte-extrahieren---indexzugriff-und-list-slicing" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="werte-extrahieren---indexzugriff-und-list-slicing">Werte extrahieren - Indexzugriff und List Slicing</h3>
+<section id="werte-extrahieren-indexzugriff-und-list-slicing" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="werte-extrahieren-indexzugriff-und-list-slicing">Werte extrahieren – Indexzugriff und List Slicing</h3>
 <p>Wie bereits bekannt, kann man über Indizes auf die einzelnen Elemente zugreifen:</p>
 <div id="bee2f479-63a5-4512-85b3-57610e50093a" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"1. Messwert: "</span> , temperatures[<span class="dv">0</span>])</span>
@@ -372,7 +410,7 @@ Max:  24.0
 Vorletzter Messwert:  22.5</code></pre>
 </div>
 </div>
-<p>Oft interessiert man sich für ganze Bereiche von Messwerten und kann diese in Python sehr effizient mit sog. “List Slicing” <em>ausschneiden</em>: Hierfür verwendet man einen Start- und Endindex, getrennt durch ein <code>:</code>. Zu beachten ist, dass der Anfangsindex inkludiert wird, das Slicing aber einen Schritt vor dem Endindex aufhört:</p>
+<p>Oft interessiert man sich für ganze Bereiche von Messwerten und kann diese in Python sehr effizient mit sog. “List Slicing” <em>ausschneiden</em>: Hierfür verwendet man einen Start- und Endindex, getrennt durch ein <code>:</code>. Zu beachten ist, dass der Anfangsindex inkludiert wird, das Slicing aber einen Schritt vor dem Endindex aufhört (<a href="#fig-slicing" class="quarto-xref">Abbildung&nbsp;<span>8.1</span></a>):</p>
 <div id="ea8e467e-d005-42ac-9e4d-6c5a3062407c" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Slicing: Werte gesucht ...</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -389,6 +427,16 @@ Vorletzter Messwert:  22.5</code></pre>
 [21.8, 24.0, 22.5]
 [23.1, 21.8, 24.0, 22.5]</code></pre>
 </div>
+</div>
+<div id="fig-slicing" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-slicing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/slicing.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-slicing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;8.1: Positive und negative Indizes der Liste <code>temperatures</code>. Beim Slicing gehört der Startindex dazu, der Endindex nicht.
+</figcaption>
+</figure>
 </div>
 <p>Man kann auch Start- und Endindex weglassen und meint damit “von Anfang” oder “bis Ende”:</p>
 <div id="71e7a400-63b4-4271-960e-c64a436a17e6" class="cell" data-execution_count="49">
@@ -410,10 +458,10 @@ Vorletzter Messwert:  22.5</code></pre>
 </div>
 <p>Python erlaubt sogar noch präzisere Analysen, indem es Schrittweiten beim Slicing zulässt. Die Schrittweite ist standardmäßig <code>1</code>, aber kann als dritter Parameter hinter einem weiteren <code>:</code> verändert werden:</p>
 <div id="67300d1b-47f1-439b-9bac-b2e09ff15684" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># von Index 0 bis 4 in 2er Schritten</span></span>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># von Index 0 bis 4 in 2er-Schritten</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[<span class="dv">0</span>:<span class="dv">5</span>:<span class="dv">2</span>]) </span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># von Index 1 bis Schluss in 2er Schritten</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># von Index 1 bis Schluss in 2er-Schritten</span></span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures[<span class="dv">1</span>::<span class="dv">2</span>]) </span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># jeder dritte Messwert</span></span>
@@ -440,9 +488,9 @@ Vorletzter Messwert:  22.5</code></pre>
 </div>
 </div>
 <p>Dabei muss intern aber jedes Element einzeln abgefragt werden, mit Pech also die gesamte Liste durchgegangen werden (die Datentypen <code>set</code> und <code>dict</code> sind hier deutlich effizienter).</p>
-<p>Darüber hinaus sind die Built-in-Functions <code>max()</code>, <code>min()</code>,<code>len()</code> oder <code>sum()</code> nützlich.</p>
+<p>Darüber hinaus sind die Built-in Functions <code>max()</code>, <code>min()</code>, <code>len()</code> oder <code>sum()</code> nützlich.</p>
 <div id="e5d22cd1-736c-48e4-899c-470d46292cce" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel: Verwendung von Built-in-Functions min, max, len</span></span>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel: Verwendung von Built-in Functions min, max, len</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Min: "</span>, <span class="bu">min</span>(temperatures))</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Max: "</span>, <span class="bu">max</span>(temperatures))</span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Anzahl der Elemente: "</span>, <span class="bu">len</span>(temperatures))</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -454,9 +502,9 @@ Anzahl der Elemente:  6</code></pre>
 </div>
 </section>
 </section>
-<section id="analyse-der-einzigartigen-messwerte-anwendung-des-sets" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="analyse-der-einzigartigen-messwerte-anwendung-des-sets"><span class="header-section-number">8.2</span> Analyse der einzigartigen Messwerte – Anwendung des Sets</h2>
-<p>Wir möchten wissen, welche Temperaturwerte einzigartig sind. Hierfür ist ein Set ideal, da es automatisch doppelte Einträge entfernt. Würden wir weiter mit einer Liste arbeiten, müssten wir selbst die Daten filtern, z.B. mit den uns bekannten Schleifen. Das wäre allerdings deutlich ineffizienter. Das Set entspricht einer mathematischen Menge, in der jedes Element nur einmal vorkommen darf. Für die Umwandlung führen wir ein explizites Casting durch:</p>
+<section id="analyse-der-verschiedenen-messwerte-anwendung-des-sets" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="analyse-der-verschiedenen-messwerte-anwendung-des-sets"><span class="header-section-number">8.2</span> Analyse der verschiedenen Messwerte – Anwendung des Sets</h2>
+<p>Wir möchten wissen, welche verschiedenen Temperaturwerte vorkommen. Hierfür ist ein Set ideal, da es automatisch doppelte Einträge entfernt. Würden wir weiter mit einer Liste arbeiten, müssten wir selbst die Daten filtern, z.B. mit den uns bekannten Schleifen. Das wäre allerdings deutlich ineffizienter. Das Set entspricht einer mathematischen Menge, in der jedes Element nur einmal vorkommen darf. Für die Umwandlung führen wir ein explizites Casting durch:</p>
 <div id="41f05ac9-172a-4748-b97c-76d1b3687c2b" class="cell" data-execution_count="72">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>unique_values <span class="op">=</span> <span class="bu">set</span>(temperatures)</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(unique_values) <span class="co"># keine doppelten Werte mehr</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -464,7 +512,7 @@ Anzahl der Elemente:  6</code></pre>
 <pre><code>{24.0, 21.8, 22.5, 23.1}</code></pre>
 </div>
 </div>
-<p>Syntaktisch erkennen Sie das Set an den geschweiften Klammern <code>{}</code>. Ein Set erlaubt alle bekannten Mengenoperationen, die Sie aus der Mathematik kennen (z.B. Durchschnitt oder Vereinigung). Nehmen wir an, wir wollen überprüfen, ob unser Sensor mit einer anderen Messreihe gemeinsame Werte hat. Hierfür können wir ganz einfach die Schnittmenge aus beiden Mengen untersuchen:</p>
+<p>Syntaktisch erkennen Sie das Set an den geschweiften Klammern <code>{}</code>. Beachten Sie: Ein Set ist ungeordnet. Die Reihenfolge der Ausgabe kann von der Eingabe abweichen, und einen Indexzugriff wie bei Listen gibt es nicht. Ein Set erlaubt alle bekannten Mengenoperationen, die Sie aus der Mathematik kennen (z.B. Schnittmenge oder Vereinigung). Nehmen wir an, wir wollen überprüfen, ob unser Sensor mit einer anderen Messreihe gemeinsame Werte hat. Hierfür können wir ganz einfach die Schnittmenge aus beiden Mengen untersuchen:</p>
 <div id="803de0fa-4d15-4ba1-b558-1bd670438910" class="cell" data-execution_count="76">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>second_temperatures <span class="op">=</span> [<span class="fl">22.0</span>, <span class="fl">23.1</span>, <span class="fl">25.0</span>, <span class="fl">22.4</span>, <span class="fl">20.8</span>]</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>second_set <span class="op">=</span> <span class="bu">set</span>(second_temperatures)</span>
@@ -474,7 +522,7 @@ Anzahl der Elemente:  6</code></pre>
 <pre><code>Gemeinsame Werte:  {23.1}</code></pre>
 </div>
 </div>
-<p>Die Abfrage mit dem Operator <code>in</code> ist übrigens bei Sets viel effizienter als bei Listen. Das liegt an einem Trick: Zu jedem Element eines Sets berechnet Python einen sog. “Hash-Wert”, der angibt, wo das Element im Speicher liegt. Fragt man, ob ein Element im Set liegt, muss Python nur den Hash-Wert für dieses Element berechnen und checken, ob der entsprechende Speicherplatz zum Set gehört. Daher ist der Aufwand - anders als bei Listen - unabhängig von der Größe des Sets!<!-- Deshalb dürfen Sets aber auch nur immutable Elemente beinhalten, denn nur diese sind hashable! --></p>
+<p>Die Abfrage mit dem Operator <code>in</code> ist übrigens bei Sets viel effizienter als bei Listen. Das liegt an einem Trick: Zu jedem Element eines Sets berechnet Python einen sog. “Hash-Wert”, der angibt, wo das Element im Speicher liegt. Fragt man, ob ein Element im Set liegt, muss Python nur den Hash-Wert für dieses Element berechnen und checken, ob der entsprechende Speicherplatz zum Set gehört. Daher ist der Aufwand - anders als bei Listen - unabhängig von der Größe des Sets! Deshalb dürfen Sets allerdings nur Elemente enthalten, für die sich ein Hash-Wert berechnen lässt (<em>hashable</em>). Das sind die unveränderlichen (immutable) Datentypen wie Zahlen, Strings oder Tupel (sofern das Tupel selbst keine Liste o. Ä. enthält); eine Liste als Element führt zu einem <code>TypeError</code>. Dasselbe gilt später für die Schlüssel von Dictionaries.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -489,7 +537,7 @@ Wie initialisiert man ein Set?
 <ul>
 <li><p>Leere Initialisierung: <code>my_set = set()</code> (<strong>Achtung: leere geschweifte Klammern initialisieren ein Dictionary und kein Set!</strong>)</p></li>
 <li><p>Mit Werten: <code>my_set = {1, 2, 3}</code></p></li>
-<li><p>Aus anderen Datenstrukturen: <code>my_set = set(x)</code>, wobei <code>x</code> einen String, eine Liste, ein Tuple oder ein Dictionary referenzieren kann. Im Falle vom String erhält man beispielsweise die Menge der Zeichen (Duplikate werden entfernt!), im Falle des Dictionaries die Menge der Schlüssel.<br>
+<li><p>Aus anderen Datenstrukturen: <code>my_set = set(x)</code>, wobei <code>x</code> einen String, eine Liste, ein Tupel oder ein Dictionary referenzieren kann. Im Falle des Strings erhält man beispielsweise die Menge der Zeichen (Duplikate werden entfernt!), im Falle des Dictionaries die Menge der Schlüssel.<br>
 </p></li>
 </ul>
 </div>
@@ -542,18 +590,18 @@ Wichtige Methoden des Sets
 </tr>
 </tbody>
 </table>
-<p>Erinnerung: Darüber hinaus sind die Built-in-Functions <code>max()</code>, <code>min()</code>,<code>len()</code>, <code>sum()</code>, <code>sorted()</code> (gibt eine sortierte Liste zurück) und der <code>in</code>-Operator nützlich!</p>
+<p>Erinnerung: Darüber hinaus sind die Built-in Functions <code>max()</code>, <code>min()</code>, <code>len()</code>, <code>sum()</code>, <code>sorted()</code> (gibt eine sortierte Liste zurück) und der <code>in</code>-Operator nützlich!</p>
 </div>
 </div>
 <div class="exercises">
 <p><b>Übungen:</b></p>
 <ol type="1">
 <li>Erstellen Sie eine eigene Liste mit fünf Messwerten. Erweitern Sie Ihre Liste durch <code>append()</code> auf insgesamt 8 Elemente.</li>
-<li>Geben Sie mithilfe des Slicing-Operators folgende Messwerte aus: a) die ersten drei, b) jeden zweiten, c) alle zwischen dem 3. und 7. Messwert (ohne den 3. und ohne den 7. Messwert selbst) d) die letzten drei.</li>
+<li>Geben Sie mithilfe des Slicing-Operators folgende Messwerte aus: a) die ersten drei, b) jeden zweiten, c) alle zwischen dem 3. und 7. Messwert (ohne den 3. und ohne den 7. Messwert selbst), d) die letzten drei.</li>
 <li>Finden Sie den größten und den kleinsten Wert Ihrer Messreihe.</li>
 <li>Sortieren Sie alle Messwerte der Größe nach von klein nach groß. Finden Sie auch heraus, wie Sie die umgekehrte Sortierung erhalten (also vom größten zum kleinsten Wert).<br>
 </li>
-<li>Reduzieren Sie Ihre Datenreihe auf ein Set, welches nur einzigartige Messwerte enthält.<br>
+<li>Reduzieren Sie Ihre Datenreihe auf ein Set, welches jeden Messwert nur einmal enthält.<br>
 </li>
 </ol>
 </div>
@@ -606,7 +654,7 @@ Wichtige Methoden des Sets
 <pre><code>{'2025-03-23 08:00': 22.5, '2025-03-23 09:00': 23.1, '2025-03-23 10:00': 21.8, '2025-03-23 11:00': 24.0, '2025-03-23 12:00': 22.5, '2025-03-23 13:00': 21.8}</code></pre>
 </div>
 </div>
-<p>Achten Sie erneut auf die Syntax: Geschweifte Klammern (wie beim Set), aber darin befinden sich Auflistungen von <code>Key:Value</code>. Der Zugriff auf einzelne Elemente ähnelt syntaktisch dem Index-Zugriff bei einer Liste, aber anstelle eines Indizes verwendet man einen Schlüssel:</p>
+<p>Achten Sie erneut auf die Syntax: Geschweifte Klammern (wie beim Set), aber darin befinden sich Auflistungen von <code>Key:Value</code>. Der Zugriff auf einzelne Elemente ähnelt syntaktisch dem Index-Zugriff bei einer Liste, aber anstelle eines Index verwendet man einen Schlüssel:</p>
 <div id="29e748a2-0429-4d14-94f8-00209b89d5a9" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Zugriff auf bestimmte Temperatur</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data[<span class="st">"2025-03-23 09:00"</span>])</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -687,7 +735,7 @@ Wichtige Methoden des Dictionaries
 </tr>
 </tbody>
 </table>
-<p>Erinnerung: Darüber hinaus sind die Built-in-Functions <code>max()</code>, <code>min()</code>,<code>len()</code>, <code>sum()</code>, <code>sorted()</code> und der <code>in</code>-Operator nützlich, aber sie operieren standardmäßig auf den Keys des Dictionaries! Variante: <code>max(my_dict.values())</code>.</p>
+<p>Erinnerung: Darüber hinaus sind die Built-in Functions <code>max()</code>, <code>min()</code>, <code>len()</code>, <code>sum()</code>, <code>sorted()</code> und der <code>in</code>-Operator nützlich, aber sie operieren standardmäßig auf den Keys des Dictionaries! Variante: <code>max(my_dict.values())</code>.</p>
 </div>
 </div>
 <div id="bf5028f6-a33f-493d-a620-f722e99a1486" class="cell" data-execution_count="9">
@@ -703,7 +751,7 @@ Wichtige Methoden des Dictionaries
 2025-03-23 13:00: 21.8°C</code></pre>
 </div>
 </div>
-<p>Das letzte Beispiel sieht etwas ungewohnt aus, da wir zwei Iterationsvariablen in einer <code>for</code>-Schleife gemeinsam verwenden: <code>time</code> und <code>temp</code>. In Wahrheit geschieht hier eine Tupel-Auflösung (das Tupel wird im nächsten Abschnitt ausführlicher behandelt): Mit <code>.items()</code> iterieren wir über die Tupel <code>(key, value)</code> zu jedem Eintrag. Dieses Tupel haben wir aufgelöst in zwei Variablen, da wir wissen, dass die Keys den Zeitstempeln und die Values den Temperaturen entsprechen. Aber auch folgender Code funktioniert:</p>
+<p>Das letzte Beispiel sieht etwas ungewohnt aus, da wir zwei Iterationsvariablen in einer <code>for</code>-Schleife gemeinsam verwenden: <code>time</code> und <code>temp</code>. In Wahrheit geschieht hier ein Entpacken von Tupeln (das Tupel wird im nächsten Abschnitt ausführlicher behandelt): Mit <code>.items()</code> iterieren wir über die Tupel <code>(key, value)</code> zu jedem Eintrag. Dieses Tupel haben wir aufgelöst in zwei Variablen, da wir wissen, dass die Keys den Zeitstempeln und die Values den Temperaturen entsprechen. Aber auch folgender Code funktioniert:</p>
 <div id="ccb0a9de-6e45-4261-a453-07079c5d67b7" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> data.items():</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"key: </span><span class="sc">{</span>t[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">, value: </span><span class="sc">{</span>t[<span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -721,14 +769,14 @@ key: 2025-03-23 13:00, value: 21.8</code></pre>
 <ol type="1">
 <li>Erstellen Sie ein Dictionary, das ein einfaches Telefonbuch darstellt. Fügen Sie einige Namen und Telefonnummern hinzu. Greifen Sie auf einige Einträge zu, überschreiben Sie einen Eintrag und versuchen Sie auch auf einen Eintrag zuzugreifen, den es nicht gibt (einmal mit und einmal ohne <code>.get()</code>).</li>
 <li>Erstellen Sie ein beliebiges Dictionary und wandeln Sie es anschließend in eine Liste um. Welche Einträge finden Sie in der Liste?</li>
-<li>Recherchieren Sie, wie man in Python echte Zeitstempel erzeugt (Tipp: es gibt eine Bibliothek dafür). Schreiben Sie Code, der alle zwei Minuten einen echten Zeitstempel erzeugt und mit einem simulierten Sensorwert (z.B. einer Zufallszahl) in ein Dictionary schreibt. Programmieren Sie eine Abbruchbedingung nach 10 Minuten und untersuchen Sie das entstandene Dictionary (Tipp: Zum Testen kann man zunächst kürzere Zeitintervalle wählen).<br>
+<li>Recherchieren Sie, wie man in Python echte Zeitstempel erzeugt (Tipp: Es gibt eine Bibliothek dafür). Schreiben Sie Code, der alle zwei Minuten einen echten Zeitstempel erzeugt und mit einem simulierten Sensorwert (z.B. einer Zufallszahl) in ein Dictionary schreibt. Programmieren Sie eine Abbruchbedingung nach 10 Minuten und untersuchen Sie das entstandene Dictionary (Tipp: Zum Testen kann man zunächst kürzere Zeitintervalle wählen).<br>
 </li>
 </ol>
 </div>
 </section>
-<section id="speichern-einer-zweiten-messgröße---anwendung-des-tupels-engl.-tuple" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="speichern-einer-zweiten-messgröße---anwendung-des-tupels-engl.-tuple"><span class="header-section-number">8.4</span> Speichern einer zweiten Messgröße - Anwendung des Tupels (engl.: tuple)</h2>
-<p>Neben der Temperatur misst der Sensor nun auch die relative Luftfeuchtigkeit. Wir speichern beide Messwerte als <strong>Tupel</strong>. Ein Tupel ist ähnlich wie die Liste eine geordnete Kollektion von Elementen, aber mit einem wichtigen Unterschied: Das Tupel ist im Gegensatz zur Liste <strong>unveränderlich</strong>. Man kann weder Elemente hinzufügen, noch entfernen oder überschreiben! Diese Einschränkungen machen das Tupel zu einem sicheren Datenformat, welches außerdem weniger Speicher verbraucht als die Liste. Syntaktisch erkennt man das Tupel meistens an den runden Klammern <code>()</code>:</p>
+<section id="speichern-einer-zweiten-messgröße-anwendung-des-tupels-engl.-tuple" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="speichern-einer-zweiten-messgröße-anwendung-des-tupels-engl.-tuple"><span class="header-section-number">8.4</span> Speichern einer zweiten Messgröße – Anwendung des Tupels (engl.: tuple)</h2>
+<p>Neben der Temperatur misst der Sensor nun auch die relative Luftfeuchtigkeit. Wir speichern beide Messwerte als <strong>Tupel</strong>. Ein Tupel ist ähnlich wie die Liste eine geordnete Kollektion von Elementen, aber mit einem wichtigen Unterschied: Das Tupel ist im Gegensatz zur Liste <strong>unveränderlich</strong>. Man kann weder Elemente hinzufügen noch entfernen oder überschreiben! Diese Einschränkungen machen das Tupel zu einem sicheren Datenformat, welches außerdem weniger Speicher verbraucht als die Liste. Syntaktisch erkennt man das Tupel meistens an den runden Klammern <code>()</code>:</p>
 <div id="e867f4c2-e098-49d9-8dee-8f6d4dd54187" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>measurement <span class="op">=</span> (<span class="fl">23.4</span>, <span class="dv">40</span>) <span class="co"># Tupel mit zwei Werten</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(measurement)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -786,7 +834,7 @@ Luftfeuchtigkeit:  40</code></pre>
 <span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a><span class="co"># neuen Wert hinzufügen</span></span>
-<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>data[<span class="st">"2025-03-23 13:00"</span>] <span class="op">=</span> (<span class="fl">24.0</span>, <span class="dv">58</span>)</span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>data[<span class="st">"2025-03-23 13:00"</span>] <span class="op">=</span> (<span class="fl">21.8</span>, <span class="dv">63</span>)</span>
 <span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a><span class="co"># einen Zeitpunkt abfragen</span></span>
 <span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data.get(<span class="st">"2025-03-23 10:00"</span>))</span>
@@ -797,7 +845,7 @@ Luftfeuchtigkeit:  40</code></pre>
 </div>
 <p>Tatsächlich könnte man die beiden Messwerte natürlich auch als Liste mit zwei Elementen zusammenfassen, aber das Tupel hat in diesem Fall klare Vorteile:</p>
 <ul>
-<li>Semantik: Ein Tupel repräsentiert eine feste Kombination von Werten, z. B. Temperatur und Luftfeuchtigkeit, die logisch zusammengehören.</li>
+<li>Semantik: Ein Tupel repräsentiert eine feste Kombination von Werten, z.B. Temperatur und Luftfeuchtigkeit, die logisch zusammengehören.</li>
 <li>Unveränderbarkeit: Tupel verhindern unbeabsichtigte Änderungen. (Will man bewusst einen Wert verändern, kann man in eine Liste umwandeln.)</li>
 <li>Effizienz: Tupel benötigen weniger Speicherplatz und werden (etwas) schneller verarbeitet als Listen.</li>
 </ul>
@@ -817,7 +865,7 @@ Wie initialisiert man ein Tupel?
 <li><p>Mit Werten: <code>my_tuple = (1, 2, 3)</code></p></li>
 <li><p>Ohne Klammern: <code>my_tuple = 1, 2, 3</code> wird automatisch als Tupel interpretiert.</p></li>
 <li><p>Achtung Spezialfall - Tupel mit exakt einem Wert: <code>t = (42,)</code> oder <code>t = 42,</code> (Merke: <em>Das Komma macht das Tupel, nicht die Klammern!</em>)</p></li>
-<li><p>Aus anderen Datenstrukturen: <code>my_tuple = tuple(x)</code>, wobei <code>x</code> einen String, eine Liste, ein Set oder ein Dictionary referenzieren kann. Im Falle vom String erhält man beispielsweise das Tupel der Zeichen, im Falle des Dictionaries das Tupel der Schlüssel.<br>
+<li><p>Aus anderen Datenstrukturen: <code>my_tuple = tuple(x)</code>, wobei <code>x</code> einen String, eine Liste, ein Set oder ein Dictionary referenzieren kann. Im Falle des Strings erhält man beispielsweise das Tupel der Zeichen, im Falle des Dictionaries das Tupel der Schlüssel.<br>
 </p></li>
 </ul>
 </div>
@@ -851,7 +899,7 @@ Methoden des Tupels
 </tr>
 </tbody>
 </table>
-<p>Erinnerung: Darüber hinaus sind die Built-in-Functions <code>max()</code>, <code>min()</code>,<code>len()</code>, <code>sum()</code>, <code>sorted()</code> und der <code>in</code>-Operator nützlich!</p>
+<p>Erinnerung: Darüber hinaus sind die Built-in Functions <code>max()</code>, <code>min()</code>, <code>len()</code>, <code>sum()</code>, <code>sorted()</code> und der <code>in</code>-Operator nützlich!</p>
 </div>
 </div>
 <div class="exercises">
@@ -879,8 +927,8 @@ Methoden des Tupels
 </details>
 </div>
 </section>
-<section id="daten-mehrerer-sensoren---verschachtelte-dictionaries" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="daten-mehrerer-sensoren---verschachtelte-dictionaries"><span class="header-section-number">8.5</span> Daten mehrerer Sensoren - verschachtelte Dictionaries</h2>
+<section id="daten-mehrerer-sensoren-verschachtelte-dictionaries" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="daten-mehrerer-sensoren-verschachtelte-dictionaries"><span class="header-section-number">8.5</span> Daten mehrerer Sensoren – verschachtelte Dictionaries</h2>
 <p>Stellen Sie sich vor, wir hätten drei anstelle von einem Sensor und wollten die Daten aller Sensoren strukturiert erfassen. Hierzu können wir zwei Dictionaries ineinander verschachteln: Der erste Key ist der Name des Sensors, zugehöriger Value ist ein Dictionary, das wie bisher die Messwerte dieses einen Sensors sammelt (also Zeitstempel als Key, Messwert als Value). Im Code sieht das so aus:</p>
 <div id="e3177ac6-9d49-4cc4-9a54-87aadce46550" class="cell" data-execution_count="170">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verschachtelte Dictionaries für drei Sensoren</span></span>
@@ -925,7 +973,7 @@ Methoden des Tupels
 </section>
 <section id="mutable-und-immutable-datenstrukturen" class="level2" data-number="8.6">
 <h2 data-number="8.6" class="anchored" data-anchor-id="mutable-und-immutable-datenstrukturen"><span class="header-section-number">8.6</span> Mutable und immutable Datenstrukturen</h2>
-<p>Die Unterscheidung zwischen <em>mutable</em> und <em>immutable</em> Datentypen haben wir bereits in früheren Kapiteln kennengelernt. Es ist bei der Programmierung wichtig, jederzeit zu wissen, ob man mit einem mutable oder immutable Datentyp arbeitet. Bei den grundlegenden Datenstrukturen in Python lässt sich das zum Glück leicht merken: <strong>Nur das Tuple ist unveränderlich (immutable)</strong>, während Listen, Sets und Dictionaries mutable sind.</p>
+<p>Die Unterscheidung zwischen <em>mutable</em> und <em>immutable</em> Datentypen haben wir bereits in früheren Kapiteln kennengelernt. Es ist bei der Programmierung wichtig, jederzeit zu wissen, ob man mit einem mutable oder immutable Datentyp arbeitet. Bei den grundlegenden Datenstrukturen in Python lässt sich das zum Glück leicht merken: <strong>Nur das Tupel ist unveränderlich (immutable)</strong>, während Listen, Sets und Dictionaries mutable sind. Achtung: Enthält ein Tupel selbst veränderliche Elemente, z.B. eine Liste, kann sich deren Inhalt trotzdem ändern.</p>
 <p>Alle mutable Datenstrukturen können potenziell Seiteneffekte verursachen. Im Folgenden illustrieren wir dies anhand von zwei Beispielen:</p>
 <div id="bd2a51bc-63d5-4005-99ca-44ad97c7c6b0" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel: Seiteneffekte bei Sets</span></span>
@@ -949,6 +997,16 @@ First: {'green', 'red', 'yellow', 'blue'} Second: {'green', 'red', 'yellow', 'bl
 <pre><code>First: {'a': 42, 'b': 2} Second: {'a': 42, 'b': 2}</code></pre>
 </div>
 </div>
+<p>Und ein Tupel, das eine Liste enthält? Das Tupel selbst lässt sich nicht verändern, die Liste darin aber schon – zum Beispiel über eine zweite Referenz auf dieselbe Liste:</p>
+<div id="08a339bc" class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>lst <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>]</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> (lst, <span class="dv">3</span>)    <span class="co"># das Tupel enthält eine Referenz auf die Liste</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>lst.append(<span class="dv">99</span>)  <span class="co"># die Liste wird über die zweite Referenz lst verändert ...</span></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(t)        <span class="co"># ... und das Tupel "sieht" die Änderung</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>([1, 2, 99], 3)</code></pre>
+</div>
+</div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -960,7 +1018,33 @@ Wichtig
 </div>
 <div class="callout-body-container callout-body">
 <p>Listen, Sets und Dictionaries sind mutable, Seiteneffekte können auftreten!</p>
-<p>Tuples sind immutable, es gibt keine Seiteneffekte.</p>
+<p>Tupel sind immutable und verursachen selbst keine Seiteneffekte – solange sie keine veränderlichen Elemente wie Listen enthalten.</p>
+</div>
+</div>
+<div class="exercises">
+<p><b>Übung (Was gibt der Code aus?):</b> Überlegen Sie <em>vor</em> dem Ausführen, welche Werte <code>a</code> und <code>b</code> am Ende haben:</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>]</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> a</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">+=</span> [<span class="dv">3</span>]</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> a <span class="op">+</span> [<span class="dv">4</span>]</span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a, b)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Auflösung
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Ausgabe: <code>[1, 2, 3, 4] [1, 2, 3]</code>. Überrascht? Bei Listen verändert <code>+=</code> die bestehende Liste direkt – ähnlich wie <code>append()</code>. Deshalb sieht auch <code>b</code> die 3. <code>a = a + [4]</code> erzeugt dagegen eine <strong>neue</strong> Liste und lässt nur <code>a</code> darauf zeigen; <code>b</code> zeigt weiter auf die alte. Bei unveränderlichen Datentypen wie Zahlen, Strings oder Tupeln gibt es diesen Unterschied nicht, denn sie können gar nicht „an Ort und Stelle“ verändert werden.</p>
+<p><strong>Merke:</strong> <code>liste += …</code> verändert die Liste, <code>liste = liste + …</code> erzeugt eine neue.</p>
+<p><em>Für Fortgeschrittene:</em> Technisch steckt dahinter, dass Python bei <code>a += b</code> zuerst prüft, ob der Datentyp von <code>a</code> eine spezielle Methode <code>__iadd__</code> (<em>in-place add</em>) besitzt. Listen haben eine solche Methode, die die Liste direkt verändert. Zahlen, Strings und Tupel haben sie nicht – dann führt Python stattdessen <code>a = a + b</code> aus. Solche Methoden mit doppelten Unterstrichen heißen <em>Magic Methods</em>; mehr dazu im Kapitel <em>Objektorientierte Programmierung</em>.</p>
+</div>
 </div>
 </div>
 </section>
@@ -968,18 +1052,18 @@ Wichtig
 <h2 data-number="8.7" class="anchored" data-anchor-id="sicheres-kopieren-von-listen"><span class="header-section-number">8.7</span> Sicheres Kopieren von Listen</h2>
 <p>Seien Sie immer auf der Hut, wenn Sie eine Liste kopieren wollen. Da sie zu den mutable Datentypen gehört, erzeugen Sie schnell unbeabsichtigt nur eine zweite Referenz auf das Original mit den genannten Seiteneffekten als Gefahr. Eine einfache Möglichkeit, dies zu umgehen, ist eine Kopie mithilfe des Slicing-Operators:</p>
 <div id="c2044608-1e7a-4b95-a9e2-600bb3c95277" class="cell" data-execution_count="212">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>original <span class="op">=</span> [<span class="st">"apples"</span>, <span class="st">"oranges"</span>, <span class="st">"books"</span>]</span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Zuweisung erzeugt nur eine zweite Referenz:</span></span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>second_reference <span class="op">=</span> original  <span class="co"># keine Kopie! </span></span>
-<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a><span class="co"># mit Slicing eine Kopie erzeugen:</span></span>
-<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>copy <span class="op">=</span> original[:] </span>
-<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Wir zeigen, dass copy keine Seiteneffekte hat: </span></span>
-<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>copy.append(<span class="st">"bananas"</span>)</span>
-<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original: "</span>, original) <span class="co"># unverändert</span></span>
-<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Kopie: "</span>, copy)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>original <span class="op">=</span> [<span class="st">"apples"</span>, <span class="st">"oranges"</span>, <span class="st">"books"</span>]</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Zuweisung erzeugt nur eine zweite Referenz:</span></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>second_reference <span class="op">=</span> original  <span class="co"># keine Kopie! </span></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a><span class="co"># mit Slicing eine Kopie erzeugen:</span></span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>my_copy <span class="op">=</span> original[:] </span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Wir zeigen, dass my_copy keine Seiteneffekte hat: </span></span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>my_copy.append(<span class="st">"bananas"</span>)</span>
+<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original: "</span>, original) <span class="co"># unverändert</span></span>
+<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Kopie: "</span>, my_copy)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Original:  ['apples', 'oranges', 'books']
 Kopie:  ['apples', 'oranges', 'books', 'bananas']</code></pre>
@@ -987,27 +1071,37 @@ Kopie:  ['apples', 'oranges', 'books', 'bananas']</code></pre>
 </div>
 <p>Es gibt allerdings noch eine Diffizilität: Der Trick mit dem Slicing-Operator funktioniert nur so lange, wie die Elemente der Liste immutable sind. Sollten sich darunter aber mutable Datentypen befinden, kann es immer noch zu Seiteneffekten kommen. Wir haben zwar eine Kopie erstellt, allerdings nur eine sog. “flache Kopie”. Um alle Mehrfachreferenzen aufzulösen und eine völlig unabhängige Kopie zu erhalten, braucht es eine sog. “tiefe Kopie”. Hierfür gibt es bestimmte Algorithmen aus dem Modul <code>copy</code>:</p>
 <div id="8fc8d7d8-b5c3-4eac-9781-397a4b8528bf" class="cell" data-execution_count="218">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> copy</span>
-<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>original <span class="op">=</span> [[<span class="dv">1</span>,<span class="dv">2</span>],<span class="dv">3</span>,<span class="dv">4</span>] <span class="co"># Liste mit einem mutable Element</span></span>
-<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>copy1 <span class="op">=</span> original[:] <span class="co"># flache Kopie</span></span>
-<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>copy2 <span class="op">=</span> copy.deepcopy(original) <span class="co"># tiefe Kopie</span></span>
-<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Demo der Seiteneffekte:</span></span>
-<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Das mutable erste Element wird in den Kopien verändert</span></span>
-<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a>copy1[<span class="dv">0</span>].append(<span class="dv">3</span>) </span>
-<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a>copy2[<span class="dv">0</span>].append(<span class="dv">100</span>)</span>
-<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original: "</span>, original)</span>
-<span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"flache Kopie: "</span>, copy1)</span>
-<span id="cb55-14"><a href="#cb55-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"tiefe Kopie: "</span>, copy2)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> copy</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>original <span class="op">=</span> [[<span class="dv">1</span>,<span class="dv">2</span>],<span class="dv">3</span>,<span class="dv">4</span>] <span class="co"># Liste mit einem mutable Element</span></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>copy1 <span class="op">=</span> original[:] <span class="co"># flache Kopie</span></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>copy2 <span class="op">=</span> copy.deepcopy(original) <span class="co"># tiefe Kopie</span></span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Demo der Seiteneffekte:</span></span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Das mutable erste Element wird in den Kopien verändert</span></span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>copy1[<span class="dv">0</span>].append(<span class="dv">3</span>) </span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a>copy2[<span class="dv">0</span>].append(<span class="dv">100</span>)</span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original: "</span>, original)</span>
+<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"flache Kopie: "</span>, copy1)</span>
+<span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"tiefe Kopie: "</span>, copy2)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Original:  [[1, 2, 3], 3, 4]
 flache Kopie:  [[1, 2, 3], 3, 4]
 tiefe Kopie:  [[1, 2, 100], 3, 4]</code></pre>
 </div>
 </div>
-<p>Die Änderungen an der flachen Kopie hatten noch Auswirkungen auf das Original, weil beide die Referenz auf das erste Element teilten, welches mutable war. Nur bei der tiefen Kopie handelt es sich um eine völlig autarke Kopie, die nichts mehr mit dem Original gemein hat.</p>
+<p>Die Änderungen an der flachen Kopie hatten noch Auswirkungen auf das Original, weil beide die Referenz auf das erste Element teilten, welches mutable war. Nur bei der tiefen Kopie handelt es sich um eine völlig autarke Kopie, die nichts mehr mit dem Original gemein hat (<a href="#fig-copy-shallow-deep" class="quarto-xref">Abbildung&nbsp;<span>8.2</span></a>).</p>
+<div id="fig-copy-shallow-deep" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-copy-shallow-deep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/copy_shallow_deep.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-copy-shallow-deep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;8.2: Flache Kopie: Die äußere Liste ist neu, die innere Liste wird aber geteilt. Tiefe Kopie: Auch die innere Liste wird kopiert.
+</figcaption>
+</figure>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1027,7 +1121,7 @@ Vier Wege zur flachen Kopie
 </ol>
 </div>
 </div>
-<p>In Python ist die tiefe Kopie (copy.deepcopy) bewusst nicht als Built-in-Funktion verfügbar. Der Grund liegt in der Designphilosophie <em>„Explicit is better than implicit“</em>: Eine tiefe Kopie sollte nur dann eingesetzt werden, wenn man sie wirklich benötigt. Da die Operation rekursiv alle enthaltenen Objekte dupliziert, ist sie vergleichsweise aufwendig in Bezug auf Laufzeit und Speicherverbrauch. In vielen Fällen ist es daher sinnvoller, benötigte Datenstrukturen gezielt neu aufzubauen oder nur Teilstrukturen zu kopieren, anstatt pauschal eine tiefe Kopie der gesamten Struktur zu erzeugen.</p>
+<p>Die tiefe Kopie (<code>copy.deepcopy</code>) ist nicht als Built-in Function verfügbar, sondern muss aus dem Modul <code>copy</code> importiert werden. Das passt gut zur Python-Philosophie <em>„Explicit is better than implicit“</em>: Eine tiefe Kopie sollte nur dann eingesetzt werden, wenn man sie wirklich benötigt. Da die Operation rekursiv alle enthaltenen Objekte dupliziert, ist sie vergleichsweise aufwendig in Bezug auf Laufzeit und Speicherverbrauch. In vielen Fällen ist es daher sinnvoller, benötigte Datenstrukturen gezielt neu aufzubauen oder nur Teilstrukturen zu kopieren, anstatt pauschal eine tiefe Kopie der gesamten Struktur zu erzeugen.</p>
 </section>
 <section id="list-comprehensions" class="level2" data-number="8.8">
 <h2 data-number="8.8" class="anchored" data-anchor-id="list-comprehensions"><span class="header-section-number">8.8</span> List Comprehensions</h2>
@@ -1038,15 +1132,15 @@ Vier Wege zur flachen Kopie
 <p>Die allgemeine Syntax sieht so aus:</p>
 <p><code>[ Ausdruck for Element in Sequenz ]</code></p>
 <ul>
-<li><p><strong>Sequenz</strong>: Etwas, über das iteriert werden kann (z.B. eine Liste, ein String, ein Bereich <code>range()</code>), wie wir es schon von der For-Schleife kennen.</p></li>
+<li><p><strong>Sequenz</strong>: Etwas, über das iteriert werden kann (z.B. eine Liste, ein String, ein Bereich <code>range()</code>), wie wir es schon von der for-Schleife kennen.</p></li>
 <li><p><strong>Element</strong>: Eine Variable, die nacheinander die Werte aus der Sequenz annimmt.</p></li>
 <li><p><strong>Ausdruck</strong>: Ein Ausdruck, der für jedes Element ausgewertet wird. Dieser wird dann der neuen Liste hinzugefügt.</p></li>
 </ul>
-<p>Der hintere Teil der List Comprehension verhält sich ganz analog zur For-Schleife, neu ist der Ausdruck. Ein Beispiel macht alles verständlicher:</p>
+<p>Der hintere Teil der List Comprehension verhält sich ganz analog zur for-Schleife, neu ist der Ausdruck. Ein Beispiel macht alles verständlicher:</p>
 <div id="f26ad137-7c53-41b9-a189-1a339c2ff8bc" class="cell" data-execution_count="42">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel: Liste aller Quadratzahlen der Zahlen von 0 bis 9</span></span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>squares <span class="op">=</span> [x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span>
-<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(squares)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel: Liste aller Quadratzahlen der Zahlen von 0 bis 9</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>squares <span class="op">=</span> [x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(squares)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</code></pre>
 </div>
@@ -1063,18 +1157,18 @@ Vier Wege zur flachen Kopie
 <li><strong>Bedingung</strong> am Ende der List Comprehension: Nur Elemente, die die Bedingung erfüllen, werden berücksichtigt.</li>
 </ul>
 <div id="0cfbaff9-8420-486a-b75a-5754aa997bdc" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ein Beispiel: Liste aller Quadratzahlen der geraden Zahlen von 0 bis 9</span></span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>squares2 <span class="op">=</span> [x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>) <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]</span>
-<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(squares2)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ein Beispiel: Liste aller Quadratzahlen der geraden Zahlen von 0 bis 9</span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>squares2 <span class="op">=</span> [x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>) <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(squares2)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[0, 4, 16, 36, 64]</code></pre>
 </div>
 </div>
-<p>Darüber hinaus können auch <code>if</code>- und <code>else</code>-Bedingungen vor dem <code>for</code> verwendet werden, um alternative Ausdrücke zu verwenden:</p>
+<p>Darüber hinaus können auch <code>if</code>- und <code>else</code>-Bedingungen vor dem <code>for</code> verwendet werden, um alternative Ausdrücke zu verwenden (vor dem <code>for</code> ist das <code>else</code> Pflicht; ein reiner Filter ohne <code>else</code> gehört ans Ende):</p>
 <div id="03d9ca33-197c-4061-901d-2b5da9584112" class="cell" data-execution_count="47">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mit if-else vor dem for</span></span>
-<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> [x <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="cf">else</span> <span class="op">-</span>x <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span>
-<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mit if-else vor dem for</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> [x <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="cf">else</span> <span class="op">-</span>x <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[0, -1, 2, -3, 4, -5, 6, -7, 8, -9]</code></pre>
 </div>
@@ -1085,47 +1179,116 @@ Vier Wege zur flachen Kopie
 <h3 class="unnumbered anchored" data-anchor-id="beispiele-aus-der-ingenieurpraxis">Beispiele aus der Ingenieurpraxis</h3>
 <p>List Comprehensions sind sehr praktisch, um Messwerte von einer Einheit in eine andere umzurechnen:</p>
 <div id="1628c126-884e-4747-b049-956a1581666c" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>values_in_cm <span class="op">=</span> [<span class="dv">100</span>, <span class="dv">250</span>, <span class="dv">430</span>, <span class="dv">125</span>]</span>
-<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>values_in_m <span class="op">=</span> [x <span class="op">/</span> <span class="dv">100</span> <span class="cf">for</span> x <span class="kw">in</span> values_in_cm]</span>
-<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(values_in_m)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>values_in_cm <span class="op">=</span> [<span class="dv">100</span>, <span class="dv">250</span>, <span class="dv">430</span>, <span class="dv">125</span>]</span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>values_in_m <span class="op">=</span> [x <span class="op">/</span> <span class="dv">100</span> <span class="cf">for</span> x <span class="kw">in</span> values_in_cm]</span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(values_in_m)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1.0, 2.5, 4.3, 1.25]</code></pre>
 </div>
 </div>
 <div id="6e572543-38d7-41ce-9a96-e23224318141" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>temperatures_celsius <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">20</span>, <span class="dv">37</span>, <span class="dv">100</span>]</span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>temperatures_fahrenheit <span class="op">=</span> [t <span class="op">*</span> <span class="dv">9</span><span class="op">/</span><span class="dv">5</span> <span class="op">+</span> <span class="dv">32</span> <span class="cf">for</span> t <span class="kw">in</span> temperatures_celsius]</span>
-<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures_fahrenheit)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>temperatures_celsius <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">20</span>, <span class="dv">37</span>, <span class="dv">100</span>]</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>temperatures_fahrenheit <span class="op">=</span> [t <span class="op">*</span> <span class="dv">9</span><span class="op">/</span><span class="dv">5</span> <span class="op">+</span> <span class="dv">32</span> <span class="cf">for</span> t <span class="kw">in</span> temperatures_celsius]</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temperatures_fahrenheit)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[32.0, 68.0, 98.6, 212.0]</code></pre>
 </div>
 </div>
 <p>List Comprehensions werden auch gerne zum Filtern von Messwerten verwendet, wie das folgende Beispiel zeigt:</p>
 <div id="06908345-2431-4d09-82b9-8c9f6cf925c5" class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>voltages <span class="op">=</span> [<span class="fl">3.3</span>, <span class="fl">5.1</span>, <span class="fl">2.5</span>, <span class="fl">4.8</span>, <span class="fl">2.1</span>, <span class="fl">7.2</span>, <span class="fl">0.7</span>]</span>
-<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>high_voltages <span class="op">=</span> [u <span class="cf">for</span> u <span class="kw">in</span> voltages <span class="cf">if</span> u <span class="op">&gt;</span> <span class="dv">5</span>]  <span class="co"># 5 V ist hier ein oberer Grenzwert </span></span>
-<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>low_voltages <span class="op">=</span> [u <span class="cf">for</span> u <span class="kw">in</span> voltages <span class="cf">if</span> u <span class="op">&lt;=</span> <span class="dv">5</span>]</span>
-<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Oberhalb des Grenzwertes:"</span>, high_voltages)</span>
-<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Gültige Messwerte:"</span>, low_voltages) </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>voltages <span class="op">=</span> [<span class="fl">3.3</span>, <span class="fl">5.1</span>, <span class="fl">2.5</span>, <span class="fl">4.8</span>, <span class="fl">2.1</span>, <span class="fl">7.2</span>, <span class="fl">0.7</span>]</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>high_voltages <span class="op">=</span> [u <span class="cf">for</span> u <span class="kw">in</span> voltages <span class="cf">if</span> u <span class="op">&gt;</span> <span class="dv">5</span>]  <span class="co"># 5 V ist hier ein oberer Grenzwert </span></span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>low_voltages <span class="op">=</span> [u <span class="cf">for</span> u <span class="kw">in</span> voltages <span class="cf">if</span> u <span class="op">&lt;=</span> <span class="dv">5</span>]</span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Oberhalb des Grenzwertes:"</span>, high_voltages)</span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Gültige Messwerte:"</span>, low_voltages) </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Oberhalb des Grenzwertes: [5.1, 7.2]
 Gültige Messwerte: [3.3, 2.5, 4.8, 2.1, 0.7]</code></pre>
 </div>
 </div>
 <div id="1cca6e65-bcd2-47d7-a60f-9a6d4969e302" class="cell" data-execution_count="54">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Alternativ könnte man die zu hohen Werte "abschneiden":</span></span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>voltages <span class="op">=</span> [<span class="fl">3.3</span>, <span class="fl">5.1</span>, <span class="fl">2.5</span>, <span class="fl">4.8</span>, <span class="fl">2.1</span>, <span class="fl">7.2</span>, <span class="fl">0.7</span>]</span>
-<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>limited_voltages <span class="op">=</span> [u <span class="cf">if</span> u <span class="op">&lt;=</span> <span class="dv">5</span> <span class="cf">else</span> <span class="dv">5</span> <span class="cf">for</span> u <span class="kw">in</span> voltages]  <span class="co"># 5 V ist hier ein oberer Grenzwert </span></span>
-<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Bereinigte Messwerte:"</span>, limited_voltages) </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Alternativ könnte man die zu hohen Werte "abschneiden":</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>voltages <span class="op">=</span> [<span class="fl">3.3</span>, <span class="fl">5.1</span>, <span class="fl">2.5</span>, <span class="fl">4.8</span>, <span class="fl">2.1</span>, <span class="fl">7.2</span>, <span class="fl">0.7</span>]</span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>limited_voltages <span class="op">=</span> [u <span class="cf">if</span> u <span class="op">&lt;=</span> <span class="dv">5</span> <span class="cf">else</span> <span class="dv">5</span> <span class="cf">for</span> u <span class="kw">in</span> voltages]  <span class="co"># 5 V ist hier ein oberer Grenzwert </span></span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Bereinigte Messwerte:"</span>, limited_voltages) </span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Bereinigte Messwerte: [3.3, 5, 2.5, 4.8, 2.1, 5, 0.7]</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fallstrick: Elemente entfernen, während man über die Liste iteriert
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>voltages <span class="op">=</span> [<span class="fl">4.8</span>, <span class="fl">5.3</span>, <span class="fl">5.6</span>, <span class="fl">4.9</span>]</span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> u <span class="kw">in</span> voltages:</span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> u <span class="op">&gt;</span> <span class="fl">5.0</span>:</span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a>        voltages.remove(u)</span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(voltages)   <span class="co"># [4.8, 5.6, 4.9] – 5.6 wurde übersehen!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Die Schleife merkt sich intern, an welcher Position sie gerade ist. Nach dem Entfernen von 5.3 rutscht 5.6 auf dessen Platz nach. Die Schleife macht aber an der nächsten Position weiter und überspringt 5.6 dadurch.</p>
+<p><strong>Lösung:</strong> Die Schleife wird <strong>komplett ersetzt</strong>. Statt Elemente aus der alten Liste zu entfernen, baut man eine <strong>neue</strong> Liste, die nur die gewünschten Elemente enthält:</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>voltages <span class="op">=</span> [<span class="fl">4.8</span>, <span class="fl">5.3</span>, <span class="fl">5.6</span>, <span class="fl">4.9</span>]</span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>voltages <span class="op">=</span> [u <span class="cf">for</span> u <span class="kw">in</span> voltages <span class="cf">if</span> u <span class="op">&lt;=</span> <span class="fl">5.0</span>]   <span class="co"># ersetzt die ganze Schleife</span></span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(voltages)   <span class="co"># [4.8, 4.9]</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ausgeschrieben als Schleife sieht dasselbe so aus:</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>voltages <span class="op">=</span> [<span class="fl">4.8</span>, <span class="fl">5.3</span>, <span class="fl">5.6</span>, <span class="fl">4.9</span>]</span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>valid <span class="op">=</span> []</span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> u <span class="kw">in</span> voltages:          <span class="co"># über die alte Liste iterieren ...</span></span>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> u <span class="op">&lt;=</span> <span class="fl">5.0</span>:</span>
+<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a>        valid.append(u)     <span class="co"># ... aber nur die neue Liste verändern</span></span>
+<span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a>voltages <span class="op">=</span> valid</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fallstrick: Verschachtelte Listen mit <code>*</code> erzeugen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>matrix <span class="op">=</span> [[<span class="dv">0</span>] <span class="op">*</span> <span class="dv">3</span>] <span class="op">*</span> <span class="dv">3</span>   <span class="co"># sieht aus wie eine 3x3-Matrix ...</span></span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>matrix[<span class="dv">0</span>][<span class="dv">0</span>] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(matrix)</span>
+<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ausgabe: [[1, 0, 0], [1, 0, 0], [1, 0, 0]] – alle Zeilen geändert!</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Was passiert hier?</strong> Python wertet den inneren Ausdruck <code>[0] * 3</code> <strong>genau einmal</strong> aus. Dabei entsteht eine einzige Liste <code>[0, 0, 0]</code>. Das äußere <code>* 3</code> kopiert diese Liste nicht, sondern vervielfältigt nur die <strong>Referenz</strong> auf sie. Das ist wie bei <code>b = a</code>, das ja auch nie kopiert. Die Zeile bedeutet also dasselbe wie:</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>row <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> <span class="dv">3</span></span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>matrix <span class="op">=</span> [row, row, row]       <span class="co"># dreimal dieselbe Liste</span></span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(matrix[<span class="dv">0</span>] <span class="kw">is</span> matrix[<span class="dv">1</span>])  <span class="co"># True</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Richtig:</strong> <code>matrix = [[0] * 3 for i in range(3)]</code></p>
+<p>Der Unterschied (<a href="#fig-matrix-references" class="quarto-xref">Abbildung&nbsp;<span>8.3</span></a>): Die List Comprehension führt den Ausdruck <code>[0] * 3</code> in <strong>jedem Durchlauf neu</strong> aus. So entstehen drei verschiedene Listen, genau wie bei dieser Schleife:</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>matrix <span class="op">=</span> []</span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a>    matrix.append([<span class="dv">0</span>] <span class="op">*</span> <span class="dv">3</span>)     <span class="co"># in jedem Durchlauf eine neue Liste</span></span>
+<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(matrix[<span class="dv">0</span>] <span class="kw">is</span> matrix[<span class="dv">1</span>])  <span class="co"># False</span></span>
+<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a>matrix[<span class="dv">0</span>][<span class="dv">0</span>] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb79-7"><a href="#cb79-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(matrix)                  <span class="co"># [[1, 0, 0], [0, 0, 0], [0, 0, 0]]</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-matrix-references" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-matrix-references-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/matrix_references.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-matrix-references-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;8.3: Links: <code>* 3</code> vervielfältigt nur die Referenz auf eine einzige Zeile. Rechts: Die List Comprehension erzeugt drei verschiedene Listen.
+</figcaption>
+</figure>
+</div>
+<p>Auch <code>[0] * 3</code> vervielfältigt übrigens nur Referenzen, nämlich auf die Zahl 0. Das ist aber harmlos: <code>int</code> ist immutable, und <code>matrix[0][0] = 1</code> lässt nur diesen einen Platz auf ein neues Objekt zeigen.</p>
 </div>
 </div>
 <div class="exercises">
 <p><b>Übungen:</b> Gegeben ist eine Liste, die Geschwindigkeitsmessungen in der Einheit km/h beinhaltet: <code>speeds = [30.0, 50.7, 45.3, 77.4, 100.9]</code></p>
 <ol type="1">
 <li>Erstellen Sie mit einer List Comprehension eine Liste, die die Geschwindigkeiten in der Einheit m/s, gerundet auf zwei Nachkommastellen, beinhaltet.</li>
-<li>Passen Sie Ihre List Comprehension so an, dass nur Werte oberhalb 50 km/h umgerechnet und in die neue Liste aufgenommen werden.</li>
+<li>Passen Sie Ihre List Comprehension so an, dass nur Werte oberhalb von 50 km/h umgerechnet und in die neue Liste aufgenommen werden.</li>
 </ol>
 <p>Gegeben ist eine Liste von Fahrten, jeweils als Tupel (Strecke in km, Zeit in Minuten): <code>trips = [(10, 30), (25, 60), (20, 20), (5, 10)]</code>.</p>
 <ol start="3" type="1">
@@ -1136,64 +1299,64 @@ Gültige Messwerte: [3.3, 2.5, 4.8, 2.1, 0.7]</code></pre>
 <div id="2ac4a400-95c5-4717-8311-085240ba9b16" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>speeds <span class="op">=</span> [<span class="fl">30.0</span>, <span class="fl">50.7</span>, <span class="fl">45.3</span>, <span class="fl">77.4</span>, <span class="fl">100.9</span>]</span>
-<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 1: Einheit umrechnen nach km/h</span></span>
-<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Umrechnungsfaktor ist *1000/3600 (oder dividieren durch 3.6)</span></span>
-<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a><span class="co"># runden auf 2 Nachkommastellen: mit round(..., 2)</span></span>
-<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a>speeds_ms <span class="op">=</span> [<span class="bu">round</span>(kmh <span class="op">*</span> <span class="dv">1000</span><span class="op">/</span><span class="dv">3600</span>, <span class="dv">2</span>) <span class="cf">for</span> kmh <span class="kw">in</span> speeds]</span>
-<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ergebnis Übung 1:"</span>, speeds_ms)</span>
-<span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-9"><a href="#cb71-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 2: nur für solche mit kmh &gt; 50</span></span>
-<span id="cb71-10"><a href="#cb71-10" aria-hidden="true" tabindex="-1"></a>fast_speeds_ms <span class="op">=</span> [<span class="bu">round</span>(kmh <span class="op">*</span> <span class="dv">1000</span><span class="op">/</span><span class="dv">3600</span>, <span class="dv">2</span>) <span class="cf">for</span> kmh <span class="kw">in</span> speeds <span class="cf">if</span> kmh <span class="op">&gt;</span> <span class="dv">50</span>]</span>
-<span id="cb71-11"><a href="#cb71-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ergebnis Übung 2:"</span>, fast_speeds_ms)</span>
-<span id="cb71-12"><a href="#cb71-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-13"><a href="#cb71-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 3</span></span>
-<span id="cb71-14"><a href="#cb71-14" aria-hidden="true" tabindex="-1"></a>trips <span class="op">=</span> [(<span class="dv">10</span>, <span class="dv">30</span>), (<span class="dv">25</span>, <span class="dv">60</span>), (<span class="dv">20</span>, <span class="dv">20</span>), (<span class="dv">5</span>, <span class="dv">10</span>)]</span>
-<span id="cb71-15"><a href="#cb71-15" aria-hidden="true" tabindex="-1"></a><span class="co"># gesuchte Durchschnittsgeschwindigkeit: Strecke in km / Zeit in h</span></span>
-<span id="cb71-16"><a href="#cb71-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Die Zeiten müssen von min in h umgerechnet werden: durch 60 dividieren  </span></span>
-<span id="cb71-17"><a href="#cb71-17" aria-hidden="true" tabindex="-1"></a>average_speeds <span class="op">=</span> [trip[<span class="dv">0</span>]<span class="op">/</span>(trip[<span class="dv">1</span>]<span class="op">/</span><span class="dv">60</span>) <span class="cf">for</span> trip <span class="kw">in</span> trips]</span>
-<span id="cb71-18"><a href="#cb71-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ergebnis Übung 3:"</span>, average_speeds)</span>
-<span id="cb71-19"><a href="#cb71-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-20"><a href="#cb71-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 4</span></span>
-<span id="cb71-21"><a href="#cb71-21" aria-hidden="true" tabindex="-1"></a>trip_labels <span class="op">=</span> [<span class="st">"langsam"</span> <span class="cf">if</span> v <span class="op">&lt;</span> <span class="dv">50</span> <span class="cf">else</span> <span class="st">"schnell"</span> <span class="cf">for</span> v <span class="kw">in</span> average_speeds]</span>
-<span id="cb71-22"><a href="#cb71-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ergebnis Übung 4:"</span>, trip_labels)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>speeds <span class="op">=</span> [<span class="fl">30.0</span>, <span class="fl">50.7</span>, <span class="fl">45.3</span>, <span class="fl">77.4</span>, <span class="fl">100.9</span>]</span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 1: Einheit umrechnen nach m/s</span></span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Umrechnungsfaktor ist *1000/3600 (oder dividieren durch 3.6)</span></span>
+<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a><span class="co"># runden auf 2 Nachkommastellen: mit round(..., 2)</span></span>
+<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a>speeds_ms <span class="op">=</span> [<span class="bu">round</span>(kmh <span class="op">*</span> <span class="dv">1000</span><span class="op">/</span><span class="dv">3600</span>, <span class="dv">2</span>) <span class="cf">for</span> kmh <span class="kw">in</span> speeds]</span>
+<span id="cb80-7"><a href="#cb80-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ergebnis Übung 1:"</span>, speeds_ms)</span>
+<span id="cb80-8"><a href="#cb80-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-9"><a href="#cb80-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 2: nur für solche mit kmh &gt; 50</span></span>
+<span id="cb80-10"><a href="#cb80-10" aria-hidden="true" tabindex="-1"></a>fast_speeds_ms <span class="op">=</span> [<span class="bu">round</span>(kmh <span class="op">*</span> <span class="dv">1000</span><span class="op">/</span><span class="dv">3600</span>, <span class="dv">2</span>) <span class="cf">for</span> kmh <span class="kw">in</span> speeds <span class="cf">if</span> kmh <span class="op">&gt;</span> <span class="dv">50</span>]</span>
+<span id="cb80-11"><a href="#cb80-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ergebnis Übung 2:"</span>, fast_speeds_ms)</span>
+<span id="cb80-12"><a href="#cb80-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-13"><a href="#cb80-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 3</span></span>
+<span id="cb80-14"><a href="#cb80-14" aria-hidden="true" tabindex="-1"></a>trips <span class="op">=</span> [(<span class="dv">10</span>, <span class="dv">30</span>), (<span class="dv">25</span>, <span class="dv">60</span>), (<span class="dv">20</span>, <span class="dv">20</span>), (<span class="dv">5</span>, <span class="dv">10</span>)]</span>
+<span id="cb80-15"><a href="#cb80-15" aria-hidden="true" tabindex="-1"></a><span class="co"># gesuchte Durchschnittsgeschwindigkeit: Strecke in km / Zeit in h</span></span>
+<span id="cb80-16"><a href="#cb80-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Die Zeiten müssen von min in h umgerechnet werden: durch 60 dividieren  </span></span>
+<span id="cb80-17"><a href="#cb80-17" aria-hidden="true" tabindex="-1"></a>average_speeds <span class="op">=</span> [trip[<span class="dv">0</span>]<span class="op">/</span>(trip[<span class="dv">1</span>]<span class="op">/</span><span class="dv">60</span>) <span class="cf">for</span> trip <span class="kw">in</span> trips]</span>
+<span id="cb80-18"><a href="#cb80-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ergebnis Übung 3:"</span>, average_speeds)</span>
+<span id="cb80-19"><a href="#cb80-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-20"><a href="#cb80-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 4</span></span>
+<span id="cb80-21"><a href="#cb80-21" aria-hidden="true" tabindex="-1"></a>trip_labels <span class="op">=</span> [<span class="st">"langsam"</span> <span class="cf">if</span> v <span class="op">&lt;</span> <span class="dv">50</span> <span class="cf">else</span> <span class="st">"schnell"</span> <span class="cf">for</span> v <span class="kw">in</span> average_speeds]</span>
+<span id="cb80-22"><a href="#cb80-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ergebnis Übung 4:"</span>, trip_labels)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="performance" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="performance">Performance</h3>
-<p>List Comprehensions sind in der Regel schneller als eine klassische Schleife mit <code>append()</code>, da sie in Python auf C-Ebene optimiert sind. Das bedeutet, viele Schritte (wie Funktionsaufrufe oder das Anhängen an eine Liste) passieren effizient im Hintergrund. Eine kleine Demo:</p>
+<p>List Comprehensions sind in der Regel schneller als eine klassische Schleife mit <code>append()</code>, weil Python dabei intern einige Schritte einsparen kann, vor allem den wiederholten Aufruf der Methode <code>append()</code>. Eine kleine Demo:</p>
 <div id="910aa7bc-8de0-4a0c-8575-8318f2e8562b" class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time  <span class="co"># zum Messen von Zeiten</span></span>
-<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Klassische For-Loop mit append</span></span>
-<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>start <span class="op">=</span> time.time()</span>
-<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> []</span>
-<span id="cb72-7"><a href="#cb72-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000000</span>):</span>
-<span id="cb72-8"><a href="#cb72-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb72-9"><a href="#cb72-9" aria-hidden="true" tabindex="-1"></a>        result.append(i <span class="op">*</span> <span class="dv">2</span>)</span>
-<span id="cb72-10"><a href="#cb72-10" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> time.time()</span>
-<span id="cb72-11"><a href="#cb72-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb72-12"><a href="#cb72-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"For-Loop Dauer: </span><span class="sc">{</span><span class="bu">round</span>(end <span class="op">-</span> start,<span class="dv">2</span>)<span class="sc">}</span><span class="ss"> Sekunden"</span>)</span>
-<span id="cb72-13"><a href="#cb72-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb72-14"><a href="#cb72-14" aria-hidden="true" tabindex="-1"></a><span class="co"># List Comprehension mit demselben Ergebnis</span></span>
-<span id="cb72-15"><a href="#cb72-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb72-16"><a href="#cb72-16" aria-hidden="true" tabindex="-1"></a>start <span class="op">=</span> time.time()</span>
-<span id="cb72-17"><a href="#cb72-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb72-18"><a href="#cb72-18" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> [i <span class="op">*</span> <span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000000</span>) <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]</span>
-<span id="cb72-19"><a href="#cb72-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb72-20"><a href="#cb72-20" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> time.time()</span>
-<span id="cb72-21"><a href="#cb72-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb72-22"><a href="#cb72-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"List Comprehension Dauer: </span><span class="sc">{</span><span class="bu">round</span>(end <span class="op">-</span> start,<span class="dv">2</span>)<span class="sc">}</span><span class="ss"> Sekunden"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time  <span class="co"># zum Messen von Zeiten</span></span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Klassische For-Loop mit append</span></span>
+<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>start <span class="op">=</span> time.time()</span>
+<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> []</span>
+<span id="cb81-7"><a href="#cb81-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000000</span>):</span>
+<span id="cb81-8"><a href="#cb81-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb81-9"><a href="#cb81-9" aria-hidden="true" tabindex="-1"></a>        result.append(i <span class="op">*</span> <span class="dv">2</span>)</span>
+<span id="cb81-10"><a href="#cb81-10" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> time.time()</span>
+<span id="cb81-11"><a href="#cb81-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-12"><a href="#cb81-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"For-Loop Dauer: </span><span class="sc">{</span><span class="bu">round</span>(end <span class="op">-</span> start,<span class="dv">2</span>)<span class="sc">}</span><span class="ss"> Sekunden"</span>)</span>
+<span id="cb81-13"><a href="#cb81-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-14"><a href="#cb81-14" aria-hidden="true" tabindex="-1"></a><span class="co"># List Comprehension mit demselben Ergebnis</span></span>
+<span id="cb81-15"><a href="#cb81-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-16"><a href="#cb81-16" aria-hidden="true" tabindex="-1"></a>start <span class="op">=</span> time.time()</span>
+<span id="cb81-17"><a href="#cb81-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-18"><a href="#cb81-18" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> [i <span class="op">*</span> <span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000000</span>) <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]</span>
+<span id="cb81-19"><a href="#cb81-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-20"><a href="#cb81-20" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> time.time()</span>
+<span id="cb81-21"><a href="#cb81-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-22"><a href="#cb81-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"List Comprehension Dauer: </span><span class="sc">{</span><span class="bu">round</span>(end <span class="op">-</span> start,<span class="dv">2</span>)<span class="sc">}</span><span class="ss"> Sekunden"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>For-Loop Dauer: 2.12 Sekunden
 List Comprehension Dauer: 1.01 Sekunden</code></pre>
 </div>
 </div>
-<p>Die Zeiten variieren natürlich und werden auf Ihrem System andere Werte annehmen. Probieren Sie es aus!</p>
-<p>Ob ein Code, wie in diesem Beispiel, eine Sekunde oder zwei Sekunden benötigt, spielt natürlich keine große Rolle. Der Performance-Unterschied wird nur relevant, wenn sie enorm große Mengen an Daten verarbeiten müssen.</p>
+<p>Die Zeiten variieren natürlich und werden auf Ihrem System andere Werte annehmen. Wie groß der Unterschied ausfällt, hängt von Python-Version und Rechner ab; oft ist er geringer als hier. Probieren Sie es aus!</p>
+<p>Ob ein Code, wie in diesem Beispiel, eine Sekunde oder zwei Sekunden benötigt, spielt natürlich keine große Rolle. Der Performance-Unterschied wird nur relevant, wenn Sie enorm große Mengen an Daten verarbeiten müssen.</p>
 </section>
 <section id="fazit-für-die-praxis" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="fazit-für-die-praxis">Fazit für die Praxis</h3>
@@ -1211,14 +1374,106 @@ Set- und Dictionary-Comprehensions
 <p>Auch mit geschweiften Klammern lassen sich Comprehensions erzeugen, probieren Sie es aus:</p>
 <p><code>my_set = {i**2 for i in range(10)}  # Set-Comprehension</code></p>
 <p><code>my_dict = {x: x**2 for x in range(10)} # Dict-Comprehension</code></p>
-<p><strong>Hinweis:</strong> Wenn man stattdessen runde Klammern verwendet, entsteht <strong>kein Tuple</strong>, wie man erwarten könnte, sondern ein <em>Generator-Objekt</em>. Generatoren gehen über den Rahmen dieser Einführung hinaus. Hier sei nur erwähnt, dass das Generator-Objekt an die Funktion <code>tuple()</code> übergeben werden kann, um auf diese Weise ein Tuple zu erzeugen:</p>
+<p><strong>Hinweis:</strong> Wenn man stattdessen runde Klammern verwendet, entsteht <strong>kein Tupel</strong>, wie man erwarten könnte, sondern ein <em>Generator-Objekt</em>. Generatoren gehen über den Rahmen dieser Einführung hinaus. Hier sei nur erwähnt, dass das Generator-Objekt an die Funktion <code>tuple()</code> übergeben werden kann, um auf diese Weise ein Tupel zu erzeugen:</p>
 <p><code>my_tuple = tuple((i**2 for i in range(10)))  # Generator-Objekt wird an tuple() übergeben</code></p>
 <p>So erhält man funktional eine <em>Tuple-Comprehension</em>, obwohl es dafür in Python keine direkte Syntax gibt.</p>
 </div>
 </div>
-
-
 </section>
+</section>
+<section id="sec-enumerate-zip" class="level2" data-number="8.9">
+<h2 data-number="8.9" class="anchored" data-anchor-id="sec-enumerate-zip"><span class="header-section-number">8.9</span> Eleganter iterieren: <code>enumerate()</code> und <code>zip()</code></h2>
+<p>In Schleifen braucht man oft mehr als nur das aktuelle Element: seine <strong>Position</strong> in der Liste oder das <strong>passende Element einer zweiten Liste</strong>, etwa den Zeitpunkt zu einem Messwert. Mit <code>range(len(...))</code> und Indexzugriffen geht das zwar, Python bietet dafür aber zwei eingebaute Funktionen, die den Code kürzer und lesbarer machen.</p>
+<p><code>enumerate()</code> liefert bei jedem Schleifendurchlauf ein Tupel aus <strong>Index und Element</strong>, das wir – wie bei <code>.items()</code> – direkt in zwei Variablen entpacken:</p>
+<div id="3a20efdc" class="cell">
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>temperatures <span class="op">=</span> [<span class="fl">21.4</span>, <span class="fl">23.9</span>, <span class="fl">27.5</span>, <span class="fl">31.2</span>, <span class="fl">36.8</span>]</span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, temp <span class="kw">in</span> <span class="bu">enumerate</span>(temperatures):</span>
+<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Messung </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>temp<span class="sc">}</span><span class="ss"> °C"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Messung 0: 21.4 °C
+Messung 1: 23.9 °C
+Messung 2: 27.5 °C
+Messung 3: 31.2 °C
+Messung 4: 36.8 °C</code></pre>
+</div>
+</div>
+<p><code>zip()</code> fügt mehrere Sequenzen zusammen wie ein Reißverschluss – daher der Name: Bei jedem Durchlauf erhalten wir ein Tupel mit den Elementen, die in den Sequenzen an derselben Position stehen:</p>
+<div id="a66ee32e" class="cell">
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>times_min <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>]</span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t, temp <span class="kw">in</span> <span class="bu">zip</span>(times_min, temperatures):</span>
+<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"t = </span><span class="sc">{</span>t<span class="sc">}</span><span class="ss"> min: </span><span class="sc">{</span>temp<span class="sc">}</span><span class="ss"> °C"</span>)</span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>t = 0 min: 21.4 °C
+t = 5 min: 23.9 °C
+t = 10 min: 27.5 °C
+t = 15 min: 31.2 °C
+t = 20 min: 36.8 °C</code></pre>
+</div>
+</div>
+<p>Was beide Funktionen leisten – und wo die Falle lauert –, erleben Sie am besten selbst:</p>
+<div class="exercises">
+<p><b>Übungen:</b></p>
+<ol type="1">
+<li>Gegeben ist die Liste <code>sensors = ["T_Einlass", "T_Lager", "T_Auslass"]</code>. Geben Sie die Sensoren nummeriert aus, beginnend bei 1 (<code>1: T_Einlass</code> usw.) – einmal mit <code>range(len(sensors))</code> und Indexzugriff, einmal mit <code>enumerate(sensors, start=1)</code>. Welche Variante ist lesbarer?</li>
+<li>Im Kapitel <em>Kontrollstrukturen</em> haben wir das Skalarprodukt der Vektoren <code>v = [1.0, -2.0, 1.5]</code> und <code>w = [-1.0, 1.0, 0.5]</code> mit einer Indexschleife berechnet. Berechnen Sie es nun in einer einzigen Zeile mit <code>zip()</code>, einer List Comprehension und der eingebauten Funktion <code>sum()</code>. Funktioniert Ihre Lösung ohne Änderung auch für Vektoren mit vier Komponenten?</li>
+<li>Zu den Sensoren aus Übung 1 gibt es die aktuellen Messwerte <code>readings = [24.3, 41.7, 30.2]</code>. Erzeugen Sie mit <code>zip()</code> und <code>dict()</code> ein Dictionary, das jedem Sensornamen seinen Messwert zuordnet, und geben Sie die Temperatur von <code>"T_Lager"</code> aus. (Tipp: Wie erzeugt man ein Dictionary aus einer Liste von Tupeln?)</li>
+<li>Bei einer Messung ist ein Wert verloren gegangen: <code>times_min = [0, 5, 10, 15, 20]</code>, aber <code>temperatures = [21.4, 23.9, 27.5, 31.2]</code>. Was gibt <code>list(zip(times_min, temperatures))</code> aus? Was fällt Ihnen auf, und warum ist das bei Messdaten gefährlich? Wiederholen Sie den Aufruf mit <code>zip(times_min, temperatures, strict=True)</code>.</li>
+</ol>
+</div>
+<div id="540ca0b1" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 1</span></span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a>sensors <span class="op">=</span> [<span class="st">"T_Einlass"</span>, <span class="st">"T_Lager"</span>, <span class="st">"T_Auslass"</span>]</span>
+<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-4"><a href="#cb87-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(sensors)):  <span class="co"># mit Index: das "+ 1" vergisst man leicht</span></span>
+<span id="cb87-5"><a href="#cb87-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i <span class="op">+</span> <span class="dv">1</span><span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>sensors[i]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb87-6"><a href="#cb87-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-7"><a href="#cb87-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> number, name <span class="kw">in</span> <span class="bu">enumerate</span>(sensors, start<span class="op">=</span><span class="dv">1</span>):  <span class="co"># mit enumerate()</span></span>
+<span id="cb87-8"><a href="#cb87-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>number<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb87-9"><a href="#cb87-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-10"><a href="#cb87-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 2</span></span>
+<span id="cb87-11"><a href="#cb87-11" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> [<span class="fl">1.0</span>, <span class="op">-</span><span class="fl">2.0</span>, <span class="fl">1.5</span>]</span>
+<span id="cb87-12"><a href="#cb87-12" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> [<span class="op">-</span><span class="fl">1.0</span>, <span class="fl">1.0</span>, <span class="fl">0.5</span>]</span>
+<span id="cb87-13"><a href="#cb87-13" aria-hidden="true" tabindex="-1"></a>v_dot_w <span class="op">=</span> <span class="bu">sum</span>([vi <span class="op">*</span> wi <span class="cf">for</span> vi, wi <span class="kw">in</span> <span class="bu">zip</span>(v, w)])</span>
+<span id="cb87-14"><a href="#cb87-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v_dot_w)  <span class="co"># -2.25, wie im Kapitel Kontrollstrukturen</span></span>
+<span id="cb87-15"><a href="#cb87-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Anders als range(3) passt sich zip() automatisch an die Länge der Vektoren an.</span></span>
+<span id="cb87-16"><a href="#cb87-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-17"><a href="#cb87-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 3</span></span>
+<span id="cb87-18"><a href="#cb87-18" aria-hidden="true" tabindex="-1"></a>readings <span class="op">=</span> [<span class="fl">24.3</span>, <span class="fl">41.7</span>, <span class="fl">30.2</span>]</span>
+<span id="cb87-19"><a href="#cb87-19" aria-hidden="true" tabindex="-1"></a>sensors_dict <span class="op">=</span> <span class="bu">dict</span>(<span class="bu">zip</span>(sensors, readings))</span>
+<span id="cb87-20"><a href="#cb87-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sensors_dict)</span>
+<span id="cb87-21"><a href="#cb87-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Lagertemperatur:"</span>, sensors_dict[<span class="st">"T_Lager"</span>], <span class="st">"°C"</span>)</span>
+<span id="cb87-22"><a href="#cb87-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-23"><a href="#cb87-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Übung 4</span></span>
+<span id="cb87-24"><a href="#cb87-24" aria-hidden="true" tabindex="-1"></a>times_min <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>]</span>
+<span id="cb87-25"><a href="#cb87-25" aria-hidden="true" tabindex="-1"></a>temperatures <span class="op">=</span> [<span class="fl">21.4</span>, <span class="fl">23.9</span>, <span class="fl">27.5</span>, <span class="fl">31.2</span>]</span>
+<span id="cb87-26"><a href="#cb87-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">list</span>(<span class="bu">zip</span>(times_min, temperatures)))</span>
+<span id="cb87-27"><a href="#cb87-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Der Zeitpunkt 20 fehlt einfach – ohne jede Warnung!</span></span>
+<span id="cb87-28"><a href="#cb87-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Schlimmer noch: zip() weiß nicht, WELCHER Wert fehlt. Fehlte z.B. der Wert bei 10 min,</span></span>
+<span id="cb87-29"><a href="#cb87-29" aria-hidden="true" tabindex="-1"></a><span class="co"># wären alle folgenden Temperaturen stillschweigend dem falschen Zeitpunkt zugeordnet.</span></span>
+<span id="cb87-30"><a href="#cb87-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Mit strict=True gibt es stattdessen eine Fehlermeldung:</span></span>
+<span id="cb87-31"><a href="#cb87-31" aria-hidden="true" tabindex="-1"></a><span class="co"># list(zip(times_min, temperatures, strict=True))</span></span>
+<span id="cb87-32"><a href="#cb87-32" aria-hidden="true" tabindex="-1"></a><span class="co"># -&gt; ValueError: zip() argument 2 is shorter than argument 1</span></span></code><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<code>zip()</code> bei unterschiedlich langen Sequenzen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>zip()</code> hört auf, sobald die <strong>kürzeste</strong> Sequenz erschöpft ist – überzählige Elemente werden stillschweigend ignoriert. Bei Messdaten verwenden Sie deshalb besser <code>zip(a, b, strict=True)</code>: Sind die Sequenzen unterschiedlich lang, bricht das Programm mit einem <code>ValueError</code> ab, statt unbemerkt mit unvollständigen Daten weiterzurechnen.</p>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->

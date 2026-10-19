@@ -1,0 +1,109 @@
+project:
+  type: book
+  output-dir: docs          # für GitHub Pages; gilt für HTML und PDF
+
+book:
+  title: "Programmierung für Ingenieurinnen und Ingenieure"
+  author: "Prof. Dr. Maik Weber"
+  date: today
+  search: true
+  downloads: [pdf]          # PDF-Download-Button in der Kopfleiste (PDF entsteht bei "quarto render")
+  sidebar:
+    logo: logo.jpg
+  navbar:                   # Kopfleiste: Titel links, PDF-Download und Hell/Dunkel-Schalter rechts
+    search: true
+  chapters:
+    - index.qmd
+    - notebooks/0-einleitung.ipynb
+    - notebooks/1-prep.ipynb
+    - notebooks/2-basics.ipynb
+    - notebooks/3-datatypes.ipynb
+    - notebooks/4-controls.ipynb
+    - notebooks/5-functions.ipynb
+    - notebooks/6-sequences.ipynb
+    - notebooks/7-bibs.ipynb
+    - notebooks/8-oop.ipynb
+  appendices:
+    - notebooks/A-dateien.ipynb
+    - notebooks/B-fehlerbehandlung.ipynb
+    - notebooks/C-gui.ipynb
+    - notebooks/D-micropython.ipynb
+
+# Dokument-Metadaten (auf oberster Ebene, damit {{< meta ... >}} sie findet)
+lang: de
+version: "4.0"
+# license: "CC BY-SA 4.0"
+toc: true
+number-sections: true
+
+# Code-Ausführung: Quarto führt die Notebooks NICHT selbst aus (Standard für .ipynb).
+# Im Skript erscheinen die Ausgaben, die beim Arbeiten in Jupyter/VS Code im Notebook
+# gespeichert wurden. Vor dem Rendern ein Notebook ggf. komplett neu ausführen
+# ("Restart Kernel and Run All") und speichern.
+execute:
+  freeze: auto
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: style.css
+    code-fold: true
+    highlight-style: pygments
+  pdf:
+    documentclass: scrreprt   # KOMA-Script
+    include-in-header:
+      text: |
+        % lange Codezeilen umbrechen statt über den Rand laufen lassen
+        \usepackage{fvextra}
+        \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+        % Ersatzschriften für Zeichen, die Latin Modern nicht enthält
+        % (griechische Buchstaben im Code, Mengensymbole, Emojis).
+        % Windows: Segoe UI/Consolas direkt aus dem Fonts-Ordner; sonst Noto/DejaVu.
+        % Nicht vorhandene Schriften werden übersprungen. Nur mit LuaLaTeX (pdf-engine unten).
+        \usepackage{iftex}
+        \ifLuaTeX
+        \usepackage{luacode}
+        \begin{luacode*}
+        -- Windows: Schriften direkt aus dem Fonts-Ordner (unabhängig von der Namensdatenbank)
+        local windir = os.getenv("WINDIR") or os.getenv("SystemRoot")
+        local fontdir = windir and (windir:gsub("\\", "/") .. "/Fonts/")
+        local function usable(c)
+          if c.file then
+            if fontdir and lfs.isfile(fontdir .. c.file) then return "[" .. fontdir .. c.file .. "]" end
+          else
+            local ok, file = pcall(fonts.names.lookup_font_name, {name = c.name,
+              specification = "name:" .. c.name, lookup = "name", size = 655360,
+              optsize = 0, style = "regular"})
+            if ok and file then return c.name end
+          end
+        end
+        local function fallbacks(candidates)
+          local list = {}
+          for _, c in ipairs(candidates) do
+            local spec = usable(c)
+            if spec then list[#list + 1] = spec .. ":mode=harf;" end
+          end
+          texio.write_nl("log", "Ersatzschriften: " .. table.concat(list, " | "))
+          return list
+        end
+        local WIN_TEXT = {{file = "segoeui.ttf"}, {file = "seguiemj.ttf"}, {file = "seguisym.ttf"}}
+        luaotfload.add_fallback("mainfb", fallbacks({WIN_TEXT[1], WIN_TEXT[2], WIN_TEXT[3],
+          {name = "Noto Color Emoji"}, {name = "DejaVu Serif"}, {name = "DejaVu Sans"}}))
+        luaotfload.add_fallback("sansfb", fallbacks({WIN_TEXT[1], WIN_TEXT[2], WIN_TEXT[3],
+          {name = "Noto Color Emoji"}, {name = "DejaVu Sans"}}))
+        luaotfload.add_fallback("monofb", fallbacks({{file = "consola.ttf"}, WIN_TEXT[2], WIN_TEXT[3],
+          {name = "Noto Color Emoji"}, {name = "DejaVu Sans Mono"}}))
+        \end{luacode*}
+        \setmainfont{lmroman10}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
+          ItalicFont=*-italic, BoldItalicFont=*-bolditalic, RawFeature={fallback=mainfb}]
+        \setsansfont{lmsans10}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
+          ItalicFont=*-oblique, BoldItalicFont=*-boldoblique, RawFeature={fallback=sansfb}]
+        \setmonofont{lmmono10}[Extension=.otf, UprightFont=*-regular, ItalicFont=*-italic,
+          BoldFont=lmmonolt10-bold, BoldItalicFont=lmmonolt10-boldoblique, RawFeature={fallback=monofb}]
+        \fi
+    pdf-engine: lualatex       # nötig für die Ersatzschriften (Emojis, griechische Buchstaben im Code)
+    keep-tex: true
+    latex-min-runs: 3          # Inhaltsverzeichnis: Seitenzahlen stabil (mehrseitiges Verzeichnis)
+    fig-pos: "H"
