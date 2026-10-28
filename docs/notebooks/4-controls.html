@@ -733,11 +733,11 @@ Kritischer Messwert gefunden: 23.2 V</code></pre>
 </div>
 <p>Wir fassen die drei Varianten von <code>range()</code> zusammen:</p>
 <ul>
-<li><code>range(stop)</code> Sequenz von <code>0</code> bis <code>stop-1</code></li>
-<li><code>range(start, stop)</code> Sequenz von <code>start</code> bis <code>stop-1</code></li>
-<li><code>range(start, stop, step)</code> Sequenz von <code>start</code> bis maximal <code>stop-1</code> mit der Schrittweite <code>step</code>.</li>
+<li><code>range(stop)</code>: Sequenz von <code>0</code> bis <code>stop-1</code></li>
+<li><code>range(start, stop)</code>: Sequenz von <code>start</code> bis <code>stop-1</code></li>
+<li><code>range(start, stop, step)</code>: Sequenz, die bei <code>start</code> beginnt und in Schritten von <code>step</code> bis <strong>vor</strong> <code>stop</code> zählt (das funktioniert auch mit negativer Schrittweite, siehe unten).</li>
 </ul>
-<p>In der dritten Variante steht “bis maximal <code>stop-1</code>”, weil nicht mehr garantiert werden kann, dass <code>stop-1</code> angenommen wird: Es wird jeweils <code>step</code> hinzuaddiert und damit könnte auch <code>stop-1</code> übersprungen werden. Genauer: Bei positiver Schrittweite endet die Sequenz vor dem ersten Wert, der <code>&gt;= stop</code> ist, bei negativer Schrittweite (siehe unten) vor dem ersten Wert, der <code>&lt;= stop</code> ist. Der Wert <code>stop</code> selbst ist also nie enthalten.</p>
+<p>Für alle drei Varianten gilt: Der Wert <code>stop</code> selbst ist <strong>nie</strong> enthalten. Bei positiver Schrittweite endet die Sequenz vor dem ersten Wert, der <code>&gt;= stop</code> ist, bei negativer Schrittweite vor dem ersten Wert, der <code>&lt;= stop</code> ist. Ob der letzte Wert genau <code>stop-1</code> ist, hängt deshalb von der Schrittweite ab: <code>range(1, 10, 2)</code> liefert 1, 3, 5, 7, 9, <code>range(1, 10, 3)</code> dagegen nur 1, 4, 7 – die 9 wird übersprungen.</p>
 <p>Übrigens kann man mit <code>range()</code> auch rückwärts zählen:</p>
 <div id="50340d1c" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">3</span>):</span>
